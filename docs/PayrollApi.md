@@ -1,0 +1,273 @@
+# \PayrollApi
+
+All URIs are relative to *https://api.affixapi.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**PayrollEmployees20230301**](PayrollApi.md#PayrollEmployees20230301) | **Get** /2023-03-01/payroll/employees | Employees
+[**PayrollIdentity20230301**](PayrollApi.md#PayrollIdentity20230301) | **Get** /2023-03-01/payroll/identity | Identity
+[**PayrollPayruns20230301**](PayrollApi.md#PayrollPayruns20230301) | **Get** /2023-03-01/payroll/payruns | Payruns
+[**PayrollPayslips20230320**](PayrollApi.md#PayrollPayslips20230320) | **Get** /2023-03-01/payroll/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+
+
+
+## PayrollEmployees20230301
+
+> []Employee20230301Response PayrollEmployees20230301(ctx).Execute()
+
+Employees
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.PayrollApi.PayrollEmployees20230301(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PayrollApi.PayrollEmployees20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PayrollEmployees20230301`: []Employee20230301Response
+    fmt.Fprintf(os.Stdout, "Response from `PayrollApi.PayrollEmployees20230301`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPayrollEmployees20230301Request struct via the builder pattern
+
+
+### Return type
+
+[**[]Employee20230301Response**](Employee20230301Response.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PayrollIdentity20230301
+
+> IdentityResponse PayrollIdentity20230301(ctx).Execute()
+
+Identity
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.PayrollApi.PayrollIdentity20230301(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PayrollApi.PayrollIdentity20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PayrollIdentity20230301`: IdentityResponse
+    fmt.Fprintf(os.Stdout, "Response from `PayrollApi.PayrollIdentity20230301`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPayrollIdentity20230301Request struct via the builder pattern
+
+
+### Return type
+
+[**IdentityResponse**](IdentityResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PayrollPayruns20230301
+
+> []PayrunResponse PayrollPayruns20230301(ctx).StartDate(startDate).EndDate(endDate).Execute()
+
+Payruns
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "time"
+    openapiclient "./openapi"
+)
+
+func main() {
+    startDate := time.Now() // string | The start date of the search period
+    endDate := time.Now() // string | The end date of the search period
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.PayrollApi.PayrollPayruns20230301(context.Background()).StartDate(startDate).EndDate(endDate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PayrollApi.PayrollPayruns20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PayrollPayruns20230301`: []PayrunResponse
+    fmt.Fprintf(os.Stdout, "Response from `PayrollApi.PayrollPayruns20230301`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPayrollPayruns20230301Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **string** | The start date of the search period | 
+ **endDate** | **string** | The end date of the search period | 
+
+### Return type
+
+[**[]PayrunResponse**](PayrunResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PayrollPayslips20230320
+
+> []PayslipResponse PayrollPayslips20230320(ctx, payrunId).Execute()
+
+Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    payrunId := "payrunId_example" // string | The id of the payrun.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.PayrollApi.PayrollPayslips20230320(context.Background(), payrunId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PayrollApi.PayrollPayslips20230320``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PayrollPayslips20230320`: []PayslipResponse
+    fmt.Fprintf(os.Stdout, "Response from `PayrollApi.PayrollPayslips20230320`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**payrunId** | **string** | The id of the payrun. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPayrollPayslips20230320Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**[]PayslipResponse**](PayslipResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+

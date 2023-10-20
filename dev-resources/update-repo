@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" && cd "$dir"
+go_sdk_dir="${dir}/.."
+api_dir="${dir}/../../api"
+
+## run this manually to update the `go-sdk` repo
+##  TODO automate this in CI
+update(){
+  cd "$api_dir" && git pull && npx openapi-generator-cli generate -i docs/openapi2.json -g go -o go
+
+  cd "$go_sdk_dir" && cp -r "${api_dir}/go/" .
+}
+
+update
