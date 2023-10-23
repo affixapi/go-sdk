@@ -19,15 +19,41 @@
 
 * `BAMBOOHR` (value: `"bamboohr"`)
 
+* `BREATHE` (value: `"breathe"`)
+
+* `CEZANNE` (value: `"cezanne"`)
+
+* `CHARLIEHR` (value: `"charliehr"`)
+
+* `DEEL` (value: `"deel"`)
+
+* `DEPUTY` (value: `"deputy"`)
+
+* `HIBOB` (value: `"hibob"`)
+
+* `HUMAANS` (value: `"humaans"`)
+
+* `IRIS_CASCADE` (value: `"iris cascade"`)
+
+* `PERSONIO_DE` (value: `"personio.de"`)
+
+* `SAGEHR` (value: `"sagehr"`)
+
+* `SAPLINGHR` (value: `"saplinghr"`)
+
+* `STAFFOLOGY` (value: `"staffology"`)
+
+* `UKG_PRO` (value: `"ukg pro"`)
+
+* `XERO` (value: `"xero"`)
+
 * `BRAIN_PAYROLL` (value: `"brain payroll"`)
 
 * `BRIGHTPAY_CONNECT` (value: `"brightpay connect"`)
 
-* `DEPUTY` (value: `"deputy"`)
-
 * `EMPLOYMENT_HERO` (value: `"employment hero"`)
 
-* `FACTORIAL` (value: `"factorial"`)
+* `FACTORIALHR` (value: `"factorialhr"`)
 
 * `FOURTHHR` (value: `"fourthhr"`)
 
@@ -47,45 +73,7 @@
 
 * `SIMPLEPAY_IE` (value: `"simplepay.ie"`)
 
-* `UKG_PRO` (value: `"ukg pro"`)
-
-* `XERO` (value: `"xero"`)
-
-* `BAMBOOHR` (value: `"bamboohr"`)
-
-* `BREATHE` (value: `"breathe"`)
-
-* `CEZANNE` (value: `"cezanne"`)
-
-* `DEEL` (value: `"deel"`)
-
-* `DEPUTY` (value: `"deputy"`)
-
-* `FACTORIALHR` (value: `"factorialhr"`)
-
-* `FOURTHHR` (value: `"fourthhr"`)
-
-* `HIBOB` (value: `"hibob"`)
-
-* `HUMAANS` (value: `"humaans"`)
-
-* `IRIS_CASCADE` (value: `"iris cascade"`)
-
-* `ITRENT` (value: `"itrent"`)
-
-* `PEOPLEHR` (value: `"peoplehr"`)
-
-* `PERSONIO_DE` (value: `"personio.de"`)
-
-* `REMOTE_COM` (value: `"remote.com"`)
-
-* `SAGEHR` (value: `"sagehr"`)
-
-* `SAPLINGHR` (value: `"saplinghr"`)
-
-* `SIMPLEPAY_IE` (value: `"simplepay.ie"`)
-
-* `STAFFOLOGY` (value: `"staffology"`)
+* `PENTO_IO` (value: `"pento.io"`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

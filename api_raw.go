@@ -25,54 +25,57 @@ var (
 	_ _context.Context
 )
 
-// Class20230301ApiService Class20230301Api service
-type Class20230301ApiService service
+// RawApiService RawApi service
+type RawApiService service
 
-type ApiDeveloperEmployees20230301Request struct {
+type ApiAmazonGetOrderRequest struct {
 	ctx _context.Context
-	ApiService *Class20230301ApiService
+	ApiService *RawApiService
+	orderId string
 }
 
 
-func (r ApiDeveloperEmployees20230301Request) Execute() ([]Employee20230301Response, *_nethttp.Response, error) {
-	return r.ApiService.DeveloperEmployees20230301Execute(r)
+func (r ApiAmazonGetOrderRequest) Execute() (Order20230320Response, *_nethttp.Response, error) {
+	return r.ApiService.AmazonGetOrderExecute(r)
 }
 
 /*
- * DeveloperEmployees20230301 Employees
- * List the individuals (employees, contractors, accountants, and others)
-listed in the HRIS/Payroll software
+ * AmazonGetOrder Get an Order
+ * Retrieves information about a specific order
 
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiDeveloperEmployees20230301Request
+ * @param orderId The id of the order.
+ * @return ApiAmazonGetOrderRequest
  */
-func (a *Class20230301ApiService) DeveloperEmployees20230301(ctx _context.Context) ApiDeveloperEmployees20230301Request {
-	return ApiDeveloperEmployees20230301Request{
+func (a *RawApiService) AmazonGetOrder(ctx _context.Context, orderId string) ApiAmazonGetOrderRequest {
+	return ApiAmazonGetOrderRequest{
 		ApiService: a,
 		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 /*
  * Execute executes the request
- * @return []Employee20230301Response
+ * @return Order20230320Response
  */
-func (a *Class20230301ApiService) DeveloperEmployees20230301Execute(r ApiDeveloperEmployees20230301Request) ([]Employee20230301Response, *_nethttp.Response, error) {
+func (a *RawApiService) AmazonGetOrderExecute(r ApiAmazonGetOrderRequest) (Order20230320Response, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []Employee20230301Response
+		localVarReturnValue  Order20230320Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class20230301ApiService.DeveloperEmployees20230301")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RawApiService.AmazonGetOrder")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/2023-03-01/developer/employees"
+	localVarPath := localBasePath + "/2023-03-20/raw/amazon/orders/{order_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"order_id"+"}", _neturl.PathEscape(parameterToString(r.orderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -185,25 +188,25 @@ func (a *Class20230301ApiService) DeveloperEmployees20230301Execute(r ApiDevelop
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeveloperIdentity20230301Request struct {
+type ApiAmazonIdentityRequest struct {
 	ctx _context.Context
-	ApiService *Class20230301ApiService
+	ApiService *RawApiService
 }
 
 
-func (r ApiDeveloperIdentity20230301Request) Execute() (IdentityResponse, *_nethttp.Response, error) {
-	return r.ApiService.DeveloperIdentity20230301Execute(r)
+func (r ApiAmazonIdentityRequest) Execute() (IdentityResponse, *_nethttp.Response, error) {
+	return r.ApiService.AmazonIdentityExecute(r)
 }
 
 /*
- * DeveloperIdentity20230301 Identity
+ * AmazonIdentity Identity
  * List information of the user for the respective account
 
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiDeveloperIdentity20230301Request
+ * @return ApiAmazonIdentityRequest
  */
-func (a *Class20230301ApiService) DeveloperIdentity20230301(ctx _context.Context) ApiDeveloperIdentity20230301Request {
-	return ApiDeveloperIdentity20230301Request{
+func (a *RawApiService) AmazonIdentity(ctx _context.Context) ApiAmazonIdentityRequest {
+	return ApiAmazonIdentityRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -213,7 +216,7 @@ func (a *Class20230301ApiService) DeveloperIdentity20230301(ctx _context.Context
  * Execute executes the request
  * @return IdentityResponse
  */
-func (a *Class20230301ApiService) DeveloperIdentity20230301Execute(r ApiDeveloperIdentity20230301Request) (IdentityResponse, *_nethttp.Response, error) {
+func (a *RawApiService) AmazonIdentityExecute(r ApiAmazonIdentityRequest) (IdentityResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -223,12 +226,12 @@ func (a *Class20230301ApiService) DeveloperIdentity20230301Execute(r ApiDevelope
 		localVarReturnValue  IdentityResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class20230301ApiService.DeveloperIdentity20230301")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RawApiService.AmazonIdentity")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/2023-03-01/developer/identity"
+	localVarPath := localBasePath + "/2023-03-20/raw/amazon/identity"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -331,40 +334,35 @@ func (a *Class20230301ApiService) DeveloperIdentity20230301Execute(r ApiDevelope
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeveloperPayruns20230301Request struct {
+type ApiAmazonOrdersRequest struct {
 	ctx _context.Context
-	ApiService *Class20230301ApiService
+	ApiService *RawApiService
 	startDate *string
 	endDate *string
 }
 
-func (r ApiDeveloperPayruns20230301Request) StartDate(startDate string) ApiDeveloperPayruns20230301Request {
+func (r ApiAmazonOrdersRequest) StartDate(startDate string) ApiAmazonOrdersRequest {
 	r.startDate = &startDate
 	return r
 }
-func (r ApiDeveloperPayruns20230301Request) EndDate(endDate string) ApiDeveloperPayruns20230301Request {
+func (r ApiAmazonOrdersRequest) EndDate(endDate string) ApiAmazonOrdersRequest {
 	r.endDate = &endDate
 	return r
 }
 
-func (r ApiDeveloperPayruns20230301Request) Execute() ([]PayrunResponse, *_nethttp.Response, error) {
-	return r.ApiService.DeveloperPayruns20230301Execute(r)
+func (r ApiAmazonOrdersRequest) Execute() ([]map[string]interface{}, *_nethttp.Response, error) {
+	return r.ApiService.AmazonOrdersExecute(r)
 }
 
 /*
- * DeveloperPayruns20230301 Payruns
- * List all the pay runs that occurred during the respective period.
-
-Supported integrations:
-  - sageone
-  - simplepay.ie
-  - brightpay connect
+ * AmazonOrders Orders
+ * List all the orders that occurred during the respective period.
 
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiDeveloperPayruns20230301Request
+ * @return ApiAmazonOrdersRequest
  */
-func (a *Class20230301ApiService) DeveloperPayruns20230301(ctx _context.Context) ApiDeveloperPayruns20230301Request {
-	return ApiDeveloperPayruns20230301Request{
+func (a *RawApiService) AmazonOrders(ctx _context.Context) ApiAmazonOrdersRequest {
+	return ApiAmazonOrdersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -372,24 +370,24 @@ func (a *Class20230301ApiService) DeveloperPayruns20230301(ctx _context.Context)
 
 /*
  * Execute executes the request
- * @return []PayrunResponse
+ * @return []map[string]interface{}
  */
-func (a *Class20230301ApiService) DeveloperPayruns20230301Execute(r ApiDeveloperPayruns20230301Request) ([]PayrunResponse, *_nethttp.Response, error) {
+func (a *RawApiService) AmazonOrdersExecute(r ApiAmazonOrdersRequest) ([]map[string]interface{}, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []PayrunResponse
+		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class20230301ApiService.DeveloperPayruns20230301")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RawApiService.AmazonOrders")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/2023-03-01/developer/payruns"
+	localVarPath := localBasePath + "/2023-03-20/raw/amazon/orders"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -487,473 +485,6 @@ func (a *Class20230301ApiService) DeveloperPayruns20230301Execute(r ApiDeveloper
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
-			var v MessageResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiDeveloperPayslips20230320Request struct {
-	ctx _context.Context
-	ApiService *Class20230301ApiService
-	payrunId string
-}
-
-
-func (r ApiDeveloperPayslips20230320Request) Execute() ([]PayslipResponse, *_nethttp.Response, error) {
-	return r.ApiService.DeveloperPayslips20230320Execute(r)
-}
-
-/*
- * DeveloperPayslips20230320 Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
- * Retrieves information about a specific pay
-Supported integrations:
-  - sageone
-  - simplepay.ie
-  - brightpay connect
-
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param payrunId The id of the payrun.
- * @return ApiDeveloperPayslips20230320Request
- */
-func (a *Class20230301ApiService) DeveloperPayslips20230320(ctx _context.Context, payrunId string) ApiDeveloperPayslips20230320Request {
-	return ApiDeveloperPayslips20230320Request{
-		ApiService: a,
-		ctx: ctx,
-		payrunId: payrunId,
-	}
-}
-
-/*
- * Execute executes the request
- * @return []PayslipResponse
- */
-func (a *Class20230301ApiService) DeveloperPayslips20230320Execute(r ApiDeveloperPayslips20230320Request) ([]PayslipResponse, *_nethttp.Response, error) {
-	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []PayslipResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class20230301ApiService.DeveloperPayslips20230320")
-	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/2023-03-01/developer/payruns/{payrun_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"payrun_id"+"}", _neturl.PathEscape(parameterToString(r.payrunId, "")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["access-token"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse401
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 429 {
-			var v MessageResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 500 {
-			var v MessageResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 501 {
-			var v MessageResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOfficialEmployees20230301Request struct {
-	ctx _context.Context
-	ApiService *Class20230301ApiService
-}
-
-
-func (r ApiOfficialEmployees20230301Request) Execute() ([]Employee20230301Response, *_nethttp.Response, error) {
-	return r.ApiService.OfficialEmployees20230301Execute(r)
-}
-
-/*
- * OfficialEmployees20230301 Employees
- * List the individuals (employees, contractors, accountants, and others)
-listed in the HRIS/Payroll software
-
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiOfficialEmployees20230301Request
- */
-func (a *Class20230301ApiService) OfficialEmployees20230301(ctx _context.Context) ApiOfficialEmployees20230301Request {
-	return ApiOfficialEmployees20230301Request{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-/*
- * Execute executes the request
- * @return []Employee20230301Response
- */
-func (a *Class20230301ApiService) OfficialEmployees20230301Execute(r ApiOfficialEmployees20230301Request) ([]Employee20230301Response, *_nethttp.Response, error) {
-	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Employee20230301Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class20230301ApiService.OfficialEmployees20230301")
-	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/2023-03-01/official/employees"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["access-token"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse401
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 429 {
-			var v MessageResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 500 {
-			var v MessageResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 501 {
-			var v MessageResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOfficialdentity20230301Request struct {
-	ctx _context.Context
-	ApiService *Class20230301ApiService
-}
-
-
-func (r ApiOfficialdentity20230301Request) Execute() (IdentityResponse, *_nethttp.Response, error) {
-	return r.ApiService.Officialdentity20230301Execute(r)
-}
-
-/*
- * Officialdentity20230301 Identity
- * List information of the user for the respective account
-
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiOfficialdentity20230301Request
- */
-func (a *Class20230301ApiService) Officialdentity20230301(ctx _context.Context) ApiOfficialdentity20230301Request {
-	return ApiOfficialdentity20230301Request{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-/*
- * Execute executes the request
- * @return IdentityResponse
- */
-func (a *Class20230301ApiService) Officialdentity20230301Execute(r ApiOfficialdentity20230301Request) (IdentityResponse, *_nethttp.Response, error) {
-	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  IdentityResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class20230301ApiService.Officialdentity20230301")
-	if err != nil {
-		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/2023-03-01/official/identity"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["access-token"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse401
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 429 {
-			var v MessageResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 500 {
 			var v MessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

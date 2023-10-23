@@ -29,33 +29,33 @@ info:
         the sign in flow is complete and exchange that `authorization_code` for
         a Bearer token
 
-    # Sandbox keys (payroll)
+    # Sandbox keys (official mode, employees endpoint)
     ### dev
     ```
-    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvcGF5cm9sbC9lbXBsb3llZXMiLCIvMjAyMy0wMy0wMS9wYXlyb2xsL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zIiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zLzpwYXlydW5faWQiXSwidG9rZW4iOiI1ZGZmMWRlMy1kZTk2LTQzZWYtYTgwMi0wYWZlNWQ5NzU4MzkiLCJpYXQiOjE2OTM4Mzk1NjIsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6InBheXJvbGwiLCJhdWQiOiIzRkRBRURGOS0xRENBNEY1NC04Nzk0OUY2QS00MTAyNzY0MyJ9.D8i_TwguGZ9vok7RCUuk5FoUJGWEGnI-4VzReI1DAg0ytZaQ8XFmVxC4RxGYBxah1ZJpcrbAsuhssGEDXffIgQ
+    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiJhNmNhODc5YS01OGEzLTQ2MGEtYTZlZC04N2E0NmRlMmMyNzMiLCJpYXQiOjE2OTc5ODUxMzEsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6Im9mZmljaWFsIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.Mw-eYth5VL7jpSVfnh88Tl8Cn-6-bKvjnE4GPtmuUdIS7VAvB5ijQksPjOM3FHkF382oh4bym_FAyQN_UE4mmg
     ```
 
     ```
     curl --fail \
-      "https://dev.api.affixapi.com/2023-03-01/payroll/employees" \
-      -H "Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvcGF5cm9sbC9lbXBsb3llZXMiLCIvMjAyMy0wMy0wMS9wYXlyb2xsL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zIiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zLzpwYXlydW5faWQiXSwidG9rZW4iOiI1ZGZmMWRlMy1kZTk2LTQzZWYtYTgwMi0wYWZlNWQ5NzU4MzkiLCJpYXQiOjE2OTM4Mzk1NjIsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6InBheXJvbGwiLCJhdWQiOiIzRkRBRURGOS0xRENBNEY1NC04Nzk0OUY2QS00MTAyNzY0MyJ9.D8i_TwguGZ9vok7RCUuk5FoUJGWEGnI-4VzReI1DAg0ytZaQ8XFmVxC4RxGYBxah1ZJpcrbAsuhssGEDXffIgQ" \
-      -X GET
+      -X GET \
+      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiJhNmNhODc5YS01OGEzLTQ2MGEtYTZlZC04N2E0NmRlMmMyNzMiLCJpYXQiOjE2OTc5ODUxMzEsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6Im9mZmljaWFsIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.Mw-eYth5VL7jpSVfnh88Tl8Cn-6-bKvjnE4GPtmuUdIS7VAvB5ijQksPjOM3FHkF382oh4bym_FAyQN_UE4mmg' \
+      'https://dev.api.affixapi.com/2023-03-01/official/employees'
     ```
 
     ### prod
     ```
-    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvcGF5cm9sbC9lbXBsb3llZXMiLCIvMjAyMy0wMy0wMS9wYXlyb2xsL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zIiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zLzpwYXlydW5faWQiXSwidG9rZW4iOiJhODdhNGE0My1jMWM2LTQ5ZTktOTUxZS0zNzAzNzRjODhiNjciLCJpYXQiOjE2OTM4Mzk2NjMsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJwYXlyb2xsIiwiYXVkIjoiMDhCQjA4MUUtRDlBQjREMTQtOERGOTkyMzMtNjY2MTVDRTkifQ.AJPINjuEzd9JH1fpf6l1L6L4XdHNIsVcaDsicFe8Giz69zqK1z6za3usbUz71kKJNmm6Eo8HfLnowCi8bcAnow
+    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiIwYzU2ZjcwMS0wYmFhLTQxOTQtYmU5Ni01ZThiOTExMzZmZDUiLCJpYXQiOjE2OTc5ODUwMTksImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJvZmZpY2lhbCIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.REb0qtwnn--ql2gWFb32FWilezTtJq8USN3Uj4NXoY8aJgwkjisca5ReRh5xyfprKSz_yOEcD1JwTrOlgkvf-Q
     ```
 
     ```
     curl --fail \
-      "https://api.affixapi.com/2023-03-01/payroll/employees" \
-      -H "Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvcGF5cm9sbC9lbXBsb3llZXMiLCIvMjAyMy0wMy0wMS9wYXlyb2xsL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zIiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zLzpwYXlydW5faWQiXSwidG9rZW4iOiJhODdhNGE0My1jMWM2LTQ5ZTktOTUxZS0zNzAzNzRjODhiNjciLCJpYXQiOjE2OTM4Mzk2NjMsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJwYXlyb2xsIiwiYXVkIjoiMDhCQjA4MUUtRDlBQjREMTQtOERGOTkyMzMtNjY2MTVDRTkifQ.AJPINjuEzd9JH1fpf6l1L6L4XdHNIsVcaDsicFe8Giz69zqK1z6za3usbUz71kKJNmm6Eo8HfLnowCi8bcAnow" \
-      -X GET
+      -X GET \
+      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiIwYzU2ZjcwMS0wYmFhLTQxOTQtYmU5Ni01ZThiOTExMzZmZDUiLCJpYXQiOjE2OTc5ODUwMTksImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJvZmZpY2lhbCIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.REb0qtwnn--ql2gWFb32FWilezTtJq8USN3Uj4NXoY8aJgwkjisca5ReRh5xyfprKSz_yOEcD1JwTrOlgkvf-Q' \
+      'https://api.affixapi.com/2023-03-01/official/employees'
     ```
 
     # Webhooks
-    An exciting feature for HRIS/Payroll modes are webhooks.
+    An exciting feature for HR/Payroll modes are webhooks.
 
     If enabled, your `webhook_uri` is set on your `client_id` for the
     respective environment: `dev | prod`
@@ -202,11 +202,21 @@ tags:
   name: Management
 - description: |
     Operations related to retrieving end customer data via customer's API key
-  name: Hris
+  name: Official
 - description: |
     Operations related to retrieving end customer data from a customer's
     credentials login
-  name: Payroll
+  name: Developer
+- description: |
+    Operations related to the 2023-03-01 API version
+  name: 2023-03-01
+- description: Operations related to retrieving customer retail data
+  name: Retail
+- description: |
+    Operations related to the 2023-03-20 API version
+  name: 2023-03-20
+- description: Raw data recevied for respective provider
+  name: Raw
 paths:
   /providers:
     get:
@@ -570,11 +580,11 @@ paths:
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
-  /2023-03-01/hris/identity:
+  /2023-03-20/retail/identity:
     get:
       description: |
         List information of the user for the respective account
-      operationId: hrisIdentity20230301
+      operationId: identity20230320
       responses:
         "200":
           content:
@@ -611,17 +621,418 @@ paths:
       - access-token: []
       summary: Identity
       tags:
-      - Hris
+      - Retail
+      - 2023-03-20
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-20/retail/orders:
+    get:
+      description: |
+        List all the orders that occurred during the respective period.
+      operationId: orders20230320
+      parameters:
+      - description: The start date of the search period
+        explode: true
+        in: query
+        name: start_date
+        required: true
+        schema:
+          $ref: '#/components/schemas/StartDate'
+        style: form
+      - description: The end date of the search period
+        explode: true
+        in: query
+        name: end_date
+        required: true
+        schema:
+          $ref: '#/components/schemas/EndDate'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Orders20230320Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Orders
+      tags:
+      - Retail
+      - 2023-03-20
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-20/retail/orders/{order_id}:
+    get:
+      description: |
+        Retrieves information about a specific order
+      operationId: getOrder20230320
+      parameters:
+      - description: The id of the order.
+        explode: false
+        in: path
+        name: order_id
+        required: true
+        schema:
+          $ref: '#/components/schemas/string'
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order20230320Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Get an Order
+      tags:
+      - Retail
+      - 2023-03-20
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-20/raw/amazon/identity:
+    get:
+      description: |
+        List information of the user for the respective account
+      operationId: amazonIdentity
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdentityResponse'
+          description: Success
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      security:
+      - access-token: []
+      summary: Identity
+      tags:
+      - Raw
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-20/raw/amazon/orders:
+    get:
+      description: |
+        List all the orders that occurred during the respective period.
+      operationId: amazonOrders
+      parameters:
+      - description: The start date of the search period
+        explode: true
+        in: query
+        name: start_date
+        required: true
+        schema:
+          $ref: '#/components/schemas/StartDate'
+        style: form
+      - description: The end date of the search period
+        explode: true
+        in: query
+        name: end_date
+        required: true
+        schema:
+          $ref: '#/components/schemas/EndDate'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Orders20230320Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Orders
+      tags:
+      - Raw
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-20/raw/amazon/orders/{order_id}:
+    get:
+      description: |
+        Retrieves information about a specific order
+      operationId: amazonGetOrder
+      parameters:
+      - description: The id of the order.
+        explode: false
+        in: path
+        name: order_id
+        required: true
+        schema:
+          $ref: '#/components/schemas/string'
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order20230320Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Get an Order
+      tags:
+      - Raw
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/official/identity:
+    get:
+      description: |
+        List information of the user for the respective account
+      operationId: officialdentity20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdentityResponse'
+          description: Success
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      security:
+      - access-token: []
+      summary: Identity
+      tags:
+      - Official
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
-  /2023-03-01/hris/employees:
+  /2023-03-01/official/employees:
     get:
       description: |
         List the individuals (employees, contractors, accountants, and others)
         listed in the HRIS/Payroll software
-      operationId: hrisEmployees20230301
+      operationId: officialEmployees20230301
       responses:
         "200":
           content:
@@ -677,16 +1088,16 @@ paths:
       - access-token: []
       summary: Employees
       tags:
-      - Hris
+      - Official
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
-  /2023-03-01/payroll/identity:
+  /2023-03-01/developer/identity:
     get:
       description: |
         List information of the user for the respective account
-      operationId: payrollIdentity20230301
+      operationId: developerIdentity20230301
       responses:
         "200":
           content:
@@ -723,17 +1134,17 @@ paths:
       - access-token: []
       summary: Identity
       tags:
-      - Payroll
+      - Developer
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
-  /2023-03-01/payroll/employees:
+  /2023-03-01/developer/employees:
     get:
       description: |
         List the individuals (employees, contractors, accountants, and others)
         listed in the HRIS/Payroll software
-      operationId: payrollEmployees20230301
+      operationId: developerEmployees20230301
       responses:
         "200":
           content:
@@ -789,16 +1200,21 @@ paths:
       - access-token: []
       summary: Employees
       tags:
-      - Payroll
+      - Developer
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
-  /2023-03-01/payroll/payruns:
+  /2023-03-01/developer/payruns:
     get:
       description: |
         List all the pay runs that occurred during the respective period.
-      operationId: payrollPayruns20230301
+
+        Supported integrations:
+          - sageone
+          - simplepay.ie
+          - brightpay connect
+      operationId: developerPayruns20230301
       parameters:
       - description: The start date of the search period
         explode: true
@@ -871,16 +1287,20 @@ paths:
       - access-token: []
       summary: Payruns
       tags:
-      - Payroll
+      - Developer
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
-  /2023-03-01/payroll/payruns/{payrun_id}:
+  /2023-03-01/developer/payruns/{payrun_id}:
     get:
       description: |
         Retrieves information about a specific pay
-      operationId: payrollPayslips20230320
+        Supported integrations:
+          - sageone
+          - simplepay.ie
+          - brightpay connect
+      operationId: developerPayslips20230320
       parameters:
       - description: The id of the payrun.
         explode: false
@@ -945,7 +1365,7 @@ paths:
       - access-token: []
       summary: Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
       tags:
-      - Payroll
+      - Developer
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1051,27 +1471,27 @@ components:
       - ssn
       - orders
       - items
-      - /2023-03-01/hris/identity
-      - /2023-03-01/hris/employees
-      - /2023-03-01/payroll/identity
-      - /2023-03-01/payroll/employees
-      - /2023-03-01/payroll/payruns
-      - /2023-03-01/payroll/payruns/:payrun_id
-      - /2023-03-20/raw/amazon/identity
-      - /2023-03-20/raw/amazon/orders
-      - /2023-03-20/raw/amazon/orders/:order_id
       - /2023-03-20/retail/identity
       - /2023-03-20/retail/orders
       - /2023-03-20/retail/orders/:order_id
+      - /2023-03-20/raw/amazon/identity
+      - /2023-03-20/raw/amazon/orders
+      - /2023-03-20/raw/amazon/orders/:order_id
+      - /2023-03-01/official/identity
+      - /2023-03-01/official/employees
+      - /2023-03-01/developer/identity
+      - /2023-03-01/developer/employees
+      - /2023-03-01/developer/payruns
+      - /2023-03-01/developer/payruns/:payrun_id
       type: string
     ModeRequest:
       enum:
       - tax
       - retail
       - raw
-      - payroll
       - employee
-      - hris
+      - official
+      - developer
       type: string
     MessageResponse:
       properties:
@@ -1090,11 +1510,24 @@ components:
       - amazon.co.uk
       - amazon.de
       - bamboohr
+      - breathe
+      - cezanne
+      - charliehr
+      - deel
+      - deputy
+      - hibob
+      - humaans
+      - iris cascade
+      - personio.de
+      - sagehr
+      - saplinghr
+      - staffology
+      - ukg pro
+      - xero
       - brain payroll
       - brightpay connect
-      - deputy
       - employment hero
-      - factorial
+      - factorialhr
       - fourthhr
       - itrent
       - oysterhr
@@ -1104,35 +1537,16 @@ components:
       - remote.com
       - sageone
       - simplepay.ie
-      - ukg pro
-      - xero
-      - bamboohr
-      - breathe
-      - cezanne
-      - deel
-      - deputy
-      - factorialhr
-      - fourthhr
-      - hibob
-      - humaans
-      - iris cascade
-      - itrent
-      - peoplehr
-      - personio.de
-      - remote.com
-      - sagehr
-      - saplinghr
-      - simplepay.ie
-      - staffology
+      - pento.io
       type: string
     ModeResponse:
       enum:
       - tax
       - retail
       - raw
-      - payroll
       - employee
-      - hris
+      - official
+      - developer
       type: string
     ProviderResponse:
       enum:
@@ -1144,11 +1558,24 @@ components:
       - amazon.co.uk
       - amazon.de
       - bamboohr
+      - breathe
+      - cezanne
+      - charliehr
+      - deel
+      - deputy
+      - hibob
+      - humaans
+      - iris cascade
+      - personio.de
+      - sagehr
+      - saplinghr
+      - staffology
+      - ukg pro
+      - xero
       - brain payroll
       - brightpay connect
-      - deputy
       - employment hero
-      - factorial
+      - factorialhr
       - fourthhr
       - itrent
       - oysterhr
@@ -1158,32 +1585,34 @@ components:
       - remote.com
       - sageone
       - simplepay.ie
-      - ukg pro
-      - xero
-      - bamboohr
-      - breathe
-      - cezanne
-      - deel
-      - deputy
-      - factorialhr
-      - fourthhr
-      - hibob
-      - humaans
-      - iris cascade
-      - itrent
-      - peoplehr
-      - personio.de
-      - remote.com
-      - sagehr
-      - saplinghr
-      - simplepay.ie
-      - staffology
+      - pento.io
       type: string
     ProvidersResponse:
       example:
-      - mode: payroll
+      - mode: official
         providers:
         - bamboohr
+        - breathe
+        - cezanne
+        - charliehr
+        - deel
+        - deputy
+        - employment hero
+        - factorialhr
+        - hibob
+        - humaans
+        - iris cascade
+        - peoplehr
+        - personio.de
+        - remote.com
+        - sagehr
+        - saplinghr
+        - simplepay.ie
+        - staffology
+        - ukg pro
+        - xero
+      - mode: developer
+        providers:
         - brain payroll
         - brightpay connect
         - deputy
@@ -1198,28 +1627,7 @@ components:
         - remote.com
         - sageone
         - simplepay.ie
-        - ukg pro
-        - xero
-      - mode: hris
-        providers:
-        - bamboohr
-        - breathe
-        - cezanne
-        - deel
-        - deputy
-        - factorialhr
-        - fourthhr
-        - hibob
-        - humaans
-        - iris cascade
-        - itrent
-        - peoplehr
-        - personio.de
-        - remote.com
-        - sagehr
-        - saplinghr
-        - simplepay.ie
-        - staffology
+        - pento.io
       items:
         properties:
           mode:
@@ -1353,18 +1761,18 @@ components:
       - ssn
       - orders
       - items
-      - /2023-03-01/hris/identity
-      - /2023-03-01/hris/employees
-      - /2023-03-01/payroll/identity
-      - /2023-03-01/payroll/employees
-      - /2023-03-01/payroll/payruns
-      - /2023-03-01/payroll/payruns/:payrun_id
-      - /2023-03-20/raw/amazon/identity
-      - /2023-03-20/raw/amazon/orders
-      - /2023-03-20/raw/amazon/orders/:order_id
       - /2023-03-20/retail/identity
       - /2023-03-20/retail/orders
       - /2023-03-20/retail/orders/:order_id
+      - /2023-03-20/raw/amazon/identity
+      - /2023-03-20/raw/amazon/orders
+      - /2023-03-20/raw/amazon/orders/:order_id
+      - /2023-03-01/official/identity
+      - /2023-03-01/official/employees
+      - /2023-03-01/developer/identity
+      - /2023-03-01/developer/employees
+      - /2023-03-01/developer/payruns
+      - /2023-03-01/developer/payruns/:payrun_id
       type: string
     TokensResponse:
       items:
@@ -1576,6 +1984,187 @@ components:
       required:
       - disconnected
       type: object
+    Orders20230301Response:
+      items:
+        properties:
+          order_id:
+            description: The order identifier, if any, and from the provider, related
+              to the transaction
+            example: 111-8523618-8988224
+            nullable: true
+            type: string
+          date:
+            description: The date the transaction was placed
+            example: 2022-04-02
+            format: date
+            type: string
+          shipment_date:
+            description: The date the order was shipped
+            example: 2022-04-02
+            format: date
+            type: string
+          status:
+            description: The status of the order
+            example: completed
+            nullable: true
+            type: string
+          carrier_name_and_tracking_number:
+            description: The carrier, and tracking number, for the shipment. May be
+              comma delimitted if multiple. If order is not complete, this field may
+              be null
+            example: AMZN_US(TBA09R942511234),RABBIT(DW00H05P0YXU4FADFA1M)
+            nullable: true
+            type: string
+          shipment_to:
+            description: The name of whom the order was sent
+            example: Laurine Barton
+            type: string
+          shipment_street_address:
+            description: The street address of where the item was sent
+            example: 221 S Main St
+            nullable: true
+            type: string
+          shipment_city:
+            description: The city the item was shipped to
+            example: Yuma
+            nullable: true
+            type: string
+          shipment_state:
+            description: If US, the two-digit state abbreviation the item was shipped
+              to
+            example: AZ
+            nullable: true
+            type: string
+          shipment_postal:
+            description: The 5+4 postal code the item was shipped to
+            example: 30691-3189
+            nullable: true
+            type: string
+          payment_instrument:
+            description: The redacted information of the payment instrument used
+            example: Visa - 9999
+            type: string
+          currency:
+            description: The currency of the transaction
+            example: usd
+            type: string
+          subtotal:
+            description: |
+              The subtotal of the order; if USD, in cents. ie $5.23 => 523
+            example: 523
+            type: integer
+          shipping_fee:
+            description: |
+              The fees charged for shipping; if USD, in cents. ie $1.48 => 148. If order is not complete, this field may be null
+            example: 148
+            nullable: true
+            type: integer
+          tax:
+            description: |
+              The tax of the order; if USD, in cents. ie $3.39 => 339. If order is not complete, this field may be null
+            example: 339
+            nullable: true
+            type: integer
+          promotions:
+            description: |
+              Promotions, if any; if USD, in cents. ie $.23 => 23. If order is not complete, this field may be null
+            example: 23
+            nullable: true
+            type: integer
+          total:
+            description: |
+              The total price of the order; if USD, in cents. ie $9.88 => 988. If order is not complete, this field may be null
+            example: 988
+            nullable: true
+            type: integer
+        required:
+        - carrier_name_and_tracking_number
+        - currency
+        - date
+        - payment_instrument
+        - promotions
+        - shipment_city
+        - shipment_date
+        - shipment_postal
+        - shipment_state
+        - shipment_street_address
+        - shipment_to
+        - shipping_fee
+        - status
+        - subtotal
+        - tax
+        - total
+        type: object
+      type: array
+    Items20230301Response:
+      items:
+        properties:
+          order_id:
+            description: The order identifier, if any, and from the provider, related
+              to the item
+            example: 111-8523618-8988224
+            nullable: true
+            type: string
+          date:
+            description: The date the order of the item was placed
+            example: 2022-04-02
+            format: date
+            type: string
+          status:
+            description: The status of the item
+            example: completed
+            nullable: true
+            type: string
+          seller:
+            description: The seller / merchant of the item
+            example: Amazon.com
+            nullable: true
+            type: string
+          buyer:
+            description: The purchaser of the item
+            example: Laurine Barton
+            type: string
+          item:
+            description: The name of the item. Nullable in a minority of cases
+            example: La Colombe Oatmilk Coffee - Draft Latte, Vanilla, 9 Fl Oz (Pack
+              of 4)
+            nullable: true
+            type: string
+          item_category:
+            description: The category, if any, of the item
+            example: coffee
+            nullable: true
+            type: string
+          currency:
+            description: The currency of the transaction
+            example: usd
+            type: string
+          price:
+            description: |
+              The price of an individual item unit; if USD, in cents. ie $5.23 => 523
+            example: 523
+            type: integer
+          quantity:
+            description: The number of items purchased
+            example: 2
+            type: integer
+          total:
+            description: |
+              The total price of the item; if USD, in cents. ie $10.46 => 1046
+            example: 1046
+            type: integer
+        required:
+        - buyer
+        - currency
+        - date
+        - item
+        - price
+        - quantity
+        - seller
+        - status
+        - total
+        type: object
+      type: array
     IdentityResponse:
       example:
         name: Laurine Barton
@@ -1602,6 +2191,388 @@ components:
       - email
       - name
       - phone_number
+      type: object
+    CurrencyResponse:
+      enum:
+      - usd
+      - gbp
+      - eur
+      type: string
+    Orders20230320Response:
+      items:
+        properties:
+          id:
+            description: The order identifier, if any, and from the provider, related
+              to the transaction
+            example: 111-8523618-8988224
+            type: string
+          date:
+            description: The date the order was placed
+            example: 2022-04-02
+            format: date
+            type: string
+          type:
+            description: |
+              The type of the order.
+              If Amazon, is also conflated with status.
+              Note, Gift cards purchases/orders are intentially excluded from the
+              resultset.
+            enum:
+            - order
+            - recurring
+            - not_yet_shipped
+            - digital_order
+            - local_store_order
+            - cancelled_order
+            example: order
+            type: string
+          ship_to:
+            description: |
+              The name of to whom the order was shipped/dispatched/delivered.
+              Potentially nullable for things like gift cards
+            example: Laurine Barton
+            nullable: true
+            type: string
+          currency:
+            $ref: '#/components/schemas/CurrencyResponse'
+          total:
+            description: |
+              The total price of the order;
+              if USD, in cents, ie $9.88 => 988.
+              if GBP, in pence, ie £513.87 => 51397
+              if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
+              If order is not complete, this field may be null
+            example: 988
+            nullable: true
+            type: integer
+        required:
+        - currency
+        - date
+        - id
+        - ship_to
+        - total
+        - type
+        type: object
+      type: array
+    itemsResponse:
+      items:
+        properties:
+          condition:
+            description: The condition of the item
+            example: Amazon.com
+            nullable: true
+            type: string
+          seller:
+            description: The seller / merchant of the item
+            example: Amazon.com
+            nullable: true
+            type: string
+          item:
+            description: The name of the item. Nullable in a minority of cases
+            example: La Colombe Oatmilk Coffee - Draft Latte, Vanilla, 9 Fl Oz (Pack
+              of 4)
+            nullable: true
+            type: string
+          price:
+            description: |
+              The price of an individual item unit;
+              if USD, in cents, ie $9.88 => 988.
+              if GBP, in pence, ie £513.87 => 51397
+              if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
+              Nullable, for exmaple, on free trials
+            example: 523
+            nullable: true
+            type: integer
+          quantity:
+            description: The number of items purchased
+            example: 2
+            type: integer
+          categories:
+            description: The category(ies) of the item
+            example:
+            - Grocery & Gourmet Food
+            - Beverages
+            - Coffee
+            - Ready to Drink Liquid Coffee
+            items:
+              type: string
+            nullable: true
+            type: array
+        required:
+        - categories
+        - condition
+        - item
+        - price
+        - quantity
+        - seller
+        type: object
+      type: array
+    shipmentsResponse:
+      items:
+        properties:
+          shipment_date:
+            description: The date the shipment/dispatch was placed
+            example: 2022-04-02
+            format: date
+            nullable: true
+            type: string
+          shipment_speed:
+            description: The shipping speed used. ie ground, 2-day, etc
+            example: FREE Shipping
+            nullable: true
+            type: string
+          shipment_to:
+            description: The name of whom the shipment was sent
+            example: Laurine Barton
+            nullable: true
+            type: string
+          shipment_street_address:
+            description: The destination street address of the shipment
+            example: 221 S Main St
+            nullable: true
+            type: string
+          shipment_locality:
+            description: The destination town/city of the shipment
+            example: Yuma
+            nullable: true
+            type: string
+          shipment_administrative_area:
+            description: |
+              The destination administrative area of the shipment.
+              If US, the two-digit state abbreviation
+            example: AZ
+            nullable: true
+            type: string
+          shipment_post_code:
+            description: |
+              The destination post code of the shipment.
+              If US, The 5+4 postal code
+            example: 30691-3189
+            nullable: true
+            type: string
+          shipment_country:
+            description: The destination country of the shipment
+            example: US
+            nullable: true
+            type: string
+          items:
+            $ref: '#/components/schemas/itemsResponse'
+        required:
+        - items
+        - shipment_administrative_area
+        - shipment_country
+        - shipment_date
+        - shipment_locality
+        - shipment_post_code
+        - shipment_speed
+        - shipment_street_address
+        - shipment_to
+        type: object
+      minItems: 1
+      nullable: true
+      type: array
+    Order20230320Response:
+      example:
+        date: 2022-04-02T00:00:00.000+0000
+        other_fees: 150
+        billing_street_address: 221 S Main St
+        billing_to: Laurine Barton
+        payment_instrument: Visa - 9999
+        billing_post_code: 30691-3189
+        billing_country: US
+        billing_administrative_area: AZ
+        tax: 339
+        billing_locality: Yuma
+        shipments:
+        - '{}'
+        - '{}'
+        shipping_fee: 523
+        total: 988
+        discounts: 23
+        gift_card_applied: 339
+        subtotal: 523
+        id: 111-8523618-8988224
+      properties:
+        id:
+          description: The order identifier, if any, and from the provider, related
+            to the transaction
+          example: 111-8523618-8988224
+          nullable: true
+          type: string
+        date:
+          description: The date the transaction was placed
+          example: 2022-04-02
+          format: date
+          type: string
+        billing_to:
+          description: The name of who paid for the order
+          example: Laurine Barton
+          nullable: true
+          type: string
+        billing_street_address:
+          description: The street address of who paid for the order
+          example: 221 S Main St
+          nullable: true
+          type: string
+        billing_locality:
+          description: The town/city of who paid for the order
+          example: Yuma
+          nullable: true
+          type: string
+        billing_administrative_area:
+          description: |
+            The administrative area of who paid for the order.
+            If US, the two-digit state abbreviation
+          example: AZ
+          nullable: true
+          type: string
+        billing_post_code:
+          description: |
+            The post code of who paid for the order.
+            If US, The 5+4 postal code
+          example: 30691-3189
+          nullable: true
+          type: string
+        billing_country:
+          description: The country of who paid for the order
+          example: US
+          nullable: true
+          type: string
+        payment_instrument:
+          description: The redacted information of the payment instrument used
+          example: Visa - 9999
+          type: string
+        currency:
+          $ref: '#/components/schemas/CurrencyResponse'
+        subtotal:
+          description: |
+            The subtotal of the order;
+            if USD, in cents, ie $9.88 => 988.
+            if GBP, in pence, ie £513.87 => 51397
+            if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
+          example: 523
+          type: integer
+        shipping_fee:
+          description: |
+            The shipping and handling fees of the order;
+            if USD, in cents, ie $9.88 => 988.
+            if GBP, in pence, ie £513.87 => 51397
+            if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
+          example: 523
+          nullable: true
+          type: integer
+        discounts:
+          description: Promotions, if any
+          example: 23
+          nullable: true
+          type: integer
+        other_fees:
+          description: Other fees, for example, California Bottle Deposit Fee; in
+            cents/pence/cent.
+          example: 150
+          nullable: true
+          type: integer
+        tax:
+          description: The sales tax or VAT of the order; in cents/pence/cent.
+          example: 339
+          nullable: true
+          type: integer
+        gift_card_applied:
+          description: |
+            If a gift card was used, how much of the
+            order was paid for by gift card
+          example: 339
+          nullable: true
+          type: integer
+        total:
+          description: |
+            The total price of the order; if USD, in cents. ie $9.88 => 988. If order is not complete, this field may be null
+          example: 988
+          nullable: true
+          type: integer
+        shipments:
+          items:
+            properties:
+              shipment_date:
+                description: The date the shipment/dispatch was placed
+                example: 2022-04-02
+                format: date
+                nullable: true
+                type: string
+              shipment_speed:
+                description: The shipping speed used. ie ground, 2-day, etc
+                example: FREE Shipping
+                nullable: true
+                type: string
+              shipment_to:
+                description: The name of whom the shipment was sent
+                example: Laurine Barton
+                nullable: true
+                type: string
+              shipment_street_address:
+                description: The destination street address of the shipment
+                example: 221 S Main St
+                nullable: true
+                type: string
+              shipment_locality:
+                description: The destination town/city of the shipment
+                example: Yuma
+                nullable: true
+                type: string
+              shipment_administrative_area:
+                description: |
+                  The destination administrative area of the shipment.
+                  If US, the two-digit state abbreviation
+                example: AZ
+                nullable: true
+                type: string
+              shipment_post_code:
+                description: |
+                  The destination post code of the shipment.
+                  If US, The 5+4 postal code
+                example: 30691-3189
+                nullable: true
+                type: string
+              shipment_country:
+                description: The destination country of the shipment
+                example: US
+                nullable: true
+                type: string
+              items:
+                $ref: '#/components/schemas/itemsResponse'
+            required:
+            - items
+            - shipment_administrative_area
+            - shipment_country
+            - shipment_date
+            - shipment_locality
+            - shipment_post_code
+            - shipment_speed
+            - shipment_street_address
+            - shipment_to
+            type: object
+          minItems: 1
+          nullable: true
+          type: array
+      required:
+      - billing_administrative_area
+      - billing_country
+      - billing_locality
+      - billing_post_code
+      - billing_street_address
+      - billing_to
+      - currency
+      - date
+      - discounts
+      - gift_card_applied
+      - id
+      - other_fees
+      - payment_instrument
+      - shipments
+      - shipping_fee
+      - subtotal
+      - tax
+      - total
       type: object
     locationResponse:
       example:
@@ -1643,12 +2614,6 @@ components:
       - post_code
       - street_address
       type: object
-    CurrencyResponse:
-      enum:
-      - usd
-      - gbp
-      - eur
-      type: string
     employmentResponse:
       example:
         employment_type: full_time
@@ -2161,543 +3126,6 @@ components:
       items:
         $ref: '#/components/schemas/PayslipResponse'
       type: array
-    Orders20230301Response:
-      items:
-        properties:
-          order_id:
-            description: The order identifier, if any, and from the provider, related
-              to the transaction
-            example: 111-8523618-8988224
-            nullable: true
-            type: string
-          date:
-            description: The date the transaction was placed
-            example: 2022-04-02
-            format: date
-            type: string
-          shipment_date:
-            description: The date the order was shipped
-            example: 2022-04-02
-            format: date
-            type: string
-          status:
-            description: The status of the order
-            example: completed
-            nullable: true
-            type: string
-          carrier_name_and_tracking_number:
-            description: The carrier, and tracking number, for the shipment. May be
-              comma delimitted if multiple. If order is not complete, this field may
-              be null
-            example: AMZN_US(TBA09R942511234),RABBIT(DW00H05P0YXU4FADFA1M)
-            nullable: true
-            type: string
-          shipment_to:
-            description: The name of whom the order was sent
-            example: Laurine Barton
-            type: string
-          shipment_street_address:
-            description: The street address of where the item was sent
-            example: 221 S Main St
-            nullable: true
-            type: string
-          shipment_city:
-            description: The city the item was shipped to
-            example: Yuma
-            nullable: true
-            type: string
-          shipment_state:
-            description: If US, the two-digit state abbreviation the item was shipped
-              to
-            example: AZ
-            nullable: true
-            type: string
-          shipment_postal:
-            description: The 5+4 postal code the item was shipped to
-            example: 30691-3189
-            nullable: true
-            type: string
-          payment_instrument:
-            description: The redacted information of the payment instrument used
-            example: Visa - 9999
-            type: string
-          currency:
-            description: The currency of the transaction
-            example: usd
-            type: string
-          subtotal:
-            description: |
-              The subtotal of the order; if USD, in cents. ie $5.23 => 523
-            example: 523
-            type: integer
-          shipping_fee:
-            description: |
-              The fees charged for shipping; if USD, in cents. ie $1.48 => 148. If order is not complete, this field may be null
-            example: 148
-            nullable: true
-            type: integer
-          tax:
-            description: |
-              The tax of the order; if USD, in cents. ie $3.39 => 339. If order is not complete, this field may be null
-            example: 339
-            nullable: true
-            type: integer
-          promotions:
-            description: |
-              Promotions, if any; if USD, in cents. ie $.23 => 23. If order is not complete, this field may be null
-            example: 23
-            nullable: true
-            type: integer
-          total:
-            description: |
-              The total price of the order; if USD, in cents. ie $9.88 => 988. If order is not complete, this field may be null
-            example: 988
-            nullable: true
-            type: integer
-        required:
-        - carrier_name_and_tracking_number
-        - currency
-        - date
-        - payment_instrument
-        - promotions
-        - shipment_city
-        - shipment_date
-        - shipment_postal
-        - shipment_state
-        - shipment_street_address
-        - shipment_to
-        - shipping_fee
-        - status
-        - subtotal
-        - tax
-        - total
-        type: object
-      type: array
-    Items20230301Response:
-      items:
-        properties:
-          order_id:
-            description: The order identifier, if any, and from the provider, related
-              to the item
-            example: 111-8523618-8988224
-            nullable: true
-            type: string
-          date:
-            description: The date the order of the item was placed
-            example: 2022-04-02
-            format: date
-            type: string
-          status:
-            description: The status of the item
-            example: completed
-            nullable: true
-            type: string
-          seller:
-            description: The seller / merchant of the item
-            example: Amazon.com
-            nullable: true
-            type: string
-          buyer:
-            description: The purchaser of the item
-            example: Laurine Barton
-            type: string
-          item:
-            description: The name of the item. Nullable in a minority of cases
-            example: La Colombe Oatmilk Coffee - Draft Latte, Vanilla, 9 Fl Oz (Pack
-              of 4)
-            nullable: true
-            type: string
-          item_category:
-            description: The category, if any, of the item
-            example: coffee
-            nullable: true
-            type: string
-          currency:
-            description: The currency of the transaction
-            example: usd
-            type: string
-          price:
-            description: |
-              The price of an individual item unit; if USD, in cents. ie $5.23 => 523
-            example: 523
-            type: integer
-          quantity:
-            description: The number of items purchased
-            example: 2
-            type: integer
-          total:
-            description: |
-              The total price of the item; if USD, in cents. ie $10.46 => 1046
-            example: 1046
-            type: integer
-        required:
-        - buyer
-        - currency
-        - date
-        - item
-        - price
-        - quantity
-        - seller
-        - status
-        - total
-        type: object
-      type: array
-    Orders20230320Response:
-      items:
-        properties:
-          id:
-            description: The order identifier, if any, and from the provider, related
-              to the transaction
-            example: 111-8523618-8988224
-            type: string
-          date:
-            description: The date the order was placed
-            example: 2022-04-02
-            format: date
-            type: string
-          type:
-            description: |
-              The type of the order.
-              If Amazon, is also conflated with status.
-              Note, Gift cards purchases/orders are intentially excluded from the
-              resultset.
-            enum:
-            - order
-            - recurring
-            - not_yet_shipped
-            - digital_order
-            - local_store_order
-            - cancelled_order
-            example: order
-            type: string
-          ship_to:
-            description: |
-              The name of to whom the order was shipped/dispatched/delivered.
-              Potentially nullable for things like gift cards
-            example: Laurine Barton
-            nullable: true
-            type: string
-          currency:
-            $ref: '#/components/schemas/CurrencyResponse'
-          total:
-            description: |
-              The total price of the order;
-              if USD, in cents, ie $9.88 => 988.
-              if GBP, in pence, ie £513.87 => 51397
-              if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
-              If order is not complete, this field may be null
-            example: 988
-            nullable: true
-            type: integer
-        required:
-        - currency
-        - date
-        - id
-        - ship_to
-        - total
-        - type
-        type: object
-      type: array
-    itemsResponse:
-      items:
-        properties:
-          condition:
-            description: The condition of the item
-            example: Amazon.com
-            nullable: true
-            type: string
-          seller:
-            description: The seller / merchant of the item
-            example: Amazon.com
-            nullable: true
-            type: string
-          item:
-            description: The name of the item. Nullable in a minority of cases
-            example: La Colombe Oatmilk Coffee - Draft Latte, Vanilla, 9 Fl Oz (Pack
-              of 4)
-            nullable: true
-            type: string
-          price:
-            description: |
-              The price of an individual item unit;
-              if USD, in cents, ie $9.88 => 988.
-              if GBP, in pence, ie £513.87 => 51397
-              if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
-              Nullable, for exmaple, on free trials
-            example: 523
-            nullable: true
-            type: integer
-          quantity:
-            description: The number of items purchased
-            example: 2
-            type: integer
-          categories:
-            description: The category(ies) of the item
-            example:
-            - Grocery & Gourmet Food
-            - Beverages
-            - Coffee
-            - Ready to Drink Liquid Coffee
-            items:
-              type: string
-            nullable: true
-            type: array
-        required:
-        - categories
-        - condition
-        - item
-        - price
-        - quantity
-        - seller
-        type: object
-      type: array
-    shipmentsResponse:
-      items:
-        properties:
-          shipment_date:
-            description: The date the shipment/dispatch was placed
-            example: 2022-04-02
-            format: date
-            nullable: true
-            type: string
-          shipment_speed:
-            description: The shipping speed used. ie ground, 2-day, etc
-            example: FREE Shipping
-            nullable: true
-            type: string
-          shipment_to:
-            description: The name of whom the shipment was sent
-            example: Laurine Barton
-            nullable: true
-            type: string
-          shipment_street_address:
-            description: The destination street address of the shipment
-            example: 221 S Main St
-            nullable: true
-            type: string
-          shipment_locality:
-            description: The destination town/city of the shipment
-            example: Yuma
-            nullable: true
-            type: string
-          shipment_administrative_area:
-            description: |
-              The destination administrative area of the shipment.
-              If US, the two-digit state abbreviation
-            example: AZ
-            nullable: true
-            type: string
-          shipment_post_code:
-            description: |
-              The destination post code of the shipment.
-              If US, The 5+4 postal code
-            example: 30691-3189
-            nullable: true
-            type: string
-          shipment_country:
-            description: The destination country of the shipment
-            example: US
-            nullable: true
-            type: string
-          items:
-            $ref: '#/components/schemas/itemsResponse'
-        required:
-        - items
-        - shipment_administrative_area
-        - shipment_country
-        - shipment_date
-        - shipment_locality
-        - shipment_post_code
-        - shipment_speed
-        - shipment_street_address
-        - shipment_to
-        type: object
-      minItems: 1
-      nullable: true
-      type: array
-    Order20230320Response:
-      properties:
-        id:
-          description: The order identifier, if any, and from the provider, related
-            to the transaction
-          example: 111-8523618-8988224
-          nullable: true
-          type: string
-        date:
-          description: The date the transaction was placed
-          example: 2022-04-02
-          format: date
-          type: string
-        billing_to:
-          description: The name of who paid for the order
-          example: Laurine Barton
-          nullable: true
-          type: string
-        billing_street_address:
-          description: The street address of who paid for the order
-          example: 221 S Main St
-          nullable: true
-          type: string
-        billing_locality:
-          description: The town/city of who paid for the order
-          example: Yuma
-          nullable: true
-          type: string
-        billing_administrative_area:
-          description: |
-            The administrative area of who paid for the order.
-            If US, the two-digit state abbreviation
-          example: AZ
-          nullable: true
-          type: string
-        billing_post_code:
-          description: |
-            The post code of who paid for the order.
-            If US, The 5+4 postal code
-          example: 30691-3189
-          nullable: true
-          type: string
-        billing_country:
-          description: The country of who paid for the order
-          example: US
-          nullable: true
-          type: string
-        payment_instrument:
-          description: The redacted information of the payment instrument used
-          example: Visa - 9999
-          type: string
-        currency:
-          $ref: '#/components/schemas/CurrencyResponse'
-        subtotal:
-          description: |
-            The subtotal of the order;
-            if USD, in cents, ie $9.88 => 988.
-            if GBP, in pence, ie £513.87 => 51397
-            if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
-          example: 523
-          type: integer
-        shipping_fee:
-          description: |
-            The shipping and handling fees of the order;
-            if USD, in cents, ie $9.88 => 988.
-            if GBP, in pence, ie £513.87 => 51397
-            if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
-          example: 523
-          nullable: true
-          type: integer
-        discounts:
-          description: Promotions, if any
-          example: 23
-          nullable: true
-          type: integer
-        other_fees:
-          description: Other fees, for example, California Bottle Deposit Fee; in
-            cents/pence/cent.
-          example: 150
-          nullable: true
-          type: integer
-        tax:
-          description: The sales tax or VAT of the order; in cents/pence/cent.
-          example: 339
-          nullable: true
-          type: integer
-        gift_card_applied:
-          description: |
-            If a gift card was used, how much of the
-            order was paid for by gift card
-          example: 339
-          nullable: true
-          type: integer
-        total:
-          description: |
-            The total price of the order; if USD, in cents. ie $9.88 => 988. If order is not complete, this field may be null
-          example: 988
-          nullable: true
-          type: integer
-        shipments:
-          items:
-            properties:
-              shipment_date:
-                description: The date the shipment/dispatch was placed
-                example: 2022-04-02
-                format: date
-                nullable: true
-                type: string
-              shipment_speed:
-                description: The shipping speed used. ie ground, 2-day, etc
-                example: FREE Shipping
-                nullable: true
-                type: string
-              shipment_to:
-                description: The name of whom the shipment was sent
-                example: Laurine Barton
-                nullable: true
-                type: string
-              shipment_street_address:
-                description: The destination street address of the shipment
-                example: 221 S Main St
-                nullable: true
-                type: string
-              shipment_locality:
-                description: The destination town/city of the shipment
-                example: Yuma
-                nullable: true
-                type: string
-              shipment_administrative_area:
-                description: |
-                  The destination administrative area of the shipment.
-                  If US, the two-digit state abbreviation
-                example: AZ
-                nullable: true
-                type: string
-              shipment_post_code:
-                description: |
-                  The destination post code of the shipment.
-                  If US, The 5+4 postal code
-                example: 30691-3189
-                nullable: true
-                type: string
-              shipment_country:
-                description: The destination country of the shipment
-                example: US
-                nullable: true
-                type: string
-              items:
-                $ref: '#/components/schemas/itemsResponse'
-            required:
-            - items
-            - shipment_administrative_area
-            - shipment_country
-            - shipment_date
-            - shipment_locality
-            - shipment_post_code
-            - shipment_speed
-            - shipment_street_address
-            - shipment_to
-            type: object
-          minItems: 1
-          nullable: true
-          type: array
-      required:
-      - billing_administrative_area
-      - billing_country
-      - billing_locality
-      - billing_post_code
-      - billing_street_address
-      - billing_to
-      - currency
-      - date
-      - discounts
-      - gift_card_applied
-      - id
-      - other_fees
-      - payment_instrument
-      - shipments
-      - shipping_fee
-      - subtotal
-      - tax
-      - total
-      type: object
     inline_response_400:
       properties:
         message:

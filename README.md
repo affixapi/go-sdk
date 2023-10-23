@@ -26,33 +26,33 @@ in order to get started, you must:
     the sign in flow is complete and exchange that `authorization_code` for
     a Bearer token
 
-# Sandbox keys (payroll)
+# Sandbox keys (official mode, employees endpoint)
 ### dev
 ```
-eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvcGF5cm9sbC9lbXBsb3llZXMiLCIvMjAyMy0wMy0wMS9wYXlyb2xsL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zIiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zLzpwYXlydW5faWQiXSwidG9rZW4iOiI1ZGZmMWRlMy1kZTk2LTQzZWYtYTgwMi0wYWZlNWQ5NzU4MzkiLCJpYXQiOjE2OTM4Mzk1NjIsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6InBheXJvbGwiLCJhdWQiOiIzRkRBRURGOS0xRENBNEY1NC04Nzk0OUY2QS00MTAyNzY0MyJ9.D8i_TwguGZ9vok7RCUuk5FoUJGWEGnI-4VzReI1DAg0ytZaQ8XFmVxC4RxGYBxah1ZJpcrbAsuhssGEDXffIgQ
+eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiJhNmNhODc5YS01OGEzLTQ2MGEtYTZlZC04N2E0NmRlMmMyNzMiLCJpYXQiOjE2OTc5ODUxMzEsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6Im9mZmljaWFsIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.Mw-eYth5VL7jpSVfnh88Tl8Cn-6-bKvjnE4GPtmuUdIS7VAvB5ijQksPjOM3FHkF382oh4bym_FAyQN_UE4mmg
 ```
 
 ```
 curl --fail \\
-  \"https://dev.api.affixapi.com/2023-03-01/payroll/employees\" \\
-  -H \"Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvcGF5cm9sbC9lbXBsb3llZXMiLCIvMjAyMy0wMy0wMS9wYXlyb2xsL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zIiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zLzpwYXlydW5faWQiXSwidG9rZW4iOiI1ZGZmMWRlMy1kZTk2LTQzZWYtYTgwMi0wYWZlNWQ5NzU4MzkiLCJpYXQiOjE2OTM4Mzk1NjIsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6InBheXJvbGwiLCJhdWQiOiIzRkRBRURGOS0xRENBNEY1NC04Nzk0OUY2QS00MTAyNzY0MyJ9.D8i_TwguGZ9vok7RCUuk5FoUJGWEGnI-4VzReI1DAg0ytZaQ8XFmVxC4RxGYBxah1ZJpcrbAsuhssGEDXffIgQ\" \\
-  -X GET
+  -X GET \\
+  -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiJhNmNhODc5YS01OGEzLTQ2MGEtYTZlZC04N2E0NmRlMmMyNzMiLCJpYXQiOjE2OTc5ODUxMzEsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6Im9mZmljaWFsIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.Mw-eYth5VL7jpSVfnh88Tl8Cn-6-bKvjnE4GPtmuUdIS7VAvB5ijQksPjOM3FHkF382oh4bym_FAyQN_UE4mmg' \\
+  'https://dev.api.affixapi.com/2023-03-01/official/employees'
 ```
 
 ### prod
 ```
-eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvcGF5cm9sbC9lbXBsb3llZXMiLCIvMjAyMy0wMy0wMS9wYXlyb2xsL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zIiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zLzpwYXlydW5faWQiXSwidG9rZW4iOiJhODdhNGE0My1jMWM2LTQ5ZTktOTUxZS0zNzAzNzRjODhiNjciLCJpYXQiOjE2OTM4Mzk2NjMsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJwYXlyb2xsIiwiYXVkIjoiMDhCQjA4MUUtRDlBQjREMTQtOERGOTkyMzMtNjY2MTVDRTkifQ.AJPINjuEzd9JH1fpf6l1L6L4XdHNIsVcaDsicFe8Giz69zqK1z6za3usbUz71kKJNmm6Eo8HfLnowCi8bcAnow
+eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiIwYzU2ZjcwMS0wYmFhLTQxOTQtYmU5Ni01ZThiOTExMzZmZDUiLCJpYXQiOjE2OTc5ODUwMTksImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJvZmZpY2lhbCIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.REb0qtwnn--ql2gWFb32FWilezTtJq8USN3Uj4NXoY8aJgwkjisca5ReRh5xyfprKSz_yOEcD1JwTrOlgkvf-Q
 ```
 
 ```
 curl --fail \\
-  \"https://api.affixapi.com/2023-03-01/payroll/employees\" \\
-  -H \"Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvcGF5cm9sbC9lbXBsb3llZXMiLCIvMjAyMy0wMy0wMS9wYXlyb2xsL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zIiwiLzIwMjMtMDMtMDEvcGF5cm9sbC9wYXlydW5zLzpwYXlydW5faWQiXSwidG9rZW4iOiJhODdhNGE0My1jMWM2LTQ5ZTktOTUxZS0zNzAzNzRjODhiNjciLCJpYXQiOjE2OTM4Mzk2NjMsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJwYXlyb2xsIiwiYXVkIjoiMDhCQjA4MUUtRDlBQjREMTQtOERGOTkyMzMtNjY2MTVDRTkifQ.AJPINjuEzd9JH1fpf6l1L6L4XdHNIsVcaDsicFe8Giz69zqK1z6za3usbUz71kKJNmm6Eo8HfLnowCi8bcAnow\" \\
-  -X GET
+  -X GET \\
+  -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiIwYzU2ZjcwMS0wYmFhLTQxOTQtYmU5Ni01ZThiOTExMzZmZDUiLCJpYXQiOjE2OTc5ODUwMTksImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJvZmZpY2lhbCIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.REb0qtwnn--ql2gWFb32FWilezTtJq8USN3Uj4NXoY8aJgwkjisca5ReRh5xyfprKSz_yOEcD1JwTrOlgkvf-Q' \\
+  'https://api.affixapi.com/2023-03-01/official/employees'
 ```
 
 # Webhooks
-An exciting feature for HRIS/Payroll modes are webhooks.
+An exciting feature for HR/Payroll modes are webhooks.
 
 If enabled, your `webhook_uri` is set on your `client_id` for the
 respective environment: `dev | prod`
@@ -255,25 +255,34 @@ All URIs are relative to *https://api.affixapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*Class20230301Api* | [**HrisEmployees20230301**](docs/Class20230301Api.md#hrisemployees20230301) | **Get** /2023-03-01/hris/employees | Employees
-*Class20230301Api* | [**HrisIdentity20230301**](docs/Class20230301Api.md#hrisidentity20230301) | **Get** /2023-03-01/hris/identity | Identity
-*Class20230301Api* | [**PayrollEmployees20230301**](docs/Class20230301Api.md#payrollemployees20230301) | **Get** /2023-03-01/payroll/employees | Employees
-*Class20230301Api* | [**PayrollIdentity20230301**](docs/Class20230301Api.md#payrollidentity20230301) | **Get** /2023-03-01/payroll/identity | Identity
-*Class20230301Api* | [**PayrollPayruns20230301**](docs/Class20230301Api.md#payrollpayruns20230301) | **Get** /2023-03-01/payroll/payruns | Payruns
-*Class20230301Api* | [**PayrollPayslips20230320**](docs/Class20230301Api.md#payrollpayslips20230320) | **Get** /2023-03-01/payroll/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+*Class20230301Api* | [**DeveloperEmployees20230301**](docs/Class20230301Api.md#developeremployees20230301) | **Get** /2023-03-01/developer/employees | Employees
+*Class20230301Api* | [**DeveloperIdentity20230301**](docs/Class20230301Api.md#developeridentity20230301) | **Get** /2023-03-01/developer/identity | Identity
+*Class20230301Api* | [**DeveloperPayruns20230301**](docs/Class20230301Api.md#developerpayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
+*Class20230301Api* | [**DeveloperPayslips20230320**](docs/Class20230301Api.md#developerpayslips20230320) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+*Class20230301Api* | [**OfficialEmployees20230301**](docs/Class20230301Api.md#officialemployees20230301) | **Get** /2023-03-01/official/employees | Employees
+*Class20230301Api* | [**Officialdentity20230301**](docs/Class20230301Api.md#officialdentity20230301) | **Get** /2023-03-01/official/identity | Identity
+*Class20230320Api* | [**GetOrder20230320**](docs/Class20230320Api.md#getorder20230320) | **Get** /2023-03-20/retail/orders/{order_id} | Get an Order
+*Class20230320Api* | [**Identity20230320**](docs/Class20230320Api.md#identity20230320) | **Get** /2023-03-20/retail/identity | Identity
+*Class20230320Api* | [**Orders20230320**](docs/Class20230320Api.md#orders20230320) | **Get** /2023-03-20/retail/orders | Orders
 *CoreApi* | [**Providers**](docs/CoreApi.md#providers) | **Get** /providers | List of providers
-*HrisApi* | [**HrisEmployees20230301**](docs/HrisApi.md#hrisemployees20230301) | **Get** /2023-03-01/hris/employees | Employees
-*HrisApi* | [**HrisIdentity20230301**](docs/HrisApi.md#hrisidentity20230301) | **Get** /2023-03-01/hris/identity | Identity
+*DeveloperApi* | [**DeveloperEmployees20230301**](docs/DeveloperApi.md#developeremployees20230301) | **Get** /2023-03-01/developer/employees | Employees
+*DeveloperApi* | [**DeveloperIdentity20230301**](docs/DeveloperApi.md#developeridentity20230301) | **Get** /2023-03-01/developer/identity | Identity
+*DeveloperApi* | [**DeveloperPayruns20230301**](docs/DeveloperApi.md#developerpayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
+*DeveloperApi* | [**DeveloperPayslips20230320**](docs/DeveloperApi.md#developerpayslips20230320) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
 *ManagementApi* | [**Client**](docs/ManagementApi.md#client) | **Get** /2023-03-01/management/client | View client
 *ManagementApi* | [**Disconnect**](docs/ManagementApi.md#disconnect) | **Post** /2023-03-01/management/disconnect | Disconnect token
 *ManagementApi* | [**Introspect**](docs/ManagementApi.md#introspect) | **Get** /2023-03-01/management/introspect | Inspect token
 *ManagementApi* | [**Token**](docs/ManagementApi.md#token) | **Post** /2023-03-01/management/token | Exchange &#x60;authorization_code&#x60; for &#x60;access_token&#x60;
 *ManagementApi* | [**Tokens**](docs/ManagementApi.md#tokens) | **Get** /2023-03-01/management/tokens | View tokens
 *ManagementApi* | [**UpdateClient**](docs/ManagementApi.md#updateclient) | **Post** /2023-03-01/management/client | Update client
-*PayrollApi* | [**PayrollEmployees20230301**](docs/PayrollApi.md#payrollemployees20230301) | **Get** /2023-03-01/payroll/employees | Employees
-*PayrollApi* | [**PayrollIdentity20230301**](docs/PayrollApi.md#payrollidentity20230301) | **Get** /2023-03-01/payroll/identity | Identity
-*PayrollApi* | [**PayrollPayruns20230301**](docs/PayrollApi.md#payrollpayruns20230301) | **Get** /2023-03-01/payroll/payruns | Payruns
-*PayrollApi* | [**PayrollPayslips20230320**](docs/PayrollApi.md#payrollpayslips20230320) | **Get** /2023-03-01/payroll/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+*OfficialApi* | [**OfficialEmployees20230301**](docs/OfficialApi.md#officialemployees20230301) | **Get** /2023-03-01/official/employees | Employees
+*OfficialApi* | [**Officialdentity20230301**](docs/OfficialApi.md#officialdentity20230301) | **Get** /2023-03-01/official/identity | Identity
+*RawApi* | [**AmazonGetOrder**](docs/RawApi.md#amazongetorder) | **Get** /2023-03-20/raw/amazon/orders/{order_id} | Get an Order
+*RawApi* | [**AmazonIdentity**](docs/RawApi.md#amazonidentity) | **Get** /2023-03-20/raw/amazon/identity | Identity
+*RawApi* | [**AmazonOrders**](docs/RawApi.md#amazonorders) | **Get** /2023-03-20/raw/amazon/orders | Orders
+*RetailApi* | [**GetOrder20230320**](docs/RetailApi.md#getorder20230320) | **Get** /2023-03-20/retail/orders/{order_id} | Get an Order
+*RetailApi* | [**Identity20230320**](docs/RetailApi.md#identity20230320) | **Get** /2023-03-20/retail/identity | Identity
+*RetailApi* | [**Orders20230320**](docs/RetailApi.md#orders20230320) | **Get** /2023-03-20/retail/orders | Orders
 
 
 ## Documentation For Models
