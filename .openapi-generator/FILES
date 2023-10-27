@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -24,6 +23,7 @@ docs/DisconnectResponse.md
 docs/Employee20230301Response.md
 docs/Employee20230301ResponseBankAccount.md
 docs/Employee20230301ResponseCompany.md
+docs/Employee20230301ResponseCompanyLocation.md
 docs/Employee20230301ResponseGroups.md
 docs/Employee20230301ResponseHomeLocation.md
 docs/Employee20230301ResponseManager.md
@@ -65,6 +65,7 @@ model_disconnect_response.go
 model_employee20230301_response.go
 model_employee20230301_response_bank_account.go
 model_employee20230301_response_company.go
+model_employee20230301_response_company_location.go
 model_employee20230301_response_groups.go
 model_employee20230301_response_home_location.go
 model_employee20230301_response_manager.go

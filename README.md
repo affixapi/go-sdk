@@ -294,6 +294,7 @@ Class | Method | HTTP request | Description
  - [Employee20230301Response](docs/Employee20230301Response.md)
  - [Employee20230301ResponseBankAccount](docs/Employee20230301ResponseBankAccount.md)
  - [Employee20230301ResponseCompany](docs/Employee20230301ResponseCompany.md)
+ - [Employee20230301ResponseCompanyLocation](docs/Employee20230301ResponseCompanyLocation.md)
  - [Employee20230301ResponseGroups](docs/Employee20230301ResponseGroups.md)
  - [Employee20230301ResponseHomeLocation](docs/Employee20230301ResponseHomeLocation.md)
  - [Employee20230301ResponseManager](docs/Employee20230301ResponseManager.md)

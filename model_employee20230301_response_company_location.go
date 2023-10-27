@@ -13,169 +13,225 @@ package openapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
-// ProviderRequest the model 'ProviderRequest'
-type ProviderRequest string
-
-// List of ProviderRequest
-const (
-	SANDBOX ProviderRequest = "sandbox"
-	TAXACT ProviderRequest = "taxact"
-	TURBOTAX ProviderRequest = "turbotax"
-	AMAZON ProviderRequest = "amazon"
-	AMAZON_COM_BUSINESS ProviderRequest = "amazon.com business"
-	AMAZON_CO_UK ProviderRequest = "amazon.co.uk"
-	AMAZON_DE ProviderRequest = "amazon.de"
-	BAMBOOHR ProviderRequest = "bamboohr"
-	BREATHE ProviderRequest = "breathe"
-	CEZANNE ProviderRequest = "cezanne"
-	CHARLIEHR ProviderRequest = "charliehr"
-	DEEL ProviderRequest = "deel"
-	DEPUTY ProviderRequest = "deputy"
-	HIBOB ProviderRequest = "hibob"
-	HUMAANS ProviderRequest = "humaans"
-	IRIS_CASCADE ProviderRequest = "iris cascade"
-	MOOREPAY ProviderRequest = "moorepay"
-	PERSONIO_DE ProviderRequest = "personio.de"
-	SAGEHR ProviderRequest = "sagehr"
-	SAPLINGHR ProviderRequest = "saplinghr"
-	STAFFOLOGY ProviderRequest = "staffology"
-	UKG_PRO ProviderRequest = "ukg pro"
-	XERO ProviderRequest = "xero"
-	BRAIN_PAYROLL ProviderRequest = "brain payroll"
-	BRIGHTPAY_CONNECT ProviderRequest = "brightpay connect"
-	EMPLOYMENT_HERO ProviderRequest = "employment hero"
-	FACTORIALHR ProviderRequest = "factorialhr"
-	FOURTHHR ProviderRequest = "fourthhr"
-	ITRENT ProviderRequest = "itrent"
-	OYSTERHR ProviderRequest = "oysterhr"
-	PAROLLA_IE ProviderRequest = "parolla.ie"
-	PAYCIRCLE ProviderRequest = "paycircle"
-	PEOPLEHR ProviderRequest = "peoplehr"
-	REMOTE_COM ProviderRequest = "remote.com"
-	SAGEONE ProviderRequest = "sageone"
-	SIMPLEPAY_IE ProviderRequest = "simplepay.ie"
-	PENTO_IO ProviderRequest = "pento.io"
-)
-
-var allowedProviderRequestEnumValues = []ProviderRequest{
-	"sandbox",
-	"taxact",
-	"turbotax",
-	"amazon",
-	"amazon.com business",
-	"amazon.co.uk",
-	"amazon.de",
-	"bamboohr",
-	"breathe",
-	"cezanne",
-	"charliehr",
-	"deel",
-	"deputy",
-	"hibob",
-	"humaans",
-	"iris cascade",
-	"moorepay",
-	"personio.de",
-	"sagehr",
-	"saplinghr",
-	"staffology",
-	"ukg pro",
-	"xero",
-	"brain payroll",
-	"brightpay connect",
-	"employment hero",
-	"factorialhr",
-	"fourthhr",
-	"itrent",
-	"oysterhr",
-	"parolla.ie",
-	"paycircle",
-	"peoplehr",
-	"remote.com",
-	"sageone",
-	"simplepay.ie",
-	"pento.io",
+// Employee20230301ResponseCompanyLocation struct for Employee20230301ResponseCompanyLocation
+type Employee20230301ResponseCompanyLocation struct {
+	StreetAddress NullableString `json:"street_address"`
+	Locality NullableString `json:"locality"`
+	// The administrative area of the address. If US or CA, the two-letter state abbreviation 
+	AdministrativeArea NullableString `json:"administrative_area"`
+	// The two-letter abbreviation of the country 
+	Country NullableString `json:"country"`
+	PostCode NullableString `json:"post_code"`
 }
 
-func (v *ProviderRequest) UnmarshalJSON(src []byte) error {
-	var value string
-	err := json.Unmarshal(src, &value)
-	if err != nil {
-		return err
-	}
-	enumTypeValue := ProviderRequest(value)
-	for _, existing := range allowedProviderRequestEnumValues {
-		if existing == enumTypeValue {
-			*v = enumTypeValue
-			return nil
-		}
+// NewEmployee20230301ResponseCompanyLocation instantiates a new Employee20230301ResponseCompanyLocation object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewEmployee20230301ResponseCompanyLocation(streetAddress NullableString, locality NullableString, administrativeArea NullableString, country NullableString, postCode NullableString) *Employee20230301ResponseCompanyLocation {
+	this := Employee20230301ResponseCompanyLocation{}
+	this.StreetAddress = streetAddress
+	this.Locality = locality
+	this.AdministrativeArea = administrativeArea
+	this.Country = country
+	this.PostCode = postCode
+	return &this
+}
+
+// NewEmployee20230301ResponseCompanyLocationWithDefaults instantiates a new Employee20230301ResponseCompanyLocation object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewEmployee20230301ResponseCompanyLocationWithDefaults() *Employee20230301ResponseCompanyLocation {
+	this := Employee20230301ResponseCompanyLocation{}
+	return &this
+}
+
+// GetStreetAddress returns the StreetAddress field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Employee20230301ResponseCompanyLocation) GetStreetAddress() string {
+	if o == nil || o.StreetAddress.Get() == nil {
+		var ret string
+		return ret
 	}
 
-	return fmt.Errorf("%+v is not a valid ProviderRequest", value)
+	return *o.StreetAddress.Get()
 }
 
-// NewProviderRequestFromValue returns a pointer to a valid ProviderRequest
-// for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewProviderRequestFromValue(v string) (*ProviderRequest, error) {
-	ev := ProviderRequest(v)
-	if ev.IsValid() {
-		return &ev, nil
-	} else {
-		return nil, fmt.Errorf("invalid value '%v' for ProviderRequest: valid values are %v", v, allowedProviderRequestEnumValues)
+// GetStreetAddressOk returns a tuple with the StreetAddress field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Employee20230301ResponseCompanyLocation) GetStreetAddressOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
 	}
+	return o.StreetAddress.Get(), o.StreetAddress.IsSet()
 }
 
-// IsValid return true if the value is valid for the enum, false otherwise
-func (v ProviderRequest) IsValid() bool {
-	for _, existing := range allowedProviderRequestEnumValues {
-		if existing == v {
-			return true
-		}
+// SetStreetAddress sets field value
+func (o *Employee20230301ResponseCompanyLocation) SetStreetAddress(v string) {
+	o.StreetAddress.Set(&v)
+}
+
+// GetLocality returns the Locality field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Employee20230301ResponseCompanyLocation) GetLocality() string {
+	if o == nil || o.Locality.Get() == nil {
+		var ret string
+		return ret
 	}
-	return false
+
+	return *o.Locality.Get()
 }
 
-// Ptr returns reference to ProviderRequest value
-func (v ProviderRequest) Ptr() *ProviderRequest {
-	return &v
+// GetLocalityOk returns a tuple with the Locality field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Employee20230301ResponseCompanyLocation) GetLocalityOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.Locality.Get(), o.Locality.IsSet()
 }
 
-type NullableProviderRequest struct {
-	value *ProviderRequest
+// SetLocality sets field value
+func (o *Employee20230301ResponseCompanyLocation) SetLocality(v string) {
+	o.Locality.Set(&v)
+}
+
+// GetAdministrativeArea returns the AdministrativeArea field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Employee20230301ResponseCompanyLocation) GetAdministrativeArea() string {
+	if o == nil || o.AdministrativeArea.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.AdministrativeArea.Get()
+}
+
+// GetAdministrativeAreaOk returns a tuple with the AdministrativeArea field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Employee20230301ResponseCompanyLocation) GetAdministrativeAreaOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.AdministrativeArea.Get(), o.AdministrativeArea.IsSet()
+}
+
+// SetAdministrativeArea sets field value
+func (o *Employee20230301ResponseCompanyLocation) SetAdministrativeArea(v string) {
+	o.AdministrativeArea.Set(&v)
+}
+
+// GetCountry returns the Country field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Employee20230301ResponseCompanyLocation) GetCountry() string {
+	if o == nil || o.Country.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.Country.Get()
+}
+
+// GetCountryOk returns a tuple with the Country field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Employee20230301ResponseCompanyLocation) GetCountryOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.Country.Get(), o.Country.IsSet()
+}
+
+// SetCountry sets field value
+func (o *Employee20230301ResponseCompanyLocation) SetCountry(v string) {
+	o.Country.Set(&v)
+}
+
+// GetPostCode returns the PostCode field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Employee20230301ResponseCompanyLocation) GetPostCode() string {
+	if o == nil || o.PostCode.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.PostCode.Get()
+}
+
+// GetPostCodeOk returns a tuple with the PostCode field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Employee20230301ResponseCompanyLocation) GetPostCodeOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.PostCode.Get(), o.PostCode.IsSet()
+}
+
+// SetPostCode sets field value
+func (o *Employee20230301ResponseCompanyLocation) SetPostCode(v string) {
+	o.PostCode.Set(&v)
+}
+
+func (o Employee20230301ResponseCompanyLocation) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["street_address"] = o.StreetAddress.Get()
+	}
+	if true {
+		toSerialize["locality"] = o.Locality.Get()
+	}
+	if true {
+		toSerialize["administrative_area"] = o.AdministrativeArea.Get()
+	}
+	if true {
+		toSerialize["country"] = o.Country.Get()
+	}
+	if true {
+		toSerialize["post_code"] = o.PostCode.Get()
+	}
+	return json.Marshal(toSerialize)
+}
+
+type NullableEmployee20230301ResponseCompanyLocation struct {
+	value *Employee20230301ResponseCompanyLocation
 	isSet bool
 }
 
-func (v NullableProviderRequest) Get() *ProviderRequest {
+func (v NullableEmployee20230301ResponseCompanyLocation) Get() *Employee20230301ResponseCompanyLocation {
 	return v.value
 }
 
-func (v *NullableProviderRequest) Set(val *ProviderRequest) {
+func (v *NullableEmployee20230301ResponseCompanyLocation) Set(val *Employee20230301ResponseCompanyLocation) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableProviderRequest) IsSet() bool {
+func (v NullableEmployee20230301ResponseCompanyLocation) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableProviderRequest) Unset() {
+func (v *NullableEmployee20230301ResponseCompanyLocation) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableProviderRequest(val *ProviderRequest) *NullableProviderRequest {
-	return &NullableProviderRequest{value: val, isSet: true}
+func NewNullableEmployee20230301ResponseCompanyLocation(val *Employee20230301ResponseCompanyLocation) *NullableEmployee20230301ResponseCompanyLocation {
+	return &NullableEmployee20230301ResponseCompanyLocation{value: val, isSet: true}
 }
 
-func (v NullableProviderRequest) MarshalJSON() ([]byte, error) {
+func (v NullableEmployee20230301ResponseCompanyLocation) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableProviderRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableEmployee20230301ResponseCompanyLocation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
 

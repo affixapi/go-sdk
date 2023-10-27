@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **NullableString** |  | 
-**Location** | [**LocationResponse**](LocationResponse.md) |  | 
+**Location** | [**NullableEmployee20230301ResponseCompanyLocation**](Employee20230301ResponseCompanyLocation.md) |  | 
 
 ## Methods
 
 ### NewEmployee20230301ResponseCompany
 
-`func NewEmployee20230301ResponseCompany(name NullableString, location LocationResponse, ) *Employee20230301ResponseCompany`
+`func NewEmployee20230301ResponseCompany(name NullableString, location NullableEmployee20230301ResponseCompanyLocation, ) *Employee20230301ResponseCompany`
 
 NewEmployee20230301ResponseCompany instantiates a new Employee20230301ResponseCompany object
 This constructor will assign default values to properties that have it defined,
@@ -58,24 +58,34 @@ SetName sets Name field to given value.
 UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetLocation
 
-`func (o *Employee20230301ResponseCompany) GetLocation() LocationResponse`
+`func (o *Employee20230301ResponseCompany) GetLocation() Employee20230301ResponseCompanyLocation`
 
 GetLocation returns the Location field if non-nil, zero value otherwise.
 
 ### GetLocationOk
 
-`func (o *Employee20230301ResponseCompany) GetLocationOk() (*LocationResponse, bool)`
+`func (o *Employee20230301ResponseCompany) GetLocationOk() (*Employee20230301ResponseCompanyLocation, bool)`
 
 GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocation
 
-`func (o *Employee20230301ResponseCompany) SetLocation(v LocationResponse)`
+`func (o *Employee20230301ResponseCompany) SetLocation(v Employee20230301ResponseCompanyLocation)`
 
 SetLocation sets Location field to given value.
 
 
+### SetLocationNil
+
+`func (o *Employee20230301ResponseCompany) SetLocationNil(b bool)`
+
+ SetLocationNil sets the value for Location to be an explicit nil
+
+### UnsetLocation
+`func (o *Employee20230301ResponseCompany) UnsetLocation()`
+
+UnsetLocation ensures that no value is present for Location, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

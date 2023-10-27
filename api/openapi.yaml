@@ -1518,6 +1518,7 @@ components:
       - hibob
       - humaans
       - iris cascade
+      - moorepay
       - personio.de
       - sagehr
       - saplinghr
@@ -1566,6 +1567,7 @@ components:
       - hibob
       - humaans
       - iris cascade
+      - moorepay
       - personio.de
       - sagehr
       - saplinghr
@@ -1602,6 +1604,7 @@ components:
         - hibob
         - humaans
         - iris cascade
+        - moorepay
         - peoplehr
         - personio.de
         - remote.com
@@ -3300,6 +3303,47 @@ components:
       - name
       - type
       type: object
+    Employee20230301Response_company_location:
+      example:
+        street_address: 221 S Main Street
+        country: US
+        post_code: "30691"
+        locality: Yuma
+        administrative_area: AZ
+      nullable: true
+      properties:
+        street_address:
+          example: 221 S Main Street
+          nullable: true
+          type: string
+        locality:
+          example: Yuma
+          nullable: true
+          type: string
+        administrative_area:
+          description: |
+            The administrative area of the address. If US or CA, the two-letter
+            state abbreviation
+          example: AZ
+          nullable: true
+          type: string
+        country:
+          description: |
+            The two-letter abbreviation of the country
+          example: US
+          nullable: true
+          type: string
+        post_code:
+          example: "30691"
+          nullable: true
+          type: string
+      required:
+      - administrative_area
+      - country
+      - locality
+      - post_code
+      - street_address
+      type: object
     Employee20230301Response_company:
       example:
         name: Affix API Limited
@@ -3316,7 +3360,7 @@ components:
           nullable: true
           type: string
         location:
-          $ref: '#/components/schemas/locationResponse'
+          $ref: '#/components/schemas/Employee20230301Response_company_location'
       required:
       - location
       - name

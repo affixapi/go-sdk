@@ -37,6 +37,7 @@ const (
 	HIBOB ProviderResponse = "hibob"
 	HUMAANS ProviderResponse = "humaans"
 	IRIS_CASCADE ProviderResponse = "iris cascade"
+	MOOREPAY ProviderResponse = "moorepay"
 	PERSONIO_DE ProviderResponse = "personio.de"
 	SAGEHR ProviderResponse = "sagehr"
 	SAPLINGHR ProviderResponse = "saplinghr"
@@ -76,6 +77,7 @@ var allowedProviderResponseEnumValues = []ProviderResponse{
 	"hibob",
 	"humaans",
 	"iris cascade",
+	"moorepay",
 	"personio.de",
 	"sagehr",
 	"saplinghr",

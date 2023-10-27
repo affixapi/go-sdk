@@ -35,6 +35,8 @@
 
 * `IRIS_CASCADE` (value: `"iris cascade"`)
 
+* `MOOREPAY` (value: `"moorepay"`)
+
 * `PERSONIO_DE` (value: `"personio.de"`)
 
 * `SAGEHR` (value: `"sagehr"`)

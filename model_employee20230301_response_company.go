@@ -18,14 +18,14 @@ import (
 // Employee20230301ResponseCompany struct for Employee20230301ResponseCompany
 type Employee20230301ResponseCompany struct {
 	Name NullableString `json:"name"`
-	Location LocationResponse `json:"location"`
+	Location NullableEmployee20230301ResponseCompanyLocation `json:"location"`
 }
 
 // NewEmployee20230301ResponseCompany instantiates a new Employee20230301ResponseCompany object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmployee20230301ResponseCompany(name NullableString, location LocationResponse) *Employee20230301ResponseCompany {
+func NewEmployee20230301ResponseCompany(name NullableString, location NullableEmployee20230301ResponseCompanyLocation) *Employee20230301ResponseCompany {
 	this := Employee20230301ResponseCompany{}
 	this.Name = name
 	this.Location = location
@@ -67,27 +67,29 @@ func (o *Employee20230301ResponseCompany) SetName(v string) {
 }
 
 // GetLocation returns the Location field value
-func (o *Employee20230301ResponseCompany) GetLocation() LocationResponse {
-	if o == nil {
-		var ret LocationResponse
+// If the value is explicit nil, the zero value for Employee20230301ResponseCompanyLocation will be returned
+func (o *Employee20230301ResponseCompany) GetLocation() Employee20230301ResponseCompanyLocation {
+	if o == nil || o.Location.Get() == nil {
+		var ret Employee20230301ResponseCompanyLocation
 		return ret
 	}
 
-	return o.Location
+	return *o.Location.Get()
 }
 
 // GetLocationOk returns a tuple with the Location field value
 // and a boolean to check if the value has been set.
-func (o *Employee20230301ResponseCompany) GetLocationOk() (*LocationResponse, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Employee20230301ResponseCompany) GetLocationOk() (*Employee20230301ResponseCompanyLocation, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Location, true
+	return o.Location.Get(), o.Location.IsSet()
 }
 
 // SetLocation sets field value
-func (o *Employee20230301ResponseCompany) SetLocation(v LocationResponse) {
-	o.Location = v
+func (o *Employee20230301ResponseCompany) SetLocation(v Employee20230301ResponseCompanyLocation) {
+	o.Location.Set(&v)
 }
 
 func (o Employee20230301ResponseCompany) MarshalJSON() ([]byte, error) {
@@ -96,7 +98,7 @@ func (o Employee20230301ResponseCompany) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name.Get()
 	}
 	if true {
-		toSerialize["location"] = o.Location
+		toSerialize["location"] = o.Location.Get()
 	}
 	return json.Marshal(toSerialize)
 }
