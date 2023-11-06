@@ -22,8 +22,6 @@ type ProviderRequest string
 // List of ProviderRequest
 const (
 	SANDBOX ProviderRequest = "sandbox"
-	TAXACT ProviderRequest = "taxact"
-	TURBOTAX ProviderRequest = "turbotax"
 	AMAZON ProviderRequest = "amazon"
 	AMAZON_COM_BUSINESS ProviderRequest = "amazon.com business"
 	AMAZON_CO_UK ProviderRequest = "amazon.co.uk"
@@ -34,16 +32,20 @@ const (
 	CHARLIEHR ProviderRequest = "charliehr"
 	DEEL ProviderRequest = "deel"
 	DEPUTY ProviderRequest = "deputy"
+	HAILYHR ProviderRequest = "hailyhr"
 	HIBOB ProviderRequest = "hibob"
 	HUMAANS ProviderRequest = "humaans"
 	IRIS_CASCADE ProviderRequest = "iris cascade"
 	MOOREPAY ProviderRequest = "moorepay"
+	NMBRS ProviderRequest = "nmbrs"
+	PAROLLA_IE ProviderRequest = "parolla.ie"
+	PAYFIT ProviderRequest = "payfit"
 	PERSONIO_DE ProviderRequest = "personio.de"
+	QUICKBOOKS_UK ProviderRequest = "quickbooks uk"
 	SAGEHR ProviderRequest = "sagehr"
 	SAPLINGHR ProviderRequest = "saplinghr"
 	STAFFOLOGY ProviderRequest = "staffology"
-	UKG_PRO ProviderRequest = "ukg pro"
-	XERO ProviderRequest = "xero"
+	XERO_UK ProviderRequest = "xero uk"
 	BRAIN_PAYROLL ProviderRequest = "brain payroll"
 	BRIGHTPAY_CONNECT ProviderRequest = "brightpay connect"
 	EMPLOYMENT_HERO ProviderRequest = "employment hero"
@@ -51,19 +53,16 @@ const (
 	FOURTHHR ProviderRequest = "fourthhr"
 	ITRENT ProviderRequest = "itrent"
 	OYSTERHR ProviderRequest = "oysterhr"
-	PAROLLA_IE ProviderRequest = "parolla.ie"
 	PAYCIRCLE ProviderRequest = "paycircle"
+	PENTO_IO ProviderRequest = "pento.io"
 	PEOPLEHR ProviderRequest = "peoplehr"
 	REMOTE_COM ProviderRequest = "remote.com"
 	SAGEONE ProviderRequest = "sageone"
 	SIMPLEPAY_IE ProviderRequest = "simplepay.ie"
-	PENTO_IO ProviderRequest = "pento.io"
 )
 
 var allowedProviderRequestEnumValues = []ProviderRequest{
 	"sandbox",
-	"taxact",
-	"turbotax",
 	"amazon",
 	"amazon.com business",
 	"amazon.co.uk",
@@ -74,16 +73,20 @@ var allowedProviderRequestEnumValues = []ProviderRequest{
 	"charliehr",
 	"deel",
 	"deputy",
+	"hailyhr",
 	"hibob",
 	"humaans",
 	"iris cascade",
 	"moorepay",
+	"nmbrs",
+	"parolla.ie",
+	"payfit",
 	"personio.de",
+	"quickbooks uk",
 	"sagehr",
 	"saplinghr",
 	"staffology",
-	"ukg pro",
-	"xero",
+	"xero uk",
 	"brain payroll",
 	"brightpay connect",
 	"employment hero",
@@ -91,13 +94,12 @@ var allowedProviderRequestEnumValues = []ProviderRequest{
 	"fourthhr",
 	"itrent",
 	"oysterhr",
-	"parolla.ie",
 	"paycircle",
+	"pento.io",
 	"peoplehr",
 	"remote.com",
 	"sageone",
 	"simplepay.ie",
-	"pento.io",
 }
 
 func (v *ProviderRequest) UnmarshalJSON(src []byte) error {

@@ -3,13 +3,9 @@
 ## Enum
 
 
-* `TAX` (value: `"tax"`)
-
 * `RETAIL` (value: `"retail"`)
 
 * `RAW` (value: `"raw"`)
-
-* `EMPLOYEE` (value: `"employee"`)
 
 * `OFFICIAL` (value: `"official"`)
 

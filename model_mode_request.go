@@ -21,19 +21,15 @@ type ModeRequest string
 
 // List of ModeRequest
 const (
-	TAX ModeRequest = "tax"
 	RETAIL ModeRequest = "retail"
 	RAW ModeRequest = "raw"
-	EMPLOYEE ModeRequest = "employee"
 	OFFICIAL ModeRequest = "official"
 	DEVELOPER ModeRequest = "developer"
 )
 
 var allowedModeRequestEnumValues = []ModeRequest{
-	"tax",
 	"retail",
 	"raw",
-	"employee",
 	"official",
 	"developer",
 }

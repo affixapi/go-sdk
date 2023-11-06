@@ -21,19 +21,15 @@ type ModeResponse string
 
 // List of ModeResponse
 const (
-	TAX ModeResponse = "tax"
 	RETAIL ModeResponse = "retail"
 	RAW ModeResponse = "raw"
-	EMPLOYEE ModeResponse = "employee"
 	OFFICIAL ModeResponse = "official"
 	DEVELOPER ModeResponse = "developer"
 )
 
 var allowedModeResponseEnumValues = []ModeResponse{
-	"tax",
 	"retail",
 	"raw",
-	"employee",
 	"official",
 	"developer",
 }

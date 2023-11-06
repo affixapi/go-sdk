@@ -22,8 +22,6 @@ type ProviderResponse string
 // List of ProviderResponse
 const (
 	SANDBOX ProviderResponse = "sandbox"
-	TAXACT ProviderResponse = "taxact"
-	TURBOTAX ProviderResponse = "turbotax"
 	AMAZON ProviderResponse = "amazon"
 	AMAZON_COM_BUSINESS ProviderResponse = "amazon.com business"
 	AMAZON_CO_UK ProviderResponse = "amazon.co.uk"
@@ -34,16 +32,20 @@ const (
 	CHARLIEHR ProviderResponse = "charliehr"
 	DEEL ProviderResponse = "deel"
 	DEPUTY ProviderResponse = "deputy"
+	HAILYHR ProviderResponse = "hailyhr"
 	HIBOB ProviderResponse = "hibob"
 	HUMAANS ProviderResponse = "humaans"
 	IRIS_CASCADE ProviderResponse = "iris cascade"
 	MOOREPAY ProviderResponse = "moorepay"
+	NMBRS ProviderResponse = "nmbrs"
+	PAROLLA_IE ProviderResponse = "parolla.ie"
+	PAYFIT ProviderResponse = "payfit"
 	PERSONIO_DE ProviderResponse = "personio.de"
+	QUICKBOOKS_UK ProviderResponse = "quickbooks uk"
 	SAGEHR ProviderResponse = "sagehr"
 	SAPLINGHR ProviderResponse = "saplinghr"
 	STAFFOLOGY ProviderResponse = "staffology"
-	UKG_PRO ProviderResponse = "ukg pro"
-	XERO ProviderResponse = "xero"
+	XERO_UK ProviderResponse = "xero uk"
 	BRAIN_PAYROLL ProviderResponse = "brain payroll"
 	BRIGHTPAY_CONNECT ProviderResponse = "brightpay connect"
 	EMPLOYMENT_HERO ProviderResponse = "employment hero"
@@ -51,19 +53,16 @@ const (
 	FOURTHHR ProviderResponse = "fourthhr"
 	ITRENT ProviderResponse = "itrent"
 	OYSTERHR ProviderResponse = "oysterhr"
-	PAROLLA_IE ProviderResponse = "parolla.ie"
 	PAYCIRCLE ProviderResponse = "paycircle"
+	PENTO_IO ProviderResponse = "pento.io"
 	PEOPLEHR ProviderResponse = "peoplehr"
 	REMOTE_COM ProviderResponse = "remote.com"
 	SAGEONE ProviderResponse = "sageone"
 	SIMPLEPAY_IE ProviderResponse = "simplepay.ie"
-	PENTO_IO ProviderResponse = "pento.io"
 )
 
 var allowedProviderResponseEnumValues = []ProviderResponse{
 	"sandbox",
-	"taxact",
-	"turbotax",
 	"amazon",
 	"amazon.com business",
 	"amazon.co.uk",
@@ -74,16 +73,20 @@ var allowedProviderResponseEnumValues = []ProviderResponse{
 	"charliehr",
 	"deel",
 	"deputy",
+	"hailyhr",
 	"hibob",
 	"humaans",
 	"iris cascade",
 	"moorepay",
+	"nmbrs",
+	"parolla.ie",
+	"payfit",
 	"personio.de",
+	"quickbooks uk",
 	"sagehr",
 	"saplinghr",
 	"staffology",
-	"ukg pro",
-	"xero",
+	"xero uk",
 	"brain payroll",
 	"brightpay connect",
 	"employment hero",
@@ -91,13 +94,12 @@ var allowedProviderResponseEnumValues = []ProviderResponse{
 	"fourthhr",
 	"itrent",
 	"oysterhr",
-	"parolla.ie",
 	"paycircle",
+	"pento.io",
 	"peoplehr",
 	"remote.com",
 	"sageone",
 	"simplepay.ie",
-	"pento.io",
 }
 
 func (v *ProviderResponse) UnmarshalJSON(src []byte) error {

@@ -5,10 +5,6 @@
 
 * `SANDBOX` (value: `"sandbox"`)
 
-* `TAXACT` (value: `"taxact"`)
-
-* `TURBOTAX` (value: `"turbotax"`)
-
 * `AMAZON` (value: `"amazon"`)
 
 * `AMAZON_COM_BUSINESS` (value: `"amazon.com business"`)
@@ -29,6 +25,8 @@
 
 * `DEPUTY` (value: `"deputy"`)
 
+* `HAILYHR` (value: `"hailyhr"`)
+
 * `HIBOB` (value: `"hibob"`)
 
 * `HUMAANS` (value: `"humaans"`)
@@ -37,7 +35,15 @@
 
 * `MOOREPAY` (value: `"moorepay"`)
 
+* `NMBRS` (value: `"nmbrs"`)
+
+* `PAROLLA_IE` (value: `"parolla.ie"`)
+
+* `PAYFIT` (value: `"payfit"`)
+
 * `PERSONIO_DE` (value: `"personio.de"`)
+
+* `QUICKBOOKS_UK` (value: `"quickbooks uk"`)
 
 * `SAGEHR` (value: `"sagehr"`)
 
@@ -45,9 +51,7 @@
 
 * `STAFFOLOGY` (value: `"staffology"`)
 
-* `UKG_PRO` (value: `"ukg pro"`)
-
-* `XERO` (value: `"xero"`)
+* `XERO_UK` (value: `"xero uk"`)
 
 * `BRAIN_PAYROLL` (value: `"brain payroll"`)
 
@@ -63,9 +67,9 @@
 
 * `OYSTERHR` (value: `"oysterhr"`)
 
-* `PAROLLA_IE` (value: `"parolla.ie"`)
-
 * `PAYCIRCLE` (value: `"paycircle"`)
+
+* `PENTO_IO` (value: `"pento.io"`)
 
 * `PEOPLEHR` (value: `"peoplehr"`)
 
@@ -74,8 +78,6 @@
 * `SAGEONE` (value: `"sageone"`)
 
 * `SIMPLEPAY_IE` (value: `"simplepay.ie"`)
-
-* `PENTO_IO` (value: `"pento.io"`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

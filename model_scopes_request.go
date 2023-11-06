@@ -21,31 +21,21 @@ type ScopesRequest string
 
 // List of ScopesRequest
 const (
-	TAX ScopesRequest = "tax"
-	IDENTITY ScopesRequest = "identity"
-	SSN ScopesRequest = "ssn"
-	ORDERS ScopesRequest = "orders"
-	ITEMS ScopesRequest = "items"
-	_2023_03_20_RETAIL_IDENTITY ScopesRequest = "/2023-03-20/retail/identity"
-	_2023_03_20_RETAIL_ORDERS ScopesRequest = "/2023-03-20/retail/orders"
-	_2023_03_20_RETAIL_ORDERS_ORDER_ID ScopesRequest = "/2023-03-20/retail/orders/:order_id"
-	_2023_03_20_RAW_AMAZON_IDENTITY ScopesRequest = "/2023-03-20/raw/amazon/identity"
-	_2023_03_20_RAW_AMAZON_ORDERS ScopesRequest = "/2023-03-20/raw/amazon/orders"
-	_2023_03_20_RAW_AMAZON_ORDERS_ORDER_ID ScopesRequest = "/2023-03-20/raw/amazon/orders/:order_id"
-	_2023_03_01_OFFICIAL_IDENTITY ScopesRequest = "/2023-03-01/official/identity"
-	_2023_03_01_OFFICIAL_EMPLOYEES ScopesRequest = "/2023-03-01/official/employees"
-	_2023_03_01_DEVELOPER_IDENTITY ScopesRequest = "/2023-03-01/developer/identity"
-	_2023_03_01_DEVELOPER_EMPLOYEES ScopesRequest = "/2023-03-01/developer/employees"
-	_2023_03_01_DEVELOPER_PAYRUNS ScopesRequest = "/2023-03-01/developer/payruns"
-	_2023_03_01_DEVELOPER_PAYRUNS_PAYRUN_ID ScopesRequest = "/2023-03-01/developer/payruns/:payrun_id"
+	_20_RETAIL_IDENTITY ScopesRequest = "/2023-03-20/retail/identity"
+	_20_RETAIL_ORDERS ScopesRequest = "/2023-03-20/retail/orders"
+	_20_RETAIL_ORDERS_ORDER_ID ScopesRequest = "/2023-03-20/retail/orders/:order_id"
+	_20_RAW_AMAZON_IDENTITY ScopesRequest = "/2023-03-20/raw/amazon/identity"
+	_20_RAW_AMAZON_ORDERS ScopesRequest = "/2023-03-20/raw/amazon/orders"
+	_20_RAW_AMAZON_ORDERS_ORDER_ID ScopesRequest = "/2023-03-20/raw/amazon/orders/:order_id"
+	_01_OFFICIAL_IDENTITY ScopesRequest = "/2023-03-01/official/identity"
+	_01_OFFICIAL_EMPLOYEES ScopesRequest = "/2023-03-01/official/employees"
+	_01_DEVELOPER_IDENTITY ScopesRequest = "/2023-03-01/developer/identity"
+	_01_DEVELOPER_EMPLOYEES ScopesRequest = "/2023-03-01/developer/employees"
+	_01_DEVELOPER_PAYRUNS ScopesRequest = "/2023-03-01/developer/payruns"
+	_01_DEVELOPER_PAYRUNS_PAYRUN_ID ScopesRequest = "/2023-03-01/developer/payruns/:payrun_id"
 )
 
 var allowedScopesRequestEnumValues = []ScopesRequest{
-	"tax",
-	"identity",
-	"ssn",
-	"orders",
-	"items",
 	"/2023-03-20/retail/identity",
 	"/2023-03-20/retail/orders",
 	"/2023-03-20/retail/orders/:order_id",

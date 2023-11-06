@@ -1466,11 +1466,6 @@ components:
       type: string
     ScopesRequest:
       enum:
-      - tax
-      - identity
-      - ssn
-      - orders
-      - items
       - /2023-03-20/retail/identity
       - /2023-03-20/retail/orders
       - /2023-03-20/retail/orders/:order_id
@@ -1486,10 +1481,8 @@ components:
       type: string
     ModeRequest:
       enum:
-      - tax
       - retail
       - raw
-      - employee
       - official
       - developer
       type: string
@@ -1503,8 +1496,6 @@ components:
     ProviderRequest:
       enum:
       - sandbox
-      - taxact
-      - turbotax
       - amazon
       - amazon.com business
       - amazon.co.uk
@@ -1515,16 +1506,20 @@ components:
       - charliehr
       - deel
       - deputy
+      - hailyhr
       - hibob
       - humaans
       - iris cascade
       - moorepay
+      - nmbrs
+      - parolla.ie
+      - payfit
       - personio.de
+      - quickbooks uk
       - sagehr
       - saplinghr
       - staffology
-      - ukg pro
-      - xero
+      - xero uk
       - brain payroll
       - brightpay connect
       - employment hero
@@ -1532,28 +1527,23 @@ components:
       - fourthhr
       - itrent
       - oysterhr
-      - parolla.ie
       - paycircle
+      - pento.io
       - peoplehr
       - remote.com
       - sageone
       - simplepay.ie
-      - pento.io
       type: string
     ModeResponse:
       enum:
-      - tax
       - retail
       - raw
-      - employee
       - official
       - developer
       type: string
     ProviderResponse:
       enum:
       - sandbox
-      - taxact
-      - turbotax
       - amazon
       - amazon.com business
       - amazon.co.uk
@@ -1564,16 +1554,20 @@ components:
       - charliehr
       - deel
       - deputy
+      - hailyhr
       - hibob
       - humaans
       - iris cascade
       - moorepay
+      - nmbrs
+      - parolla.ie
+      - payfit
       - personio.de
+      - quickbooks uk
       - sagehr
       - saplinghr
       - staffology
-      - ukg pro
-      - xero
+      - xero uk
       - brain payroll
       - brightpay connect
       - employment hero
@@ -1581,13 +1575,12 @@ components:
       - fourthhr
       - itrent
       - oysterhr
-      - parolla.ie
       - paycircle
+      - pento.io
       - peoplehr
       - remote.com
       - sageone
       - simplepay.ie
-      - pento.io
       type: string
     ProvidersResponse:
       example:
@@ -1603,8 +1596,12 @@ components:
         - factorialhr
         - hibob
         - humaans
+        - hailyhr
         - iris cascade
         - moorepay
+        - nmbrs
+        - parolla.ie
+        - payfit
         - peoplehr
         - personio.de
         - remote.com
@@ -1612,8 +1609,6 @@ components:
         - saplinghr
         - simplepay.ie
         - staffology
-        - ukg pro
-        - xero
       - mode: developer
         providers:
         - brain payroll
@@ -1623,14 +1618,17 @@ components:
         - factorialhr
         - fourthhr
         - itrent
+        - moorepay
         - oysterhr
         - parolla.ie
         - paycircle
+        - pento.io
         - peoplehr
+        - quickbooks uk
         - remote.com
         - sageone
         - simplepay.ie
-        - pento.io
+        - xero uk
       items:
         properties:
           mode:
@@ -1759,11 +1757,6 @@ components:
       type: object
     ScopesResponse:
       enum:
-      - tax
-      - identity
-      - ssn
-      - orders
-      - items
       - /2023-03-20/retail/identity
       - /2023-03-20/retail/orders
       - /2023-03-20/retail/orders/:order_id
