@@ -1300,7 +1300,7 @@ paths:
           - sageone
           - simplepay.ie
           - brightpay connect
-      operationId: developerPayslips20230320
+      operationId: developerPayslips20230301
       parameters:
       - description: The id of the payrun.
         explode: false

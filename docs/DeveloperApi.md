@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**DeveloperEmployees20230301**](DeveloperApi.md#DeveloperEmployees20230301) | **Get** /2023-03-01/developer/employees | Employees
 [**DeveloperIdentity20230301**](DeveloperApi.md#DeveloperIdentity20230301) | **Get** /2023-03-01/developer/identity | Identity
 [**DeveloperPayruns20230301**](DeveloperApi.md#DeveloperPayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
-[**DeveloperPayslips20230320**](DeveloperApi.md#DeveloperPayslips20230320) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+[**DeveloperPayslips20230301**](DeveloperApi.md#DeveloperPayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
 
 
 
@@ -202,9 +202,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeveloperPayslips20230320
+## DeveloperPayslips20230301
 
-> []PayslipResponse DeveloperPayslips20230320(ctx, payrunId).Execute()
+> []PayslipResponse DeveloperPayslips20230301(ctx, payrunId).Execute()
 
 Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
 
@@ -227,13 +227,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperPayslips20230320(context.Background(), payrunId).Execute()
+    resp, r, err := api_client.DeveloperApi.DeveloperPayslips20230301(context.Background(), payrunId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperPayslips20230320``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperPayslips20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperPayslips20230320`: []PayslipResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperPayslips20230320`: %v\n", resp)
+    // response from `DeveloperPayslips20230301`: []PayslipResponse
+    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperPayslips20230301`: %v\n", resp)
 }
 ```
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperPayslips20230320Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeveloperPayslips20230301Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -510,19 +510,19 @@ func (a *Class20230301ApiService) DeveloperPayruns20230301Execute(r ApiDeveloper
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeveloperPayslips20230320Request struct {
+type ApiDeveloperPayslips20230301Request struct {
 	ctx _context.Context
 	ApiService *Class20230301ApiService
 	payrunId string
 }
 
 
-func (r ApiDeveloperPayslips20230320Request) Execute() ([]PayslipResponse, *_nethttp.Response, error) {
-	return r.ApiService.DeveloperPayslips20230320Execute(r)
+func (r ApiDeveloperPayslips20230301Request) Execute() ([]PayslipResponse, *_nethttp.Response, error) {
+	return r.ApiService.DeveloperPayslips20230301Execute(r)
 }
 
 /*
- * DeveloperPayslips20230320 Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+ * DeveloperPayslips20230301 Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
  * Retrieves information about a specific pay
 Supported integrations:
   - sageone
@@ -531,10 +531,10 @@ Supported integrations:
 
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param payrunId The id of the payrun.
- * @return ApiDeveloperPayslips20230320Request
+ * @return ApiDeveloperPayslips20230301Request
  */
-func (a *Class20230301ApiService) DeveloperPayslips20230320(ctx _context.Context, payrunId string) ApiDeveloperPayslips20230320Request {
-	return ApiDeveloperPayslips20230320Request{
+func (a *Class20230301ApiService) DeveloperPayslips20230301(ctx _context.Context, payrunId string) ApiDeveloperPayslips20230301Request {
+	return ApiDeveloperPayslips20230301Request{
 		ApiService: a,
 		ctx: ctx,
 		payrunId: payrunId,
@@ -545,7 +545,7 @@ func (a *Class20230301ApiService) DeveloperPayslips20230320(ctx _context.Context
  * Execute executes the request
  * @return []PayslipResponse
  */
-func (a *Class20230301ApiService) DeveloperPayslips20230320Execute(r ApiDeveloperPayslips20230320Request) ([]PayslipResponse, *_nethttp.Response, error) {
+func (a *Class20230301ApiService) DeveloperPayslips20230301Execute(r ApiDeveloperPayslips20230301Request) ([]PayslipResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -555,7 +555,7 @@ func (a *Class20230301ApiService) DeveloperPayslips20230320Execute(r ApiDevelope
 		localVarReturnValue  []PayslipResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class20230301ApiService.DeveloperPayslips20230320")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class20230301ApiService.DeveloperPayslips20230301")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}

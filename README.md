@@ -258,7 +258,7 @@ Class | Method | HTTP request | Description
 *Class20230301Api* | [**DeveloperEmployees20230301**](docs/Class20230301Api.md#developeremployees20230301) | **Get** /2023-03-01/developer/employees | Employees
 *Class20230301Api* | [**DeveloperIdentity20230301**](docs/Class20230301Api.md#developeridentity20230301) | **Get** /2023-03-01/developer/identity | Identity
 *Class20230301Api* | [**DeveloperPayruns20230301**](docs/Class20230301Api.md#developerpayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
-*Class20230301Api* | [**DeveloperPayslips20230320**](docs/Class20230301Api.md#developerpayslips20230320) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+*Class20230301Api* | [**DeveloperPayslips20230301**](docs/Class20230301Api.md#developerpayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
 *Class20230301Api* | [**OfficialEmployees20230301**](docs/Class20230301Api.md#officialemployees20230301) | **Get** /2023-03-01/official/employees | Employees
 *Class20230301Api* | [**Officialdentity20230301**](docs/Class20230301Api.md#officialdentity20230301) | **Get** /2023-03-01/official/identity | Identity
 *Class20230320Api* | [**GetOrder20230320**](docs/Class20230320Api.md#getorder20230320) | **Get** /2023-03-20/retail/orders/{order_id} | Get an Order
@@ -268,7 +268,7 @@ Class | Method | HTTP request | Description
 *DeveloperApi* | [**DeveloperEmployees20230301**](docs/DeveloperApi.md#developeremployees20230301) | **Get** /2023-03-01/developer/employees | Employees
 *DeveloperApi* | [**DeveloperIdentity20230301**](docs/DeveloperApi.md#developeridentity20230301) | **Get** /2023-03-01/developer/identity | Identity
 *DeveloperApi* | [**DeveloperPayruns20230301**](docs/DeveloperApi.md#developerpayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
-*DeveloperApi* | [**DeveloperPayslips20230320**](docs/DeveloperApi.md#developerpayslips20230320) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+*DeveloperApi* | [**DeveloperPayslips20230301**](docs/DeveloperApi.md#developerpayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
 *ManagementApi* | [**Client**](docs/ManagementApi.md#client) | **Get** /2023-03-01/management/client | View client
 *ManagementApi* | [**Disconnect**](docs/ManagementApi.md#disconnect) | **Post** /2023-03-01/management/disconnect | Disconnect token
 *ManagementApi* | [**Introspect**](docs/ManagementApi.md#introspect) | **Get** /2023-03-01/management/introspect | Inspect token
