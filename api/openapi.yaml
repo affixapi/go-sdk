@@ -12,8 +12,7 @@ info:
     third party systems.
 
     # OAuth 2.1
-    Affix API follows the [OAuth 2.1
-    spec](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-08).
+    Affix API follows the [OAuth 2.1 spec](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-08).
 
     As an OAuth application, Affix API handles not only both the collection of
     sensitive user credentials or API keys, but also builds and maintains the
@@ -29,29 +28,31 @@ info:
         the sign in flow is complete and exchange that `authorization_code` for
         a Bearer token
 
-    # Sandbox keys (official mode, employees endpoint)
+    # Sandbox keys (developer mode)
     ### dev
     ```
-    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiJhNmNhODc5YS01OGEzLTQ2MGEtYTZlZC04N2E0NmRlMmMyNzMiLCJpYXQiOjE2OTc5ODUxMzEsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6Im9mZmljaWFsIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.Mw-eYth5VL7jpSVfnh88Tl8Cn-6-bKvjnE4GPtmuUdIS7VAvB5ijQksPjOM3FHkF382oh4bym_FAyQN_UE4mmg
+    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ
     ```
 
+    #### `employees` endpoint sample:
     ```
     curl --fail \
       -X GET \
-      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiJhNmNhODc5YS01OGEzLTQ2MGEtYTZlZC04N2E0NmRlMmMyNzMiLCJpYXQiOjE2OTc5ODUxMzEsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6Im9mZmljaWFsIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.Mw-eYth5VL7jpSVfnh88Tl8Cn-6-bKvjnE4GPtmuUdIS7VAvB5ijQksPjOM3FHkF382oh4bym_FAyQN_UE4mmg' \
-      'https://dev.api.affixapi.com/2023-03-01/official/employees'
+      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ' \
+      'https://dev.api.affixapi.com/2023-03-01/developer/employees'
     ```
 
     ### prod
     ```
-    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiIwYzU2ZjcwMS0wYmFhLTQxOTQtYmU5Ni01ZThiOTExMzZmZDUiLCJpYXQiOjE2OTc5ODUwMTksImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJvZmZpY2lhbCIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.REb0qtwnn--ql2gWFb32FWilezTtJq8USN3Uj4NXoY8aJgwkjisca5ReRh5xyfprKSz_yOEcD1JwTrOlgkvf-Q
+    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw
     ```
 
+    #### `employees` endpoint sample:
     ```
     curl --fail \
       -X GET \
-      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiIwYzU2ZjcwMS0wYmFhLTQxOTQtYmU5Ni01ZThiOTExMzZmZDUiLCJpYXQiOjE2OTc5ODUwMTksImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJvZmZpY2lhbCIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.REb0qtwnn--ql2gWFb32FWilezTtJq8USN3Uj4NXoY8aJgwkjisca5ReRh5xyfprKSz_yOEcD1JwTrOlgkvf-Q' \
-      'https://api.affixapi.com/2023-03-01/official/employees'
+      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw' \
+      'https://api.affixapi.com/2023-03-01/developer/employees'
     ```
 
     # Webhooks
@@ -67,8 +68,8 @@ info:
     ```
     {
 
-      added: <api.Employees20230301Response>[
-        <api.Employee20230301>{
+      added: <api.v20230301.Employees>[
+        <api.v20230301.Employee>{
           ...,
           date_of_birth: '2010-08-06',
           display_full_name: 'Daija Rogahn',
@@ -92,7 +93,7 @@ info:
       ],
       removed: [],
       updated: [
-        <api.Employee20230301>{
+        <api.v20230301.Employee>{
           ...,
           date_of_birth: '2009-11-09',
           display_full_name: 'Lourdes Stiedemann',
@@ -210,19 +211,11 @@ tags:
 - description: |
     Operations related to the 2023-03-01 API version
   name: 2023-03-01
-- description: Operations related to retrieving customer retail data
-  name: Retail
-- description: |
-    Operations related to the 2023-03-20 API version
-  name: 2023-03-20
-- description: Raw data recevied for respective provider
-  name: Raw
 paths:
   /providers:
     get:
       description: |
-        Retrieve the api modes (hris, payroll) and providers for the respective
-        modes
+        Retrieve the api modes (official, developer) and providers for the respective modes
       operationId: providers
       responses:
         "200":
@@ -237,7 +230,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/MessageResponse'
           description: Server Error
-      summary: List of providers
+      summary: Providers
       tags:
       - Core
       x-public: true
@@ -288,7 +281,7 @@ paths:
           description: Server Error
       security:
       - basic: []
-      summary: View client
+      summary: Client
       tags:
       - Management
       x-public: true
@@ -408,7 +401,7 @@ paths:
           description: Server Error
       security:
       - basic: []
-      summary: View tokens
+      summary: Tokens
       tags:
       - Management
       x-public: true
@@ -417,8 +410,7 @@ paths:
   /2023-03-01/management/token:
     post:
       description: |
-        Exchange an authorization_code for an access_token after receiving on from
-        the redirect_uri you specifiy after a successful user connection
+        Exchange an `authorization_code` for an `access_token` after receiving on from the `redirect_uri` you specifiy after a successful user connection
       operationId: token
       requestBody:
         content:
@@ -470,7 +462,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/MessageResponse'
           description: Server Error
-      summary: Exchange `authorization_code` for `access_token`
+      summary: Create token
       tags:
       - Management
       x-public: true
@@ -479,8 +471,7 @@ paths:
   /2023-03-01/management/introspect:
     get:
       description: |
-        Retrieve data about the token, such as scopes, mode, provider, and if it is
-        active
+        Retrieve data about the token, such as `scopes`, `mode`, `provider`, and if it is active
       operationId: introspect
       responses:
         "200":
@@ -537,8 +528,7 @@ paths:
   /2023-03-01/management/disconnect:
     post:
       description: |
-        Disconnect the token. A disconnected token will no longer return data. Data
-        requests with a disconnected token will return a 403 Forbidden
+        Disconnect the token. A disconnected token will no longer return data. Data requests with a disconnected token will return a 403 Forbidden
       operationId: disconnect
       responses:
         "200":
@@ -580,80 +570,17 @@ paths:
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
-  /2023-03-20/retail/identity:
+  /2023-03-01/official/company:
     get:
       description: |
-        List information of the user for the respective account
-      operationId: identity20230320
+        Retrieve company information
+      operationId: officialCompanies20230301
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IdentityResponse'
-          description: Success
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-      security:
-      - access-token: []
-      summary: Identity
-      tags:
-      - Retail
-      - 2023-03-20
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-  /2023-03-20/retail/orders:
-    get:
-      description: |
-        List all the orders that occurred during the respective period.
-      operationId: orders20230320
-      parameters:
-      - description: The start date of the search period
-        explode: true
-        in: query
-        name: start_date
-        required: true
-        schema:
-          $ref: '#/components/schemas/StartDate'
-        style: form
-      - description: The end date of the search period
-        explode: true
-        in: query
-        name: end_date
-        required: true
-        schema:
-          $ref: '#/components/schemas/EndDate'
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Orders20230320Response'
+                $ref: '#/components/schemas/Companies20230301Response'
           description: Success
         "202":
           content:
@@ -701,283 +628,10 @@ paths:
           description: Not Implemented
       security:
       - access-token: []
-      summary: Orders
+      summary: Company
       tags:
-      - Retail
-      - 2023-03-20
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-  /2023-03-20/retail/orders/{order_id}:
-    get:
-      description: |
-        Retrieves information about a specific order
-      operationId: getOrder20230320
-      parameters:
-      - description: The id of the order.
-        explode: false
-        in: path
-        name: order_id
-        required: true
-        schema:
-          $ref: '#/components/schemas/string'
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Order20230320Response'
-          description: Success
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Accepted + pending (async job started)
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Get an Order
-      tags:
-      - Retail
-      - 2023-03-20
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-  /2023-03-20/raw/amazon/identity:
-    get:
-      description: |
-        List information of the user for the respective account
-      operationId: amazonIdentity
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/IdentityResponse'
-          description: Success
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-      security:
-      - access-token: []
-      summary: Identity
-      tags:
-      - Raw
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-  /2023-03-20/raw/amazon/orders:
-    get:
-      description: |
-        List all the orders that occurred during the respective period.
-      operationId: amazonOrders
-      parameters:
-      - description: The start date of the search period
-        explode: true
-        in: query
-        name: start_date
-        required: true
-        schema:
-          $ref: '#/components/schemas/StartDate'
-        style: form
-      - description: The end date of the search period
-        explode: true
-        in: query
-        name: end_date
-        required: true
-        schema:
-          $ref: '#/components/schemas/EndDate'
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Orders20230320Response'
-          description: Success
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Accepted + pending (async job started)
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Orders
-      tags:
-      - Raw
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-  /2023-03-20/raw/amazon/orders/{order_id}:
-    get:
-      description: |
-        Retrieves information about a specific order
-      operationId: amazonGetOrder
-      parameters:
-      - description: The id of the order.
-        explode: false
-        in: path
-        name: order_id
-        required: true
-        schema:
-          $ref: '#/components/schemas/string'
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Order20230320Response'
-          description: Success
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Accepted + pending (async job started)
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Get an Order
-      tags:
-      - Raw
+      - Official
+      - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
@@ -1021,6 +675,64 @@ paths:
       security:
       - access-token: []
       summary: Identity
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/official/employee:
+    post:
+      description: |
+        Creates a new Employee
+      operationId: officialCreateEmployee20230301
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEmployeeRequest'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeResponse'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Create Employee
       tags:
       - Official
       - 2023-03-01
@@ -1093,6 +805,266 @@ paths:
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
+  /2023-03-01/official/time-off-entries:
+    get:
+      description: |
+        Retrieve time off / absence entries
+      operationId: officialTimeOffEntries20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeOffEntries20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Time off entries
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/official/timesheets:
+    get:
+      description: |
+        Retrieve Timesheets
+      operationId: officialTimesheets20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Timesheets20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Timesheets
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/official/time-off-balances:
+    get:
+      description: |
+        Retrieve all time off balances.
+      operationId: officialTimeOffBalances20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeOffBalances20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Time off balances
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/developer/company:
+    get:
+      description: |
+        Retrieve company information
+      operationId: developerCompanies20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Companies20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Company
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
   /2023-03-01/developer/identity:
     get:
       description: |
@@ -1133,6 +1105,64 @@ paths:
       security:
       - access-token: []
       summary: Identity
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/developer/employee:
+    post:
+      description: |
+        Creates a new Employee
+      operationId: developerCreateEmployee20230301
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEmployeeRequest'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeResponse'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Create employee
       tags:
       - Developer
       - 2023-03-01
@@ -1199,6 +1229,201 @@ paths:
       security:
       - access-token: []
       summary: Employees
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/developer/timesheets:
+    get:
+      description: |
+        Retrieve Timesheets
+      operationId: developerTimesheets20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Timesheets20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Timesheets
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/developer/time-off-entries:
+    get:
+      description: |
+        Retrieve time off / absence entries
+      operationId: developerTimeOffEntries20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeOffEntries20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Time off entries
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/developer/time-off-balances:
+    get:
+      description: |
+        Retrieve all time off balances.
+      operationId: developerTimeOffBalances20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeOffBalances20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Time off balances
       tags:
       - Developer
       - 2023-03-01
@@ -1295,7 +1520,8 @@ paths:
   /2023-03-01/developer/payruns/{payrun_id}:
     get:
       description: |
-        Retrieves information about a specific pay
+        Retrieves payslips from a specific payrun.
+
         Supported integrations:
           - sageone
           - simplepay.ie
@@ -1363,7 +1589,7 @@ paths:
           description: Not Implemented
       security:
       - access-token: []
-      summary: Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+      summary: Payslips
       tags:
       - Developer
       - 2023-03-01
@@ -1466,23 +1692,25 @@ components:
       type: string
     ScopesRequest:
       enum:
-      - /2023-03-20/retail/identity
-      - /2023-03-20/retail/orders
-      - /2023-03-20/retail/orders/:order_id
-      - /2023-03-20/raw/amazon/identity
-      - /2023-03-20/raw/amazon/orders
-      - /2023-03-20/raw/amazon/orders/:order_id
+      - /2023-03-01/official/company
       - /2023-03-01/official/identity
+      - /2023-03-01/official/employee
       - /2023-03-01/official/employees
+      - /2023-03-01/official/timesheets
+      - /2023-03-01/official/time-off-entries
+      - /2023-03-01/official/time-off-balances
+      - /2023-03-01/developer/company
       - /2023-03-01/developer/identity
+      - /2023-03-01/developer/employee
       - /2023-03-01/developer/employees
+      - /2023-03-01/developer/timesheets
+      - /2023-03-01/developer/time-off-entries
+      - /2023-03-01/developer/time-off-balances
       - /2023-03-01/developer/payruns
       - /2023-03-01/developer/payruns/:payrun_id
       type: string
     ModeRequest:
       enum:
-      - retail
-      - raw
       - official
       - developer
       type: string
@@ -1496,10 +1724,6 @@ components:
     ProviderRequest:
       enum:
       - sandbox
-      - amazon
-      - amazon.com business
-      - amazon.co.uk
-      - amazon.de
       - bamboohr
       - breathe
       - cezanne
@@ -1536,18 +1760,12 @@ components:
       type: string
     ModeResponse:
       enum:
-      - retail
-      - raw
       - official
       - developer
       type: string
     ProviderResponse:
       enum:
       - sandbox
-      - amazon
-      - amazon.com business
-      - amazon.co.uk
-      - amazon.de
       - bamboohr
       - breathe
       - cezanne
@@ -1609,6 +1827,7 @@ components:
         - saplinghr
         - simplepay.ie
         - staffology
+        - xero uk
       - mode: developer
         providers:
         - brain payroll
@@ -1628,7 +1847,6 @@ components:
         - remote.com
         - sageone
         - simplepay.ie
-        - xero uk
       items:
         properties:
           mode:
@@ -1757,16 +1975,20 @@ components:
       type: object
     ScopesResponse:
       enum:
-      - /2023-03-20/retail/identity
-      - /2023-03-20/retail/orders
-      - /2023-03-20/retail/orders/:order_id
-      - /2023-03-20/raw/amazon/identity
-      - /2023-03-20/raw/amazon/orders
-      - /2023-03-20/raw/amazon/orders/:order_id
+      - /2023-03-01/official/company
       - /2023-03-01/official/identity
+      - /2023-03-01/official/employee
       - /2023-03-01/official/employees
+      - /2023-03-01/official/timesheets
+      - /2023-03-01/official/time-off-entries
+      - /2023-03-01/official/time-off-balances
+      - /2023-03-01/developer/company
       - /2023-03-01/developer/identity
+      - /2023-03-01/developer/employee
       - /2023-03-01/developer/employees
+      - /2023-03-01/developer/timesheets
+      - /2023-03-01/developer/time-off-entries
+      - /2023-03-01/developer/time-off-balances
       - /2023-03-01/developer/payruns
       - /2023-03-01/developer/payruns/:payrun_id
       type: string
@@ -1980,186 +2202,53 @@ components:
       required:
       - disconnected
       type: object
-    Orders20230301Response:
+    CompanyResponse:
+      example:
+        remote_id: "19202938"
+        location:
+          street_address: 221 S Main Street
+          country: IE
+          post_code: D02 X59C
+          locality: Dublin
+          administrative_area: Dublin 2
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        legal_name: Affix
+        display_name: Affix API Limited
+        tax_id: 12-3456789
+      properties:
+        id:
+          description: The Affix-assigned id of the abscence
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the abscence
+          example: "19202938"
+          type: string
+        legal_name:
+          example: Affix
+          nullable: true
+          type: string
+        display_name:
+          example: Affix API Limited
+          nullable: true
+          type: string
+        tax_id:
+          example: 12-3456789
+          nullable: true
+          type: string
+        location:
+          $ref: '#/components/schemas/CompanyResponse_location'
+      required:
+      - display_name
+      - id
+      - legal_name
+      - location
+      - remote_id
+      - tax_id
+      type: object
+    Companies20230301Response:
       items:
-        properties:
-          order_id:
-            description: The order identifier, if any, and from the provider, related
-              to the transaction
-            example: 111-8523618-8988224
-            nullable: true
-            type: string
-          date:
-            description: The date the transaction was placed
-            example: 2022-04-02
-            format: date
-            type: string
-          shipment_date:
-            description: The date the order was shipped
-            example: 2022-04-02
-            format: date
-            type: string
-          status:
-            description: The status of the order
-            example: completed
-            nullable: true
-            type: string
-          carrier_name_and_tracking_number:
-            description: The carrier, and tracking number, for the shipment. May be
-              comma delimitted if multiple. If order is not complete, this field may
-              be null
-            example: AMZN_US(TBA09R942511234),RABBIT(DW00H05P0YXU4FADFA1M)
-            nullable: true
-            type: string
-          shipment_to:
-            description: The name of whom the order was sent
-            example: Laurine Barton
-            type: string
-          shipment_street_address:
-            description: The street address of where the item was sent
-            example: 221 S Main St
-            nullable: true
-            type: string
-          shipment_city:
-            description: The city the item was shipped to
-            example: Yuma
-            nullable: true
-            type: string
-          shipment_state:
-            description: If US, the two-digit state abbreviation the item was shipped
-              to
-            example: AZ
-            nullable: true
-            type: string
-          shipment_postal:
-            description: The 5+4 postal code the item was shipped to
-            example: 30691-3189
-            nullable: true
-            type: string
-          payment_instrument:
-            description: The redacted information of the payment instrument used
-            example: Visa - 9999
-            type: string
-          currency:
-            description: The currency of the transaction
-            example: usd
-            type: string
-          subtotal:
-            description: |
-              The subtotal of the order; if USD, in cents. ie $5.23 => 523
-            example: 523
-            type: integer
-          shipping_fee:
-            description: |
-              The fees charged for shipping; if USD, in cents. ie $1.48 => 148. If order is not complete, this field may be null
-            example: 148
-            nullable: true
-            type: integer
-          tax:
-            description: |
-              The tax of the order; if USD, in cents. ie $3.39 => 339. If order is not complete, this field may be null
-            example: 339
-            nullable: true
-            type: integer
-          promotions:
-            description: |
-              Promotions, if any; if USD, in cents. ie $.23 => 23. If order is not complete, this field may be null
-            example: 23
-            nullable: true
-            type: integer
-          total:
-            description: |
-              The total price of the order; if USD, in cents. ie $9.88 => 988. If order is not complete, this field may be null
-            example: 988
-            nullable: true
-            type: integer
-        required:
-        - carrier_name_and_tracking_number
-        - currency
-        - date
-        - payment_instrument
-        - promotions
-        - shipment_city
-        - shipment_date
-        - shipment_postal
-        - shipment_state
-        - shipment_street_address
-        - shipment_to
-        - shipping_fee
-        - status
-        - subtotal
-        - tax
-        - total
-        type: object
-      type: array
-    Items20230301Response:
-      items:
-        properties:
-          order_id:
-            description: The order identifier, if any, and from the provider, related
-              to the item
-            example: 111-8523618-8988224
-            nullable: true
-            type: string
-          date:
-            description: The date the order of the item was placed
-            example: 2022-04-02
-            format: date
-            type: string
-          status:
-            description: The status of the item
-            example: completed
-            nullable: true
-            type: string
-          seller:
-            description: The seller / merchant of the item
-            example: Amazon.com
-            nullable: true
-            type: string
-          buyer:
-            description: The purchaser of the item
-            example: Laurine Barton
-            type: string
-          item:
-            description: The name of the item. Nullable in a minority of cases
-            example: La Colombe Oatmilk Coffee - Draft Latte, Vanilla, 9 Fl Oz (Pack
-              of 4)
-            nullable: true
-            type: string
-          item_category:
-            description: The category, if any, of the item
-            example: coffee
-            nullable: true
-            type: string
-          currency:
-            description: The currency of the transaction
-            example: usd
-            type: string
-          price:
-            description: |
-              The price of an individual item unit; if USD, in cents. ie $5.23 => 523
-            example: 523
-            type: integer
-          quantity:
-            description: The number of items purchased
-            example: 2
-            type: integer
-          total:
-            description: |
-              The total price of the item; if USD, in cents. ie $10.46 => 1046
-            example: 1046
-            type: integer
-        required:
-        - buyer
-        - currency
-        - date
-        - item
-        - price
-        - quantity
-        - seller
-        - status
-        - total
-        type: object
+        $ref: '#/components/schemas/CompanyResponse'
       type: array
     IdentityResponse:
       example:
@@ -2188,387 +2277,322 @@ components:
       - name
       - phone_number
       type: object
-    CurrencyResponse:
+    locationRequest:
+      example:
+        street_address: 221 S Main Street
+        country: US
+        post_code: "30691"
+        locality: Yuma
+        administrative_area: AZ
+      properties:
+        street_address:
+          example: 221 S Main Street
+          nullable: true
+          type: string
+        locality:
+          example: Yuma
+          nullable: true
+          type: string
+        administrative_area:
+          description: |
+            The administrative area of the address. If US or CA, the two-letter
+            state abbreviation
+          example: AZ
+          nullable: true
+          type: string
+        country:
+          description: |
+            The two-letter abbreviation of the country
+          example: US
+          nullable: true
+          type: string
+        post_code:
+          example: "30691"
+          nullable: true
+          type: string
+      required:
+      - administrative_area
+      - country
+      - locality
+      - post_code
+      - street_address
+      type: object
+    CurrencyRequest:
       enum:
       - usd
       - gbp
       - eur
       type: string
-    Orders20230320Response:
-      items:
-        properties:
-          id:
-            description: The order identifier, if any, and from the provider, related
-              to the transaction
-            example: 111-8523618-8988224
-            type: string
-          date:
-            description: The date the order was placed
-            example: 2022-04-02
-            format: date
-            type: string
-          type:
-            description: |
-              The type of the order.
-              If Amazon, is also conflated with status.
-              Note, Gift cards purchases/orders are intentially excluded from the
-              resultset.
-            enum:
-            - order
-            - recurring
-            - not_yet_shipped
-            - digital_order
-            - local_store_order
-            - cancelled_order
-            example: order
-            type: string
-          ship_to:
-            description: |
-              The name of to whom the order was shipped/dispatched/delivered.
-              Potentially nullable for things like gift cards
-            example: Laurine Barton
-            nullable: true
-            type: string
-          currency:
-            $ref: '#/components/schemas/CurrencyResponse'
-          total:
-            description: |
-              The total price of the order;
-              if USD, in cents, ie $9.88 => 988.
-              if GBP, in pence, ie £513.87 => 51397
-              if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
-              If order is not complete, this field may be null
-            example: 988
-            nullable: true
-            type: integer
-        required:
-        - currency
-        - date
-        - id
-        - ship_to
-        - total
-        - type
-        type: object
-      type: array
-    itemsResponse:
-      items:
-        properties:
-          condition:
-            description: The condition of the item
-            example: Amazon.com
-            nullable: true
-            type: string
-          seller:
-            description: The seller / merchant of the item
-            example: Amazon.com
-            nullable: true
-            type: string
-          item:
-            description: The name of the item. Nullable in a minority of cases
-            example: La Colombe Oatmilk Coffee - Draft Latte, Vanilla, 9 Fl Oz (Pack
-              of 4)
-            nullable: true
-            type: string
-          price:
-            description: |
-              The price of an individual item unit;
-              if USD, in cents, ie $9.88 => 988.
-              if GBP, in pence, ie £513.87 => 51397
-              if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
-              Nullable, for exmaple, on free trials
-            example: 523
-            nullable: true
-            type: integer
-          quantity:
-            description: The number of items purchased
-            example: 2
-            type: integer
-          categories:
-            description: The category(ies) of the item
-            example:
-            - Grocery & Gourmet Food
-            - Beverages
-            - Coffee
-            - Ready to Drink Liquid Coffee
-            items:
-              type: string
-            nullable: true
-            type: array
-        required:
-        - categories
-        - condition
-        - item
-        - price
-        - quantity
-        - seller
-        type: object
-      type: array
-    shipmentsResponse:
-      items:
-        properties:
-          shipment_date:
-            description: The date the shipment/dispatch was placed
-            example: 2022-04-02
-            format: date
-            nullable: true
-            type: string
-          shipment_speed:
-            description: The shipping speed used. ie ground, 2-day, etc
-            example: FREE Shipping
-            nullable: true
-            type: string
-          shipment_to:
-            description: The name of whom the shipment was sent
-            example: Laurine Barton
-            nullable: true
-            type: string
-          shipment_street_address:
-            description: The destination street address of the shipment
-            example: 221 S Main St
-            nullable: true
-            type: string
-          shipment_locality:
-            description: The destination town/city of the shipment
-            example: Yuma
-            nullable: true
-            type: string
-          shipment_administrative_area:
-            description: |
-              The destination administrative area of the shipment.
-              If US, the two-digit state abbreviation
-            example: AZ
-            nullable: true
-            type: string
-          shipment_post_code:
-            description: |
-              The destination post code of the shipment.
-              If US, The 5+4 postal code
-            example: 30691-3189
-            nullable: true
-            type: string
-          shipment_country:
-            description: The destination country of the shipment
-            example: US
-            nullable: true
-            type: string
-          items:
-            $ref: '#/components/schemas/itemsResponse'
-        required:
-        - items
-        - shipment_administrative_area
-        - shipment_country
-        - shipment_date
-        - shipment_locality
-        - shipment_post_code
-        - shipment_speed
-        - shipment_street_address
-        - shipment_to
-        type: object
-      minItems: 1
-      nullable: true
-      type: array
-    Order20230320Response:
+    employment-no-null-enumRequest:
       example:
-        date: 2022-04-02T00:00:00.000+0000
-        other_fees: 150
-        billing_street_address: 221 S Main St
-        billing_to: Laurine Barton
-        payment_instrument: Visa - 9999
-        billing_post_code: 30691-3189
-        billing_country: US
-        billing_administrative_area: AZ
-        tax: 339
-        billing_locality: Yuma
-        shipments:
-        - '{}'
-        - '{}'
-        shipping_fee: 523
-        total: 988
-        discounts: 23
-        gift_card_applied: 339
-        subtotal: 523
-        id: 111-8523618-8988224
+        employment_type: full_time
+        effective_date: 2020-10-11T00:00:00.000+0000
+        pay_period: year
+        pay_frequency: semimonthly
+        job_title: Software Developer
+        pay_rate: 85000
       properties:
-        id:
-          description: The order identifier, if any, and from the provider, related
-            to the transaction
-          example: 111-8523618-8988224
+        job_title:
+          example: Software Developer
           nullable: true
           type: string
-        date:
-          description: The date the transaction was placed
-          example: 2022-04-02
-          format: date
-          type: string
-        billing_to:
-          description: The name of who paid for the order
-          example: Laurine Barton
+        pay_rate:
+          example: 85000
+          nullable: true
+          type: number
+        pay_period:
+          example: year
           nullable: true
           type: string
-        billing_street_address:
-          description: The street address of who paid for the order
-          example: 221 S Main St
+        pay_frequency:
+          enum:
+          - weekly
+          - biweekly
+          - semimonthly
+          - monthly
+          - other
+          example: semimonthly
           nullable: true
           type: string
-        billing_locality:
-          description: The town/city of who paid for the order
-          example: Yuma
+        employment_type:
+          enum:
+          - full_time
+          - part_time
+          - contractor
+          - other
+          example: full_time
           nullable: true
-          type: string
-        billing_administrative_area:
-          description: |
-            The administrative area of who paid for the order.
-            If US, the two-digit state abbreviation
-          example: AZ
-          nullable: true
-          type: string
-        billing_post_code:
-          description: |
-            The post code of who paid for the order.
-            If US, The 5+4 postal code
-          example: 30691-3189
-          nullable: true
-          type: string
-        billing_country:
-          description: The country of who paid for the order
-          example: US
-          nullable: true
-          type: string
-        payment_instrument:
-          description: The redacted information of the payment instrument used
-          example: Visa - 9999
           type: string
         currency:
-          $ref: '#/components/schemas/CurrencyResponse'
-        subtotal:
-          description: |
-            The subtotal of the order;
-            if USD, in cents, ie $9.88 => 988.
-            if GBP, in pence, ie £513.87 => 51397
-            if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
-          example: 523
-          type: integer
-        shipping_fee:
-          description: |
-            The shipping and handling fees of the order;
-            if USD, in cents, ie $9.88 => 988.
-            if GBP, in pence, ie £513.87 => 51397
-            if EUR, in cent, ie €15,90 => 1590, ie €15.90 => 1590, ie 15,90€ => 1590
-          example: 523
+          $ref: '#/components/schemas/CurrencyRequest'
+        effective_date:
+          example: 2020-10-11
+          format: date
           nullable: true
-          type: integer
-        discounts:
-          description: Promotions, if any
-          example: 23
+          type: string
+      required:
+      - currency
+      - effective_date
+      - employment_type
+      - job_title
+      - pay_frequency
+      - pay_period
+      - pay_rate
+      type: object
+    CreateEmployeeRequest:
+      example:
+        display_full_name: Hirsch
+        work_email: greg@affixapi.com
+        employment_type: full_time
+        gender: male
+        ethnicity: white
+        date_of_birth: 1990-11-10T00:00:00.000+0000
+        work_location:
+          name: Affix HQ
+          location:
+            street_address: 221 S Main Street
+            country: US
+            post_code: "30691"
+            locality: Yuma
+            administrative_area: AZ
+          type: office
+        home_location:
+          location:
+            street_address: 221 S Main Street
+            country: US
+            post_code: "30691"
+            locality: Yuma
+            administrative_area: AZ
+        company:
+          name: Affix API Limited
+          location:
+            street_address: 221 S Main Street
+            country: US
+            post_code: "30691"
+            locality: Yuma
+            administrative_area: AZ
+        employment_status: active
+        first_name: Greg
+        job_title: Software developer
+        start_date: 2020-10-11T00:00:00.000+0000
+        bank_account:
+          account_number: account_number
+          iban: iban
+          bank_name: bank_name
+          bic: bic
+          holder_name: holder_name
+        manager:
+          work_email: work_email
+          remote_id: remote_id
+          last_name: last_name
+          id: id
+          first_name: first_name
+        custom_fields:
+          t_shirt_size: medium
+        last_name: Hirsch
+        groups:
+        - name: Customer Success
+          type: TEAM
+        - name: Customer Success
+          type: TEAM
+        avatar: http://alturl.com/h2h8m
+        employments:
+        - employment_type: full_time
+          effective_date: 2020-10-11T00:00:00.000+0000
+          pay_period: year
+          pay_frequency: semimonthly
+          job_title: Software Developer
+          pay_rate: 85000
+        - employment_type: full_time
+          effective_date: 2020-10-11T00:00:00.000+0000
+          pay_period: year
+          pay_frequency: semimonthly
+          job_title: Software Developer
+          pay_rate: 85000
+        tax_id: "1234567890"
+        mobile_phone_number: Hirsch
+        marital_status: single
+        nationality: Irish
+        termination_date: 2021-10-12T00:00:00.000+0000
+        employee_number: "2"
+        personal_email: greg@gmail.com
+      properties:
+        employee_number:
+          example: "2"
           nullable: true
-          type: integer
-        other_fees:
-          description: Other fees, for example, California Bottle Deposit Fee; in
-            cents/pence/cent.
-          example: 150
+          type: string
+        first_name:
+          description: the first name of the individual
+          example: Greg
+          type: string
+        last_name:
+          description: the last name of the individual
+          example: Hirsch
+          type: string
+        display_full_name:
+          example: Hirsch
           nullable: true
-          type: integer
-        tax:
-          description: The sales tax or VAT of the order; in cents/pence/cent.
-          example: 339
+          type: string
+        nationality:
+          example: Irish
           nullable: true
-          type: integer
-        gift_card_applied:
-          description: |
-            If a gift card was used, how much of the
-            order was paid for by gift card
-          example: 339
+          type: string
+        job_title:
+          example: Software developer
           nullable: true
-          type: integer
-        total:
-          description: |
-            The total price of the order; if USD, in cents. ie $9.88 => 988. If order is not complete, this field may be null
-          example: 988
+          type: string
+        work_email:
+          description: the work email of the individual
+          example: greg@affixapi.com
           nullable: true
-          type: integer
-        shipments:
+          type: string
+        personal_email:
+          description: the personal email of the individual
+          example: greg@gmail.com
+          nullable: true
+          type: string
+        mobile_phone_number:
+          description: +1234567890
+          example: Hirsch
+          nullable: true
+          type: string
+        tax_id:
+          example: "1234567890"
+          nullable: true
+          type: string
+        gender:
+          enum:
+          - male
+          - female
+          - not_specified
+          example: male
+          nullable: true
+          type: string
+        ethnicity:
+          enum:
+          - asian
+          - black
+          - hispanic
+          - mixed
+          - not_specified
+          - other
+          - white
+          example: white
+          nullable: true
+          type: string
+        marital_status:
+          enum:
+          - single
+          - married
+          - not_specified
+          example: single
+          nullable: true
+          type: string
+        date_of_birth:
+          example: 1990-11-10
+          format: date
+          nullable: true
+          type: string
+        employment_status:
+          enum:
+          - active
+          - inactive
+          - pending
+          - leave
+          example: active
+          nullable: true
+          type: string
+        employment_type:
+          enum:
+          - full_time
+          - part_time
+          - contractor
+          - other
+          example: full_time
+          nullable: true
+          type: string
+        start_date:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        termination_date:
+          example: 2021-10-12
+          format: date
+          nullable: true
+          type: string
+        avatar:
+          example: http://alturl.com/h2h8m
+          nullable: true
+          type: string
+        home_location:
+          $ref: '#/components/schemas/CreateEmployeeRequest_home_location'
+        work_location:
+          $ref: '#/components/schemas/CreateEmployeeRequest_work_location'
+        manager:
+          $ref: '#/components/schemas/CreateEmployeeRequest_manager'
+        bank_account:
+          $ref: '#/components/schemas/CreateEmployeeRequest_bank_account'
+        employments:
           items:
-            properties:
-              shipment_date:
-                description: The date the shipment/dispatch was placed
-                example: 2022-04-02
-                format: date
-                nullable: true
-                type: string
-              shipment_speed:
-                description: The shipping speed used. ie ground, 2-day, etc
-                example: FREE Shipping
-                nullable: true
-                type: string
-              shipment_to:
-                description: The name of whom the shipment was sent
-                example: Laurine Barton
-                nullable: true
-                type: string
-              shipment_street_address:
-                description: The destination street address of the shipment
-                example: 221 S Main St
-                nullable: true
-                type: string
-              shipment_locality:
-                description: The destination town/city of the shipment
-                example: Yuma
-                nullable: true
-                type: string
-              shipment_administrative_area:
-                description: |
-                  The destination administrative area of the shipment.
-                  If US, the two-digit state abbreviation
-                example: AZ
-                nullable: true
-                type: string
-              shipment_post_code:
-                description: |
-                  The destination post code of the shipment.
-                  If US, The 5+4 postal code
-                example: 30691-3189
-                nullable: true
-                type: string
-              shipment_country:
-                description: The destination country of the shipment
-                example: US
-                nullable: true
-                type: string
-              items:
-                $ref: '#/components/schemas/itemsResponse'
-            required:
-            - items
-            - shipment_administrative_area
-            - shipment_country
-            - shipment_date
-            - shipment_locality
-            - shipment_post_code
-            - shipment_speed
-            - shipment_street_address
-            - shipment_to
-            type: object
-          minItems: 1
+            $ref: '#/components/schemas/employment-no-null-enumRequest'
           nullable: true
           type: array
+        custom_fields:
+          example:
+            t_shirt_size: medium
+          nullable: true
+          type: object
+        groups:
+          items:
+            $ref: '#/components/schemas/CreateEmployeeRequest_groups'
+          nullable: true
+          type: array
+        company:
+          $ref: '#/components/schemas/CreateEmployeeRequest_company'
       required:
-      - billing_administrative_area
-      - billing_country
-      - billing_locality
-      - billing_post_code
-      - billing_street_address
-      - billing_to
-      - currency
-      - date
-      - discounts
-      - gift_card_applied
-      - id
-      - other_fees
-      - payment_instrument
-      - shipments
-      - shipping_fee
-      - subtotal
-      - tax
-      - total
+      - first_name
+      - last_name
       type: object
     locationResponse:
       example:
@@ -2610,6 +2634,12 @@ components:
       - post_code
       - street_address
       type: object
+    CurrencyResponse:
+      enum:
+      - usd
+      - gbp
+      - eur
+      type: string
     employmentResponse:
       example:
         employment_type: full_time
@@ -2668,7 +2698,7 @@ components:
       - pay_period
       - pay_rate
       type: object
-    Employee20230301Response:
+    EmployeeResponse:
       example:
         display_full_name: Hirsch
         work_email: greg@affixapi.com
@@ -2752,10 +2782,12 @@ components:
         id:
           description: The Affix-assigned id of the individual
           example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          readOnly: true
           type: string
         remote_id:
           description: the remote system-assigned id of the individual
           example: "19202938"
+          readOnly: true
           type: string
         employee_number:
           example: "2"
@@ -2865,6 +2897,7 @@ components:
           example: 2020-10-11
           format: date
           nullable: true
+          readOnly: true
           type: string
         termination_date:
           example: 2021-10-12
@@ -2876,13 +2909,13 @@ components:
           nullable: true
           type: string
         home_location:
-          $ref: '#/components/schemas/Employee20230301Response_home_location'
+          $ref: '#/components/schemas/EmployeeResponse_home_location'
         work_location:
-          $ref: '#/components/schemas/Employee20230301Response_work_location'
+          $ref: '#/components/schemas/EmployeeResponse_work_location'
         manager:
-          $ref: '#/components/schemas/Employee20230301Response_manager'
+          $ref: '#/components/schemas/CreateEmployeeRequest_manager'
         bank_account:
-          $ref: '#/components/schemas/Employee20230301Response_bank_account'
+          $ref: '#/components/schemas/CreateEmployeeRequest_bank_account'
         employments:
           items:
             $ref: '#/components/schemas/employmentResponse'
@@ -2895,11 +2928,11 @@ components:
           type: object
         groups:
           items:
-            $ref: '#/components/schemas/Employee20230301Response_groups'
+            $ref: '#/components/schemas/CreateEmployeeRequest_groups'
           nullable: true
           type: array
         company:
-          $ref: '#/components/schemas/Employee20230301Response_company'
+          $ref: '#/components/schemas/CreateEmployeeRequest_company'
       required:
       - avatar
       - bank_account
@@ -2934,19 +2967,230 @@ components:
       type: object
     Employees20230301Response:
       items:
-        $ref: '#/components/schemas/Employee20230301Response'
+        $ref: '#/components/schemas/EmployeeResponse'
+      type: array
+    TimeOffEntryResponse:
+      example:
+        end_date: 2020-10-14T00:00:00.000+0000
+        amount: 3
+        unit: days
+        request_type: vacation
+        employee_note: Visiting my family
+        remote_id: "19202938"
+        employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        remote_created_at: 2020-10-11T00:00:00.000+0000
+        remote_modified_at: 2020-10-12T00:00:00.000+0000
+        start_date: 2020-10-11T00:00:00.000+0000
+        status: approved
+      properties:
+        id:
+          description: The Affix-assigned id of the time off entry
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the time off entry
+          example: "19202938"
+          type: string
+        employee_id:
+          description: the Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        start_date:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        end_date:
+          example: 2020-10-14
+          format: date
+          nullable: true
+          type: string
+        amount:
+          example: 3
+          multipleOf: 0.1
+          type: number
+        unit:
+          enum:
+          - null
+          - hours
+          - days
+          - months
+          example: days
+          type: string
+        status:
+          enum:
+          - null
+          - approved
+          - pending
+          - rejected
+          example: approved
+          nullable: true
+          type: string
+        employee_note:
+          example: Visiting my family
+          nullable: true
+          type: string
+        request_type:
+          example: vacation
+          nullable: true
+          type: string
+        remote_created_at:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        remote_modified_at:
+          example: 2020-10-12
+          format: date
+          nullable: true
+          type: string
+      required:
+      - amount
+      - employee_id
+      - employee_note
+      - end_date
+      - id
+      - remote_created_at
+      - remote_id
+      - remote_modified_at
+      - request_type
+      - start_date
+      - status
+      - unit
+      type: object
+    TimeOffEntries20230301Response:
+      items:
+        $ref: '#/components/schemas/TimeOffEntryResponse'
+      type: array
+    TimesheetResponse:
+      example:
+        start_time: 2020-10-11T08:00:00Z
+        remote_id: "19202938"
+        employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        end_time: 2020-10-11T17:00:00Z
+        hours_worked: 8
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        remote_created_at: 2020-10-11T00:00:00.000+0000
+        remote_modified_at: 2020-10-12T00:00:00.000+0000
+      properties:
+        id:
+          description: The Affix-assigned id of the time off entry
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the time off entry
+          example: "19202938"
+          type: string
+        employee_id:
+          description: the Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        start_time:
+          example: 2020-10-11T08:00:00Z
+          format: date-time
+          nullable: true
+          type: string
+        end_time:
+          example: 2020-10-11T17:00:00Z
+          format: date-time
+          nullable: true
+          type: string
+        hours_worked:
+          example: 8
+          multipleOf: 0.1
+          type: number
+        remote_created_at:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        remote_modified_at:
+          example: 2020-10-12
+          format: date
+          nullable: true
+          type: string
+      required:
+      - employee_id
+      - end_time
+      - hours_worked
+      - id
+      - remote_created_at
+      - remote_id
+      - remote_modified_at
+      - start_time
+      type: object
+    Timesheets20230301Response:
+      items:
+        $ref: '#/components/schemas/TimesheetResponse'
+      type: array
+    TimeOffBalanceResponse:
+      example:
+        policy_type: vacation
+        balance: 24.5
+        employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        remote_id: "19202938"
+        used: 12
+        remote_created_at: 2020-10-11T00:00:00.000+0000
+        remote_modified_at: 2020-10-11T00:00:00.000+0000
+      properties:
+        employee_id:
+          description: The Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the individual
+          example: "19202938"
+          type: string
+        balance:
+          example: 24.5
+          multipleOf: 0.1
+          type: number
+        used:
+          example: 12
+          multipleOf: 0.1
+          type: number
+        policy_type:
+          enum:
+          - vacation
+          - sick
+          - personal
+          - jury_duty
+          - volunteer
+          - bereavement
+          nullable: true
+          type: string
+        remote_created_at:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        remote_modified_at:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+      required:
+      - balance
+      - employee_id
+      - policy_type
+      - remote_created_at
+      - remote_id
+      - remote_modified_at
+      - used
+      type: object
+    TimeOffBalances20230301Response:
+      items:
+        $ref: '#/components/schemas/TimeOffBalanceResponse'
       type: array
     PayrunResponse:
       example:
-        end_date: 2020-01-15T00:00:00.000+0000
-        field_mappings:
-          organization_defined_targets:
-            custom_key: medium
-        check_date: 2020-01-15T00:00:00.000+0000
+        end_date: 2020-01-31T00:00:00.000+0000
         remote_id: "19202938"
         run_state: paid
         id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         run_type: regular
+        payment_date: 2020-01-27T00:00:00.000+0000
         start_date: 2020-01-01T00:00:00.000+0000
       properties:
         id:
@@ -2971,31 +3215,27 @@ components:
           nullable: true
           type: string
         start_date:
+          description: Payrun period start date
           example: 2020-01-01
           format: date
           nullable: true
           type: string
         end_date:
-          example: 2020-01-15
+          description: Payrun period end date
+          example: 2020-01-31
           format: date
           nullable: true
           type: string
-        check_date:
-          example: 2020-01-15
+        payment_date:
+          description: Payment date / check date
+          example: 2020-01-27
           format: date
           nullable: true
           type: string
-        field_mappings:
-          example:
-            organization_defined_targets:
-              custom_key: medium
-          nullable: true
-          type: object
       required:
-      - check_date
       - end_date
-      - field_mappings
       - id
+      - payment_date
       - remote_id
       - run_state
       - run_type
@@ -3007,41 +3247,47 @@ components:
       type: array
     PayslipResponse:
       example:
-        end_date: 2020-01-15T00:00:00.000+0000
+        end_date: 2020-01-31T00:00:00.000+0000
         remote_id: "19202938"
         taxes:
-        - amount: 10025
-          payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
-          name: California State Income Tax
-          employer_tax: true
-        - amount: 10025
-          payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
-          name: California State Income Tax
+        - name: PRSI
+          amount: 725
+          employer_tax: false
+        - name: PSC (Class S)
+          amount: 125
+          employer_tax: false
+        - name: Income Tax
+          amount: 10025
+          employer_tax: false
+        - name: Payroll Tax
+          amount: 10025
           employer_tax: true
         gross_pay: 134267
         deductions:
-        - amount: 3454
-          payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
-          name: Health Insurance Premium
-        - amount: 3454
-          payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
-          name: Health Insurance Premium
+        - name: Transportation allowance benefit
+          amount: 3454
+        - name: Private Health Insurance (Employee)
+          amount: 3454
         net_pay: 86578
-        field_mappings:
-          organization_defined_targets:
-            custom_key: medium
         earnings:
+        - amount: 100234
+          name: SALARY
+          hours: 80
         - amount: 834234
-          payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
-          name: salary
-        - amount: 834234
-          payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
-          name: salary
+          name: OVERTIME
+          hours: 8
+        contributions:
+        - name: Private Health Insurance (Employer)
+          amount: 13454
+        - name: Transportation allowance benefit (Employer)
+          amount: 3454
+        - name: Other (Employer)
+          amount: 3454
         payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
-        check_date: 2020-01-15T00:00:00.000+0000
         employee_id: d2f972d0-2526-434b-9409-4c3b468e08f0
-        currency: usd
+        currency: eur
         id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        payment_date: 2020-01-27T00:00:00.000+0000
         start_date: 2020-01-01T00:00:00.000+0000
       properties:
         id:
@@ -3063,6 +3309,7 @@ components:
           - usd
           - eur
           - gbp
+          example: eur
           type: string
         gross_pay:
           description: if USD/EUR/GBP, in cent
@@ -3077,42 +3324,76 @@ components:
           format: date
           type: string
         end_date:
-          example: 2020-01-15
+          example: 2020-01-31
           format: date
           type: string
-        check_date:
-          example: 2020-01-15
+        payment_date:
+          example: 2020-01-27
           format: date
           type: string
         earnings:
+          example:
+          - amount: 100234
+            name: SALARY
+            hours: 80
+          - amount: 834234
+            name: OVERTIME
+            hours: 8
           items:
             $ref: '#/components/schemas/PayslipResponse_earnings'
           type: array
+        contributions:
+          description: |
+            Items paid by the employer that are not included in gross pay,
+            such as employer-paid portion of private health insurance
+          example:
+          - name: Private Health Insurance (Employer)
+            amount: 13454
+          - name: Transportation allowance benefit (Employer)
+            amount: 3454
+          - name: Other (Employer)
+            amount: 3454
+          items:
+            $ref: '#/components/schemas/PayslipResponse_contributions'
+          nullable: true
+          type: array
         deductions:
+          example:
+          - name: Transportation allowance benefit
+            amount: 3454
+          - name: Private Health Insurance (Employee)
+            amount: 3454
           items:
             $ref: '#/components/schemas/PayslipResponse_deductions'
           type: array
         taxes:
+          example:
+          - name: PRSI
+            amount: 725
+            employer_tax: false
+          - name: PSC (Class S)
+            amount: 125
+            employer_tax: false
+          - name: Income Tax
+            amount: 10025
+            employer_tax: false
+          - name: Payroll Tax
+            amount: 10025
+            employer_tax: true
           items:
             $ref: '#/components/schemas/PayslipResponse_taxes'
           type: array
-        field_mappings:
-          example:
-            organization_defined_targets:
-              custom_key: medium
-          nullable: true
-          type: object
       required:
-      - check_date
+      - contributions
       - currency
       - deductions
       - earnings
       - employee_id
       - end_date
-      - field_mappings
       - gross_pay
       - id
       - net_pay
+      - payment_date
       - payrun_id
       - remote_id
       - start_date
@@ -3177,7 +3458,48 @@ components:
       required:
       - error
       type: object
-    Employee20230301Response_home_location:
+    CompanyResponse_location:
+      example:
+        street_address: 221 S Main Street
+        country: IE
+        post_code: D02 X59C
+        locality: Dublin
+        administrative_area: Dublin 2
+      nullable: true
+      properties:
+        street_address:
+          example: 221 S Main Street
+          nullable: true
+          type: string
+        locality:
+          example: Dublin
+          nullable: true
+          type: string
+        administrative_area:
+          description: |
+            The administrative area of the address. If US or CA, the two-letter
+            state abbreviation
+          example: Dublin 2
+          nullable: true
+          type: string
+        country:
+          description: |
+            The two-letter abbreviation of the country
+          example: IE
+          nullable: true
+          type: string
+        post_code:
+          example: D02 X59C
+          nullable: true
+          type: string
+      required:
+      - administrative_area
+      - country
+      - locality
+      - post_code
+      - street_address
+      type: object
+    CreateEmployeeRequest_home_location:
       example:
         location:
           street_address: 221 S Main Street
@@ -3185,13 +3507,14 @@ components:
           post_code: "30691"
           locality: Yuma
           administrative_area: AZ
+      nullable: true
       properties:
         location:
-          $ref: '#/components/schemas/locationResponse'
+          $ref: '#/components/schemas/locationRequest'
       required:
       - location
       type: object
-    Employee20230301Response_work_location:
+    CreateEmployeeRequest_work_location:
       example:
         name: Affix HQ
         location:
@@ -3204,7 +3527,7 @@ components:
       nullable: true
       properties:
         location:
-          $ref: '#/components/schemas/locationResponse'
+          $ref: '#/components/schemas/locationRequest'
         type:
           example: office
           nullable: true
@@ -3218,7 +3541,7 @@ components:
       - name
       - type
       type: object
-    Employee20230301Response_manager:
+    CreateEmployeeRequest_manager:
       example:
         work_email: work_email
         remote_id: remote_id
@@ -3248,7 +3571,7 @@ components:
       - remote_id
       - work_email
       type: object
-    Employee20230301Response_bank_account:
+    CreateEmployeeRequest_bank_account:
       example:
         account_number: account_number
         iban: iban
@@ -3279,7 +3602,7 @@ components:
       - holder_name
       - iban
       type: object
-    Employee20230301Response_groups:
+    CreateEmployeeRequest_groups:
       example:
         name: Customer Success
         type: TEAM
@@ -3296,7 +3619,7 @@ components:
       - name
       - type
       type: object
-    Employee20230301Response_company_location:
+    CreateEmployeeRequest_company_location:
       example:
         street_address: 221 S Main Street
         country: US
@@ -3337,7 +3660,7 @@ components:
       - post_code
       - street_address
       type: object
-    Employee20230301Response_company:
+    CreateEmployeeRequest_company:
       example:
         name: Affix API Limited
         location:
@@ -3353,20 +3676,56 @@ components:
           nullable: true
           type: string
         location:
-          $ref: '#/components/schemas/Employee20230301Response_company_location'
+          $ref: '#/components/schemas/CreateEmployeeRequest_company_location'
       required:
       - location
       - name
       type: object
-    PayslipResponse_earnings:
+    EmployeeResponse_home_location:
       example:
-        amount: 834234
-        payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
-        name: salary
+        location:
+          street_address: 221 S Main Street
+          country: US
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
+      nullable: true
       properties:
-        payrun_id:
-          example: 35347df1-95e7-46e2-93cc-66f1191edca5
+        location:
+          $ref: '#/components/schemas/locationResponse'
+      required:
+      - location
+      type: object
+    EmployeeResponse_work_location:
+      example:
+        name: Affix HQ
+        location:
+          street_address: 221 S Main Street
+          country: US
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
+        type: office
+      nullable: true
+      properties:
+        location:
+          $ref: '#/components/schemas/locationResponse'
+        type:
+          example: office
+          nullable: true
           type: string
+        name:
+          example: Affix HQ
+          nullable: true
+          type: string
+      required:
+      - location
+      - name
+      - type
+      type: object
+    PayslipResponse_earnings:
+      description: The breakdown of gross pay
+      properties:
         name:
           example: salary
           type: string
@@ -3374,22 +3733,20 @@ components:
           description: if USD/EUR/GBP, in cent
           example: 834234
           type: number
+        hours:
+          description: hours, if applicable
+          example: 80
+          nullable: true
+          type: number
       required:
       - amount
+      - hours
       - name
-      - payrun_id
       type: object
-    PayslipResponse_deductions:
-      example:
-        amount: 3454
-        payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
-        name: Health Insurance Premium
+    PayslipResponse_contributions:
       properties:
-        payrun_id:
-          example: 35347df1-95e7-46e2-93cc-66f1191edca5
-          type: string
         name:
-          example: Health Insurance Premium
+          example: Private Health Insurance (Employer)
           type: string
         amount:
           description: if USD/EUR/GBP, in cent
@@ -3398,20 +3755,24 @@ components:
       required:
       - amount
       - name
-      - payrun_id
+      type: object
+    PayslipResponse_deductions:
+      properties:
+        name:
+          example: Private Insurance Premium (Employee)
+          type: string
+        amount:
+          description: if USD/EUR/GBP, in cent
+          example: 3454
+          type: number
+      required:
+      - amount
+      - name
       type: object
     PayslipResponse_taxes:
-      example:
-        amount: 10025
-        payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
-        name: California State Income Tax
-        employer_tax: true
       properties:
-        payrun_id:
-          example: 35347df1-95e7-46e2-93cc-66f1191edca5
-          type: string
         name:
-          example: California State Income Tax
+          example: Income Tax
           type: string
         amount:
           description: if USD/EUR/GBP, in cent
@@ -3424,7 +3785,6 @@ components:
       - amount
       - employer_tax
       - name
-      - payrun_id
       type: object
   securitySchemes:
     access-token:

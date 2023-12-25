@@ -4,16 +4,148 @@ All URIs are relative to *https://api.affixapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**DeveloperCompanies20230301**](DeveloperApi.md#DeveloperCompanies20230301) | **Get** /2023-03-01/developer/company | Company
+[**DeveloperCreateEmployee20230301**](DeveloperApi.md#DeveloperCreateEmployee20230301) | **Post** /2023-03-01/developer/employee | Create employee
 [**DeveloperEmployees20230301**](DeveloperApi.md#DeveloperEmployees20230301) | **Get** /2023-03-01/developer/employees | Employees
 [**DeveloperIdentity20230301**](DeveloperApi.md#DeveloperIdentity20230301) | **Get** /2023-03-01/developer/identity | Identity
 [**DeveloperPayruns20230301**](DeveloperApi.md#DeveloperPayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
-[**DeveloperPayslips20230301**](DeveloperApi.md#DeveloperPayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+[**DeveloperPayslips20230301**](DeveloperApi.md#DeveloperPayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Payslips
+[**DeveloperTimeOffBalances20230301**](DeveloperApi.md#DeveloperTimeOffBalances20230301) | **Get** /2023-03-01/developer/time-off-balances | Time off balances
+[**DeveloperTimeOffEntries20230301**](DeveloperApi.md#DeveloperTimeOffEntries20230301) | **Get** /2023-03-01/developer/time-off-entries | Time off entries
+[**DeveloperTimesheets20230301**](DeveloperApi.md#DeveloperTimesheets20230301) | **Get** /2023-03-01/developer/timesheets | Timesheets
 
+
+
+## DeveloperCompanies20230301
+
+> []CompanyResponse DeveloperCompanies20230301(ctx).Execute()
+
+Company
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DeveloperApi.DeveloperCompanies20230301(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperCompanies20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeveloperCompanies20230301`: []CompanyResponse
+    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperCompanies20230301`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeveloperCompanies20230301Request struct via the builder pattern
+
+
+### Return type
+
+[**[]CompanyResponse**](CompanyResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeveloperCreateEmployee20230301
+
+> EmployeeResponse DeveloperCreateEmployee20230301(ctx).CreateEmployeeRequest(createEmployeeRequest).Execute()
+
+Create employee
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    createEmployeeRequest := *openapiclient.NewCreateEmployeeRequest("Greg", "Hirsch") // CreateEmployeeRequest | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DeveloperApi.DeveloperCreateEmployee20230301(context.Background()).CreateEmployeeRequest(createEmployeeRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperCreateEmployee20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeveloperCreateEmployee20230301`: EmployeeResponse
+    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperCreateEmployee20230301`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeveloperCreateEmployee20230301Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createEmployeeRequest** | [**CreateEmployeeRequest**](CreateEmployeeRequest.md) |  | 
+
+### Return type
+
+[**EmployeeResponse**](EmployeeResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## DeveloperEmployees20230301
 
-> []Employee20230301Response DeveloperEmployees20230301(ctx).Execute()
+> []EmployeeResponse DeveloperEmployees20230301(ctx).Execute()
 
 Employees
 
@@ -40,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperEmployees20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperEmployees20230301`: []Employee20230301Response
+    // response from `DeveloperEmployees20230301`: []EmployeeResponse
     fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperEmployees20230301`: %v\n", resp)
 }
 ```
@@ -56,7 +188,7 @@ Other parameters are passed through a pointer to a apiDeveloperEmployees20230301
 
 ### Return type
 
-[**[]Employee20230301Response**](Employee20230301Response.md)
+[**[]EmployeeResponse**](EmployeeResponse.md)
 
 ### Authorization
 
@@ -206,7 +338,7 @@ Name | Type | Description  | Notes
 
 > []PayslipResponse DeveloperPayslips20230301(ctx, payrunId).Execute()
 
-Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+Payslips
 
 
 
@@ -257,6 +389,189 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]PayslipResponse**](PayslipResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeveloperTimeOffBalances20230301
+
+> []TimeOffBalanceResponse DeveloperTimeOffBalances20230301(ctx).Execute()
+
+Time off balances
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DeveloperApi.DeveloperTimeOffBalances20230301(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperTimeOffBalances20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeveloperTimeOffBalances20230301`: []TimeOffBalanceResponse
+    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperTimeOffBalances20230301`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeveloperTimeOffBalances20230301Request struct via the builder pattern
+
+
+### Return type
+
+[**[]TimeOffBalanceResponse**](TimeOffBalanceResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeveloperTimeOffEntries20230301
+
+> []TimeOffEntryResponse DeveloperTimeOffEntries20230301(ctx).Execute()
+
+Time off entries
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DeveloperApi.DeveloperTimeOffEntries20230301(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperTimeOffEntries20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeveloperTimeOffEntries20230301`: []TimeOffEntryResponse
+    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperTimeOffEntries20230301`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeveloperTimeOffEntries20230301Request struct via the builder pattern
+
+
+### Return type
+
+[**[]TimeOffEntryResponse**](TimeOffEntryResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeveloperTimesheets20230301
+
+> []TimesheetResponse DeveloperTimesheets20230301(ctx).Execute()
+
+Timesheets
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DeveloperApi.DeveloperTimesheets20230301(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperTimesheets20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeveloperTimesheets20230301`: []TimesheetResponse
+    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperTimesheets20230301`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeveloperTimesheets20230301Request struct via the builder pattern
+
+
+### Return type
+
+[**[]TimesheetResponse**](TimesheetResponse.md)
 
 ### Authorization
 

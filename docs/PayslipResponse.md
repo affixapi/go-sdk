@@ -13,17 +13,17 @@ Name | Type | Description | Notes
 **NetPay** | **float32** | if USD/EUR/GBP, in cent | 
 **StartDate** | **string** |  | 
 **EndDate** | **string** |  | 
-**CheckDate** | **string** |  | 
+**PaymentDate** | **string** |  | 
 **Earnings** | [**[]PayslipResponseEarnings**](PayslipResponseEarnings.md) |  | 
+**Contributions** | [**[]PayslipResponseContributions**](PayslipResponseContributions.md) | Items paid by the employer that are not included in gross pay, such as employer-paid portion of private health insurance  | 
 **Deductions** | [**[]PayslipResponseDeductions**](PayslipResponseDeductions.md) |  | 
 **Taxes** | [**[]PayslipResponseTaxes**](PayslipResponseTaxes.md) |  | 
-**FieldMappings** | **map[string]interface{}** |  | 
 
 ## Methods
 
 ### NewPayslipResponse
 
-`func NewPayslipResponse(id string, remoteId string, employeeId string, payrunId string, currency string, grossPay float32, netPay float32, startDate string, endDate string, checkDate string, earnings []PayslipResponseEarnings, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes, fieldMappings map[string]interface{}, ) *PayslipResponse`
+`func NewPayslipResponse(id string, remoteId string, employeeId string, payrunId string, currency string, grossPay float32, netPay float32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes, ) *PayslipResponse`
 
 NewPayslipResponse instantiates a new PayslipResponse object
 This constructor will assign default values to properties that have it defined,
@@ -218,24 +218,24 @@ and a boolean to check if the value has been set.
 SetEndDate sets EndDate field to given value.
 
 
-### GetCheckDate
+### GetPaymentDate
 
-`func (o *PayslipResponse) GetCheckDate() string`
+`func (o *PayslipResponse) GetPaymentDate() string`
 
-GetCheckDate returns the CheckDate field if non-nil, zero value otherwise.
+GetPaymentDate returns the PaymentDate field if non-nil, zero value otherwise.
 
-### GetCheckDateOk
+### GetPaymentDateOk
 
-`func (o *PayslipResponse) GetCheckDateOk() (*string, bool)`
+`func (o *PayslipResponse) GetPaymentDateOk() (*string, bool)`
 
-GetCheckDateOk returns a tuple with the CheckDate field if it's non-nil, zero value otherwise
+GetPaymentDateOk returns a tuple with the PaymentDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCheckDate
+### SetPaymentDate
 
-`func (o *PayslipResponse) SetCheckDate(v string)`
+`func (o *PayslipResponse) SetPaymentDate(v string)`
 
-SetCheckDate sets CheckDate field to given value.
+SetPaymentDate sets PaymentDate field to given value.
 
 
 ### GetEarnings
@@ -258,6 +258,36 @@ and a boolean to check if the value has been set.
 SetEarnings sets Earnings field to given value.
 
 
+### GetContributions
+
+`func (o *PayslipResponse) GetContributions() []PayslipResponseContributions`
+
+GetContributions returns the Contributions field if non-nil, zero value otherwise.
+
+### GetContributionsOk
+
+`func (o *PayslipResponse) GetContributionsOk() (*[]PayslipResponseContributions, bool)`
+
+GetContributionsOk returns a tuple with the Contributions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContributions
+
+`func (o *PayslipResponse) SetContributions(v []PayslipResponseContributions)`
+
+SetContributions sets Contributions field to given value.
+
+
+### SetContributionsNil
+
+`func (o *PayslipResponse) SetContributionsNil(b bool)`
+
+ SetContributionsNil sets the value for Contributions to be an explicit nil
+
+### UnsetContributions
+`func (o *PayslipResponse) UnsetContributions()`
+
+UnsetContributions ensures that no value is present for Contributions, not even an explicit nil
 ### GetDeductions
 
 `func (o *PayslipResponse) GetDeductions() []PayslipResponseDeductions`
@@ -298,36 +328,6 @@ and a boolean to check if the value has been set.
 SetTaxes sets Taxes field to given value.
 
 
-### GetFieldMappings
-
-`func (o *PayslipResponse) GetFieldMappings() map[string]interface{}`
-
-GetFieldMappings returns the FieldMappings field if non-nil, zero value otherwise.
-
-### GetFieldMappingsOk
-
-`func (o *PayslipResponse) GetFieldMappingsOk() (*map[string]interface{}, bool)`
-
-GetFieldMappingsOk returns a tuple with the FieldMappings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFieldMappings
-
-`func (o *PayslipResponse) SetFieldMappings(v map[string]interface{})`
-
-SetFieldMappings sets FieldMappings field to given value.
-
-
-### SetFieldMappingsNil
-
-`func (o *PayslipResponse) SetFieldMappingsNil(b bool)`
-
- SetFieldMappingsNil sets the value for FieldMappings to be an explicit nil
-
-### UnsetFieldMappings
-`func (o *PayslipResponse) UnsetFieldMappings()`
-
-UnsetFieldMappings ensures that no value is present for FieldMappings, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

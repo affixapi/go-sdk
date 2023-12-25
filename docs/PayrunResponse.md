@@ -8,16 +8,15 @@ Name | Type | Description | Notes
 **RemoteId** | **string** | the remote system-assigned id of the payrun | 
 **RunState** | **string** |  | 
 **RunType** | **NullableString** |  | 
-**StartDate** | **NullableString** |  | 
-**EndDate** | **NullableString** |  | 
-**CheckDate** | **NullableString** |  | 
-**FieldMappings** | **map[string]interface{}** |  | 
+**StartDate** | **NullableString** | Payrun period start date | 
+**EndDate** | **NullableString** | Payrun period end date | 
+**PaymentDate** | **NullableString** | Payment date / check date | 
 
 ## Methods
 
 ### NewPayrunResponse
 
-`func NewPayrunResponse(id string, remoteId string, runState string, runType NullableString, startDate NullableString, endDate NullableString, checkDate NullableString, fieldMappings map[string]interface{}, ) *PayrunResponse`
+`func NewPayrunResponse(id string, remoteId string, runState string, runType NullableString, startDate NullableString, endDate NullableString, paymentDate NullableString, ) *PayrunResponse`
 
 NewPayrunResponse instantiates a new PayrunResponse object
 This constructor will assign default values to properties that have it defined,
@@ -182,66 +181,36 @@ SetEndDate sets EndDate field to given value.
 `func (o *PayrunResponse) UnsetEndDate()`
 
 UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
-### GetCheckDate
+### GetPaymentDate
 
-`func (o *PayrunResponse) GetCheckDate() string`
+`func (o *PayrunResponse) GetPaymentDate() string`
 
-GetCheckDate returns the CheckDate field if non-nil, zero value otherwise.
+GetPaymentDate returns the PaymentDate field if non-nil, zero value otherwise.
 
-### GetCheckDateOk
+### GetPaymentDateOk
 
-`func (o *PayrunResponse) GetCheckDateOk() (*string, bool)`
+`func (o *PayrunResponse) GetPaymentDateOk() (*string, bool)`
 
-GetCheckDateOk returns a tuple with the CheckDate field if it's non-nil, zero value otherwise
+GetPaymentDateOk returns a tuple with the PaymentDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCheckDate
+### SetPaymentDate
 
-`func (o *PayrunResponse) SetCheckDate(v string)`
+`func (o *PayrunResponse) SetPaymentDate(v string)`
 
-SetCheckDate sets CheckDate field to given value.
-
-
-### SetCheckDateNil
-
-`func (o *PayrunResponse) SetCheckDateNil(b bool)`
-
- SetCheckDateNil sets the value for CheckDate to be an explicit nil
-
-### UnsetCheckDate
-`func (o *PayrunResponse) UnsetCheckDate()`
-
-UnsetCheckDate ensures that no value is present for CheckDate, not even an explicit nil
-### GetFieldMappings
-
-`func (o *PayrunResponse) GetFieldMappings() map[string]interface{}`
-
-GetFieldMappings returns the FieldMappings field if non-nil, zero value otherwise.
-
-### GetFieldMappingsOk
-
-`func (o *PayrunResponse) GetFieldMappingsOk() (*map[string]interface{}, bool)`
-
-GetFieldMappingsOk returns a tuple with the FieldMappings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFieldMappings
-
-`func (o *PayrunResponse) SetFieldMappings(v map[string]interface{})`
-
-SetFieldMappings sets FieldMappings field to given value.
+SetPaymentDate sets PaymentDate field to given value.
 
 
-### SetFieldMappingsNil
+### SetPaymentDateNil
 
-`func (o *PayrunResponse) SetFieldMappingsNil(b bool)`
+`func (o *PayrunResponse) SetPaymentDateNil(b bool)`
 
- SetFieldMappingsNil sets the value for FieldMappings to be an explicit nil
+ SetPaymentDateNil sets the value for PaymentDate to be an explicit nil
 
-### UnsetFieldMappings
-`func (o *PayrunResponse) UnsetFieldMappings()`
+### UnsetPaymentDate
+`func (o *PayrunResponse) UnsetPaymentDate()`
 
-UnsetFieldMappings ensures that no value is present for FieldMappings, not even an explicit nil
+UnsetPaymentDate ensures that no value is present for PaymentDate, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

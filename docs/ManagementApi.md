@@ -4,11 +4,11 @@ All URIs are relative to *https://api.affixapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Client**](ManagementApi.md#Client) | **Get** /2023-03-01/management/client | View client
+[**Client**](ManagementApi.md#Client) | **Get** /2023-03-01/management/client | Client
 [**Disconnect**](ManagementApi.md#Disconnect) | **Post** /2023-03-01/management/disconnect | Disconnect token
 [**Introspect**](ManagementApi.md#Introspect) | **Get** /2023-03-01/management/introspect | Inspect token
-[**Token**](ManagementApi.md#Token) | **Post** /2023-03-01/management/token | Exchange &#x60;authorization_code&#x60; for &#x60;access_token&#x60;
-[**Tokens**](ManagementApi.md#Tokens) | **Get** /2023-03-01/management/tokens | View tokens
+[**Token**](ManagementApi.md#Token) | **Post** /2023-03-01/management/token | Create token
+[**Tokens**](ManagementApi.md#Tokens) | **Get** /2023-03-01/management/tokens | Tokens
 [**UpdateClient**](ManagementApi.md#UpdateClient) | **Post** /2023-03-01/management/client | Update client
 
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 > ClientResponse Client(ctx).Execute()
 
-View client
+Client
 
 
 
@@ -200,7 +200,7 @@ Other parameters are passed through a pointer to a apiIntrospectRequest struct v
 
 > TokenResponse Token(ctx).TokenRequest(tokenRequest).Execute()
 
-Exchange `authorization_code` for `access_token`
+Create token
 
 
 
@@ -266,7 +266,7 @@ No authorization required
 
 > []map[string]interface{} Tokens(ctx).Execute()
 
-View tokens
+Tokens
 
 
 

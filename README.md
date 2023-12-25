@@ -9,8 +9,7 @@ integrations; or collect login credentials or API keys from users for these
 third party systems.
 
 # OAuth 2.1
-Affix API follows the [OAuth 2.1
-spec](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-08).
+Affix API follows the [OAuth 2.1 spec](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-08).
 
 As an OAuth application, Affix API handles not only both the collection of
 sensitive user credentials or API keys, but also builds and maintains the
@@ -26,29 +25,31 @@ in order to get started, you must:
     the sign in flow is complete and exchange that `authorization_code` for
     a Bearer token
 
-# Sandbox keys (official mode, employees endpoint)
+# Sandbox keys (developer mode)
 ### dev
 ```
-eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiJhNmNhODc5YS01OGEzLTQ2MGEtYTZlZC04N2E0NmRlMmMyNzMiLCJpYXQiOjE2OTc5ODUxMzEsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6Im9mZmljaWFsIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.Mw-eYth5VL7jpSVfnh88Tl8Cn-6-bKvjnE4GPtmuUdIS7VAvB5ijQksPjOM3FHkF382oh4bym_FAyQN_UE4mmg
+eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ
 ```
 
+#### `employees` endpoint sample:
 ```
 curl --fail \\
   -X GET \\
-  -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiJhNmNhODc5YS01OGEzLTQ2MGEtYTZlZC04N2E0NmRlMmMyNzMiLCJpYXQiOjE2OTc5ODUxMzEsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6Im9mZmljaWFsIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.Mw-eYth5VL7jpSVfnh88Tl8Cn-6-bKvjnE4GPtmuUdIS7VAvB5ijQksPjOM3FHkF382oh4bym_FAyQN_UE4mmg' \\
-  'https://dev.api.affixapi.com/2023-03-01/official/employees'
+  -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ' \\
+  'https://dev.api.affixapi.com/2023-03-01/developer/employees'
 ```
 
 ### prod
 ```
-eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiIwYzU2ZjcwMS0wYmFhLTQxOTQtYmU5Ni01ZThiOTExMzZmZDUiLCJpYXQiOjE2OTc5ODUwMTksImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJvZmZpY2lhbCIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.REb0qtwnn--ql2gWFb32FWilezTtJq8USN3Uj4NXoY8aJgwkjisca5ReRh5xyfprKSz_yOEcD1JwTrOlgkvf-Q
+eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw
 ```
 
+#### `employees` endpoint sample:
 ```
 curl --fail \\
   -X GET \\
-  -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvb2ZmaWNpYWwvaWRlbnRpdHkiXSwidG9rZW4iOiIwYzU2ZjcwMS0wYmFhLTQxOTQtYmU5Ni01ZThiOTExMzZmZDUiLCJpYXQiOjE2OTc5ODUwMTksImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJvZmZpY2lhbCIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.REb0qtwnn--ql2gWFb32FWilezTtJq8USN3Uj4NXoY8aJgwkjisca5ReRh5xyfprKSz_yOEcD1JwTrOlgkvf-Q' \\
-  'https://api.affixapi.com/2023-03-01/official/employees'
+  -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw' \\
+  'https://api.affixapi.com/2023-03-01/developer/employees'
 ```
 
 # Webhooks
@@ -64,8 +65,8 @@ request to your `webhook_uri` with this shape:
 ```
 {
 
-  added: <api.Employees20230301Response>[
-    <api.Employee20230301>{
+  added: <api.v20230301.Employees>[
+    <api.v20230301.Employee>{
       ...,
       date_of_birth: '2010-08-06',
       display_full_name: 'Daija Rogahn',
@@ -89,7 +90,7 @@ request to your `webhook_uri` with this shape:
   ],
   removed: [],
   updated: [
-    <api.Employee20230301>{
+    <api.v20230301.Employee>{
       ...,
       date_of_birth: '2009-11-09',
       display_full_name: 'Lourdes Stiedemann',
@@ -255,50 +256,68 @@ All URIs are relative to *https://api.affixapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*Class20230301Api* | [**DeveloperCompanies20230301**](docs/Class20230301Api.md#developercompanies20230301) | **Get** /2023-03-01/developer/company | Company
+*Class20230301Api* | [**DeveloperCreateEmployee20230301**](docs/Class20230301Api.md#developercreateemployee20230301) | **Post** /2023-03-01/developer/employee | Create employee
 *Class20230301Api* | [**DeveloperEmployees20230301**](docs/Class20230301Api.md#developeremployees20230301) | **Get** /2023-03-01/developer/employees | Employees
 *Class20230301Api* | [**DeveloperIdentity20230301**](docs/Class20230301Api.md#developeridentity20230301) | **Get** /2023-03-01/developer/identity | Identity
 *Class20230301Api* | [**DeveloperPayruns20230301**](docs/Class20230301Api.md#developerpayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
-*Class20230301Api* | [**DeveloperPayslips20230301**](docs/Class20230301Api.md#developerpayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
+*Class20230301Api* | [**DeveloperPayslips20230301**](docs/Class20230301Api.md#developerpayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Payslips
+*Class20230301Api* | [**DeveloperTimeOffBalances20230301**](docs/Class20230301Api.md#developertimeoffbalances20230301) | **Get** /2023-03-01/developer/time-off-balances | Time off balances
+*Class20230301Api* | [**DeveloperTimeOffEntries20230301**](docs/Class20230301Api.md#developertimeoffentries20230301) | **Get** /2023-03-01/developer/time-off-entries | Time off entries
+*Class20230301Api* | [**DeveloperTimesheets20230301**](docs/Class20230301Api.md#developertimesheets20230301) | **Get** /2023-03-01/developer/timesheets | Timesheets
+*Class20230301Api* | [**OfficialCompanies20230301**](docs/Class20230301Api.md#officialcompanies20230301) | **Get** /2023-03-01/official/company | Company
+*Class20230301Api* | [**OfficialCreateEmployee20230301**](docs/Class20230301Api.md#officialcreateemployee20230301) | **Post** /2023-03-01/official/employee | Create Employee
 *Class20230301Api* | [**OfficialEmployees20230301**](docs/Class20230301Api.md#officialemployees20230301) | **Get** /2023-03-01/official/employees | Employees
+*Class20230301Api* | [**OfficialTimeOffBalances20230301**](docs/Class20230301Api.md#officialtimeoffbalances20230301) | **Get** /2023-03-01/official/time-off-balances | Time off balances
+*Class20230301Api* | [**OfficialTimeOffEntries20230301**](docs/Class20230301Api.md#officialtimeoffentries20230301) | **Get** /2023-03-01/official/time-off-entries | Time off entries
+*Class20230301Api* | [**OfficialTimesheets20230301**](docs/Class20230301Api.md#officialtimesheets20230301) | **Get** /2023-03-01/official/timesheets | Timesheets
 *Class20230301Api* | [**Officialdentity20230301**](docs/Class20230301Api.md#officialdentity20230301) | **Get** /2023-03-01/official/identity | Identity
-*Class20230320Api* | [**GetOrder20230320**](docs/Class20230320Api.md#getorder20230320) | **Get** /2023-03-20/retail/orders/{order_id} | Get an Order
-*Class20230320Api* | [**Identity20230320**](docs/Class20230320Api.md#identity20230320) | **Get** /2023-03-20/retail/identity | Identity
-*Class20230320Api* | [**Orders20230320**](docs/Class20230320Api.md#orders20230320) | **Get** /2023-03-20/retail/orders | Orders
-*CoreApi* | [**Providers**](docs/CoreApi.md#providers) | **Get** /providers | List of providers
+*CoreApi* | [**Providers**](docs/CoreApi.md#providers) | **Get** /providers | Providers
+*DeveloperApi* | [**DeveloperCompanies20230301**](docs/DeveloperApi.md#developercompanies20230301) | **Get** /2023-03-01/developer/company | Company
+*DeveloperApi* | [**DeveloperCreateEmployee20230301**](docs/DeveloperApi.md#developercreateemployee20230301) | **Post** /2023-03-01/developer/employee | Create employee
 *DeveloperApi* | [**DeveloperEmployees20230301**](docs/DeveloperApi.md#developeremployees20230301) | **Get** /2023-03-01/developer/employees | Employees
 *DeveloperApi* | [**DeveloperIdentity20230301**](docs/DeveloperApi.md#developeridentity20230301) | **Get** /2023-03-01/developer/identity | Identity
 *DeveloperApi* | [**DeveloperPayruns20230301**](docs/DeveloperApi.md#developerpayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
-*DeveloperApi* | [**DeveloperPayslips20230301**](docs/DeveloperApi.md#developerpayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Get payslips of a payrun (the payslips/pay stubs/check stubs + detail)
-*ManagementApi* | [**Client**](docs/ManagementApi.md#client) | **Get** /2023-03-01/management/client | View client
+*DeveloperApi* | [**DeveloperPayslips20230301**](docs/DeveloperApi.md#developerpayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Payslips
+*DeveloperApi* | [**DeveloperTimeOffBalances20230301**](docs/DeveloperApi.md#developertimeoffbalances20230301) | **Get** /2023-03-01/developer/time-off-balances | Time off balances
+*DeveloperApi* | [**DeveloperTimeOffEntries20230301**](docs/DeveloperApi.md#developertimeoffentries20230301) | **Get** /2023-03-01/developer/time-off-entries | Time off entries
+*DeveloperApi* | [**DeveloperTimesheets20230301**](docs/DeveloperApi.md#developertimesheets20230301) | **Get** /2023-03-01/developer/timesheets | Timesheets
+*ManagementApi* | [**Client**](docs/ManagementApi.md#client) | **Get** /2023-03-01/management/client | Client
 *ManagementApi* | [**Disconnect**](docs/ManagementApi.md#disconnect) | **Post** /2023-03-01/management/disconnect | Disconnect token
 *ManagementApi* | [**Introspect**](docs/ManagementApi.md#introspect) | **Get** /2023-03-01/management/introspect | Inspect token
-*ManagementApi* | [**Token**](docs/ManagementApi.md#token) | **Post** /2023-03-01/management/token | Exchange &#x60;authorization_code&#x60; for &#x60;access_token&#x60;
-*ManagementApi* | [**Tokens**](docs/ManagementApi.md#tokens) | **Get** /2023-03-01/management/tokens | View tokens
+*ManagementApi* | [**Token**](docs/ManagementApi.md#token) | **Post** /2023-03-01/management/token | Create token
+*ManagementApi* | [**Tokens**](docs/ManagementApi.md#tokens) | **Get** /2023-03-01/management/tokens | Tokens
 *ManagementApi* | [**UpdateClient**](docs/ManagementApi.md#updateclient) | **Post** /2023-03-01/management/client | Update client
+*OfficialApi* | [**OfficialCompanies20230301**](docs/OfficialApi.md#officialcompanies20230301) | **Get** /2023-03-01/official/company | Company
+*OfficialApi* | [**OfficialCreateEmployee20230301**](docs/OfficialApi.md#officialcreateemployee20230301) | **Post** /2023-03-01/official/employee | Create Employee
 *OfficialApi* | [**OfficialEmployees20230301**](docs/OfficialApi.md#officialemployees20230301) | **Get** /2023-03-01/official/employees | Employees
+*OfficialApi* | [**OfficialTimeOffBalances20230301**](docs/OfficialApi.md#officialtimeoffbalances20230301) | **Get** /2023-03-01/official/time-off-balances | Time off balances
+*OfficialApi* | [**OfficialTimeOffEntries20230301**](docs/OfficialApi.md#officialtimeoffentries20230301) | **Get** /2023-03-01/official/time-off-entries | Time off entries
+*OfficialApi* | [**OfficialTimesheets20230301**](docs/OfficialApi.md#officialtimesheets20230301) | **Get** /2023-03-01/official/timesheets | Timesheets
 *OfficialApi* | [**Officialdentity20230301**](docs/OfficialApi.md#officialdentity20230301) | **Get** /2023-03-01/official/identity | Identity
-*RawApi* | [**AmazonGetOrder**](docs/RawApi.md#amazongetorder) | **Get** /2023-03-20/raw/amazon/orders/{order_id} | Get an Order
-*RawApi* | [**AmazonIdentity**](docs/RawApi.md#amazonidentity) | **Get** /2023-03-20/raw/amazon/identity | Identity
-*RawApi* | [**AmazonOrders**](docs/RawApi.md#amazonorders) | **Get** /2023-03-20/raw/amazon/orders | Orders
-*RetailApi* | [**GetOrder20230320**](docs/RetailApi.md#getorder20230320) | **Get** /2023-03-20/retail/orders/{order_id} | Get an Order
-*RetailApi* | [**Identity20230320**](docs/RetailApi.md#identity20230320) | **Get** /2023-03-20/retail/identity | Identity
-*RetailApi* | [**Orders20230320**](docs/RetailApi.md#orders20230320) | **Get** /2023-03-20/retail/orders | Orders
 
 
 ## Documentation For Models
 
  - [ClientRequest](docs/ClientRequest.md)
  - [ClientResponse](docs/ClientResponse.md)
+ - [CompanyResponse](docs/CompanyResponse.md)
+ - [CompanyResponseLocation](docs/CompanyResponseLocation.md)
+ - [CreateEmployeeRequest](docs/CreateEmployeeRequest.md)
+ - [CreateEmployeeRequestBankAccount](docs/CreateEmployeeRequestBankAccount.md)
+ - [CreateEmployeeRequestCompany](docs/CreateEmployeeRequestCompany.md)
+ - [CreateEmployeeRequestCompanyLocation](docs/CreateEmployeeRequestCompanyLocation.md)
+ - [CreateEmployeeRequestGroups](docs/CreateEmployeeRequestGroups.md)
+ - [CreateEmployeeRequestHomeLocation](docs/CreateEmployeeRequestHomeLocation.md)
+ - [CreateEmployeeRequestManager](docs/CreateEmployeeRequestManager.md)
+ - [CreateEmployeeRequestWorkLocation](docs/CreateEmployeeRequestWorkLocation.md)
+ - [CurrencyRequest](docs/CurrencyRequest.md)
  - [CurrencyResponse](docs/CurrencyResponse.md)
  - [DisconnectResponse](docs/DisconnectResponse.md)
- - [Employee20230301Response](docs/Employee20230301Response.md)
- - [Employee20230301ResponseBankAccount](docs/Employee20230301ResponseBankAccount.md)
- - [Employee20230301ResponseCompany](docs/Employee20230301ResponseCompany.md)
- - [Employee20230301ResponseCompanyLocation](docs/Employee20230301ResponseCompanyLocation.md)
- - [Employee20230301ResponseGroups](docs/Employee20230301ResponseGroups.md)
- - [Employee20230301ResponseHomeLocation](docs/Employee20230301ResponseHomeLocation.md)
- - [Employee20230301ResponseManager](docs/Employee20230301ResponseManager.md)
- - [Employee20230301ResponseWorkLocation](docs/Employee20230301ResponseWorkLocation.md)
+ - [EmployeeResponse](docs/EmployeeResponse.md)
+ - [EmployeeResponseHomeLocation](docs/EmployeeResponseHomeLocation.md)
+ - [EmployeeResponseWorkLocation](docs/EmployeeResponseWorkLocation.md)
+ - [EmploymentNoNullEnumRequest](docs/EmploymentNoNullEnumRequest.md)
  - [EmploymentResponse](docs/EmploymentResponse.md)
  - [IdAndMessageResponse](docs/IdAndMessageResponse.md)
  - [IdentityResponse](docs/IdentityResponse.md)
@@ -306,13 +325,14 @@ Class | Method | HTTP request | Description
  - [InlineResponse401](docs/InlineResponse401.md)
  - [InlineResponse409](docs/InlineResponse409.md)
  - [IntrospectResponse](docs/IntrospectResponse.md)
+ - [LocationRequest](docs/LocationRequest.md)
  - [LocationResponse](docs/LocationResponse.md)
  - [MessageResponse](docs/MessageResponse.md)
  - [ModeRequest](docs/ModeRequest.md)
  - [ModeResponse](docs/ModeResponse.md)
- - [Order20230320Response](docs/Order20230320Response.md)
  - [PayrunResponse](docs/PayrunResponse.md)
  - [PayslipResponse](docs/PayslipResponse.md)
+ - [PayslipResponseContributions](docs/PayslipResponseContributions.md)
  - [PayslipResponseDeductions](docs/PayslipResponseDeductions.md)
  - [PayslipResponseEarnings](docs/PayslipResponseEarnings.md)
  - [PayslipResponseTaxes](docs/PayslipResponseTaxes.md)
@@ -320,6 +340,9 @@ Class | Method | HTTP request | Description
  - [ProviderResponse](docs/ProviderResponse.md)
  - [ScopesRequest](docs/ScopesRequest.md)
  - [ScopesResponse](docs/ScopesResponse.md)
+ - [TimeOffBalanceResponse](docs/TimeOffBalanceResponse.md)
+ - [TimeOffEntryResponse](docs/TimeOffEntryResponse.md)
+ - [TimesheetResponse](docs/TimesheetResponse.md)
  - [TokenRequest](docs/TokenRequest.md)
  - [TokenResponse](docs/TokenResponse.md)
 

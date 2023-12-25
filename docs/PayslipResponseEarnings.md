@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PayrunId** | **string** |  | 
 **Name** | **string** |  | 
 **Amount** | **float32** | if USD/EUR/GBP, in cent | 
+**Hours** | **NullableFloat32** | hours, if applicable | 
 
 ## Methods
 
 ### NewPayslipResponseEarnings
 
-`func NewPayslipResponseEarnings(payrunId string, name string, amount float32, ) *PayslipResponseEarnings`
+`func NewPayslipResponseEarnings(name string, amount float32, hours NullableFloat32, ) *PayslipResponseEarnings`
 
 NewPayslipResponseEarnings instantiates a new PayslipResponseEarnings object
 This constructor will assign default values to properties that have it defined,
@@ -26,26 +26,6 @@ will change when the set of required properties is changed
 NewPayslipResponseEarningsWithDefaults instantiates a new PayslipResponseEarnings object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPayrunId
-
-`func (o *PayslipResponseEarnings) GetPayrunId() string`
-
-GetPayrunId returns the PayrunId field if non-nil, zero value otherwise.
-
-### GetPayrunIdOk
-
-`func (o *PayslipResponseEarnings) GetPayrunIdOk() (*string, bool)`
-
-GetPayrunIdOk returns a tuple with the PayrunId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPayrunId
-
-`func (o *PayslipResponseEarnings) SetPayrunId(v string)`
-
-SetPayrunId sets PayrunId field to given value.
-
 
 ### GetName
 
@@ -87,6 +67,36 @@ and a boolean to check if the value has been set.
 SetAmount sets Amount field to given value.
 
 
+### GetHours
+
+`func (o *PayslipResponseEarnings) GetHours() float32`
+
+GetHours returns the Hours field if non-nil, zero value otherwise.
+
+### GetHoursOk
+
+`func (o *PayslipResponseEarnings) GetHoursOk() (*float32, bool)`
+
+GetHoursOk returns a tuple with the Hours field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHours
+
+`func (o *PayslipResponseEarnings) SetHours(v float32)`
+
+SetHours sets Hours field to given value.
+
+
+### SetHoursNil
+
+`func (o *PayslipResponseEarnings) SetHoursNil(b bool)`
+
+ SetHoursNil sets the value for Hours to be an explicit nil
+
+### UnsetHours
+`func (o *PayslipResponseEarnings) UnsetHours()`
+
+UnsetHours ensures that no value is present for Hours, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

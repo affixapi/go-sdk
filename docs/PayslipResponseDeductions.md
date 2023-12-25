@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PayrunId** | **string** |  | 
 **Name** | **string** |  | 
 **Amount** | **float32** | if USD/EUR/GBP, in cent | 
 
@@ -12,7 +11,7 @@ Name | Type | Description | Notes
 
 ### NewPayslipResponseDeductions
 
-`func NewPayslipResponseDeductions(payrunId string, name string, amount float32, ) *PayslipResponseDeductions`
+`func NewPayslipResponseDeductions(name string, amount float32, ) *PayslipResponseDeductions`
 
 NewPayslipResponseDeductions instantiates a new PayslipResponseDeductions object
 This constructor will assign default values to properties that have it defined,
@@ -26,26 +25,6 @@ will change when the set of required properties is changed
 NewPayslipResponseDeductionsWithDefaults instantiates a new PayslipResponseDeductions object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPayrunId
-
-`func (o *PayslipResponseDeductions) GetPayrunId() string`
-
-GetPayrunId returns the PayrunId field if non-nil, zero value otherwise.
-
-### GetPayrunIdOk
-
-`func (o *PayslipResponseDeductions) GetPayrunIdOk() (*string, bool)`
-
-GetPayrunIdOk returns a tuple with the PayrunId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPayrunId
-
-`func (o *PayslipResponseDeductions) SetPayrunId(v string)`
-
-SetPayrunId sets PayrunId field to given value.
-
 
 ### GetName
 

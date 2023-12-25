@@ -3,10 +3,6 @@
 ## Enum
 
 
-* `RETAIL` (value: `"retail"`)
-
-* `RAW` (value: `"raw"`)
-
 * `OFFICIAL` (value: `"official"`)
 
 * `DEVELOPER` (value: `"developer"`)

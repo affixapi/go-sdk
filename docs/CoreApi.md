@@ -4,7 +4,7 @@ All URIs are relative to *https://api.affixapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Providers**](CoreApi.md#Providers) | **Get** /providers | List of providers
+[**Providers**](CoreApi.md#Providers) | **Get** /providers | Providers
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > []map[string]interface{} Providers(ctx).Execute()
 
-List of providers
+Providers
 
 
 

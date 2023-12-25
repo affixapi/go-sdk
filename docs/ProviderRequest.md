@@ -5,14 +5,6 @@
 
 * `SANDBOX` (value: `"sandbox"`)
 
-* `AMAZON` (value: `"amazon"`)
-
-* `AMAZON_COM_BUSINESS` (value: `"amazon.com business"`)
-
-* `AMAZON_CO_UK` (value: `"amazon.co.uk"`)
-
-* `AMAZON_DE` (value: `"amazon.de"`)
-
 * `BAMBOOHR` (value: `"bamboohr"`)
 
 * `BREATHE` (value: `"breathe"`)
