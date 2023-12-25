@@ -208,9 +208,6 @@ tags:
     Operations related to retrieving end customer data from a customer's
     credentials login
   name: Developer
-- description: |
-    Operations related to the 2023-03-01 API version
-  name: 2023-03-01
 paths:
   /providers:
     get:
