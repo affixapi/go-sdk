@@ -321,7 +321,7 @@ Class | Method | HTTP request | Description
  - [EmployeeResponse](docs/EmployeeResponse.md)
  - [EmploymentNoNullEnumRequest](docs/EmploymentNoNullEnumRequest.md)
  - [EmploymentResponse](docs/EmploymentResponse.md)
- - [GroupRequest](docs/GroupRequest.md)
+ - [GroupNoNullEnumRequest](docs/GroupNoNullEnumRequest.md)
  - [GroupResponse](docs/GroupResponse.md)
  - [IdAndMessageResponse](docs/IdAndMessageResponse.md)
  - [IdentityResponse](docs/IdentityResponse.md)

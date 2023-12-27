@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **BankAccount** | Pointer to [**NullableCreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  | [optional] 
 **Employments** | Pointer to [**[]EmploymentNoNullEnumRequest**](EmploymentNoNullEnumRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Groups** | Pointer to [**[]GroupRequest**](GroupRequest.md) |  | [optional] 
+**Groups** | Pointer to [**[]GroupNoNullEnumRequest**](GroupNoNullEnumRequest.md) |  | [optional] 
 
 ## Methods
 
@@ -897,20 +897,20 @@ HasCustomFields returns a boolean if a field has been set.
 UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
 ### GetGroups
 
-`func (o *CreateEmployeeRequest) GetGroups() []GroupRequest`
+`func (o *CreateEmployeeRequest) GetGroups() []GroupNoNullEnumRequest`
 
 GetGroups returns the Groups field if non-nil, zero value otherwise.
 
 ### GetGroupsOk
 
-`func (o *CreateEmployeeRequest) GetGroupsOk() (*[]GroupRequest, bool)`
+`func (o *CreateEmployeeRequest) GetGroupsOk() (*[]GroupNoNullEnumRequest, bool)`
 
 GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroups
 
-`func (o *CreateEmployeeRequest) SetGroups(v []GroupRequest)`
+`func (o *CreateEmployeeRequest) SetGroups(v []GroupNoNullEnumRequest)`
 
 SetGroups sets Groups field to given value.
 

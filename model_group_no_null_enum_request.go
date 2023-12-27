@@ -15,20 +15,20 @@ import (
 	"encoding/json"
 )
 
-// GroupRequest struct for GroupRequest
-type GroupRequest struct {
+// GroupNoNullEnumRequest struct for GroupNoNullEnumRequest
+type GroupNoNullEnumRequest struct {
 	Id NullableString `json:"id"`
 	RemoteId NullableString `json:"remote_id"`
 	Name NullableString `json:"name"`
 	Type NullableString `json:"type"`
 }
 
-// NewGroupRequest instantiates a new GroupRequest object
+// NewGroupNoNullEnumRequest instantiates a new GroupNoNullEnumRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroupRequest(id NullableString, remoteId NullableString, name NullableString, type_ NullableString) *GroupRequest {
-	this := GroupRequest{}
+func NewGroupNoNullEnumRequest(id NullableString, remoteId NullableString, name NullableString, type_ NullableString) *GroupNoNullEnumRequest {
+	this := GroupNoNullEnumRequest{}
 	this.Id = id
 	this.RemoteId = remoteId
 	this.Name = name
@@ -36,17 +36,17 @@ func NewGroupRequest(id NullableString, remoteId NullableString, name NullableSt
 	return &this
 }
 
-// NewGroupRequestWithDefaults instantiates a new GroupRequest object
+// NewGroupNoNullEnumRequestWithDefaults instantiates a new GroupNoNullEnumRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGroupRequestWithDefaults() *GroupRequest {
-	this := GroupRequest{}
+func NewGroupNoNullEnumRequestWithDefaults() *GroupNoNullEnumRequest {
+	this := GroupNoNullEnumRequest{}
 	return &this
 }
 
 // GetId returns the Id field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *GroupRequest) GetId() string {
+func (o *GroupNoNullEnumRequest) GetId() string {
 	if o == nil || o.Id.Get() == nil {
 		var ret string
 		return ret
@@ -58,7 +58,7 @@ func (o *GroupRequest) GetId() string {
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GroupRequest) GetIdOk() (*string, bool) {
+func (o *GroupNoNullEnumRequest) GetIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -66,13 +66,13 @@ func (o *GroupRequest) GetIdOk() (*string, bool) {
 }
 
 // SetId sets field value
-func (o *GroupRequest) SetId(v string) {
+func (o *GroupNoNullEnumRequest) SetId(v string) {
 	o.Id.Set(&v)
 }
 
 // GetRemoteId returns the RemoteId field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *GroupRequest) GetRemoteId() string {
+func (o *GroupNoNullEnumRequest) GetRemoteId() string {
 	if o == nil || o.RemoteId.Get() == nil {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *GroupRequest) GetRemoteId() string {
 // GetRemoteIdOk returns a tuple with the RemoteId field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GroupRequest) GetRemoteIdOk() (*string, bool) {
+func (o *GroupNoNullEnumRequest) GetRemoteIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -92,13 +92,13 @@ func (o *GroupRequest) GetRemoteIdOk() (*string, bool) {
 }
 
 // SetRemoteId sets field value
-func (o *GroupRequest) SetRemoteId(v string) {
+func (o *GroupNoNullEnumRequest) SetRemoteId(v string) {
 	o.RemoteId.Set(&v)
 }
 
 // GetName returns the Name field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *GroupRequest) GetName() string {
+func (o *GroupNoNullEnumRequest) GetName() string {
 	if o == nil || o.Name.Get() == nil {
 		var ret string
 		return ret
@@ -110,7 +110,7 @@ func (o *GroupRequest) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GroupRequest) GetNameOk() (*string, bool) {
+func (o *GroupNoNullEnumRequest) GetNameOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -118,13 +118,13 @@ func (o *GroupRequest) GetNameOk() (*string, bool) {
 }
 
 // SetName sets field value
-func (o *GroupRequest) SetName(v string) {
+func (o *GroupNoNullEnumRequest) SetName(v string) {
 	o.Name.Set(&v)
 }
 
 // GetType returns the Type field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *GroupRequest) GetType() string {
+func (o *GroupNoNullEnumRequest) GetType() string {
 	if o == nil || o.Type.Get() == nil {
 		var ret string
 		return ret
@@ -136,7 +136,7 @@ func (o *GroupRequest) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GroupRequest) GetTypeOk() (*string, bool) {
+func (o *GroupNoNullEnumRequest) GetTypeOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -144,11 +144,11 @@ func (o *GroupRequest) GetTypeOk() (*string, bool) {
 }
 
 // SetType sets field value
-func (o *GroupRequest) SetType(v string) {
+func (o *GroupNoNullEnumRequest) SetType(v string) {
 	o.Type.Set(&v)
 }
 
-func (o GroupRequest) MarshalJSON() ([]byte, error) {
+func (o GroupNoNullEnumRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
 		toSerialize["id"] = o.Id.Get()
@@ -165,38 +165,38 @@ func (o GroupRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGroupRequest struct {
-	value *GroupRequest
+type NullableGroupNoNullEnumRequest struct {
+	value *GroupNoNullEnumRequest
 	isSet bool
 }
 
-func (v NullableGroupRequest) Get() *GroupRequest {
+func (v NullableGroupNoNullEnumRequest) Get() *GroupNoNullEnumRequest {
 	return v.value
 }
 
-func (v *NullableGroupRequest) Set(val *GroupRequest) {
+func (v *NullableGroupNoNullEnumRequest) Set(val *GroupNoNullEnumRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGroupRequest) IsSet() bool {
+func (v NullableGroupNoNullEnumRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGroupRequest) Unset() {
+func (v *NullableGroupNoNullEnumRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGroupRequest(val *GroupRequest) *NullableGroupRequest {
-	return &NullableGroupRequest{value: val, isSet: true}
+func NewNullableGroupNoNullEnumRequest(val *GroupNoNullEnumRequest) *NullableGroupNoNullEnumRequest {
+	return &NullableGroupNoNullEnumRequest{value: val, isSet: true}
 }
 
-func (v NullableGroupRequest) MarshalJSON() ([]byte, error) {
+func (v NullableGroupNoNullEnumRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGroupRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableGroupNoNullEnumRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

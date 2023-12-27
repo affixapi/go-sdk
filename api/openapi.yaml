@@ -2730,7 +2730,7 @@ components:
       - pay_period
       - pay_rate
       type: object
-    groupRequest:
+    group-no-null-enumRequest:
       example:
         id: 4B9bKBpX5tnwjiG93TAqF7ci
         remote_id: df6c28e8
@@ -2751,7 +2751,6 @@ components:
           type: string
         type:
           enum:
-          - null
           - department
           - team
           - cost_centre
@@ -2765,7 +2764,7 @@ components:
       - remote_id
       - type
       type: object
-    Groups20230301Request:
+    groups-no-null-enumRequest:
       example:
       - id: 4B9bKBpX5tnwjiG93TAqF7ci
         remote_id: df6c28e8
@@ -2776,7 +2775,7 @@ components:
         name: engineering
         type: department
       items:
-        $ref: '#/components/schemas/groupRequest'
+        $ref: '#/components/schemas/group-no-null-enumRequest'
       nullable: true
       type: array
     CreateEmployeeRequest:
@@ -2991,7 +2990,7 @@ components:
             name: engineering
             type: department
           items:
-            $ref: '#/components/schemas/groupRequest'
+            $ref: '#/components/schemas/group-no-null-enumRequest'
           nullable: true
           type: array
       required:

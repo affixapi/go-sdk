@@ -47,7 +47,7 @@ type CreateEmployeeRequest struct {
 	BankAccount NullableCreateEmployeeRequestBankAccount `json:"bank_account,omitempty"`
 	Employments []EmploymentNoNullEnumRequest `json:"employments,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Groups []GroupRequest `json:"groups,omitempty"`
+	Groups []GroupNoNullEnumRequest `json:"groups,omitempty"`
 }
 
 // NewCreateEmployeeRequest instantiates a new CreateEmployeeRequest object
@@ -1066,9 +1066,9 @@ func (o *CreateEmployeeRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 // GetGroups returns the Groups field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateEmployeeRequest) GetGroups() []GroupRequest {
+func (o *CreateEmployeeRequest) GetGroups() []GroupNoNullEnumRequest {
 	if o == nil  {
-		var ret []GroupRequest
+		var ret []GroupNoNullEnumRequest
 		return ret
 	}
 	return o.Groups
@@ -1077,7 +1077,7 @@ func (o *CreateEmployeeRequest) GetGroups() []GroupRequest {
 // GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateEmployeeRequest) GetGroupsOk() (*[]GroupRequest, bool) {
+func (o *CreateEmployeeRequest) GetGroupsOk() (*[]GroupNoNullEnumRequest, bool) {
 	if o == nil || o.Groups == nil {
 		return nil, false
 	}
@@ -1093,8 +1093,8 @@ func (o *CreateEmployeeRequest) HasGroups() bool {
 	return false
 }
 
-// SetGroups gets a reference to the given []GroupRequest and assigns it to the Groups field.
-func (o *CreateEmployeeRequest) SetGroups(v []GroupRequest) {
+// SetGroups gets a reference to the given []GroupNoNullEnumRequest and assigns it to the Groups field.
+func (o *CreateEmployeeRequest) SetGroups(v []GroupNoNullEnumRequest) {
 	o.Groups = v
 }
 

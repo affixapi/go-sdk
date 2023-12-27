@@ -27,7 +27,7 @@ docs/DisconnectResponse.md
 docs/EmployeeResponse.md
 docs/EmploymentNoNullEnumRequest.md
 docs/EmploymentResponse.md
-docs/GroupRequest.md
+docs/GroupNoNullEnumRequest.md
 docs/GroupResponse.md
 docs/IdAndMessageResponse.md
 docs/IdentityResponse.md
@@ -74,7 +74,7 @@ model_disconnect_response.go
 model_employee_response.go
 model_employment_no_null_enum_request.go
 model_employment_response.go
-model_group_request.go
+model_group_no_null_enum_request.go
 model_group_response.go
 model_id_and_message_response.go
 model_identity_response.go
