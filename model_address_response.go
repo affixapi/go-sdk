@@ -15,126 +15,221 @@ import (
 	"encoding/json"
 )
 
-// CreateEmployeeRequestCompany struct for CreateEmployeeRequestCompany
-type CreateEmployeeRequestCompany struct {
-	Name NullableString `json:"name"`
-	Location NullableCreateEmployeeRequestCompanyLocation `json:"location"`
+// AddressResponse struct for AddressResponse
+type AddressResponse struct {
+	StreetAddress NullableString `json:"street_address"`
+	Locality NullableString `json:"locality"`
+	// The administrative area of the address. If US or CA, the two-letter state or province abbreviation. Else, the province / administrative area; such as, `Dublin 2` or `County Cork` 
+	AdministrativeArea NullableString `json:"administrative_area"`
+	// The ISO-3166-2 two-letter abbreviation of the country. Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details 
+	Country NullableString `json:"country"`
+	PostCode NullableString `json:"post_code"`
 }
 
-// NewCreateEmployeeRequestCompany instantiates a new CreateEmployeeRequestCompany object
+// NewAddressResponse instantiates a new AddressResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateEmployeeRequestCompany(name NullableString, location NullableCreateEmployeeRequestCompanyLocation) *CreateEmployeeRequestCompany {
-	this := CreateEmployeeRequestCompany{}
-	this.Name = name
-	this.Location = location
+func NewAddressResponse(streetAddress NullableString, locality NullableString, administrativeArea NullableString, country NullableString, postCode NullableString) *AddressResponse {
+	this := AddressResponse{}
+	this.StreetAddress = streetAddress
+	this.Locality = locality
+	this.AdministrativeArea = administrativeArea
+	this.Country = country
+	this.PostCode = postCode
 	return &this
 }
 
-// NewCreateEmployeeRequestCompanyWithDefaults instantiates a new CreateEmployeeRequestCompany object
+// NewAddressResponseWithDefaults instantiates a new AddressResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewCreateEmployeeRequestCompanyWithDefaults() *CreateEmployeeRequestCompany {
-	this := CreateEmployeeRequestCompany{}
+func NewAddressResponseWithDefaults() *AddressResponse {
+	this := AddressResponse{}
 	return &this
 }
 
-// GetName returns the Name field value
+// GetStreetAddress returns the StreetAddress field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *CreateEmployeeRequestCompany) GetName() string {
-	if o == nil || o.Name.Get() == nil {
+func (o *AddressResponse) GetStreetAddress() string {
+	if o == nil || o.StreetAddress.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.Name.Get()
+	return *o.StreetAddress.Get()
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetStreetAddressOk returns a tuple with the StreetAddress field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateEmployeeRequestCompany) GetNameOk() (*string, bool) {
+func (o *AddressResponse) GetStreetAddressOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.Name.Get(), o.Name.IsSet()
+	return o.StreetAddress.Get(), o.StreetAddress.IsSet()
 }
 
-// SetName sets field value
-func (o *CreateEmployeeRequestCompany) SetName(v string) {
-	o.Name.Set(&v)
+// SetStreetAddress sets field value
+func (o *AddressResponse) SetStreetAddress(v string) {
+	o.StreetAddress.Set(&v)
 }
 
-// GetLocation returns the Location field value
-// If the value is explicit nil, the zero value for CreateEmployeeRequestCompanyLocation will be returned
-func (o *CreateEmployeeRequestCompany) GetLocation() CreateEmployeeRequestCompanyLocation {
-	if o == nil || o.Location.Get() == nil {
-		var ret CreateEmployeeRequestCompanyLocation
+// GetLocality returns the Locality field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *AddressResponse) GetLocality() string {
+	if o == nil || o.Locality.Get() == nil {
+		var ret string
 		return ret
 	}
 
-	return *o.Location.Get()
+	return *o.Locality.Get()
 }
 
-// GetLocationOk returns a tuple with the Location field value
+// GetLocalityOk returns a tuple with the Locality field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateEmployeeRequestCompany) GetLocationOk() (*CreateEmployeeRequestCompanyLocation, bool) {
+func (o *AddressResponse) GetLocalityOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.Location.Get(), o.Location.IsSet()
+	return o.Locality.Get(), o.Locality.IsSet()
 }
 
-// SetLocation sets field value
-func (o *CreateEmployeeRequestCompany) SetLocation(v CreateEmployeeRequestCompanyLocation) {
-	o.Location.Set(&v)
+// SetLocality sets field value
+func (o *AddressResponse) SetLocality(v string) {
+	o.Locality.Set(&v)
 }
 
-func (o CreateEmployeeRequestCompany) MarshalJSON() ([]byte, error) {
+// GetAdministrativeArea returns the AdministrativeArea field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *AddressResponse) GetAdministrativeArea() string {
+	if o == nil || o.AdministrativeArea.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.AdministrativeArea.Get()
+}
+
+// GetAdministrativeAreaOk returns a tuple with the AdministrativeArea field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddressResponse) GetAdministrativeAreaOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.AdministrativeArea.Get(), o.AdministrativeArea.IsSet()
+}
+
+// SetAdministrativeArea sets field value
+func (o *AddressResponse) SetAdministrativeArea(v string) {
+	o.AdministrativeArea.Set(&v)
+}
+
+// GetCountry returns the Country field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *AddressResponse) GetCountry() string {
+	if o == nil || o.Country.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.Country.Get()
+}
+
+// GetCountryOk returns a tuple with the Country field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddressResponse) GetCountryOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.Country.Get(), o.Country.IsSet()
+}
+
+// SetCountry sets field value
+func (o *AddressResponse) SetCountry(v string) {
+	o.Country.Set(&v)
+}
+
+// GetPostCode returns the PostCode field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *AddressResponse) GetPostCode() string {
+	if o == nil || o.PostCode.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.PostCode.Get()
+}
+
+// GetPostCodeOk returns a tuple with the PostCode field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddressResponse) GetPostCodeOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.PostCode.Get(), o.PostCode.IsSet()
+}
+
+// SetPostCode sets field value
+func (o *AddressResponse) SetPostCode(v string) {
+	o.PostCode.Set(&v)
+}
+
+func (o AddressResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["name"] = o.Name.Get()
+		toSerialize["street_address"] = o.StreetAddress.Get()
 	}
 	if true {
-		toSerialize["location"] = o.Location.Get()
+		toSerialize["locality"] = o.Locality.Get()
+	}
+	if true {
+		toSerialize["administrative_area"] = o.AdministrativeArea.Get()
+	}
+	if true {
+		toSerialize["country"] = o.Country.Get()
+	}
+	if true {
+		toSerialize["post_code"] = o.PostCode.Get()
 	}
 	return json.Marshal(toSerialize)
 }
 
-type NullableCreateEmployeeRequestCompany struct {
-	value *CreateEmployeeRequestCompany
+type NullableAddressResponse struct {
+	value *AddressResponse
 	isSet bool
 }
 
-func (v NullableCreateEmployeeRequestCompany) Get() *CreateEmployeeRequestCompany {
+func (v NullableAddressResponse) Get() *AddressResponse {
 	return v.value
 }
 
-func (v *NullableCreateEmployeeRequestCompany) Set(val *CreateEmployeeRequestCompany) {
+func (v *NullableAddressResponse) Set(val *AddressResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCreateEmployeeRequestCompany) IsSet() bool {
+func (v NullableAddressResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCreateEmployeeRequestCompany) Unset() {
+func (v *NullableAddressResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCreateEmployeeRequestCompany(val *CreateEmployeeRequestCompany) *NullableCreateEmployeeRequestCompany {
-	return &NullableCreateEmployeeRequestCompany{value: val, isSet: true}
+func NewNullableAddressResponse(val *AddressResponse) *NullableAddressResponse {
+	return &NullableAddressResponse{value: val, isSet: true}
 }
 
-func (v NullableCreateEmployeeRequestCompany) MarshalJSON() ([]byte, error) {
+func (v NullableAddressResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCreateEmployeeRequestCompany) UnmarshalJSON(src []byte) error {
+func (v *NullableAddressResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

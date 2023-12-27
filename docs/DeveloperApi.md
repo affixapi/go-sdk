@@ -7,12 +7,14 @@ Method | HTTP request | Description
 [**DeveloperCompanies20230301**](DeveloperApi.md#DeveloperCompanies20230301) | **Get** /2023-03-01/developer/company | Company
 [**DeveloperCreateEmployee20230301**](DeveloperApi.md#DeveloperCreateEmployee20230301) | **Post** /2023-03-01/developer/employee | Create employee
 [**DeveloperEmployees20230301**](DeveloperApi.md#DeveloperEmployees20230301) | **Get** /2023-03-01/developer/employees | Employees
+[**DeveloperGroups20230301**](DeveloperApi.md#DeveloperGroups20230301) | **Get** /2023-03-01/developer/groups | Groups
 [**DeveloperIdentity20230301**](DeveloperApi.md#DeveloperIdentity20230301) | **Get** /2023-03-01/developer/identity | Identity
 [**DeveloperPayruns20230301**](DeveloperApi.md#DeveloperPayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
 [**DeveloperPayslips20230301**](DeveloperApi.md#DeveloperPayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Payslips
 [**DeveloperTimeOffBalances20230301**](DeveloperApi.md#DeveloperTimeOffBalances20230301) | **Get** /2023-03-01/developer/time-off-balances | Time off balances
 [**DeveloperTimeOffEntries20230301**](DeveloperApi.md#DeveloperTimeOffEntries20230301) | **Get** /2023-03-01/developer/time-off-entries | Time off entries
 [**DeveloperTimesheets20230301**](DeveloperApi.md#DeveloperTimesheets20230301) | **Get** /2023-03-01/developer/timesheets | Timesheets
+[**DeveloperWorkLocations20230301**](DeveloperApi.md#DeveloperWorkLocations20230301) | **Get** /2023-03-01/developer/work-locations | Work Locations
 
 
 
@@ -189,6 +191,67 @@ Other parameters are passed through a pointer to a apiDeveloperEmployees20230301
 ### Return type
 
 [**[]EmployeeResponse**](EmployeeResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeveloperGroups20230301
+
+> []GroupResponse DeveloperGroups20230301(ctx).Execute()
+
+Groups
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DeveloperApi.DeveloperGroups20230301(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperGroups20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeveloperGroups20230301`: []GroupResponse
+    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperGroups20230301`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeveloperGroups20230301Request struct via the builder pattern
+
+
+### Return type
+
+[**[]GroupResponse**](GroupResponse.md)
 
 ### Authorization
 
@@ -572,6 +635,67 @@ Other parameters are passed through a pointer to a apiDeveloperTimesheets2023030
 ### Return type
 
 [**[]TimesheetResponse**](TimesheetResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeveloperWorkLocations20230301
+
+> []LocationResponse DeveloperWorkLocations20230301(ctx).Execute()
+
+Work Locations
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DeveloperApi.DeveloperWorkLocations20230301(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperWorkLocations20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeveloperWorkLocations20230301`: []LocationResponse
+    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperWorkLocations20230301`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeveloperWorkLocations20230301Request struct via the builder pattern
+
+
+### Return type
+
+[**[]LocationResponse**](LocationResponse.md)
 
 ### Authorization
 

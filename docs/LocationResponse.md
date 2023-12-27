@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StreetAddress** | **NullableString** |  | 
-**Locality** | **NullableString** |  | 
-**AdministrativeArea** | **NullableString** | The administrative area of the address. If US or CA, the two-letter state abbreviation  | 
-**Country** | **NullableString** | The two-letter abbreviation of the country  | 
-**PostCode** | **NullableString** |  | 
+**Id** | **NullableString** | The Affix-assigned id of the individual | 
+**RemoteId** | **NullableString** | the remote system-assigned id of the individual | 
+**Name** | **NullableString** | System assigned description of the location | 
+**Type** | **NullableString** | The location&#39;s type. In cases where there is no clear mapping, the original value passed through will be returned.  | 
+**Address** | [**NullableAddressResponse**](AddressResponse.md) |  | 
 
 ## Methods
 
 ### NewLocationResponse
 
-`func NewLocationResponse(streetAddress NullableString, locality NullableString, administrativeArea NullableString, country NullableString, postCode NullableString, ) *LocationResponse`
+`func NewLocationResponse(id NullableString, remoteId NullableString, name NullableString, type_ NullableString, address NullableAddressResponse, ) *LocationResponse`
 
 NewLocationResponse instantiates a new LocationResponse object
 This constructor will assign default values to properties that have it defined,
@@ -29,156 +29,156 @@ NewLocationResponseWithDefaults instantiates a new LocationResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetStreetAddress
+### GetId
 
-`func (o *LocationResponse) GetStreetAddress() string`
+`func (o *LocationResponse) GetId() string`
 
-GetStreetAddress returns the StreetAddress field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetStreetAddressOk
+### GetIdOk
 
-`func (o *LocationResponse) GetStreetAddressOk() (*string, bool)`
+`func (o *LocationResponse) GetIdOk() (*string, bool)`
 
-GetStreetAddressOk returns a tuple with the StreetAddress field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStreetAddress
+### SetId
 
-`func (o *LocationResponse) SetStreetAddress(v string)`
+`func (o *LocationResponse) SetId(v string)`
 
-SetStreetAddress sets StreetAddress field to given value.
+SetId sets Id field to given value.
 
 
-### SetStreetAddressNil
+### SetIdNil
 
-`func (o *LocationResponse) SetStreetAddressNil(b bool)`
+`func (o *LocationResponse) SetIdNil(b bool)`
 
- SetStreetAddressNil sets the value for StreetAddress to be an explicit nil
+ SetIdNil sets the value for Id to be an explicit nil
 
-### UnsetStreetAddress
-`func (o *LocationResponse) UnsetStreetAddress()`
+### UnsetId
+`func (o *LocationResponse) UnsetId()`
 
-UnsetStreetAddress ensures that no value is present for StreetAddress, not even an explicit nil
-### GetLocality
+UnsetId ensures that no value is present for Id, not even an explicit nil
+### GetRemoteId
 
-`func (o *LocationResponse) GetLocality() string`
+`func (o *LocationResponse) GetRemoteId() string`
 
-GetLocality returns the Locality field if non-nil, zero value otherwise.
+GetRemoteId returns the RemoteId field if non-nil, zero value otherwise.
 
-### GetLocalityOk
+### GetRemoteIdOk
 
-`func (o *LocationResponse) GetLocalityOk() (*string, bool)`
+`func (o *LocationResponse) GetRemoteIdOk() (*string, bool)`
 
-GetLocalityOk returns a tuple with the Locality field if it's non-nil, zero value otherwise
+GetRemoteIdOk returns a tuple with the RemoteId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLocality
+### SetRemoteId
 
-`func (o *LocationResponse) SetLocality(v string)`
+`func (o *LocationResponse) SetRemoteId(v string)`
 
-SetLocality sets Locality field to given value.
+SetRemoteId sets RemoteId field to given value.
 
 
-### SetLocalityNil
+### SetRemoteIdNil
 
-`func (o *LocationResponse) SetLocalityNil(b bool)`
+`func (o *LocationResponse) SetRemoteIdNil(b bool)`
 
- SetLocalityNil sets the value for Locality to be an explicit nil
+ SetRemoteIdNil sets the value for RemoteId to be an explicit nil
 
-### UnsetLocality
-`func (o *LocationResponse) UnsetLocality()`
+### UnsetRemoteId
+`func (o *LocationResponse) UnsetRemoteId()`
 
-UnsetLocality ensures that no value is present for Locality, not even an explicit nil
-### GetAdministrativeArea
+UnsetRemoteId ensures that no value is present for RemoteId, not even an explicit nil
+### GetName
 
-`func (o *LocationResponse) GetAdministrativeArea() string`
+`func (o *LocationResponse) GetName() string`
 
-GetAdministrativeArea returns the AdministrativeArea field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetAdministrativeAreaOk
+### GetNameOk
 
-`func (o *LocationResponse) GetAdministrativeAreaOk() (*string, bool)`
+`func (o *LocationResponse) GetNameOk() (*string, bool)`
 
-GetAdministrativeAreaOk returns a tuple with the AdministrativeArea field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAdministrativeArea
+### SetName
 
-`func (o *LocationResponse) SetAdministrativeArea(v string)`
+`func (o *LocationResponse) SetName(v string)`
 
-SetAdministrativeArea sets AdministrativeArea field to given value.
+SetName sets Name field to given value.
 
 
-### SetAdministrativeAreaNil
+### SetNameNil
 
-`func (o *LocationResponse) SetAdministrativeAreaNil(b bool)`
+`func (o *LocationResponse) SetNameNil(b bool)`
 
- SetAdministrativeAreaNil sets the value for AdministrativeArea to be an explicit nil
+ SetNameNil sets the value for Name to be an explicit nil
 
-### UnsetAdministrativeArea
-`func (o *LocationResponse) UnsetAdministrativeArea()`
+### UnsetName
+`func (o *LocationResponse) UnsetName()`
 
-UnsetAdministrativeArea ensures that no value is present for AdministrativeArea, not even an explicit nil
-### GetCountry
+UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetType
 
-`func (o *LocationResponse) GetCountry() string`
+`func (o *LocationResponse) GetType() string`
 
-GetCountry returns the Country field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetCountryOk
+### GetTypeOk
 
-`func (o *LocationResponse) GetCountryOk() (*string, bool)`
+`func (o *LocationResponse) GetTypeOk() (*string, bool)`
 
-GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCountry
+### SetType
 
-`func (o *LocationResponse) SetCountry(v string)`
+`func (o *LocationResponse) SetType(v string)`
 
-SetCountry sets Country field to given value.
+SetType sets Type field to given value.
 
 
-### SetCountryNil
+### SetTypeNil
 
-`func (o *LocationResponse) SetCountryNil(b bool)`
+`func (o *LocationResponse) SetTypeNil(b bool)`
 
- SetCountryNil sets the value for Country to be an explicit nil
+ SetTypeNil sets the value for Type to be an explicit nil
 
-### UnsetCountry
-`func (o *LocationResponse) UnsetCountry()`
+### UnsetType
+`func (o *LocationResponse) UnsetType()`
 
-UnsetCountry ensures that no value is present for Country, not even an explicit nil
-### GetPostCode
+UnsetType ensures that no value is present for Type, not even an explicit nil
+### GetAddress
 
-`func (o *LocationResponse) GetPostCode() string`
+`func (o *LocationResponse) GetAddress() AddressResponse`
 
-GetPostCode returns the PostCode field if non-nil, zero value otherwise.
+GetAddress returns the Address field if non-nil, zero value otherwise.
 
-### GetPostCodeOk
+### GetAddressOk
 
-`func (o *LocationResponse) GetPostCodeOk() (*string, bool)`
+`func (o *LocationResponse) GetAddressOk() (*AddressResponse, bool)`
 
-GetPostCodeOk returns a tuple with the PostCode field if it's non-nil, zero value otherwise
+GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPostCode
+### SetAddress
 
-`func (o *LocationResponse) SetPostCode(v string)`
+`func (o *LocationResponse) SetAddress(v AddressResponse)`
 
-SetPostCode sets PostCode field to given value.
+SetAddress sets Address field to given value.
 
 
-### SetPostCodeNil
+### SetAddressNil
 
-`func (o *LocationResponse) SetPostCodeNil(b bool)`
+`func (o *LocationResponse) SetAddressNil(b bool)`
 
- SetPostCodeNil sets the value for PostCode to be an explicit nil
+ SetAddressNil sets the value for Address to be an explicit nil
 
-### UnsetPostCode
-`func (o *LocationResponse) UnsetPostCode()`
+### UnsetAddress
+`func (o *LocationResponse) UnsetAddress()`
 
-UnsetPostCode ensures that no value is present for PostCode, not even an explicit nil
+UnsetAddress ensures that no value is present for Address, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

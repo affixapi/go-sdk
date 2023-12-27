@@ -259,29 +259,35 @@ Class | Method | HTTP request | Description
 *Class20230301Api* | [**DeveloperCompanies20230301**](docs/Class20230301Api.md#developercompanies20230301) | **Get** /2023-03-01/developer/company | Company
 *Class20230301Api* | [**DeveloperCreateEmployee20230301**](docs/Class20230301Api.md#developercreateemployee20230301) | **Post** /2023-03-01/developer/employee | Create employee
 *Class20230301Api* | [**DeveloperEmployees20230301**](docs/Class20230301Api.md#developeremployees20230301) | **Get** /2023-03-01/developer/employees | Employees
+*Class20230301Api* | [**DeveloperGroups20230301**](docs/Class20230301Api.md#developergroups20230301) | **Get** /2023-03-01/developer/groups | Groups
 *Class20230301Api* | [**DeveloperIdentity20230301**](docs/Class20230301Api.md#developeridentity20230301) | **Get** /2023-03-01/developer/identity | Identity
 *Class20230301Api* | [**DeveloperPayruns20230301**](docs/Class20230301Api.md#developerpayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
 *Class20230301Api* | [**DeveloperPayslips20230301**](docs/Class20230301Api.md#developerpayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Payslips
 *Class20230301Api* | [**DeveloperTimeOffBalances20230301**](docs/Class20230301Api.md#developertimeoffbalances20230301) | **Get** /2023-03-01/developer/time-off-balances | Time off balances
 *Class20230301Api* | [**DeveloperTimeOffEntries20230301**](docs/Class20230301Api.md#developertimeoffentries20230301) | **Get** /2023-03-01/developer/time-off-entries | Time off entries
 *Class20230301Api* | [**DeveloperTimesheets20230301**](docs/Class20230301Api.md#developertimesheets20230301) | **Get** /2023-03-01/developer/timesheets | Timesheets
+*Class20230301Api* | [**DeveloperWorkLocations20230301**](docs/Class20230301Api.md#developerworklocations20230301) | **Get** /2023-03-01/developer/work-locations | Work Locations
 *Class20230301Api* | [**OfficialCompanies20230301**](docs/Class20230301Api.md#officialcompanies20230301) | **Get** /2023-03-01/official/company | Company
 *Class20230301Api* | [**OfficialCreateEmployee20230301**](docs/Class20230301Api.md#officialcreateemployee20230301) | **Post** /2023-03-01/official/employee | Create Employee
 *Class20230301Api* | [**OfficialEmployees20230301**](docs/Class20230301Api.md#officialemployees20230301) | **Get** /2023-03-01/official/employees | Employees
+*Class20230301Api* | [**OfficialGroups20230301**](docs/Class20230301Api.md#officialgroups20230301) | **Get** /2023-03-01/official/groups | Groups
 *Class20230301Api* | [**OfficialTimeOffBalances20230301**](docs/Class20230301Api.md#officialtimeoffbalances20230301) | **Get** /2023-03-01/official/time-off-balances | Time off balances
 *Class20230301Api* | [**OfficialTimeOffEntries20230301**](docs/Class20230301Api.md#officialtimeoffentries20230301) | **Get** /2023-03-01/official/time-off-entries | Time off entries
 *Class20230301Api* | [**OfficialTimesheets20230301**](docs/Class20230301Api.md#officialtimesheets20230301) | **Get** /2023-03-01/official/timesheets | Timesheets
+*Class20230301Api* | [**OfficialWorkLocations20230301**](docs/Class20230301Api.md#officialworklocations20230301) | **Get** /2023-03-01/official/work-locations | Work Locations
 *Class20230301Api* | [**Officialdentity20230301**](docs/Class20230301Api.md#officialdentity20230301) | **Get** /2023-03-01/official/identity | Identity
 *CoreApi* | [**Providers**](docs/CoreApi.md#providers) | **Get** /providers | Providers
 *DeveloperApi* | [**DeveloperCompanies20230301**](docs/DeveloperApi.md#developercompanies20230301) | **Get** /2023-03-01/developer/company | Company
 *DeveloperApi* | [**DeveloperCreateEmployee20230301**](docs/DeveloperApi.md#developercreateemployee20230301) | **Post** /2023-03-01/developer/employee | Create employee
 *DeveloperApi* | [**DeveloperEmployees20230301**](docs/DeveloperApi.md#developeremployees20230301) | **Get** /2023-03-01/developer/employees | Employees
+*DeveloperApi* | [**DeveloperGroups20230301**](docs/DeveloperApi.md#developergroups20230301) | **Get** /2023-03-01/developer/groups | Groups
 *DeveloperApi* | [**DeveloperIdentity20230301**](docs/DeveloperApi.md#developeridentity20230301) | **Get** /2023-03-01/developer/identity | Identity
 *DeveloperApi* | [**DeveloperPayruns20230301**](docs/DeveloperApi.md#developerpayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
 *DeveloperApi* | [**DeveloperPayslips20230301**](docs/DeveloperApi.md#developerpayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Payslips
 *DeveloperApi* | [**DeveloperTimeOffBalances20230301**](docs/DeveloperApi.md#developertimeoffbalances20230301) | **Get** /2023-03-01/developer/time-off-balances | Time off balances
 *DeveloperApi* | [**DeveloperTimeOffEntries20230301**](docs/DeveloperApi.md#developertimeoffentries20230301) | **Get** /2023-03-01/developer/time-off-entries | Time off entries
 *DeveloperApi* | [**DeveloperTimesheets20230301**](docs/DeveloperApi.md#developertimesheets20230301) | **Get** /2023-03-01/developer/timesheets | Timesheets
+*DeveloperApi* | [**DeveloperWorkLocations20230301**](docs/DeveloperApi.md#developerworklocations20230301) | **Get** /2023-03-01/developer/work-locations | Work Locations
 *ManagementApi* | [**Client**](docs/ManagementApi.md#client) | **Get** /2023-03-01/management/client | Client
 *ManagementApi* | [**Disconnect**](docs/ManagementApi.md#disconnect) | **Post** /2023-03-01/management/disconnect | Disconnect token
 *ManagementApi* | [**Introspect**](docs/ManagementApi.md#introspect) | **Get** /2023-03-01/management/introspect | Inspect token
@@ -291,34 +297,32 @@ Class | Method | HTTP request | Description
 *OfficialApi* | [**OfficialCompanies20230301**](docs/OfficialApi.md#officialcompanies20230301) | **Get** /2023-03-01/official/company | Company
 *OfficialApi* | [**OfficialCreateEmployee20230301**](docs/OfficialApi.md#officialcreateemployee20230301) | **Post** /2023-03-01/official/employee | Create Employee
 *OfficialApi* | [**OfficialEmployees20230301**](docs/OfficialApi.md#officialemployees20230301) | **Get** /2023-03-01/official/employees | Employees
+*OfficialApi* | [**OfficialGroups20230301**](docs/OfficialApi.md#officialgroups20230301) | **Get** /2023-03-01/official/groups | Groups
 *OfficialApi* | [**OfficialTimeOffBalances20230301**](docs/OfficialApi.md#officialtimeoffbalances20230301) | **Get** /2023-03-01/official/time-off-balances | Time off balances
 *OfficialApi* | [**OfficialTimeOffEntries20230301**](docs/OfficialApi.md#officialtimeoffentries20230301) | **Get** /2023-03-01/official/time-off-entries | Time off entries
 *OfficialApi* | [**OfficialTimesheets20230301**](docs/OfficialApi.md#officialtimesheets20230301) | **Get** /2023-03-01/official/timesheets | Timesheets
+*OfficialApi* | [**OfficialWorkLocations20230301**](docs/OfficialApi.md#officialworklocations20230301) | **Get** /2023-03-01/official/work-locations | Work Locations
 *OfficialApi* | [**Officialdentity20230301**](docs/OfficialApi.md#officialdentity20230301) | **Get** /2023-03-01/official/identity | Identity
 
 
 ## Documentation For Models
 
+ - [AddressRequest](docs/AddressRequest.md)
+ - [AddressResponse](docs/AddressResponse.md)
  - [ClientRequest](docs/ClientRequest.md)
  - [ClientResponse](docs/ClientResponse.md)
  - [CompanyResponse](docs/CompanyResponse.md)
- - [CompanyResponseLocation](docs/CompanyResponseLocation.md)
  - [CreateEmployeeRequest](docs/CreateEmployeeRequest.md)
  - [CreateEmployeeRequestBankAccount](docs/CreateEmployeeRequestBankAccount.md)
- - [CreateEmployeeRequestCompany](docs/CreateEmployeeRequestCompany.md)
- - [CreateEmployeeRequestCompanyLocation](docs/CreateEmployeeRequestCompanyLocation.md)
- - [CreateEmployeeRequestGroups](docs/CreateEmployeeRequestGroups.md)
- - [CreateEmployeeRequestHomeLocation](docs/CreateEmployeeRequestHomeLocation.md)
  - [CreateEmployeeRequestManager](docs/CreateEmployeeRequestManager.md)
- - [CreateEmployeeRequestWorkLocation](docs/CreateEmployeeRequestWorkLocation.md)
  - [CurrencyRequest](docs/CurrencyRequest.md)
  - [CurrencyResponse](docs/CurrencyResponse.md)
  - [DisconnectResponse](docs/DisconnectResponse.md)
  - [EmployeeResponse](docs/EmployeeResponse.md)
- - [EmployeeResponseHomeLocation](docs/EmployeeResponseHomeLocation.md)
- - [EmployeeResponseWorkLocation](docs/EmployeeResponseWorkLocation.md)
  - [EmploymentNoNullEnumRequest](docs/EmploymentNoNullEnumRequest.md)
  - [EmploymentResponse](docs/EmploymentResponse.md)
+ - [GroupRequest](docs/GroupRequest.md)
+ - [GroupResponse](docs/GroupResponse.md)
  - [IdAndMessageResponse](docs/IdAndMessageResponse.md)
  - [IdentityResponse](docs/IdentityResponse.md)
  - [InlineResponse400](docs/InlineResponse400.md)

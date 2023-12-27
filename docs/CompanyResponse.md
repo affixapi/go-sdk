@@ -9,13 +9,13 @@ Name | Type | Description | Notes
 **LegalName** | **NullableString** |  | 
 **DisplayName** | **NullableString** |  | 
 **TaxId** | **NullableString** |  | 
-**Location** | [**NullableCompanyResponseLocation**](CompanyResponseLocation.md) |  | 
+**Address** | [**NullableAddressResponse**](AddressResponse.md) |  | 
 
 ## Methods
 
 ### NewCompanyResponse
 
-`func NewCompanyResponse(id string, remoteId string, legalName NullableString, displayName NullableString, taxId NullableString, location NullableCompanyResponseLocation, ) *CompanyResponse`
+`func NewCompanyResponse(id string, remoteId string, legalName NullableString, displayName NullableString, taxId NullableString, address NullableAddressResponse, ) *CompanyResponse`
 
 NewCompanyResponse instantiates a new CompanyResponse object
 This constructor will assign default values to properties that have it defined,
@@ -160,36 +160,36 @@ SetTaxId sets TaxId field to given value.
 `func (o *CompanyResponse) UnsetTaxId()`
 
 UnsetTaxId ensures that no value is present for TaxId, not even an explicit nil
-### GetLocation
+### GetAddress
 
-`func (o *CompanyResponse) GetLocation() CompanyResponseLocation`
+`func (o *CompanyResponse) GetAddress() AddressResponse`
 
-GetLocation returns the Location field if non-nil, zero value otherwise.
+GetAddress returns the Address field if non-nil, zero value otherwise.
 
-### GetLocationOk
+### GetAddressOk
 
-`func (o *CompanyResponse) GetLocationOk() (*CompanyResponseLocation, bool)`
+`func (o *CompanyResponse) GetAddressOk() (*AddressResponse, bool)`
 
-GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
+GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLocation
+### SetAddress
 
-`func (o *CompanyResponse) SetLocation(v CompanyResponseLocation)`
+`func (o *CompanyResponse) SetAddress(v AddressResponse)`
 
-SetLocation sets Location field to given value.
+SetAddress sets Address field to given value.
 
 
-### SetLocationNil
+### SetAddressNil
 
-`func (o *CompanyResponse) SetLocationNil(b bool)`
+`func (o *CompanyResponse) SetAddressNil(b bool)`
 
- SetLocationNil sets the value for Location to be an explicit nil
+ SetAddressNil sets the value for Address to be an explicit nil
 
-### UnsetLocation
-`func (o *CompanyResponse) UnsetLocation()`
+### UnsetAddress
+`func (o *CompanyResponse) UnsetAddress()`
 
-UnsetLocation ensures that no value is present for Location, not even an explicit nil
+UnsetAddress ensures that no value is present for Address, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

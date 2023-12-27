@@ -24,21 +24,21 @@ type CompanyResponse struct {
 	LegalName NullableString `json:"legal_name"`
 	DisplayName NullableString `json:"display_name"`
 	TaxId NullableString `json:"tax_id"`
-	Location NullableCompanyResponseLocation `json:"location"`
+	Address NullableAddressResponse `json:"address"`
 }
 
 // NewCompanyResponse instantiates a new CompanyResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCompanyResponse(id string, remoteId string, legalName NullableString, displayName NullableString, taxId NullableString, location NullableCompanyResponseLocation) *CompanyResponse {
+func NewCompanyResponse(id string, remoteId string, legalName NullableString, displayName NullableString, taxId NullableString, address NullableAddressResponse) *CompanyResponse {
 	this := CompanyResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
 	this.LegalName = legalName
 	this.DisplayName = displayName
 	this.TaxId = taxId
-	this.Location = location
+	this.Address = address
 	return &this
 }
 
@@ -176,30 +176,30 @@ func (o *CompanyResponse) SetTaxId(v string) {
 	o.TaxId.Set(&v)
 }
 
-// GetLocation returns the Location field value
-// If the value is explicit nil, the zero value for CompanyResponseLocation will be returned
-func (o *CompanyResponse) GetLocation() CompanyResponseLocation {
-	if o == nil || o.Location.Get() == nil {
-		var ret CompanyResponseLocation
+// GetAddress returns the Address field value
+// If the value is explicit nil, the zero value for AddressResponse will be returned
+func (o *CompanyResponse) GetAddress() AddressResponse {
+	if o == nil || o.Address.Get() == nil {
+		var ret AddressResponse
 		return ret
 	}
 
-	return *o.Location.Get()
+	return *o.Address.Get()
 }
 
-// GetLocationOk returns a tuple with the Location field value
+// GetAddressOk returns a tuple with the Address field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CompanyResponse) GetLocationOk() (*CompanyResponseLocation, bool) {
+func (o *CompanyResponse) GetAddressOk() (*AddressResponse, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.Location.Get(), o.Location.IsSet()
+	return o.Address.Get(), o.Address.IsSet()
 }
 
-// SetLocation sets field value
-func (o *CompanyResponse) SetLocation(v CompanyResponseLocation) {
-	o.Location.Set(&v)
+// SetAddress sets field value
+func (o *CompanyResponse) SetAddress(v AddressResponse) {
+	o.Address.Set(&v)
 }
 
 func (o CompanyResponse) MarshalJSON() ([]byte, error) {
@@ -220,7 +220,7 @@ func (o CompanyResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["tax_id"] = o.TaxId.Get()
 	}
 	if true {
-		toSerialize["location"] = o.Location.Get()
+		toSerialize["address"] = o.Address.Get()
 	}
 	return json.Marshal(toSerialize)
 }

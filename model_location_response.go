@@ -17,26 +17,28 @@ import (
 
 // LocationResponse struct for LocationResponse
 type LocationResponse struct {
-	StreetAddress NullableString `json:"street_address"`
-	Locality NullableString `json:"locality"`
-	// The administrative area of the address. If US or CA, the two-letter state abbreviation 
-	AdministrativeArea NullableString `json:"administrative_area"`
-	// The two-letter abbreviation of the country 
-	Country NullableString `json:"country"`
-	PostCode NullableString `json:"post_code"`
+	// The Affix-assigned id of the individual
+	Id NullableString `json:"id"`
+	// the remote system-assigned id of the individual
+	RemoteId NullableString `json:"remote_id"`
+	// System assigned description of the location
+	Name NullableString `json:"name"`
+	// The location's type. In cases where there is no clear mapping, the original value passed through will be returned. 
+	Type NullableString `json:"type"`
+	Address NullableAddressResponse `json:"address"`
 }
 
 // NewLocationResponse instantiates a new LocationResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLocationResponse(streetAddress NullableString, locality NullableString, administrativeArea NullableString, country NullableString, postCode NullableString) *LocationResponse {
+func NewLocationResponse(id NullableString, remoteId NullableString, name NullableString, type_ NullableString, address NullableAddressResponse) *LocationResponse {
 	this := LocationResponse{}
-	this.StreetAddress = streetAddress
-	this.Locality = locality
-	this.AdministrativeArea = administrativeArea
-	this.Country = country
-	this.PostCode = postCode
+	this.Id = id
+	this.RemoteId = remoteId
+	this.Name = name
+	this.Type = type_
+	this.Address = address
 	return &this
 }
 
@@ -48,152 +50,152 @@ func NewLocationResponseWithDefaults() *LocationResponse {
 	return &this
 }
 
-// GetStreetAddress returns the StreetAddress field value
+// GetId returns the Id field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *LocationResponse) GetStreetAddress() string {
-	if o == nil || o.StreetAddress.Get() == nil {
+func (o *LocationResponse) GetId() string {
+	if o == nil || o.Id.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.StreetAddress.Get()
+	return *o.Id.Get()
 }
 
-// GetStreetAddressOk returns a tuple with the StreetAddress field value
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocationResponse) GetStreetAddressOk() (*string, bool) {
+func (o *LocationResponse) GetIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.StreetAddress.Get(), o.StreetAddress.IsSet()
+	return o.Id.Get(), o.Id.IsSet()
 }
 
-// SetStreetAddress sets field value
-func (o *LocationResponse) SetStreetAddress(v string) {
-	o.StreetAddress.Set(&v)
+// SetId sets field value
+func (o *LocationResponse) SetId(v string) {
+	o.Id.Set(&v)
 }
 
-// GetLocality returns the Locality field value
+// GetRemoteId returns the RemoteId field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *LocationResponse) GetLocality() string {
-	if o == nil || o.Locality.Get() == nil {
+func (o *LocationResponse) GetRemoteId() string {
+	if o == nil || o.RemoteId.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.Locality.Get()
+	return *o.RemoteId.Get()
 }
 
-// GetLocalityOk returns a tuple with the Locality field value
+// GetRemoteIdOk returns a tuple with the RemoteId field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocationResponse) GetLocalityOk() (*string, bool) {
+func (o *LocationResponse) GetRemoteIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.Locality.Get(), o.Locality.IsSet()
+	return o.RemoteId.Get(), o.RemoteId.IsSet()
 }
 
-// SetLocality sets field value
-func (o *LocationResponse) SetLocality(v string) {
-	o.Locality.Set(&v)
+// SetRemoteId sets field value
+func (o *LocationResponse) SetRemoteId(v string) {
+	o.RemoteId.Set(&v)
 }
 
-// GetAdministrativeArea returns the AdministrativeArea field value
+// GetName returns the Name field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *LocationResponse) GetAdministrativeArea() string {
-	if o == nil || o.AdministrativeArea.Get() == nil {
+func (o *LocationResponse) GetName() string {
+	if o == nil || o.Name.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.AdministrativeArea.Get()
+	return *o.Name.Get()
 }
 
-// GetAdministrativeAreaOk returns a tuple with the AdministrativeArea field value
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocationResponse) GetAdministrativeAreaOk() (*string, bool) {
+func (o *LocationResponse) GetNameOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.AdministrativeArea.Get(), o.AdministrativeArea.IsSet()
+	return o.Name.Get(), o.Name.IsSet()
 }
 
-// SetAdministrativeArea sets field value
-func (o *LocationResponse) SetAdministrativeArea(v string) {
-	o.AdministrativeArea.Set(&v)
+// SetName sets field value
+func (o *LocationResponse) SetName(v string) {
+	o.Name.Set(&v)
 }
 
-// GetCountry returns the Country field value
+// GetType returns the Type field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *LocationResponse) GetCountry() string {
-	if o == nil || o.Country.Get() == nil {
+func (o *LocationResponse) GetType() string {
+	if o == nil || o.Type.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.Country.Get()
+	return *o.Type.Get()
 }
 
-// GetCountryOk returns a tuple with the Country field value
+// GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocationResponse) GetCountryOk() (*string, bool) {
+func (o *LocationResponse) GetTypeOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.Country.Get(), o.Country.IsSet()
+	return o.Type.Get(), o.Type.IsSet()
 }
 
-// SetCountry sets field value
-func (o *LocationResponse) SetCountry(v string) {
-	o.Country.Set(&v)
+// SetType sets field value
+func (o *LocationResponse) SetType(v string) {
+	o.Type.Set(&v)
 }
 
-// GetPostCode returns the PostCode field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *LocationResponse) GetPostCode() string {
-	if o == nil || o.PostCode.Get() == nil {
-		var ret string
+// GetAddress returns the Address field value
+// If the value is explicit nil, the zero value for AddressResponse will be returned
+func (o *LocationResponse) GetAddress() AddressResponse {
+	if o == nil || o.Address.Get() == nil {
+		var ret AddressResponse
 		return ret
 	}
 
-	return *o.PostCode.Get()
+	return *o.Address.Get()
 }
 
-// GetPostCodeOk returns a tuple with the PostCode field value
+// GetAddressOk returns a tuple with the Address field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocationResponse) GetPostCodeOk() (*string, bool) {
+func (o *LocationResponse) GetAddressOk() (*AddressResponse, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.PostCode.Get(), o.PostCode.IsSet()
+	return o.Address.Get(), o.Address.IsSet()
 }
 
-// SetPostCode sets field value
-func (o *LocationResponse) SetPostCode(v string) {
-	o.PostCode.Set(&v)
+// SetAddress sets field value
+func (o *LocationResponse) SetAddress(v AddressResponse) {
+	o.Address.Set(&v)
 }
 
 func (o LocationResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["street_address"] = o.StreetAddress.Get()
+		toSerialize["id"] = o.Id.Get()
 	}
 	if true {
-		toSerialize["locality"] = o.Locality.Get()
+		toSerialize["remote_id"] = o.RemoteId.Get()
 	}
 	if true {
-		toSerialize["administrative_area"] = o.AdministrativeArea.Get()
+		toSerialize["name"] = o.Name.Get()
 	}
 	if true {
-		toSerialize["country"] = o.Country.Get()
+		toSerialize["type"] = o.Type.Get()
 	}
 	if true {
-		toSerialize["post_code"] = o.PostCode.Get()
+		toSerialize["address"] = o.Address.Get()
 	}
 	return json.Marshal(toSerialize)
 }

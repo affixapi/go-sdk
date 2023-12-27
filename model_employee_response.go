@@ -46,21 +46,20 @@ type EmployeeResponse struct {
 	RemoteCreatedAt NullableString `json:"remote_created_at"`
 	TerminationDate NullableString `json:"termination_date"`
 	Avatar NullableString `json:"avatar"`
-	HomeLocation NullableEmployeeResponseHomeLocation `json:"home_location"`
-	WorkLocation NullableEmployeeResponseWorkLocation `json:"work_location"`
+	HomeLocation NullableAddressResponse `json:"home_location"`
+	WorkLocation NullableLocationResponse `json:"work_location"`
 	Manager NullableCreateEmployeeRequestManager `json:"manager"`
 	BankAccount NullableCreateEmployeeRequestBankAccount `json:"bank_account"`
 	Employments []EmploymentResponse `json:"employments"`
 	CustomFields map[string]interface{} `json:"custom_fields"`
-	Groups []CreateEmployeeRequestGroups `json:"groups"`
-	Company NullableCreateEmployeeRequestCompany `json:"company"`
+	Groups []GroupResponse `json:"groups"`
 }
 
 // NewEmployeeResponse instantiates a new EmployeeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableString, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableEmployeeResponseHomeLocation, workLocation NullableEmployeeResponseWorkLocation, manager NullableCreateEmployeeRequestManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []CreateEmployeeRequestGroups, company NullableCreateEmployeeRequestCompany) *EmployeeResponse {
+func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableString, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableCreateEmployeeRequestManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse) *EmployeeResponse {
 	this := EmployeeResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
@@ -91,7 +90,6 @@ func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableStri
 	this.Employments = employments
 	this.CustomFields = customFields
 	this.Groups = groups
-	this.Company = company
 	return &this
 }
 
@@ -668,10 +666,10 @@ func (o *EmployeeResponse) SetAvatar(v string) {
 }
 
 // GetHomeLocation returns the HomeLocation field value
-// If the value is explicit nil, the zero value for EmployeeResponseHomeLocation will be returned
-func (o *EmployeeResponse) GetHomeLocation() EmployeeResponseHomeLocation {
+// If the value is explicit nil, the zero value for AddressResponse will be returned
+func (o *EmployeeResponse) GetHomeLocation() AddressResponse {
 	if o == nil || o.HomeLocation.Get() == nil {
-		var ret EmployeeResponseHomeLocation
+		var ret AddressResponse
 		return ret
 	}
 
@@ -681,7 +679,7 @@ func (o *EmployeeResponse) GetHomeLocation() EmployeeResponseHomeLocation {
 // GetHomeLocationOk returns a tuple with the HomeLocation field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmployeeResponse) GetHomeLocationOk() (*EmployeeResponseHomeLocation, bool) {
+func (o *EmployeeResponse) GetHomeLocationOk() (*AddressResponse, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -689,15 +687,15 @@ func (o *EmployeeResponse) GetHomeLocationOk() (*EmployeeResponseHomeLocation, b
 }
 
 // SetHomeLocation sets field value
-func (o *EmployeeResponse) SetHomeLocation(v EmployeeResponseHomeLocation) {
+func (o *EmployeeResponse) SetHomeLocation(v AddressResponse) {
 	o.HomeLocation.Set(&v)
 }
 
 // GetWorkLocation returns the WorkLocation field value
-// If the value is explicit nil, the zero value for EmployeeResponseWorkLocation will be returned
-func (o *EmployeeResponse) GetWorkLocation() EmployeeResponseWorkLocation {
+// If the value is explicit nil, the zero value for LocationResponse will be returned
+func (o *EmployeeResponse) GetWorkLocation() LocationResponse {
 	if o == nil || o.WorkLocation.Get() == nil {
-		var ret EmployeeResponseWorkLocation
+		var ret LocationResponse
 		return ret
 	}
 
@@ -707,7 +705,7 @@ func (o *EmployeeResponse) GetWorkLocation() EmployeeResponseWorkLocation {
 // GetWorkLocationOk returns a tuple with the WorkLocation field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmployeeResponse) GetWorkLocationOk() (*EmployeeResponseWorkLocation, bool) {
+func (o *EmployeeResponse) GetWorkLocationOk() (*LocationResponse, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -715,7 +713,7 @@ func (o *EmployeeResponse) GetWorkLocationOk() (*EmployeeResponseWorkLocation, b
 }
 
 // SetWorkLocation sets field value
-func (o *EmployeeResponse) SetWorkLocation(v EmployeeResponseWorkLocation) {
+func (o *EmployeeResponse) SetWorkLocation(v LocationResponse) {
 	o.WorkLocation.Set(&v)
 }
 
@@ -824,10 +822,10 @@ func (o *EmployeeResponse) SetCustomFields(v map[string]interface{}) {
 }
 
 // GetGroups returns the Groups field value
-// If the value is explicit nil, the zero value for []CreateEmployeeRequestGroups will be returned
-func (o *EmployeeResponse) GetGroups() []CreateEmployeeRequestGroups {
+// If the value is explicit nil, the zero value for []GroupResponse will be returned
+func (o *EmployeeResponse) GetGroups() []GroupResponse {
 	if o == nil {
-		var ret []CreateEmployeeRequestGroups
+		var ret []GroupResponse
 		return ret
 	}
 
@@ -837,7 +835,7 @@ func (o *EmployeeResponse) GetGroups() []CreateEmployeeRequestGroups {
 // GetGroupsOk returns a tuple with the Groups field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmployeeResponse) GetGroupsOk() (*[]CreateEmployeeRequestGroups, bool) {
+func (o *EmployeeResponse) GetGroupsOk() (*[]GroupResponse, bool) {
 	if o == nil || o.Groups == nil {
 		return nil, false
 	}
@@ -845,34 +843,8 @@ func (o *EmployeeResponse) GetGroupsOk() (*[]CreateEmployeeRequestGroups, bool) 
 }
 
 // SetGroups sets field value
-func (o *EmployeeResponse) SetGroups(v []CreateEmployeeRequestGroups) {
+func (o *EmployeeResponse) SetGroups(v []GroupResponse) {
 	o.Groups = v
-}
-
-// GetCompany returns the Company field value
-// If the value is explicit nil, the zero value for CreateEmployeeRequestCompany will be returned
-func (o *EmployeeResponse) GetCompany() CreateEmployeeRequestCompany {
-	if o == nil || o.Company.Get() == nil {
-		var ret CreateEmployeeRequestCompany
-		return ret
-	}
-
-	return *o.Company.Get()
-}
-
-// GetCompanyOk returns a tuple with the Company field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmployeeResponse) GetCompanyOk() (*CreateEmployeeRequestCompany, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.Company.Get(), o.Company.IsSet()
-}
-
-// SetCompany sets field value
-func (o *EmployeeResponse) SetCompany(v CreateEmployeeRequestCompany) {
-	o.Company.Set(&v)
 }
 
 func (o EmployeeResponse) MarshalJSON() ([]byte, error) {
@@ -963,9 +935,6 @@ func (o EmployeeResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.Groups != nil {
 		toSerialize["groups"] = o.Groups
-	}
-	if true {
-		toSerialize["company"] = o.Company.Get()
 	}
 	return json.Marshal(toSerialize)
 }

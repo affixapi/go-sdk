@@ -23,14 +23,13 @@ Name | Type | Description | Notes
 **StartDate** | Pointer to **NullableString** |  | [optional] 
 **TerminationDate** | Pointer to **NullableString** |  | [optional] 
 **Avatar** | Pointer to **NullableString** |  | [optional] 
-**HomeLocation** | Pointer to [**NullableCreateEmployeeRequestHomeLocation**](CreateEmployeeRequestHomeLocation.md) |  | [optional] 
-**WorkLocation** | Pointer to [**NullableCreateEmployeeRequestWorkLocation**](CreateEmployeeRequestWorkLocation.md) |  | [optional] 
+**HomeLocation** | Pointer to [**NullableAddressRequest**](AddressRequest.md) |  | [optional] 
+**WorkLocation** | Pointer to [**NullableLocationRequest**](LocationRequest.md) |  | [optional] 
 **Manager** | Pointer to [**NullableCreateEmployeeRequestManager**](CreateEmployeeRequestManager.md) |  | [optional] 
 **BankAccount** | Pointer to [**NullableCreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  | [optional] 
 **Employments** | Pointer to [**[]EmploymentNoNullEnumRequest**](EmploymentNoNullEnumRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Groups** | Pointer to [**[]CreateEmployeeRequestGroups**](CreateEmployeeRequestGroups.md) |  | [optional] 
-**Company** | Pointer to [**NullableCreateEmployeeRequestCompany**](CreateEmployeeRequestCompany.md) |  | [optional] 
+**Groups** | Pointer to [**[]GroupRequest**](GroupRequest.md) |  | [optional] 
 
 ## Methods
 
@@ -688,20 +687,20 @@ HasAvatar returns a boolean if a field has been set.
 UnsetAvatar ensures that no value is present for Avatar, not even an explicit nil
 ### GetHomeLocation
 
-`func (o *CreateEmployeeRequest) GetHomeLocation() CreateEmployeeRequestHomeLocation`
+`func (o *CreateEmployeeRequest) GetHomeLocation() AddressRequest`
 
 GetHomeLocation returns the HomeLocation field if non-nil, zero value otherwise.
 
 ### GetHomeLocationOk
 
-`func (o *CreateEmployeeRequest) GetHomeLocationOk() (*CreateEmployeeRequestHomeLocation, bool)`
+`func (o *CreateEmployeeRequest) GetHomeLocationOk() (*AddressRequest, bool)`
 
 GetHomeLocationOk returns a tuple with the HomeLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHomeLocation
 
-`func (o *CreateEmployeeRequest) SetHomeLocation(v CreateEmployeeRequestHomeLocation)`
+`func (o *CreateEmployeeRequest) SetHomeLocation(v AddressRequest)`
 
 SetHomeLocation sets HomeLocation field to given value.
 
@@ -723,20 +722,20 @@ HasHomeLocation returns a boolean if a field has been set.
 UnsetHomeLocation ensures that no value is present for HomeLocation, not even an explicit nil
 ### GetWorkLocation
 
-`func (o *CreateEmployeeRequest) GetWorkLocation() CreateEmployeeRequestWorkLocation`
+`func (o *CreateEmployeeRequest) GetWorkLocation() LocationRequest`
 
 GetWorkLocation returns the WorkLocation field if non-nil, zero value otherwise.
 
 ### GetWorkLocationOk
 
-`func (o *CreateEmployeeRequest) GetWorkLocationOk() (*CreateEmployeeRequestWorkLocation, bool)`
+`func (o *CreateEmployeeRequest) GetWorkLocationOk() (*LocationRequest, bool)`
 
 GetWorkLocationOk returns a tuple with the WorkLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWorkLocation
 
-`func (o *CreateEmployeeRequest) SetWorkLocation(v CreateEmployeeRequestWorkLocation)`
+`func (o *CreateEmployeeRequest) SetWorkLocation(v LocationRequest)`
 
 SetWorkLocation sets WorkLocation field to given value.
 
@@ -898,20 +897,20 @@ HasCustomFields returns a boolean if a field has been set.
 UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
 ### GetGroups
 
-`func (o *CreateEmployeeRequest) GetGroups() []CreateEmployeeRequestGroups`
+`func (o *CreateEmployeeRequest) GetGroups() []GroupRequest`
 
 GetGroups returns the Groups field if non-nil, zero value otherwise.
 
 ### GetGroupsOk
 
-`func (o *CreateEmployeeRequest) GetGroupsOk() (*[]CreateEmployeeRequestGroups, bool)`
+`func (o *CreateEmployeeRequest) GetGroupsOk() (*[]GroupRequest, bool)`
 
 GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroups
 
-`func (o *CreateEmployeeRequest) SetGroups(v []CreateEmployeeRequestGroups)`
+`func (o *CreateEmployeeRequest) SetGroups(v []GroupRequest)`
 
 SetGroups sets Groups field to given value.
 
@@ -931,41 +930,6 @@ HasGroups returns a boolean if a field has been set.
 `func (o *CreateEmployeeRequest) UnsetGroups()`
 
 UnsetGroups ensures that no value is present for Groups, not even an explicit nil
-### GetCompany
-
-`func (o *CreateEmployeeRequest) GetCompany() CreateEmployeeRequestCompany`
-
-GetCompany returns the Company field if non-nil, zero value otherwise.
-
-### GetCompanyOk
-
-`func (o *CreateEmployeeRequest) GetCompanyOk() (*CreateEmployeeRequestCompany, bool)`
-
-GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCompany
-
-`func (o *CreateEmployeeRequest) SetCompany(v CreateEmployeeRequestCompany)`
-
-SetCompany sets Company field to given value.
-
-### HasCompany
-
-`func (o *CreateEmployeeRequest) HasCompany() bool`
-
-HasCompany returns a boolean if a field has been set.
-
-### SetCompanyNil
-
-`func (o *CreateEmployeeRequest) SetCompanyNil(b bool)`
-
- SetCompanyNil sets the value for Company to be an explicit nil
-
-### UnsetCompany
-`func (o *CreateEmployeeRequest) UnsetCompany()`
-
-UnsetCompany ensures that no value is present for Company, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

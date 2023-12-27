@@ -15,86 +15,90 @@ import (
 	"encoding/json"
 )
 
-// EmployeeResponseWorkLocation struct for EmployeeResponseWorkLocation
-type EmployeeResponseWorkLocation struct {
-	Location LocationResponse `json:"location"`
-	Type NullableString `json:"type"`
+// GroupRequest struct for GroupRequest
+type GroupRequest struct {
+	Id NullableString `json:"id"`
+	RemoteId NullableString `json:"remote_id"`
 	Name NullableString `json:"name"`
+	Type NullableString `json:"type"`
 }
 
-// NewEmployeeResponseWorkLocation instantiates a new EmployeeResponseWorkLocation object
+// NewGroupRequest instantiates a new GroupRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmployeeResponseWorkLocation(location LocationResponse, type_ NullableString, name NullableString) *EmployeeResponseWorkLocation {
-	this := EmployeeResponseWorkLocation{}
-	this.Location = location
-	this.Type = type_
+func NewGroupRequest(id NullableString, remoteId NullableString, name NullableString, type_ NullableString) *GroupRequest {
+	this := GroupRequest{}
+	this.Id = id
+	this.RemoteId = remoteId
 	this.Name = name
+	this.Type = type_
 	return &this
 }
 
-// NewEmployeeResponseWorkLocationWithDefaults instantiates a new EmployeeResponseWorkLocation object
+// NewGroupRequestWithDefaults instantiates a new GroupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewEmployeeResponseWorkLocationWithDefaults() *EmployeeResponseWorkLocation {
-	this := EmployeeResponseWorkLocation{}
+func NewGroupRequestWithDefaults() *GroupRequest {
+	this := GroupRequest{}
 	return &this
 }
 
-// GetLocation returns the Location field value
-func (o *EmployeeResponseWorkLocation) GetLocation() LocationResponse {
-	if o == nil {
-		var ret LocationResponse
-		return ret
-	}
-
-	return o.Location
-}
-
-// GetLocationOk returns a tuple with the Location field value
-// and a boolean to check if the value has been set.
-func (o *EmployeeResponseWorkLocation) GetLocationOk() (*LocationResponse, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Location, true
-}
-
-// SetLocation sets field value
-func (o *EmployeeResponseWorkLocation) SetLocation(v LocationResponse) {
-	o.Location = v
-}
-
-// GetType returns the Type field value
+// GetId returns the Id field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *EmployeeResponseWorkLocation) GetType() string {
-	if o == nil || o.Type.Get() == nil {
+func (o *GroupRequest) GetId() string {
+	if o == nil || o.Id.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.Type.Get()
+	return *o.Id.Get()
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmployeeResponseWorkLocation) GetTypeOk() (*string, bool) {
+func (o *GroupRequest) GetIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.Type.Get(), o.Type.IsSet()
+	return o.Id.Get(), o.Id.IsSet()
 }
 
-// SetType sets field value
-func (o *EmployeeResponseWorkLocation) SetType(v string) {
-	o.Type.Set(&v)
+// SetId sets field value
+func (o *GroupRequest) SetId(v string) {
+	o.Id.Set(&v)
+}
+
+// GetRemoteId returns the RemoteId field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *GroupRequest) GetRemoteId() string {
+	if o == nil || o.RemoteId.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.RemoteId.Get()
+}
+
+// GetRemoteIdOk returns a tuple with the RemoteId field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GroupRequest) GetRemoteIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.RemoteId.Get(), o.RemoteId.IsSet()
+}
+
+// SetRemoteId sets field value
+func (o *GroupRequest) SetRemoteId(v string) {
+	o.RemoteId.Set(&v)
 }
 
 // GetName returns the Name field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *EmployeeResponseWorkLocation) GetName() string {
+func (o *GroupRequest) GetName() string {
 	if o == nil || o.Name.Get() == nil {
 		var ret string
 		return ret
@@ -106,7 +110,7 @@ func (o *EmployeeResponseWorkLocation) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmployeeResponseWorkLocation) GetNameOk() (*string, bool) {
+func (o *GroupRequest) GetNameOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -114,56 +118,85 @@ func (o *EmployeeResponseWorkLocation) GetNameOk() (*string, bool) {
 }
 
 // SetName sets field value
-func (o *EmployeeResponseWorkLocation) SetName(v string) {
+func (o *GroupRequest) SetName(v string) {
 	o.Name.Set(&v)
 }
 
-func (o EmployeeResponseWorkLocation) MarshalJSON() ([]byte, error) {
+// GetType returns the Type field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *GroupRequest) GetType() string {
+	if o == nil || o.Type.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.Type.Get()
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GroupRequest) GetTypeOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.Type.Get(), o.Type.IsSet()
+}
+
+// SetType sets field value
+func (o *GroupRequest) SetType(v string) {
+	o.Type.Set(&v)
+}
+
+func (o GroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["location"] = o.Location
+		toSerialize["id"] = o.Id.Get()
 	}
 	if true {
-		toSerialize["type"] = o.Type.Get()
+		toSerialize["remote_id"] = o.RemoteId.Get()
 	}
 	if true {
 		toSerialize["name"] = o.Name.Get()
 	}
+	if true {
+		toSerialize["type"] = o.Type.Get()
+	}
 	return json.Marshal(toSerialize)
 }
 
-type NullableEmployeeResponseWorkLocation struct {
-	value *EmployeeResponseWorkLocation
+type NullableGroupRequest struct {
+	value *GroupRequest
 	isSet bool
 }
 
-func (v NullableEmployeeResponseWorkLocation) Get() *EmployeeResponseWorkLocation {
+func (v NullableGroupRequest) Get() *GroupRequest {
 	return v.value
 }
 
-func (v *NullableEmployeeResponseWorkLocation) Set(val *EmployeeResponseWorkLocation) {
+func (v *NullableGroupRequest) Set(val *GroupRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableEmployeeResponseWorkLocation) IsSet() bool {
+func (v NullableGroupRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableEmployeeResponseWorkLocation) Unset() {
+func (v *NullableGroupRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableEmployeeResponseWorkLocation(val *EmployeeResponseWorkLocation) *NullableEmployeeResponseWorkLocation {
-	return &NullableEmployeeResponseWorkLocation{value: val, isSet: true}
+func NewNullableGroupRequest(val *GroupRequest) *NullableGroupRequest {
+	return &NullableGroupRequest{value: val, isSet: true}
 }
 
-func (v NullableEmployeeResponseWorkLocation) MarshalJSON() ([]byte, error) {
+func (v NullableGroupRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableEmployeeResponseWorkLocation) UnmarshalJSON(src []byte) error {
+func (v *NullableGroupRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

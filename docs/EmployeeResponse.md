@@ -26,20 +26,19 @@ Name | Type | Description | Notes
 **RemoteCreatedAt** | **NullableString** |  | [readonly] 
 **TerminationDate** | **NullableString** |  | 
 **Avatar** | **NullableString** |  | 
-**HomeLocation** | [**NullableEmployeeResponseHomeLocation**](EmployeeResponseHomeLocation.md) |  | 
-**WorkLocation** | [**NullableEmployeeResponseWorkLocation**](EmployeeResponseWorkLocation.md) |  | 
+**HomeLocation** | [**NullableAddressResponse**](AddressResponse.md) |  | 
+**WorkLocation** | [**NullableLocationResponse**](LocationResponse.md) |  | 
 **Manager** | [**NullableCreateEmployeeRequestManager**](CreateEmployeeRequestManager.md) |  | 
 **BankAccount** | [**NullableCreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  | 
 **Employments** | [**[]EmploymentResponse**](EmploymentResponse.md) |  | 
 **CustomFields** | **map[string]interface{}** |  | 
-**Groups** | [**[]CreateEmployeeRequestGroups**](CreateEmployeeRequestGroups.md) |  | 
-**Company** | [**NullableCreateEmployeeRequestCompany**](CreateEmployeeRequestCompany.md) |  | 
+**Groups** | [**[]GroupResponse**](GroupResponse.md) |  | 
 
 ## Methods
 
 ### NewEmployeeResponse
 
-`func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableString, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableEmployeeResponseHomeLocation, workLocation NullableEmployeeResponseWorkLocation, manager NullableCreateEmployeeRequestManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []CreateEmployeeRequestGroups, company NullableCreateEmployeeRequestCompany, ) *EmployeeResponse`
+`func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableString, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableCreateEmployeeRequestManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse, ) *EmployeeResponse`
 
 NewEmployeeResponse instantiates a new EmployeeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -676,20 +675,20 @@ SetAvatar sets Avatar field to given value.
 UnsetAvatar ensures that no value is present for Avatar, not even an explicit nil
 ### GetHomeLocation
 
-`func (o *EmployeeResponse) GetHomeLocation() EmployeeResponseHomeLocation`
+`func (o *EmployeeResponse) GetHomeLocation() AddressResponse`
 
 GetHomeLocation returns the HomeLocation field if non-nil, zero value otherwise.
 
 ### GetHomeLocationOk
 
-`func (o *EmployeeResponse) GetHomeLocationOk() (*EmployeeResponseHomeLocation, bool)`
+`func (o *EmployeeResponse) GetHomeLocationOk() (*AddressResponse, bool)`
 
 GetHomeLocationOk returns a tuple with the HomeLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHomeLocation
 
-`func (o *EmployeeResponse) SetHomeLocation(v EmployeeResponseHomeLocation)`
+`func (o *EmployeeResponse) SetHomeLocation(v AddressResponse)`
 
 SetHomeLocation sets HomeLocation field to given value.
 
@@ -706,20 +705,20 @@ SetHomeLocation sets HomeLocation field to given value.
 UnsetHomeLocation ensures that no value is present for HomeLocation, not even an explicit nil
 ### GetWorkLocation
 
-`func (o *EmployeeResponse) GetWorkLocation() EmployeeResponseWorkLocation`
+`func (o *EmployeeResponse) GetWorkLocation() LocationResponse`
 
 GetWorkLocation returns the WorkLocation field if non-nil, zero value otherwise.
 
 ### GetWorkLocationOk
 
-`func (o *EmployeeResponse) GetWorkLocationOk() (*EmployeeResponseWorkLocation, bool)`
+`func (o *EmployeeResponse) GetWorkLocationOk() (*LocationResponse, bool)`
 
 GetWorkLocationOk returns a tuple with the WorkLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWorkLocation
 
-`func (o *EmployeeResponse) SetWorkLocation(v EmployeeResponseWorkLocation)`
+`func (o *EmployeeResponse) SetWorkLocation(v LocationResponse)`
 
 SetWorkLocation sets WorkLocation field to given value.
 
@@ -856,20 +855,20 @@ SetCustomFields sets CustomFields field to given value.
 UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
 ### GetGroups
 
-`func (o *EmployeeResponse) GetGroups() []CreateEmployeeRequestGroups`
+`func (o *EmployeeResponse) GetGroups() []GroupResponse`
 
 GetGroups returns the Groups field if non-nil, zero value otherwise.
 
 ### GetGroupsOk
 
-`func (o *EmployeeResponse) GetGroupsOk() (*[]CreateEmployeeRequestGroups, bool)`
+`func (o *EmployeeResponse) GetGroupsOk() (*[]GroupResponse, bool)`
 
 GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroups
 
-`func (o *EmployeeResponse) SetGroups(v []CreateEmployeeRequestGroups)`
+`func (o *EmployeeResponse) SetGroups(v []GroupResponse)`
 
 SetGroups sets Groups field to given value.
 
@@ -884,36 +883,6 @@ SetGroups sets Groups field to given value.
 `func (o *EmployeeResponse) UnsetGroups()`
 
 UnsetGroups ensures that no value is present for Groups, not even an explicit nil
-### GetCompany
-
-`func (o *EmployeeResponse) GetCompany() CreateEmployeeRequestCompany`
-
-GetCompany returns the Company field if non-nil, zero value otherwise.
-
-### GetCompanyOk
-
-`func (o *EmployeeResponse) GetCompanyOk() (*CreateEmployeeRequestCompany, bool)`
-
-GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCompany
-
-`func (o *EmployeeResponse) SetCompany(v CreateEmployeeRequestCompany)`
-
-SetCompany sets Company field to given value.
-
-
-### SetCompanyNil
-
-`func (o *EmployeeResponse) SetCompanyNil(b bool)`
-
- SetCompanyNil sets the value for Company to be an explicit nil
-
-### UnsetCompany
-`func (o *EmployeeResponse) UnsetCompany()`
-
-UnsetCompany ensures that no value is present for Company, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -632,6 +632,138 @@ paths:
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
+  /2023-03-01/official/groups:
+    get:
+      description: |
+        The Group object is used to represent any subset of employees, such as
+        PayGroup, Team, or Department. Employees can be in multiple Groups.
+      operationId: officialGroups20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Groups20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Groups
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/official/work-locations:
+    get:
+      description: |
+        The Location object is used to represent an address that can be associated
+        with an employee
+      operationId: officialWorkLocations20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkLocations20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Work Locations
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
   /2023-03-01/official/identity:
     get:
       description: |
@@ -1056,6 +1188,138 @@ paths:
       security:
       - access-token: []
       summary: Company
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/developer/groups:
+    get:
+      description: |
+        The Group object is used to represent any subset of employees, such as
+        PayGroup, Team, or Department. Employees can be in multiple Groups.
+      operationId: developerGroups20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Groups20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Groups
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+  /2023-03-01/developer/work-locations:
+    get:
+      description: |
+        The Location object is used to represent an address that can be associated
+        with an employee
+      operationId: developerWorkLocations20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkLocations20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Work Locations
       tags:
       - Developer
       - 2023-03-01
@@ -2199,15 +2463,69 @@ components:
       required:
       - disconnected
       type: object
+    addressResponse:
+      example:
+        street_address: 221 S Main Street
+        country: IE
+        post_code: "30691"
+        locality: Yuma
+        administrative_area: AZ
+      nullable: true
+      properties:
+        street_address:
+          example: 221 S Main Street
+          nullable: true
+          type: string
+        locality:
+          example: Yuma
+          nullable: true
+          type: string
+        administrative_area:
+          description: |
+            The administrative area of the address. If US or CA, the two-letter
+            state or province abbreviation. Else, the province /
+            administrative area; such as, `Dublin 2` or `County Cork`
+          example: AZ
+          nullable: true
+          type: string
+        country:
+          description: |
+            The ISO-3166-2 two-letter abbreviation of the country.
+            Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
+          enum:
+          - US
+          - CA
+          - MX
+          - GB
+          - IE
+          - IT
+          - FR
+          - ES
+          - DE
+          - NL
+          example: IE
+          nullable: true
+          type: string
+        post_code:
+          example: "30691"
+          nullable: true
+          type: string
+      required:
+      - administrative_area
+      - country
+      - locality
+      - post_code
+      - street_address
+      type: object
     CompanyResponse:
       example:
-        remote_id: "19202938"
-        location:
+        address:
           street_address: 221 S Main Street
           country: IE
-          post_code: D02 X59C
-          locality: Dublin
-          administrative_area: Dublin 2
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
+        remote_id: "19202938"
         id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         legal_name: Affix
         display_name: Affix API Limited
@@ -2233,19 +2551,118 @@ components:
           example: 12-3456789
           nullable: true
           type: string
-        location:
-          $ref: '#/components/schemas/CompanyResponse_location'
+        address:
+          $ref: '#/components/schemas/addressResponse'
       required:
+      - address
       - display_name
       - id
       - legal_name
-      - location
       - remote_id
       - tax_id
       type: object
     Companies20230301Response:
       items:
         $ref: '#/components/schemas/CompanyResponse'
+      type: array
+    groupResponse:
+      example:
+        id: 4B9bKBpX5tnwjiG93TAqF7ci
+        remote_id: df6c28e8
+        name: backend
+        type: team
+      properties:
+        id:
+          example: 4B9bKBpX5tnwjiG93TAqF7ci
+          nullable: true
+          type: string
+        remote_id:
+          example: "49"
+          nullable: true
+          type: string
+        name:
+          example: Customer Success
+          nullable: true
+          type: string
+        type:
+          enum:
+          - null
+          - department
+          - team
+          - cost_centre
+          - pay_group
+          example: TEAM
+          nullable: true
+          type: string
+      required:
+      - id
+      - name
+      - remote_id
+      - type
+      type: object
+    Groups20230301Response:
+      example:
+      - id: 4B9bKBpX5tnwjiG93TAqF7ci
+        remote_id: df6c28e8
+        name: backend
+        type: team
+      - id: 132Xpnw2a38aaQG93TAqF7ci
+        remote_id: 355c65922637
+        name: engineering
+        type: department
+      items:
+        $ref: '#/components/schemas/groupResponse'
+      nullable: true
+      type: array
+    locationResponse:
+      example:
+        address:
+          street_address: 221 S Main Street
+          country: IE
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
+        remote_id: "19202938"
+        name: NYC Office
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        type: office
+      nullable: true
+      properties:
+        id:
+          description: The Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          nullable: true
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the individual
+          example: "19202938"
+          nullable: true
+          type: string
+        name:
+          description: System assigned description of the location
+          example: NYC Office
+          nullable: true
+          type: string
+        type:
+          description: |
+            The location's type. In cases where there is no clear mapping, the
+            original value passed through will be returned.
+          example: office
+          nullable: true
+          type: string
+        address:
+          $ref: '#/components/schemas/addressResponse'
+      required:
+      - address
+      - id
+      - name
+      - remote_id
+      - type
+      type: object
+    WorkLocations20230301Response:
+      description: Work locations
+      items:
+        $ref: '#/components/schemas/locationResponse'
       type: array
     IdentityResponse:
       example:
@@ -2274,13 +2691,14 @@ components:
       - name
       - phone_number
       type: object
-    locationRequest:
+    addressRequest:
       example:
         street_address: 221 S Main Street
-        country: US
+        country: IE
         post_code: "30691"
         locality: Yuma
         administrative_area: AZ
+      nullable: true
       properties:
         street_address:
           example: 221 S Main Street
@@ -2293,14 +2711,27 @@ components:
         administrative_area:
           description: |
             The administrative area of the address. If US or CA, the two-letter
-            state abbreviation
+            state or province abbreviation. Else, the province /
+            administrative area; such as, `Dublin 2` or `County Cork`
           example: AZ
           nullable: true
           type: string
         country:
           description: |
-            The two-letter abbreviation of the country
-          example: US
+            The ISO-3166-2 two-letter abbreviation of the country.
+            Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
+          enum:
+          - US
+          - CA
+          - MX
+          - GB
+          - IE
+          - IT
+          - FR
+          - ES
+          - DE
+          - NL
+          example: IE
           nullable: true
           type: string
         post_code:
@@ -2313,6 +2744,51 @@ components:
       - locality
       - post_code
       - street_address
+      type: object
+    locationRequest:
+      example:
+        address:
+          street_address: 221 S Main Street
+          country: IE
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
+        remote_id: "19202938"
+        name: NYC Office
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        type: office
+      nullable: true
+      properties:
+        id:
+          description: The Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          nullable: true
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the individual
+          example: "19202938"
+          nullable: true
+          type: string
+        name:
+          description: System assigned description of the location
+          example: NYC Office
+          nullable: true
+          type: string
+        type:
+          description: |
+            The location's type. In cases where there is no clear mapping, the
+            original value passed through will be returned.
+          example: office
+          nullable: true
+          type: string
+        address:
+          $ref: '#/components/schemas/addressRequest'
+      required:
+      - address
+      - id
+      - name
+      - remote_id
+      - type
       type: object
     CurrencyRequest:
       enum:
@@ -2376,6 +2852,55 @@ components:
       - pay_period
       - pay_rate
       type: object
+    groupRequest:
+      example:
+        id: 4B9bKBpX5tnwjiG93TAqF7ci
+        remote_id: df6c28e8
+        name: backend
+        type: team
+      properties:
+        id:
+          example: 4B9bKBpX5tnwjiG93TAqF7ci
+          nullable: true
+          type: string
+        remote_id:
+          example: "49"
+          nullable: true
+          type: string
+        name:
+          example: Customer Success
+          nullable: true
+          type: string
+        type:
+          enum:
+          - null
+          - department
+          - team
+          - cost_centre
+          - pay_group
+          example: TEAM
+          nullable: true
+          type: string
+      required:
+      - id
+      - name
+      - remote_id
+      - type
+      type: object
+    Groups20230301Request:
+      example:
+      - id: 4B9bKBpX5tnwjiG93TAqF7ci
+        remote_id: df6c28e8
+        name: backend
+        type: team
+      - id: 132Xpnw2a38aaQG93TAqF7ci
+        remote_id: 355c65922637
+        name: engineering
+        type: department
+      items:
+        $ref: '#/components/schemas/groupRequest'
+      nullable: true
+      type: array
     CreateEmployeeRequest:
       example:
         display_full_name: Hirsch
@@ -2385,29 +2910,22 @@ components:
         ethnicity: white
         date_of_birth: 1990-11-10T00:00:00.000+0000
         work_location:
-          name: Affix HQ
-          location:
+          address:
             street_address: 221 S Main Street
-            country: US
+            country: IE
             post_code: "30691"
             locality: Yuma
             administrative_area: AZ
+          remote_id: "19202938"
+          name: NYC Office
+          id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
           type: office
         home_location:
-          location:
-            street_address: 221 S Main Street
-            country: US
-            post_code: "30691"
-            locality: Yuma
-            administrative_area: AZ
-        company:
-          name: Affix API Limited
-          location:
-            street_address: 221 S Main Street
-            country: US
-            post_code: "30691"
-            locality: Yuma
-            administrative_area: AZ
+          street_address: 221 S Main Street
+          country: IE
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
         employment_status: active
         first_name: Greg
         job_title: Software developer
@@ -2428,10 +2946,14 @@ components:
           t_shirt_size: medium
         last_name: Hirsch
         groups:
-        - name: Customer Success
-          type: TEAM
-        - name: Customer Success
-          type: TEAM
+        - id: 4B9bKBpX5tnwjiG93TAqF7ci
+          remote_id: df6c28e8
+          name: backend
+          type: team
+        - id: 132Xpnw2a38aaQG93TAqF7ci
+          remote_id: 355c65922637
+          name: engineering
+          type: department
         avatar: http://alturl.com/h2h8m
         employments:
         - employment_type: full_time
@@ -2563,9 +3085,9 @@ components:
           nullable: true
           type: string
         home_location:
-          $ref: '#/components/schemas/CreateEmployeeRequest_home_location'
+          $ref: '#/components/schemas/addressRequest'
         work_location:
-          $ref: '#/components/schemas/CreateEmployeeRequest_work_location'
+          $ref: '#/components/schemas/locationRequest'
         manager:
           $ref: '#/components/schemas/CreateEmployeeRequest_manager'
         bank_account:
@@ -2581,55 +3103,22 @@ components:
           nullable: true
           type: object
         groups:
+          example:
+          - id: 4B9bKBpX5tnwjiG93TAqF7ci
+            remote_id: df6c28e8
+            name: backend
+            type: team
+          - id: 132Xpnw2a38aaQG93TAqF7ci
+            remote_id: 355c65922637
+            name: engineering
+            type: department
           items:
-            $ref: '#/components/schemas/CreateEmployeeRequest_groups'
+            $ref: '#/components/schemas/groupRequest'
           nullable: true
           type: array
-        company:
-          $ref: '#/components/schemas/CreateEmployeeRequest_company'
       required:
       - first_name
       - last_name
-      type: object
-    locationResponse:
-      example:
-        street_address: 221 S Main Street
-        country: US
-        post_code: "30691"
-        locality: Yuma
-        administrative_area: AZ
-      properties:
-        street_address:
-          example: 221 S Main Street
-          nullable: true
-          type: string
-        locality:
-          example: Yuma
-          nullable: true
-          type: string
-        administrative_area:
-          description: |
-            The administrative area of the address. If US or CA, the two-letter
-            state abbreviation
-          example: AZ
-          nullable: true
-          type: string
-        country:
-          description: |
-            The two-letter abbreviation of the country
-          example: US
-          nullable: true
-          type: string
-        post_code:
-          example: "30691"
-          nullable: true
-          type: string
-      required:
-      - administrative_area
-      - country
-      - locality
-      - post_code
-      - street_address
       type: object
     CurrencyResponse:
       enum:
@@ -2704,29 +3193,22 @@ components:
         ethnicity: white
         date_of_birth: 1990-11-10T00:00:00.000+0000
         work_location:
-          name: Affix HQ
-          location:
+          address:
             street_address: 221 S Main Street
-            country: US
+            country: IE
             post_code: "30691"
             locality: Yuma
             administrative_area: AZ
+          remote_id: "19202938"
+          name: NYC Office
+          id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
           type: office
         home_location:
-          location:
-            street_address: 221 S Main Street
-            country: US
-            post_code: "30691"
-            locality: Yuma
-            administrative_area: AZ
-        company:
-          name: Affix API Limited
-          location:
-            street_address: 221 S Main Street
-            country: US
-            post_code: "30691"
-            locality: Yuma
-            administrative_area: AZ
+          street_address: 221 S Main Street
+          country: IE
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
         id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         employment_status: active
         first_name: Greg
@@ -2749,10 +3231,14 @@ components:
         remote_id: "19202938"
         last_name: Hirsch
         groups:
-        - name: Customer Success
-          type: TEAM
-        - name: Customer Success
-          type: TEAM
+        - id: 4B9bKBpX5tnwjiG93TAqF7ci
+          remote_id: df6c28e8
+          name: backend
+          type: team
+        - id: 132Xpnw2a38aaQG93TAqF7ci
+          remote_id: 355c65922637
+          name: engineering
+          type: department
         avatar: http://alturl.com/h2h8m
         employments:
         - employment_type: full_time
@@ -2906,9 +3392,9 @@ components:
           nullable: true
           type: string
         home_location:
-          $ref: '#/components/schemas/EmployeeResponse_home_location'
+          $ref: '#/components/schemas/addressResponse'
         work_location:
-          $ref: '#/components/schemas/EmployeeResponse_work_location'
+          $ref: '#/components/schemas/locationResponse'
         manager:
           $ref: '#/components/schemas/CreateEmployeeRequest_manager'
         bank_account:
@@ -2924,16 +3410,22 @@ components:
           nullable: true
           type: object
         groups:
+          example:
+          - id: 4B9bKBpX5tnwjiG93TAqF7ci
+            remote_id: df6c28e8
+            name: backend
+            type: team
+          - id: 132Xpnw2a38aaQG93TAqF7ci
+            remote_id: 355c65922637
+            name: engineering
+            type: department
           items:
-            $ref: '#/components/schemas/CreateEmployeeRequest_groups'
+            $ref: '#/components/schemas/groupResponse'
           nullable: true
           type: array
-        company:
-          $ref: '#/components/schemas/CreateEmployeeRequest_company'
       required:
       - avatar
       - bank_account
-      - company
       - custom_fields
       - date_of_birth
       - display_full_name
@@ -3455,89 +3947,6 @@ components:
       required:
       - error
       type: object
-    CompanyResponse_location:
-      example:
-        street_address: 221 S Main Street
-        country: IE
-        post_code: D02 X59C
-        locality: Dublin
-        administrative_area: Dublin 2
-      nullable: true
-      properties:
-        street_address:
-          example: 221 S Main Street
-          nullable: true
-          type: string
-        locality:
-          example: Dublin
-          nullable: true
-          type: string
-        administrative_area:
-          description: |
-            The administrative area of the address. If US or CA, the two-letter
-            state abbreviation
-          example: Dublin 2
-          nullable: true
-          type: string
-        country:
-          description: |
-            The two-letter abbreviation of the country
-          example: IE
-          nullable: true
-          type: string
-        post_code:
-          example: D02 X59C
-          nullable: true
-          type: string
-      required:
-      - administrative_area
-      - country
-      - locality
-      - post_code
-      - street_address
-      type: object
-    CreateEmployeeRequest_home_location:
-      example:
-        location:
-          street_address: 221 S Main Street
-          country: US
-          post_code: "30691"
-          locality: Yuma
-          administrative_area: AZ
-      nullable: true
-      properties:
-        location:
-          $ref: '#/components/schemas/locationRequest'
-      required:
-      - location
-      type: object
-    CreateEmployeeRequest_work_location:
-      example:
-        name: Affix HQ
-        location:
-          street_address: 221 S Main Street
-          country: US
-          post_code: "30691"
-          locality: Yuma
-          administrative_area: AZ
-        type: office
-      nullable: true
-      properties:
-        location:
-          $ref: '#/components/schemas/locationRequest'
-        type:
-          example: office
-          nullable: true
-          type: string
-        name:
-          example: Affix HQ
-          nullable: true
-          type: string
-      required:
-      - location
-      - name
-      - type
-      type: object
     CreateEmployeeRequest_manager:
       example:
         work_email: work_email
@@ -3598,127 +4007,6 @@ components:
       - bic
       - holder_name
       - iban
-      type: object
-    CreateEmployeeRequest_groups:
-      example:
-        name: Customer Success
-        type: TEAM
-      properties:
-        name:
-          example: Customer Success
-          nullable: true
-          type: string
-        type:
-          example: TEAM
-          nullable: true
-          type: string
-      required:
-      - name
-      - type
-      type: object
-    CreateEmployeeRequest_company_location:
-      example:
-        street_address: 221 S Main Street
-        country: US
-        post_code: "30691"
-        locality: Yuma
-        administrative_area: AZ
-      nullable: true
-      properties:
-        street_address:
-          example: 221 S Main Street
-          nullable: true
-          type: string
-        locality:
-          example: Yuma
-          nullable: true
-          type: string
-        administrative_area:
-          description: |
-            The administrative area of the address. If US or CA, the two-letter
-            state abbreviation
-          example: AZ
-          nullable: true
-          type: string
-        country:
-          description: |
-            The two-letter abbreviation of the country
-          example: US
-          nullable: true
-          type: string
-        post_code:
-          example: "30691"
-          nullable: true
-          type: string
-      required:
-      - administrative_area
-      - country
-      - locality
-      - post_code
-      - street_address
-      type: object
-    CreateEmployeeRequest_company:
-      example:
-        name: Affix API Limited
-        location:
-          street_address: 221 S Main Street
-          country: US
-          post_code: "30691"
-          locality: Yuma
-          administrative_area: AZ
-      nullable: true
-      properties:
-        name:
-          example: Affix API Limited
-          nullable: true
-          type: string
-        location:
-          $ref: '#/components/schemas/CreateEmployeeRequest_company_location'
-      required:
-      - location
-      - name
-      type: object
-    EmployeeResponse_home_location:
-      example:
-        location:
-          street_address: 221 S Main Street
-          country: US
-          post_code: "30691"
-          locality: Yuma
-          administrative_area: AZ
-      nullable: true
-      properties:
-        location:
-          $ref: '#/components/schemas/locationResponse'
-      required:
-      - location
-      type: object
-    EmployeeResponse_work_location:
-      example:
-        name: Affix HQ
-        location:
-          street_address: 221 S Main Street
-          country: US
-          post_code: "30691"
-          locality: Yuma
-          administrative_area: AZ
-        type: office
-      nullable: true
-      properties:
-        location:
-          $ref: '#/components/schemas/locationResponse'
-        type:
-          example: office
-          nullable: true
-          type: string
-        name:
-          example: Affix HQ
-          nullable: true
-          type: string
-      required:
-      - location
-      - name
-      - type
       type: object
     PayslipResponse_earnings:
       description: The breakdown of gross pay
