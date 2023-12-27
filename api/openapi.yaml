@@ -2493,16 +2493,18 @@ components:
             The ISO-3166-2 two-letter abbreviation of the country.
             Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
           enum:
-          - US
+          - AU
           - CA
-          - MX
+          - DE
+          - ES
+          - FR
           - GB
           - IE
           - IT
-          - FR
-          - ES
-          - DE
+          - MX
           - NL
+          - NZ
+          - US
           example: IE
           nullable: true
           type: string
@@ -2595,16 +2597,18 @@ components:
             The ISO-3166-2 two-letter abbreviation of the country.
             Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
           enum:
-          - US
+          - AU
           - CA
-          - MX
+          - DE
+          - ES
+          - FR
           - GB
           - IE
           - IT
-          - FR
-          - ES
-          - DE
+          - MX
           - NL
+          - NZ
+          - US
           example: IE
           nullable: true
           type: string
