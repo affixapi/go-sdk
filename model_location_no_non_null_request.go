@@ -15,8 +15,8 @@ import (
 	"encoding/json"
 )
 
-// LocationRequest struct for LocationRequest
-type LocationRequest struct {
+// LocationNoNonNullRequest struct for LocationNoNonNullRequest
+type LocationNoNonNullRequest struct {
 	// The Affix-assigned id of the individual
 	Id NullableString `json:"id"`
 	// the remote system-assigned id of the individual
@@ -25,15 +25,15 @@ type LocationRequest struct {
 	Name NullableString `json:"name"`
 	// The location's type. In cases where there is no clear mapping, the original value passed through will be returned. 
 	Type NullableString `json:"type"`
-	Address NullableAddressRequest `json:"address"`
+	Address NullableAddressNoNonNullRequest `json:"address"`
 }
 
-// NewLocationRequest instantiates a new LocationRequest object
+// NewLocationNoNonNullRequest instantiates a new LocationNoNonNullRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLocationRequest(id NullableString, remoteId NullableString, name NullableString, type_ NullableString, address NullableAddressRequest) *LocationRequest {
-	this := LocationRequest{}
+func NewLocationNoNonNullRequest(id NullableString, remoteId NullableString, name NullableString, type_ NullableString, address NullableAddressNoNonNullRequest) *LocationNoNonNullRequest {
+	this := LocationNoNonNullRequest{}
 	this.Id = id
 	this.RemoteId = remoteId
 	this.Name = name
@@ -42,17 +42,17 @@ func NewLocationRequest(id NullableString, remoteId NullableString, name Nullabl
 	return &this
 }
 
-// NewLocationRequestWithDefaults instantiates a new LocationRequest object
+// NewLocationNoNonNullRequestWithDefaults instantiates a new LocationNoNonNullRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLocationRequestWithDefaults() *LocationRequest {
-	this := LocationRequest{}
+func NewLocationNoNonNullRequestWithDefaults() *LocationNoNonNullRequest {
+	this := LocationNoNonNullRequest{}
 	return &this
 }
 
 // GetId returns the Id field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *LocationRequest) GetId() string {
+func (o *LocationNoNonNullRequest) GetId() string {
 	if o == nil || o.Id.Get() == nil {
 		var ret string
 		return ret
@@ -64,7 +64,7 @@ func (o *LocationRequest) GetId() string {
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocationRequest) GetIdOk() (*string, bool) {
+func (o *LocationNoNonNullRequest) GetIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -72,13 +72,13 @@ func (o *LocationRequest) GetIdOk() (*string, bool) {
 }
 
 // SetId sets field value
-func (o *LocationRequest) SetId(v string) {
+func (o *LocationNoNonNullRequest) SetId(v string) {
 	o.Id.Set(&v)
 }
 
 // GetRemoteId returns the RemoteId field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *LocationRequest) GetRemoteId() string {
+func (o *LocationNoNonNullRequest) GetRemoteId() string {
 	if o == nil || o.RemoteId.Get() == nil {
 		var ret string
 		return ret
@@ -90,7 +90,7 @@ func (o *LocationRequest) GetRemoteId() string {
 // GetRemoteIdOk returns a tuple with the RemoteId field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocationRequest) GetRemoteIdOk() (*string, bool) {
+func (o *LocationNoNonNullRequest) GetRemoteIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -98,13 +98,13 @@ func (o *LocationRequest) GetRemoteIdOk() (*string, bool) {
 }
 
 // SetRemoteId sets field value
-func (o *LocationRequest) SetRemoteId(v string) {
+func (o *LocationNoNonNullRequest) SetRemoteId(v string) {
 	o.RemoteId.Set(&v)
 }
 
 // GetName returns the Name field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *LocationRequest) GetName() string {
+func (o *LocationNoNonNullRequest) GetName() string {
 	if o == nil || o.Name.Get() == nil {
 		var ret string
 		return ret
@@ -116,7 +116,7 @@ func (o *LocationRequest) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocationRequest) GetNameOk() (*string, bool) {
+func (o *LocationNoNonNullRequest) GetNameOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -124,13 +124,13 @@ func (o *LocationRequest) GetNameOk() (*string, bool) {
 }
 
 // SetName sets field value
-func (o *LocationRequest) SetName(v string) {
+func (o *LocationNoNonNullRequest) SetName(v string) {
 	o.Name.Set(&v)
 }
 
 // GetType returns the Type field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *LocationRequest) GetType() string {
+func (o *LocationNoNonNullRequest) GetType() string {
 	if o == nil || o.Type.Get() == nil {
 		var ret string
 		return ret
@@ -142,7 +142,7 @@ func (o *LocationRequest) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocationRequest) GetTypeOk() (*string, bool) {
+func (o *LocationNoNonNullRequest) GetTypeOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -150,15 +150,15 @@ func (o *LocationRequest) GetTypeOk() (*string, bool) {
 }
 
 // SetType sets field value
-func (o *LocationRequest) SetType(v string) {
+func (o *LocationNoNonNullRequest) SetType(v string) {
 	o.Type.Set(&v)
 }
 
 // GetAddress returns the Address field value
-// If the value is explicit nil, the zero value for AddressRequest will be returned
-func (o *LocationRequest) GetAddress() AddressRequest {
+// If the value is explicit nil, the zero value for AddressNoNonNullRequest will be returned
+func (o *LocationNoNonNullRequest) GetAddress() AddressNoNonNullRequest {
 	if o == nil || o.Address.Get() == nil {
-		var ret AddressRequest
+		var ret AddressNoNonNullRequest
 		return ret
 	}
 
@@ -168,7 +168,7 @@ func (o *LocationRequest) GetAddress() AddressRequest {
 // GetAddressOk returns a tuple with the Address field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocationRequest) GetAddressOk() (*AddressRequest, bool) {
+func (o *LocationNoNonNullRequest) GetAddressOk() (*AddressNoNonNullRequest, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -176,11 +176,11 @@ func (o *LocationRequest) GetAddressOk() (*AddressRequest, bool) {
 }
 
 // SetAddress sets field value
-func (o *LocationRequest) SetAddress(v AddressRequest) {
+func (o *LocationNoNonNullRequest) SetAddress(v AddressNoNonNullRequest) {
 	o.Address.Set(&v)
 }
 
-func (o LocationRequest) MarshalJSON() ([]byte, error) {
+func (o LocationNoNonNullRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
 		toSerialize["id"] = o.Id.Get()
@@ -200,38 +200,38 @@ func (o LocationRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableLocationRequest struct {
-	value *LocationRequest
+type NullableLocationNoNonNullRequest struct {
+	value *LocationNoNonNullRequest
 	isSet bool
 }
 
-func (v NullableLocationRequest) Get() *LocationRequest {
+func (v NullableLocationNoNonNullRequest) Get() *LocationNoNonNullRequest {
 	return v.value
 }
 
-func (v *NullableLocationRequest) Set(val *LocationRequest) {
+func (v *NullableLocationNoNonNullRequest) Set(val *LocationNoNonNullRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableLocationRequest) IsSet() bool {
+func (v NullableLocationNoNonNullRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableLocationRequest) Unset() {
+func (v *NullableLocationNoNonNullRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableLocationRequest(val *LocationRequest) *NullableLocationRequest {
-	return &NullableLocationRequest{value: val, isSet: true}
+func NewNullableLocationNoNonNullRequest(val *LocationNoNonNullRequest) *NullableLocationNoNonNullRequest {
+	return &NullableLocationNoNonNullRequest{value: val, isSet: true}
 }
 
-func (v NullableLocationRequest) MarshalJSON() ([]byte, error) {
+func (v NullableLocationNoNonNullRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableLocationRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableLocationNoNonNullRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

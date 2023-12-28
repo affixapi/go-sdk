@@ -10,7 +10,7 @@ api_management.go
 api_official.go
 client.go
 configuration.go
-docs/AddressRequest.md
+docs/AddressNoNonNullRequest.md
 docs/AddressResponse.md
 docs/Class20230301Api.md
 docs/ClientRequest.md
@@ -35,7 +35,7 @@ docs/InlineResponse400.md
 docs/InlineResponse401.md
 docs/InlineResponse409.md
 docs/IntrospectResponse.md
-docs/LocationRequest.md
+docs/LocationNoNonNullRequest.md
 docs/LocationResponse.md
 docs/ManagementApi.md
 docs/MessageResponse.md
@@ -60,7 +60,7 @@ docs/TokenResponse.md
 git_push.sh
 go.mod
 go.sum
-model_address_request.go
+model_address_no_non_null_request.go
 model_address_response.go
 model_client_request.go
 model_client_response.go
@@ -82,7 +82,7 @@ model_inline_response_400.go
 model_inline_response_401.go
 model_inline_response_409.go
 model_introspect_response.go
-model_location_request.go
+model_location_no_non_null_request.go
 model_location_response.go
 model_message_response.go
 model_mode_request.go

@@ -15,8 +15,8 @@ import (
 	"encoding/json"
 )
 
-// AddressRequest struct for AddressRequest
-type AddressRequest struct {
+// AddressNoNonNullRequest struct for AddressNoNonNullRequest
+type AddressNoNonNullRequest struct {
 	StreetAddress NullableString `json:"street_address"`
 	Locality NullableString `json:"locality"`
 	// The administrative area of the address. If US or CA, the two-letter state or province abbreviation. Else, the province / administrative area; such as, `Dublin 2` or `County Cork` 
@@ -26,12 +26,12 @@ type AddressRequest struct {
 	PostCode NullableString `json:"post_code"`
 }
 
-// NewAddressRequest instantiates a new AddressRequest object
+// NewAddressNoNonNullRequest instantiates a new AddressNoNonNullRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddressRequest(streetAddress NullableString, locality NullableString, administrativeArea NullableString, country NullableString, postCode NullableString) *AddressRequest {
-	this := AddressRequest{}
+func NewAddressNoNonNullRequest(streetAddress NullableString, locality NullableString, administrativeArea NullableString, country NullableString, postCode NullableString) *AddressNoNonNullRequest {
+	this := AddressNoNonNullRequest{}
 	this.StreetAddress = streetAddress
 	this.Locality = locality
 	this.AdministrativeArea = administrativeArea
@@ -40,17 +40,17 @@ func NewAddressRequest(streetAddress NullableString, locality NullableString, ad
 	return &this
 }
 
-// NewAddressRequestWithDefaults instantiates a new AddressRequest object
+// NewAddressNoNonNullRequestWithDefaults instantiates a new AddressNoNonNullRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddressRequestWithDefaults() *AddressRequest {
-	this := AddressRequest{}
+func NewAddressNoNonNullRequestWithDefaults() *AddressNoNonNullRequest {
+	this := AddressNoNonNullRequest{}
 	return &this
 }
 
 // GetStreetAddress returns the StreetAddress field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *AddressRequest) GetStreetAddress() string {
+func (o *AddressNoNonNullRequest) GetStreetAddress() string {
 	if o == nil || o.StreetAddress.Get() == nil {
 		var ret string
 		return ret
@@ -62,7 +62,7 @@ func (o *AddressRequest) GetStreetAddress() string {
 // GetStreetAddressOk returns a tuple with the StreetAddress field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddressRequest) GetStreetAddressOk() (*string, bool) {
+func (o *AddressNoNonNullRequest) GetStreetAddressOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -70,13 +70,13 @@ func (o *AddressRequest) GetStreetAddressOk() (*string, bool) {
 }
 
 // SetStreetAddress sets field value
-func (o *AddressRequest) SetStreetAddress(v string) {
+func (o *AddressNoNonNullRequest) SetStreetAddress(v string) {
 	o.StreetAddress.Set(&v)
 }
 
 // GetLocality returns the Locality field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *AddressRequest) GetLocality() string {
+func (o *AddressNoNonNullRequest) GetLocality() string {
 	if o == nil || o.Locality.Get() == nil {
 		var ret string
 		return ret
@@ -88,7 +88,7 @@ func (o *AddressRequest) GetLocality() string {
 // GetLocalityOk returns a tuple with the Locality field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddressRequest) GetLocalityOk() (*string, bool) {
+func (o *AddressNoNonNullRequest) GetLocalityOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -96,13 +96,13 @@ func (o *AddressRequest) GetLocalityOk() (*string, bool) {
 }
 
 // SetLocality sets field value
-func (o *AddressRequest) SetLocality(v string) {
+func (o *AddressNoNonNullRequest) SetLocality(v string) {
 	o.Locality.Set(&v)
 }
 
 // GetAdministrativeArea returns the AdministrativeArea field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *AddressRequest) GetAdministrativeArea() string {
+func (o *AddressNoNonNullRequest) GetAdministrativeArea() string {
 	if o == nil || o.AdministrativeArea.Get() == nil {
 		var ret string
 		return ret
@@ -114,7 +114,7 @@ func (o *AddressRequest) GetAdministrativeArea() string {
 // GetAdministrativeAreaOk returns a tuple with the AdministrativeArea field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddressRequest) GetAdministrativeAreaOk() (*string, bool) {
+func (o *AddressNoNonNullRequest) GetAdministrativeAreaOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -122,13 +122,13 @@ func (o *AddressRequest) GetAdministrativeAreaOk() (*string, bool) {
 }
 
 // SetAdministrativeArea sets field value
-func (o *AddressRequest) SetAdministrativeArea(v string) {
+func (o *AddressNoNonNullRequest) SetAdministrativeArea(v string) {
 	o.AdministrativeArea.Set(&v)
 }
 
 // GetCountry returns the Country field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *AddressRequest) GetCountry() string {
+func (o *AddressNoNonNullRequest) GetCountry() string {
 	if o == nil || o.Country.Get() == nil {
 		var ret string
 		return ret
@@ -140,7 +140,7 @@ func (o *AddressRequest) GetCountry() string {
 // GetCountryOk returns a tuple with the Country field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddressRequest) GetCountryOk() (*string, bool) {
+func (o *AddressNoNonNullRequest) GetCountryOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -148,13 +148,13 @@ func (o *AddressRequest) GetCountryOk() (*string, bool) {
 }
 
 // SetCountry sets field value
-func (o *AddressRequest) SetCountry(v string) {
+func (o *AddressNoNonNullRequest) SetCountry(v string) {
 	o.Country.Set(&v)
 }
 
 // GetPostCode returns the PostCode field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *AddressRequest) GetPostCode() string {
+func (o *AddressNoNonNullRequest) GetPostCode() string {
 	if o == nil || o.PostCode.Get() == nil {
 		var ret string
 		return ret
@@ -166,7 +166,7 @@ func (o *AddressRequest) GetPostCode() string {
 // GetPostCodeOk returns a tuple with the PostCode field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddressRequest) GetPostCodeOk() (*string, bool) {
+func (o *AddressNoNonNullRequest) GetPostCodeOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -174,11 +174,11 @@ func (o *AddressRequest) GetPostCodeOk() (*string, bool) {
 }
 
 // SetPostCode sets field value
-func (o *AddressRequest) SetPostCode(v string) {
+func (o *AddressNoNonNullRequest) SetPostCode(v string) {
 	o.PostCode.Set(&v)
 }
 
-func (o AddressRequest) MarshalJSON() ([]byte, error) {
+func (o AddressNoNonNullRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
 		toSerialize["street_address"] = o.StreetAddress.Get()
@@ -198,38 +198,38 @@ func (o AddressRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAddressRequest struct {
-	value *AddressRequest
+type NullableAddressNoNonNullRequest struct {
+	value *AddressNoNonNullRequest
 	isSet bool
 }
 
-func (v NullableAddressRequest) Get() *AddressRequest {
+func (v NullableAddressNoNonNullRequest) Get() *AddressNoNonNullRequest {
 	return v.value
 }
 
-func (v *NullableAddressRequest) Set(val *AddressRequest) {
+func (v *NullableAddressNoNonNullRequest) Set(val *AddressNoNonNullRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddressRequest) IsSet() bool {
+func (v NullableAddressNoNonNullRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddressRequest) Unset() {
+func (v *NullableAddressNoNonNullRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddressRequest(val *AddressRequest) *NullableAddressRequest {
-	return &NullableAddressRequest{value: val, isSet: true}
+func NewNullableAddressNoNonNullRequest(val *AddressNoNonNullRequest) *NullableAddressNoNonNullRequest {
+	return &NullableAddressNoNonNullRequest{value: val, isSet: true}
 }
 
-func (v NullableAddressRequest) MarshalJSON() ([]byte, error) {
+func (v NullableAddressNoNonNullRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddressRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableAddressNoNonNullRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

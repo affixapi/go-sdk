@@ -23,8 +23,8 @@ Name | Type | Description | Notes
 **StartDate** | Pointer to **NullableString** |  | [optional] 
 **TerminationDate** | Pointer to **NullableString** |  | [optional] 
 **Avatar** | Pointer to **NullableString** |  | [optional] 
-**HomeLocation** | Pointer to [**NullableAddressRequest**](AddressRequest.md) |  | [optional] 
-**WorkLocation** | Pointer to [**NullableLocationRequest**](LocationRequest.md) |  | [optional] 
+**HomeLocation** | Pointer to [**NullableAddressNoNonNullRequest**](AddressNoNonNullRequest.md) |  | [optional] 
+**WorkLocation** | Pointer to [**NullableLocationNoNonNullRequest**](LocationNoNonNullRequest.md) |  | [optional] 
 **Manager** | Pointer to [**NullableCreateEmployeeRequestManager**](CreateEmployeeRequestManager.md) |  | [optional] 
 **BankAccount** | Pointer to [**NullableCreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  | [optional] 
 **Employments** | Pointer to [**[]EmploymentNoNullEnumRequest**](EmploymentNoNullEnumRequest.md) |  | [optional] 
@@ -687,20 +687,20 @@ HasAvatar returns a boolean if a field has been set.
 UnsetAvatar ensures that no value is present for Avatar, not even an explicit nil
 ### GetHomeLocation
 
-`func (o *CreateEmployeeRequest) GetHomeLocation() AddressRequest`
+`func (o *CreateEmployeeRequest) GetHomeLocation() AddressNoNonNullRequest`
 
 GetHomeLocation returns the HomeLocation field if non-nil, zero value otherwise.
 
 ### GetHomeLocationOk
 
-`func (o *CreateEmployeeRequest) GetHomeLocationOk() (*AddressRequest, bool)`
+`func (o *CreateEmployeeRequest) GetHomeLocationOk() (*AddressNoNonNullRequest, bool)`
 
 GetHomeLocationOk returns a tuple with the HomeLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHomeLocation
 
-`func (o *CreateEmployeeRequest) SetHomeLocation(v AddressRequest)`
+`func (o *CreateEmployeeRequest) SetHomeLocation(v AddressNoNonNullRequest)`
 
 SetHomeLocation sets HomeLocation field to given value.
 
@@ -722,20 +722,20 @@ HasHomeLocation returns a boolean if a field has been set.
 UnsetHomeLocation ensures that no value is present for HomeLocation, not even an explicit nil
 ### GetWorkLocation
 
-`func (o *CreateEmployeeRequest) GetWorkLocation() LocationRequest`
+`func (o *CreateEmployeeRequest) GetWorkLocation() LocationNoNonNullRequest`
 
 GetWorkLocation returns the WorkLocation field if non-nil, zero value otherwise.
 
 ### GetWorkLocationOk
 
-`func (o *CreateEmployeeRequest) GetWorkLocationOk() (*LocationRequest, bool)`
+`func (o *CreateEmployeeRequest) GetWorkLocationOk() (*LocationNoNonNullRequest, bool)`
 
 GetWorkLocationOk returns a tuple with the WorkLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWorkLocation
 
-`func (o *CreateEmployeeRequest) SetWorkLocation(v LocationRequest)`
+`func (o *CreateEmployeeRequest) SetWorkLocation(v LocationNoNonNullRequest)`
 
 SetWorkLocation sets WorkLocation field to given value.
 

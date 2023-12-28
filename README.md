@@ -307,7 +307,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AddressRequest](docs/AddressRequest.md)
+ - [AddressNoNonNullRequest](docs/AddressNoNonNullRequest.md)
  - [AddressResponse](docs/AddressResponse.md)
  - [ClientRequest](docs/ClientRequest.md)
  - [ClientResponse](docs/ClientResponse.md)
@@ -329,7 +329,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse401](docs/InlineResponse401.md)
  - [InlineResponse409](docs/InlineResponse409.md)
  - [IntrospectResponse](docs/IntrospectResponse.md)
- - [LocationRequest](docs/LocationRequest.md)
+ - [LocationNoNonNullRequest](docs/LocationNoNonNullRequest.md)
  - [LocationResponse](docs/LocationResponse.md)
  - [MessageResponse](docs/MessageResponse.md)
  - [ModeRequest](docs/ModeRequest.md)

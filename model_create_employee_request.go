@@ -41,8 +41,8 @@ type CreateEmployeeRequest struct {
 	StartDate NullableString `json:"start_date,omitempty"`
 	TerminationDate NullableString `json:"termination_date,omitempty"`
 	Avatar NullableString `json:"avatar,omitempty"`
-	HomeLocation NullableAddressRequest `json:"home_location,omitempty"`
-	WorkLocation NullableLocationRequest `json:"work_location,omitempty"`
+	HomeLocation NullableAddressNoNonNullRequest `json:"home_location,omitempty"`
+	WorkLocation NullableLocationNoNonNullRequest `json:"work_location,omitempty"`
 	Manager NullableCreateEmployeeRequestManager `json:"manager,omitempty"`
 	BankAccount NullableCreateEmployeeRequestBankAccount `json:"bank_account,omitempty"`
 	Employments []EmploymentNoNullEnumRequest `json:"employments,omitempty"`
@@ -832,9 +832,9 @@ func (o *CreateEmployeeRequest) UnsetAvatar() {
 }
 
 // GetHomeLocation returns the HomeLocation field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateEmployeeRequest) GetHomeLocation() AddressRequest {
+func (o *CreateEmployeeRequest) GetHomeLocation() AddressNoNonNullRequest {
 	if o == nil || o.HomeLocation.Get() == nil {
-		var ret AddressRequest
+		var ret AddressNoNonNullRequest
 		return ret
 	}
 	return *o.HomeLocation.Get()
@@ -843,7 +843,7 @@ func (o *CreateEmployeeRequest) GetHomeLocation() AddressRequest {
 // GetHomeLocationOk returns a tuple with the HomeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateEmployeeRequest) GetHomeLocationOk() (*AddressRequest, bool) {
+func (o *CreateEmployeeRequest) GetHomeLocationOk() (*AddressNoNonNullRequest, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -859,8 +859,8 @@ func (o *CreateEmployeeRequest) HasHomeLocation() bool {
 	return false
 }
 
-// SetHomeLocation gets a reference to the given NullableAddressRequest and assigns it to the HomeLocation field.
-func (o *CreateEmployeeRequest) SetHomeLocation(v AddressRequest) {
+// SetHomeLocation gets a reference to the given NullableAddressNoNonNullRequest and assigns it to the HomeLocation field.
+func (o *CreateEmployeeRequest) SetHomeLocation(v AddressNoNonNullRequest) {
 	o.HomeLocation.Set(&v)
 }
 // SetHomeLocationNil sets the value for HomeLocation to be an explicit nil
@@ -874,9 +874,9 @@ func (o *CreateEmployeeRequest) UnsetHomeLocation() {
 }
 
 // GetWorkLocation returns the WorkLocation field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateEmployeeRequest) GetWorkLocation() LocationRequest {
+func (o *CreateEmployeeRequest) GetWorkLocation() LocationNoNonNullRequest {
 	if o == nil || o.WorkLocation.Get() == nil {
-		var ret LocationRequest
+		var ret LocationNoNonNullRequest
 		return ret
 	}
 	return *o.WorkLocation.Get()
@@ -885,7 +885,7 @@ func (o *CreateEmployeeRequest) GetWorkLocation() LocationRequest {
 // GetWorkLocationOk returns a tuple with the WorkLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateEmployeeRequest) GetWorkLocationOk() (*LocationRequest, bool) {
+func (o *CreateEmployeeRequest) GetWorkLocationOk() (*LocationNoNonNullRequest, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -901,8 +901,8 @@ func (o *CreateEmployeeRequest) HasWorkLocation() bool {
 	return false
 }
 
-// SetWorkLocation gets a reference to the given NullableLocationRequest and assigns it to the WorkLocation field.
-func (o *CreateEmployeeRequest) SetWorkLocation(v LocationRequest) {
+// SetWorkLocation gets a reference to the given NullableLocationNoNonNullRequest and assigns it to the WorkLocation field.
+func (o *CreateEmployeeRequest) SetWorkLocation(v LocationNoNonNullRequest) {
 	o.WorkLocation.Set(&v)
 }
 // SetWorkLocationNil sets the value for WorkLocation to be an explicit nil

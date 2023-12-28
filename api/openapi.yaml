@@ -2493,17 +2493,29 @@ components:
             The ISO-3166-2 two-letter abbreviation of the country.
             Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
           enum:
-          - AU
+          - null
+          - AT
+          - BE
           - CA
+          - CH
+          - CZ
           - DE
+          - DK
+          - EE
           - ES
           - FR
           - GB
           - IE
           - IT
-          - MX
+          - JP
+          - LT
+          - LV
           - NL
-          - NZ
+          - "NO"
+          - PL
+          - RO
+          - SE
+          - SK
           - US
           example: IE
           nullable: true
@@ -2567,7 +2579,7 @@ components:
       items:
         $ref: '#/components/schemas/CompanyResponse'
       type: array
-    addressRequest:
+    address-no-non-nullRequest:
       example:
         street_address: 221 S Main Street
         country: IE
@@ -2597,17 +2609,29 @@ components:
             The ISO-3166-2 two-letter abbreviation of the country.
             Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
           enum:
-          - AU
+          - null
+          - AT
+          - BE
           - CA
+          - CH
+          - CZ
           - DE
+          - DK
+          - EE
           - ES
           - FR
           - GB
           - IE
           - IT
-          - MX
+          - JP
+          - LT
+          - LV
           - NL
-          - NZ
+          - "NO"
+          - PL
+          - RO
+          - SE
+          - SK
           - US
           example: IE
           nullable: true
@@ -2623,7 +2647,7 @@ components:
       - post_code
       - street_address
       type: object
-    locationRequest:
+    location-no-non-nullRequest:
       example:
         address:
           street_address: 221 S Main Street
@@ -2660,7 +2684,7 @@ components:
           nullable: true
           type: string
         address:
-          $ref: '#/components/schemas/addressRequest'
+          $ref: '#/components/schemas/address-no-non-nullRequest'
       required:
       - address
       - id
@@ -2962,9 +2986,9 @@ components:
           nullable: true
           type: string
         home_location:
-          $ref: '#/components/schemas/addressRequest'
+          $ref: '#/components/schemas/address-no-non-nullRequest'
         work_location:
-          $ref: '#/components/schemas/locationRequest'
+          $ref: '#/components/schemas/location-no-non-nullRequest'
         manager:
           $ref: '#/components/schemas/CreateEmployeeRequest_manager'
         bank_account:
