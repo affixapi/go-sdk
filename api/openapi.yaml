@@ -2495,6 +2495,7 @@ components:
           enum:
           - null
           - AT
+          - AU
           - BE
           - CA
           - CH
