@@ -2516,6 +2516,7 @@ components:
           - PL
           - RO
           - SE
+          - SG
           - SK
           - US
           example: IE
@@ -2631,6 +2632,7 @@ components:
           - PL
           - RO
           - SE
+          - SG
           - SK
           - US
           example: IE
