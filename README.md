@@ -266,7 +266,7 @@ Class | Method | HTTP request | Description
 *Class20230301Api* | [**DeveloperTimeOffBalances20230301**](docs/Class20230301Api.md#developertimeoffbalances20230301) | **Get** /2023-03-01/developer/time-off-balances | Time off balances
 *Class20230301Api* | [**DeveloperTimeOffEntries20230301**](docs/Class20230301Api.md#developertimeoffentries20230301) | **Get** /2023-03-01/developer/time-off-entries | Time off entries
 *Class20230301Api* | [**DeveloperTimesheets20230301**](docs/Class20230301Api.md#developertimesheets20230301) | **Get** /2023-03-01/developer/timesheets | Timesheets
-*Class20230301Api* | [**DeveloperWorkLocations20230301**](docs/Class20230301Api.md#developerworklocations20230301) | **Get** /2023-03-01/developer/work-locations | Work Locations
+*Class20230301Api* | [**DeveloperWorkLocations20230301**](docs/Class20230301Api.md#developerworklocations20230301) | **Get** /2023-03-01/developer/work-locations | Work locations
 *Class20230301Api* | [**OfficialCompanies20230301**](docs/Class20230301Api.md#officialcompanies20230301) | **Get** /2023-03-01/official/company | Company
 *Class20230301Api* | [**OfficialCreateEmployee20230301**](docs/Class20230301Api.md#officialcreateemployee20230301) | **Post** /2023-03-01/official/employee | Create Employee
 *Class20230301Api* | [**OfficialEmployees20230301**](docs/Class20230301Api.md#officialemployees20230301) | **Get** /2023-03-01/official/employees | Employees
@@ -274,7 +274,7 @@ Class | Method | HTTP request | Description
 *Class20230301Api* | [**OfficialTimeOffBalances20230301**](docs/Class20230301Api.md#officialtimeoffbalances20230301) | **Get** /2023-03-01/official/time-off-balances | Time off balances
 *Class20230301Api* | [**OfficialTimeOffEntries20230301**](docs/Class20230301Api.md#officialtimeoffentries20230301) | **Get** /2023-03-01/official/time-off-entries | Time off entries
 *Class20230301Api* | [**OfficialTimesheets20230301**](docs/Class20230301Api.md#officialtimesheets20230301) | **Get** /2023-03-01/official/timesheets | Timesheets
-*Class20230301Api* | [**OfficialWorkLocations20230301**](docs/Class20230301Api.md#officialworklocations20230301) | **Get** /2023-03-01/official/work-locations | Work Locations
+*Class20230301Api* | [**OfficialWorkLocations20230301**](docs/Class20230301Api.md#officialworklocations20230301) | **Get** /2023-03-01/official/work-locations | Work locations
 *Class20230301Api* | [**Officialdentity20230301**](docs/Class20230301Api.md#officialdentity20230301) | **Get** /2023-03-01/official/identity | Identity
 *CoreApi* | [**Providers**](docs/CoreApi.md#providers) | **Get** /providers | Providers
 *DeveloperApi* | [**DeveloperCompanies20230301**](docs/DeveloperApi.md#developercompanies20230301) | **Get** /2023-03-01/developer/company | Company
@@ -287,7 +287,7 @@ Class | Method | HTTP request | Description
 *DeveloperApi* | [**DeveloperTimeOffBalances20230301**](docs/DeveloperApi.md#developertimeoffbalances20230301) | **Get** /2023-03-01/developer/time-off-balances | Time off balances
 *DeveloperApi* | [**DeveloperTimeOffEntries20230301**](docs/DeveloperApi.md#developertimeoffentries20230301) | **Get** /2023-03-01/developer/time-off-entries | Time off entries
 *DeveloperApi* | [**DeveloperTimesheets20230301**](docs/DeveloperApi.md#developertimesheets20230301) | **Get** /2023-03-01/developer/timesheets | Timesheets
-*DeveloperApi* | [**DeveloperWorkLocations20230301**](docs/DeveloperApi.md#developerworklocations20230301) | **Get** /2023-03-01/developer/work-locations | Work Locations
+*DeveloperApi* | [**DeveloperWorkLocations20230301**](docs/DeveloperApi.md#developerworklocations20230301) | **Get** /2023-03-01/developer/work-locations | Work locations
 *ManagementApi* | [**Client**](docs/ManagementApi.md#client) | **Get** /2023-03-01/management/client | Client
 *ManagementApi* | [**Disconnect**](docs/ManagementApi.md#disconnect) | **Post** /2023-03-01/management/disconnect | Disconnect token
 *ManagementApi* | [**Introspect**](docs/ManagementApi.md#introspect) | **Get** /2023-03-01/management/introspect | Inspect token
@@ -301,7 +301,7 @@ Class | Method | HTTP request | Description
 *OfficialApi* | [**OfficialTimeOffBalances20230301**](docs/OfficialApi.md#officialtimeoffbalances20230301) | **Get** /2023-03-01/official/time-off-balances | Time off balances
 *OfficialApi* | [**OfficialTimeOffEntries20230301**](docs/OfficialApi.md#officialtimeoffentries20230301) | **Get** /2023-03-01/official/time-off-entries | Time off entries
 *OfficialApi* | [**OfficialTimesheets20230301**](docs/OfficialApi.md#officialtimesheets20230301) | **Get** /2023-03-01/official/timesheets | Timesheets
-*OfficialApi* | [**OfficialWorkLocations20230301**](docs/OfficialApi.md#officialworklocations20230301) | **Get** /2023-03-01/official/work-locations | Work Locations
+*OfficialApi* | [**OfficialWorkLocations20230301**](docs/OfficialApi.md#officialworklocations20230301) | **Get** /2023-03-01/official/work-locations | Work locations
 *OfficialApi* | [**Officialdentity20230301**](docs/OfficialApi.md#officialdentity20230301) | **Get** /2023-03-01/official/identity | Identity
 
 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**DeveloperTimeOffBalances20230301**](DeveloperApi.md#DeveloperTimeOffBalances20230301) | **Get** /2023-03-01/developer/time-off-balances | Time off balances
 [**DeveloperTimeOffEntries20230301**](DeveloperApi.md#DeveloperTimeOffEntries20230301) | **Get** /2023-03-01/developer/time-off-entries | Time off entries
 [**DeveloperTimesheets20230301**](DeveloperApi.md#DeveloperTimesheets20230301) | **Get** /2023-03-01/developer/timesheets | Timesheets
-[**DeveloperWorkLocations20230301**](DeveloperApi.md#DeveloperWorkLocations20230301) | **Get** /2023-03-01/developer/work-locations | Work Locations
+[**DeveloperWorkLocations20230301**](DeveloperApi.md#DeveloperWorkLocations20230301) | **Get** /2023-03-01/developer/work-locations | Work locations
 
 
 
@@ -654,7 +654,7 @@ Other parameters are passed through a pointer to a apiDeveloperTimesheets2023030
 
 > []LocationResponse DeveloperWorkLocations20230301(ctx).Execute()
 
-Work Locations
+Work locations
 
 
 

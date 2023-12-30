@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**OfficialTimeOffBalances20230301**](OfficialApi.md#OfficialTimeOffBalances20230301) | **Get** /2023-03-01/official/time-off-balances | Time off balances
 [**OfficialTimeOffEntries20230301**](OfficialApi.md#OfficialTimeOffEntries20230301) | **Get** /2023-03-01/official/time-off-entries | Time off entries
 [**OfficialTimesheets20230301**](OfficialApi.md#OfficialTimesheets20230301) | **Get** /2023-03-01/official/timesheets | Timesheets
-[**OfficialWorkLocations20230301**](OfficialApi.md#OfficialWorkLocations20230301) | **Get** /2023-03-01/official/work-locations | Work Locations
+[**OfficialWorkLocations20230301**](OfficialApi.md#OfficialWorkLocations20230301) | **Get** /2023-03-01/official/work-locations | Work locations
 [**Officialdentity20230301**](OfficialApi.md#Officialdentity20230301) | **Get** /2023-03-01/official/identity | Identity
 
 
@@ -452,7 +452,7 @@ Other parameters are passed through a pointer to a apiOfficialTimesheets20230301
 
 > []LocationResponse OfficialWorkLocations20230301(ctx).Execute()
 
-Work Locations
+Work locations
 
 
 

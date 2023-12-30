@@ -1633,7 +1633,7 @@ func (r ApiDeveloperWorkLocations20230301Request) Execute() ([]LocationResponse,
 }
 
 /*
- * DeveloperWorkLocations20230301 Work Locations
+ * DeveloperWorkLocations20230301 Work locations
  * The Location object is used to represent an address that can be associated
 with an employee
 
@@ -2894,7 +2894,7 @@ func (r ApiOfficialWorkLocations20230301Request) Execute() ([]LocationResponse, 
 }
 
 /*
- * OfficialWorkLocations20230301 Work Locations
+ * OfficialWorkLocations20230301 Work locations
  * The Location object is used to represent an address that can be associated
 with an employee
 
