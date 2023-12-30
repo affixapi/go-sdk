@@ -22,40 +22,48 @@ type ScopesRequest string
 // List of ScopesRequest
 const (
 	OFFICIAL_COMPANY ScopesRequest = "/2023-03-01/official/company"
-	OFFICIAL_IDENTITY ScopesRequest = "/2023-03-01/official/identity"
 	OFFICIAL_EMPLOYEE ScopesRequest = "/2023-03-01/official/employee"
 	OFFICIAL_EMPLOYEES ScopesRequest = "/2023-03-01/official/employees"
-	OFFICIAL_TIMESHEETS ScopesRequest = "/2023-03-01/official/timesheets"
-	OFFICIAL_TIME_OFF_ENTRIES ScopesRequest = "/2023-03-01/official/time-off-entries"
+	OFFICIAL_GROUPS ScopesRequest = "/2023-03-01/official/groups"
+	OFFICIAL_IDENTITY ScopesRequest = "/2023-03-01/official/identity"
 	OFFICIAL_TIME_OFF_BALANCES ScopesRequest = "/2023-03-01/official/time-off-balances"
+	OFFICIAL_TIME_OFF_ENTRIES ScopesRequest = "/2023-03-01/official/time-off-entries"
+	OFFICIAL_TIMESHEETS ScopesRequest = "/2023-03-01/official/timesheets"
+	OFFICIAL_WORK_LOCATIONS ScopesRequest = "/2023-03-01/official/work-locations"
 	DEVELOPER_COMPANY ScopesRequest = "/2023-03-01/developer/company"
-	DEVELOPER_IDENTITY ScopesRequest = "/2023-03-01/developer/identity"
 	DEVELOPER_EMPLOYEE ScopesRequest = "/2023-03-01/developer/employee"
 	DEVELOPER_EMPLOYEES ScopesRequest = "/2023-03-01/developer/employees"
-	DEVELOPER_TIMESHEETS ScopesRequest = "/2023-03-01/developer/timesheets"
-	DEVELOPER_TIME_OFF_ENTRIES ScopesRequest = "/2023-03-01/developer/time-off-entries"
-	DEVELOPER_TIME_OFF_BALANCES ScopesRequest = "/2023-03-01/developer/time-off-balances"
+	DEVELOPER_GROUPS ScopesRequest = "/2023-03-01/developer/groups"
+	DEVELOPER_IDENTITY ScopesRequest = "/2023-03-01/developer/identity"
 	DEVELOPER_PAYRUNS ScopesRequest = "/2023-03-01/developer/payruns"
 	DEVELOPER_PAYRUNS_PAYRUN_ID ScopesRequest = "/2023-03-01/developer/payruns/:payrun_id"
+	DEVELOPER_TIME_OFF_BALANCES ScopesRequest = "/2023-03-01/developer/time-off-balances"
+	DEVELOPER_TIME_OFF_ENTRIES ScopesRequest = "/2023-03-01/developer/time-off-entries"
+	DEVELOPER_TIMESHEETS ScopesRequest = "/2023-03-01/developer/timesheets"
+	DEVELOPER_WORK_LOCATIONS ScopesRequest = "/2023-03-01/developer/work-locations"
 )
 
 var allowedScopesRequestEnumValues = []ScopesRequest{
 	"/2023-03-01/official/company",
-	"/2023-03-01/official/identity",
 	"/2023-03-01/official/employee",
 	"/2023-03-01/official/employees",
-	"/2023-03-01/official/timesheets",
-	"/2023-03-01/official/time-off-entries",
+	"/2023-03-01/official/groups",
+	"/2023-03-01/official/identity",
 	"/2023-03-01/official/time-off-balances",
+	"/2023-03-01/official/time-off-entries",
+	"/2023-03-01/official/timesheets",
+	"/2023-03-01/official/work-locations",
 	"/2023-03-01/developer/company",
-	"/2023-03-01/developer/identity",
 	"/2023-03-01/developer/employee",
 	"/2023-03-01/developer/employees",
-	"/2023-03-01/developer/timesheets",
-	"/2023-03-01/developer/time-off-entries",
-	"/2023-03-01/developer/time-off-balances",
+	"/2023-03-01/developer/groups",
+	"/2023-03-01/developer/identity",
 	"/2023-03-01/developer/payruns",
 	"/2023-03-01/developer/payruns/:payrun_id",
+	"/2023-03-01/developer/time-off-balances",
+	"/2023-03-01/developer/time-off-entries",
+	"/2023-03-01/developer/timesheets",
+	"/2023-03-01/developer/work-locations",
 }
 
 func (v *ScopesRequest) UnmarshalJSON(src []byte) error {
