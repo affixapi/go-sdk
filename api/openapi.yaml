@@ -2004,6 +2004,7 @@ components:
       - parolla.ie
       - payfit
       - personio.de
+      - planday
       - quickbooks uk
       - sagehr
       - saplinghr
@@ -2046,6 +2047,7 @@ components:
       - parolla.ie
       - payfit
       - personio.de
+      - planday
       - quickbooks uk
       - sagehr
       - saplinghr
@@ -2077,9 +2079,9 @@ components:
         - deputy
         - employment hero
         - factorialhr
+        - hailyhr
         - hibob
         - humaans
-        - hailyhr
         - iris cascade
         - moorepay
         - nmbrs
@@ -2087,12 +2089,12 @@ components:
         - payfit
         - peoplehr
         - personio.de
+        - planday
         - remote.com
         - sagehr
         - saplinghr
         - simplepay.ie
         - staffology
-        - xero uk
       - mode: developer
         providers:
         - brain payroll

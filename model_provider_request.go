@@ -37,6 +37,7 @@ const (
 	PAROLLA_IE ProviderRequest = "parolla.ie"
 	PAYFIT ProviderRequest = "payfit"
 	PERSONIO_DE ProviderRequest = "personio.de"
+	PLANDAY ProviderRequest = "planday"
 	QUICKBOOKS_UK ProviderRequest = "quickbooks uk"
 	SAGEHR ProviderRequest = "sagehr"
 	SAPLINGHR ProviderRequest = "saplinghr"
@@ -74,6 +75,7 @@ var allowedProviderRequestEnumValues = []ProviderRequest{
 	"parolla.ie",
 	"payfit",
 	"personio.de",
+	"planday",
 	"quickbooks uk",
 	"sagehr",
 	"saplinghr",

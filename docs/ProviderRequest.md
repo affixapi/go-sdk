@@ -35,6 +35,8 @@
 
 * `PERSONIO_DE` (value: `"personio.de"`)
 
+* `PLANDAY` (value: `"planday"`)
+
 * `QUICKBOOKS_UK` (value: `"quickbooks uk"`)
 
 * `SAGEHR` (value: `"sagehr"`)
