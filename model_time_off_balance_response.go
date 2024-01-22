@@ -23,6 +23,8 @@ type TimeOffBalanceResponse struct {
 	RemoteId string `json:"remote_id"`
 	Balance float32 `json:"balance"`
 	Used float32 `json:"used"`
+	// The name of the policy, as assigned by the remote system
+	PolicyName NullableString `json:"policy_name"`
 	PolicyType NullableString `json:"policy_type"`
 	RemoteCreatedAt NullableString `json:"remote_created_at"`
 	RemoteModifiedAt NullableString `json:"remote_modified_at"`
@@ -32,12 +34,13 @@ type TimeOffBalanceResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTimeOffBalanceResponse(employeeId string, remoteId string, balance float32, used float32, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffBalanceResponse {
+func NewTimeOffBalanceResponse(employeeId string, remoteId string, balance float32, used float32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffBalanceResponse {
 	this := TimeOffBalanceResponse{}
 	this.EmployeeId = employeeId
 	this.RemoteId = remoteId
 	this.Balance = balance
 	this.Used = used
+	this.PolicyName = policyName
 	this.PolicyType = policyType
 	this.RemoteCreatedAt = remoteCreatedAt
 	this.RemoteModifiedAt = remoteModifiedAt
@@ -148,6 +151,32 @@ func (o *TimeOffBalanceResponse) SetUsed(v float32) {
 	o.Used = v
 }
 
+// GetPolicyName returns the PolicyName field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *TimeOffBalanceResponse) GetPolicyName() string {
+	if o == nil || o.PolicyName.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.PolicyName.Get()
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TimeOffBalanceResponse) GetPolicyNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.PolicyName.Get(), o.PolicyName.IsSet()
+}
+
+// SetPolicyName sets field value
+func (o *TimeOffBalanceResponse) SetPolicyName(v string) {
+	o.PolicyName.Set(&v)
+}
+
 // GetPolicyType returns the PolicyType field value
 // If the value is explicit nil, the zero value for string will be returned
 func (o *TimeOffBalanceResponse) GetPolicyType() string {
@@ -239,6 +268,9 @@ func (o TimeOffBalanceResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["used"] = o.Used
+	}
+	if true {
+		toSerialize["policy_name"] = o.PolicyName.Get()
 	}
 	if true {
 		toSerialize["policy_type"] = o.PolicyType.Get()

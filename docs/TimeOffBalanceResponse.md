@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **RemoteId** | **string** | the remote system-assigned id of the individual | 
 **Balance** | **float32** |  | 
 **Used** | **float32** |  | 
+**PolicyName** | **NullableString** | The name of the policy, as assigned by the remote system | 
 **PolicyType** | **NullableString** |  | 
 **RemoteCreatedAt** | **NullableString** |  | 
 **RemoteModifiedAt** | **NullableString** |  | 
@@ -16,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewTimeOffBalanceResponse
 
-`func NewTimeOffBalanceResponse(employeeId string, remoteId string, balance float32, used float32, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffBalanceResponse`
+`func NewTimeOffBalanceResponse(employeeId string, remoteId string, balance float32, used float32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffBalanceResponse`
 
 NewTimeOffBalanceResponse instantiates a new TimeOffBalanceResponse object
 This constructor will assign default values to properties that have it defined,
@@ -111,6 +112,36 @@ and a boolean to check if the value has been set.
 SetUsed sets Used field to given value.
 
 
+### GetPolicyName
+
+`func (o *TimeOffBalanceResponse) GetPolicyName() string`
+
+GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
+
+### GetPolicyNameOk
+
+`func (o *TimeOffBalanceResponse) GetPolicyNameOk() (*string, bool)`
+
+GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyName
+
+`func (o *TimeOffBalanceResponse) SetPolicyName(v string)`
+
+SetPolicyName sets PolicyName field to given value.
+
+
+### SetPolicyNameNil
+
+`func (o *TimeOffBalanceResponse) SetPolicyNameNil(b bool)`
+
+ SetPolicyNameNil sets the value for PolicyName to be an explicit nil
+
+### UnsetPolicyName
+`func (o *TimeOffBalanceResponse) UnsetPolicyName()`
+
+UnsetPolicyName ensures that no value is present for PolicyName, not even an explicit nil
 ### GetPolicyType
 
 `func (o *TimeOffBalanceResponse) GetPolicyType() string`

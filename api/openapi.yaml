@@ -3653,6 +3653,7 @@ components:
         balance: 24.5
         employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         remote_id: "19202938"
+        policy_name: Comp/In Lieu Time
         used: 12
         remote_created_at: 2020-10-11T00:00:00.000+0000
         remote_modified_at: 2020-10-11T00:00:00.000+0000
@@ -3667,12 +3668,15 @@ components:
           type: string
         balance:
           example: 24.5
-          multipleOf: 0.1
           type: number
         used:
           example: 12
-          multipleOf: 0.1
           type: number
+        policy_name:
+          description: The name of the policy, as assigned by the remote system
+          example: Comp/In Lieu Time
+          nullable: true
+          type: string
         policy_type:
           enum:
           - vacation
@@ -3696,6 +3700,7 @@ components:
       required:
       - balance
       - employee_id
+      - policy_name
       - policy_type
       - remote_created_at
       - remote_id
