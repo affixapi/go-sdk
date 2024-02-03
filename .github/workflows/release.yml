@@ -17,11 +17,15 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # keep it as `secrets.GITHUB_TOKEN` as repo is public and this token has limited privs
+          persist-credentials: false
 
       - uses: cycjimmy/semantic-release-action@v4.0.0 # runs tests etc, publishes to private gh repo
         with:
           semantic_version: 18
           extra_plugins: |
+            @semantic-release/git@10.0.1
             @semantic-release/changelog@6.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # keep it as `secrets.GITHUB_TOKEN` as repo is public and this token has limited privs
