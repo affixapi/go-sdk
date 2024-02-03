@@ -27,4 +27,4 @@ jobs:
         with:
           semantic_version: 18
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # keep it as `secrets.GITHUB_TOKEN` as repo is public and this token has limited privs
+          GITHUB_TOKEN: ${{ secrets.GO_SDK_TOKEN }}
