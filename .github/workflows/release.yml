@@ -23,5 +23,7 @@ jobs:
       - uses: cycjimmy/semantic-release-action@v4.0.0 # runs tests etc, publishes to private gh repo
         with:
           semantic_version: 18
+          extra_plugins: |
+            @semantic-release/changelog@6.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
