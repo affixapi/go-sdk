@@ -9,10 +9,9 @@ defaults:
   run:
     shell: bash
 
-# permissions:
-  # pull-requests: write
-  # contents: write
-  # issues: write
+permissions:
+  contents: write
+  issues: write
 
 jobs:
   publish:
@@ -20,12 +19,9 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.ACTIONS_TOKEN }}
-          persist-credentials: false
 
       - uses: cycjimmy/semantic-release-action@v4.0.0 # runs tests etc, publishes to private gh repo
         with:
           semantic_version: 18
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
