@@ -9,10 +9,10 @@ defaults:
   run:
     shell: bash
 
-permissions:
-  pull-requests: write
-  contents: write
-  issues: write
+permissions: write-all
+  # pull-requests: write
+  # contents: write
+  # issues: write
 
 jobs:
   publish-artifact:
