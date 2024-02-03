@@ -9,6 +9,10 @@ defaults:
   run:
     shell: bash
 
+permissions:
+  pull-requests: write
+  contents: write
+
 jobs:
   publish-artifact:
     permissions:
@@ -24,5 +28,8 @@ jobs:
       - uses: cycjimmy/semantic-release-action@v4.0.0 # runs tests etc, publishes to private gh repo
         with:
           semantic_version: 18
+          extra_plugins: |
+            @semantic-release/git@10.0.1
+            @semantic-release/changelog@6.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # keep it as `secrets.GITHUB_TOKEN` as repo is public and this token has limited privs
