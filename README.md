@@ -391,5 +391,5 @@ Each of these functions takes a value of the given basic type and returns a poin
 
 ## Author
 
-john@affixapi.com
+developers@affixapi.com
 

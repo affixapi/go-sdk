@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   contact:
-    email: john@affixapi.com
+    email: developers@affixapi.com
   description: |
     The affixapi.com API documentation.
 
