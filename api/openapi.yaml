@@ -2084,7 +2084,7 @@ components:
         - humaans
         - iris cascade
         - moorepay
-        - nmbrs
+        - oysterhr
         - parolla.ie
         - payfit
         - peoplehr
@@ -2095,25 +2095,29 @@ components:
         - saplinghr
         - simplepay.ie
         - staffology
+        - xero uk
       - mode: developer
         providers:
-        - brain payroll
+        - bamboohr
         - brightpay connect
+        - deel
         - deputy
         - employment hero
         - factorialhr
         - fourthhr
+        - hibob
         - itrent
         - moorepay
         - oysterhr
         - parolla.ie
-        - paycircle
         - pento.io
         - peoplehr
+        - personio.de
         - quickbooks uk
         - remote.com
         - sageone
         - simplepay.ie
+        - xero uk
       items:
         properties:
           mode:
