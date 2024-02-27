@@ -48,13 +48,17 @@ const (
 	EMPLOYMENT_HERO ProviderRequest = "employment hero"
 	FACTORIALHR ProviderRequest = "factorialhr"
 	FOURTHHR ProviderRequest = "fourthhr"
+	GUSTO ProviderRequest = "gusto"
 	ITRENT ProviderRequest = "itrent"
+	JUSTWORKS ProviderRequest = "justworks"
 	OYSTERHR ProviderRequest = "oysterhr"
 	PAYCIRCLE ProviderRequest = "paycircle"
 	PENTO_IO ProviderRequest = "pento.io"
 	PEOPLEHR ProviderRequest = "peoplehr"
 	REMOTE_COM ProviderRequest = "remote.com"
+	RIPPLING ProviderRequest = "rippling"
 	SAGEONE ProviderRequest = "sageone"
+	SHAPE_PAYROLL ProviderRequest = "shape payroll"
 	SIMPLEPAY_IE ProviderRequest = "simplepay.ie"
 )
 
@@ -86,13 +90,17 @@ var allowedProviderRequestEnumValues = []ProviderRequest{
 	"employment hero",
 	"factorialhr",
 	"fourthhr",
+	"gusto",
 	"itrent",
+	"justworks",
 	"oysterhr",
 	"paycircle",
 	"pento.io",
 	"peoplehr",
 	"remote.com",
+	"rippling",
 	"sageone",
+	"shape payroll",
 	"simplepay.ie",
 }
 
