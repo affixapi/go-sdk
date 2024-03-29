@@ -1,26 +1,26 @@
-# \DeveloperApi
+# \XHRApi
 
 All URIs are relative to *https://api.affixapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeveloperCompanies20230301**](DeveloperApi.md#DeveloperCompanies20230301) | **Get** /2023-03-01/developer/company | Company
-[**DeveloperCreateEmployee20230301**](DeveloperApi.md#DeveloperCreateEmployee20230301) | **Post** /2023-03-01/developer/employee | Create employee
-[**DeveloperEmployees20230301**](DeveloperApi.md#DeveloperEmployees20230301) | **Get** /2023-03-01/developer/employees | Employees
-[**DeveloperGroups20230301**](DeveloperApi.md#DeveloperGroups20230301) | **Get** /2023-03-01/developer/groups | Groups
-[**DeveloperIdentity20230301**](DeveloperApi.md#DeveloperIdentity20230301) | **Get** /2023-03-01/developer/identity | Identity
-[**DeveloperPayruns20230301**](DeveloperApi.md#DeveloperPayruns20230301) | **Get** /2023-03-01/developer/payruns | Payruns
-[**DeveloperPayslips20230301**](DeveloperApi.md#DeveloperPayslips20230301) | **Get** /2023-03-01/developer/payruns/{payrun_id} | Payslips
-[**DeveloperTimeOffBalances20230301**](DeveloperApi.md#DeveloperTimeOffBalances20230301) | **Get** /2023-03-01/developer/time-off-balances | Time off balances
-[**DeveloperTimeOffEntries20230301**](DeveloperApi.md#DeveloperTimeOffEntries20230301) | **Get** /2023-03-01/developer/time-off-entries | Time off entries
-[**DeveloperTimesheets20230301**](DeveloperApi.md#DeveloperTimesheets20230301) | **Get** /2023-03-01/developer/timesheets | Timesheets
-[**DeveloperWorkLocations20230301**](DeveloperApi.md#DeveloperWorkLocations20230301) | **Get** /2023-03-01/developer/work-locations | Work locations
+[**XhrCompanies20230301**](XHRApi.md#XhrCompanies20230301) | **Get** /2023-03-01/xhr/company | Company
+[**XhrCreateEmployee20230301**](XHRApi.md#XhrCreateEmployee20230301) | **Post** /2023-03-01/xhr/employee | Create employee
+[**XhrEmployees20230301**](XHRApi.md#XhrEmployees20230301) | **Get** /2023-03-01/xhr/employees | Employees
+[**XhrGroups20230301**](XHRApi.md#XhrGroups20230301) | **Get** /2023-03-01/xhr/groups | Groups
+[**XhrIdentity20230301**](XHRApi.md#XhrIdentity20230301) | **Get** /2023-03-01/xhr/identity | Identity
+[**XhrPayruns20230301**](XHRApi.md#XhrPayruns20230301) | **Get** /2023-03-01/xhr/payruns | Payruns
+[**XhrPayslips20230301**](XHRApi.md#XhrPayslips20230301) | **Get** /2023-03-01/xhr/payruns/{payrun_id} | Payslips
+[**XhrTimeOffBalances20230301**](XHRApi.md#XhrTimeOffBalances20230301) | **Get** /2023-03-01/xhr/time-off-balances | Time off balances
+[**XhrTimeOffEntries20230301**](XHRApi.md#XhrTimeOffEntries20230301) | **Get** /2023-03-01/xhr/time-off-entries | Time off entries
+[**XhrTimesheets20230301**](XHRApi.md#XhrTimesheets20230301) | **Get** /2023-03-01/xhr/timesheets | Timesheets
+[**XhrWorkLocations20230301**](XHRApi.md#XhrWorkLocations20230301) | **Get** /2023-03-01/xhr/work-locations | Work locations
 
 
 
-## DeveloperCompanies20230301
+## XhrCompanies20230301
 
-> []CompanyResponse DeveloperCompanies20230301(ctx).Execute()
+> []CompanyResponse XhrCompanies20230301(ctx).Execute()
 
 Company
 
@@ -42,13 +42,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperCompanies20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRApi.XhrCompanies20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperCompanies20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrCompanies20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperCompanies20230301`: []CompanyResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperCompanies20230301`: %v\n", resp)
+    // response from `XhrCompanies20230301`: []CompanyResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrCompanies20230301`: %v\n", resp)
 }
 ```
 
@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperCompanies20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrCompanies20230301Request struct via the builder pattern
 
 
 ### Return type
@@ -79,9 +79,9 @@ Other parameters are passed through a pointer to a apiDeveloperCompanies20230301
 [[Back to README]](../README.md)
 
 
-## DeveloperCreateEmployee20230301
+## XhrCreateEmployee20230301
 
-> EmployeeResponse DeveloperCreateEmployee20230301(ctx).CreateEmployeeRequest(createEmployeeRequest).Execute()
+> EmployeeResponse XhrCreateEmployee20230301(ctx).CreateEmployeeRequest(createEmployeeRequest).Execute()
 
 Create employee
 
@@ -104,13 +104,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperCreateEmployee20230301(context.Background()).CreateEmployeeRequest(createEmployeeRequest).Execute()
+    resp, r, err := api_client.XHRApi.XhrCreateEmployee20230301(context.Background()).CreateEmployeeRequest(createEmployeeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperCreateEmployee20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrCreateEmployee20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperCreateEmployee20230301`: EmployeeResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperCreateEmployee20230301`: %v\n", resp)
+    // response from `XhrCreateEmployee20230301`: EmployeeResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrCreateEmployee20230301`: %v\n", resp)
 }
 ```
 
@@ -120,7 +120,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperCreateEmployee20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrCreateEmployee20230301Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -145,9 +145,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeveloperEmployees20230301
+## XhrEmployees20230301
 
-> []EmployeeResponse DeveloperEmployees20230301(ctx).Execute()
+> []EmployeeResponse XhrEmployees20230301(ctx).Execute()
 
 Employees
 
@@ -169,13 +169,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperEmployees20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRApi.XhrEmployees20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperEmployees20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrEmployees20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperEmployees20230301`: []EmployeeResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperEmployees20230301`: %v\n", resp)
+    // response from `XhrEmployees20230301`: []EmployeeResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrEmployees20230301`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperEmployees20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrEmployees20230301Request struct via the builder pattern
 
 
 ### Return type
@@ -206,9 +206,9 @@ Other parameters are passed through a pointer to a apiDeveloperEmployees20230301
 [[Back to README]](../README.md)
 
 
-## DeveloperGroups20230301
+## XhrGroups20230301
 
-> []GroupResponse DeveloperGroups20230301(ctx).Execute()
+> []GroupResponse XhrGroups20230301(ctx).Execute()
 
 Groups
 
@@ -230,13 +230,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperGroups20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRApi.XhrGroups20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperGroups20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrGroups20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperGroups20230301`: []GroupResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperGroups20230301`: %v\n", resp)
+    // response from `XhrGroups20230301`: []GroupResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrGroups20230301`: %v\n", resp)
 }
 ```
 
@@ -246,7 +246,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperGroups20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrGroups20230301Request struct via the builder pattern
 
 
 ### Return type
@@ -267,9 +267,9 @@ Other parameters are passed through a pointer to a apiDeveloperGroups20230301Req
 [[Back to README]](../README.md)
 
 
-## DeveloperIdentity20230301
+## XhrIdentity20230301
 
-> IdentityResponse DeveloperIdentity20230301(ctx).Execute()
+> IdentityResponse XhrIdentity20230301(ctx).Execute()
 
 Identity
 
@@ -291,13 +291,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperIdentity20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRApi.XhrIdentity20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperIdentity20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrIdentity20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperIdentity20230301`: IdentityResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperIdentity20230301`: %v\n", resp)
+    // response from `XhrIdentity20230301`: IdentityResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrIdentity20230301`: %v\n", resp)
 }
 ```
 
@@ -307,7 +307,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperIdentity20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrIdentity20230301Request struct via the builder pattern
 
 
 ### Return type
@@ -328,9 +328,9 @@ Other parameters are passed through a pointer to a apiDeveloperIdentity20230301R
 [[Back to README]](../README.md)
 
 
-## DeveloperPayruns20230301
+## XhrPayruns20230301
 
-> []PayrunResponse DeveloperPayruns20230301(ctx).StartDate(startDate).EndDate(endDate).Execute()
+> []PayrunResponse XhrPayruns20230301(ctx).StartDate(startDate).EndDate(endDate).Execute()
 
 Payruns
 
@@ -355,13 +355,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperPayruns20230301(context.Background()).StartDate(startDate).EndDate(endDate).Execute()
+    resp, r, err := api_client.XHRApi.XhrPayruns20230301(context.Background()).StartDate(startDate).EndDate(endDate).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperPayruns20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrPayruns20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperPayruns20230301`: []PayrunResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperPayruns20230301`: %v\n", resp)
+    // response from `XhrPayruns20230301`: []PayrunResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrPayruns20230301`: %v\n", resp)
 }
 ```
 
@@ -371,7 +371,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperPayruns20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrPayruns20230301Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -397,9 +397,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeveloperPayslips20230301
+## XhrPayslips20230301
 
-> []PayslipResponse DeveloperPayslips20230301(ctx, payrunId).Execute()
+> []PayslipResponse XhrPayslips20230301(ctx, payrunId).Execute()
 
 Payslips
 
@@ -422,13 +422,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperPayslips20230301(context.Background(), payrunId).Execute()
+    resp, r, err := api_client.XHRApi.XhrPayslips20230301(context.Background(), payrunId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperPayslips20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrPayslips20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperPayslips20230301`: []PayslipResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperPayslips20230301`: %v\n", resp)
+    // response from `XhrPayslips20230301`: []PayslipResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrPayslips20230301`: %v\n", resp)
 }
 ```
 
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperPayslips20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrPayslips20230301Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -467,9 +467,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeveloperTimeOffBalances20230301
+## XhrTimeOffBalances20230301
 
-> []TimeOffBalanceResponse DeveloperTimeOffBalances20230301(ctx).Execute()
+> []TimeOffBalanceResponse XhrTimeOffBalances20230301(ctx).Execute()
 
 Time off balances
 
@@ -491,13 +491,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperTimeOffBalances20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRApi.XhrTimeOffBalances20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperTimeOffBalances20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrTimeOffBalances20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperTimeOffBalances20230301`: []TimeOffBalanceResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperTimeOffBalances20230301`: %v\n", resp)
+    // response from `XhrTimeOffBalances20230301`: []TimeOffBalanceResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrTimeOffBalances20230301`: %v\n", resp)
 }
 ```
 
@@ -507,7 +507,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperTimeOffBalances20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrTimeOffBalances20230301Request struct via the builder pattern
 
 
 ### Return type
@@ -528,9 +528,9 @@ Other parameters are passed through a pointer to a apiDeveloperTimeOffBalances20
 [[Back to README]](../README.md)
 
 
-## DeveloperTimeOffEntries20230301
+## XhrTimeOffEntries20230301
 
-> []TimeOffEntryResponse DeveloperTimeOffEntries20230301(ctx).Execute()
+> []TimeOffEntryResponse XhrTimeOffEntries20230301(ctx).Execute()
 
 Time off entries
 
@@ -552,13 +552,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperTimeOffEntries20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRApi.XhrTimeOffEntries20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperTimeOffEntries20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrTimeOffEntries20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperTimeOffEntries20230301`: []TimeOffEntryResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperTimeOffEntries20230301`: %v\n", resp)
+    // response from `XhrTimeOffEntries20230301`: []TimeOffEntryResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrTimeOffEntries20230301`: %v\n", resp)
 }
 ```
 
@@ -568,7 +568,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperTimeOffEntries20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrTimeOffEntries20230301Request struct via the builder pattern
 
 
 ### Return type
@@ -589,9 +589,9 @@ Other parameters are passed through a pointer to a apiDeveloperTimeOffEntries202
 [[Back to README]](../README.md)
 
 
-## DeveloperTimesheets20230301
+## XhrTimesheets20230301
 
-> []TimesheetResponse DeveloperTimesheets20230301(ctx).Execute()
+> []TimesheetResponse XhrTimesheets20230301(ctx).Execute()
 
 Timesheets
 
@@ -613,13 +613,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperTimesheets20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRApi.XhrTimesheets20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperTimesheets20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrTimesheets20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperTimesheets20230301`: []TimesheetResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperTimesheets20230301`: %v\n", resp)
+    // response from `XhrTimesheets20230301`: []TimesheetResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrTimesheets20230301`: %v\n", resp)
 }
 ```
 
@@ -629,7 +629,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperTimesheets20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrTimesheets20230301Request struct via the builder pattern
 
 
 ### Return type
@@ -650,9 +650,9 @@ Other parameters are passed through a pointer to a apiDeveloperTimesheets2023030
 [[Back to README]](../README.md)
 
 
-## DeveloperWorkLocations20230301
+## XhrWorkLocations20230301
 
-> []LocationResponse DeveloperWorkLocations20230301(ctx).Execute()
+> []LocationResponse XhrWorkLocations20230301(ctx).Execute()
 
 Work locations
 
@@ -674,13 +674,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeveloperApi.DeveloperWorkLocations20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRApi.XhrWorkLocations20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DeveloperApi.DeveloperWorkLocations20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrWorkLocations20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeveloperWorkLocations20230301`: []LocationResponse
-    fmt.Fprintf(os.Stdout, "Response from `DeveloperApi.DeveloperWorkLocations20230301`: %v\n", resp)
+    // response from `XhrWorkLocations20230301`: []LocationResponse
+    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrWorkLocations20230301`: %v\n", resp)
 }
 ```
 
@@ -690,7 +690,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeveloperWorkLocations20230301Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiXhrWorkLocations20230301Request struct via the builder pattern
 
 
 ### Return type
