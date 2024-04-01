@@ -5,7 +5,6 @@ All URIs are relative to *https://api.affixapi.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**XhrCompanies20230301**](XHRVerticallyIntegratedApi.md#XhrCompanies20230301) | **Get** /2023-03-01/xhr/company | Company
-[**XhrCreateEmployee20230301**](XHRVerticallyIntegratedApi.md#XhrCreateEmployee20230301) | **Post** /2023-03-01/xhr/employee | Create employee
 [**XhrEmployees20230301**](XHRVerticallyIntegratedApi.md#XhrEmployees20230301) | **Get** /2023-03-01/xhr/employees | Employees
 [**XhrGroups20230301**](XHRVerticallyIntegratedApi.md#XhrGroups20230301) | **Get** /2023-03-01/xhr/groups | Groups
 [**XhrIdentity20230301**](XHRVerticallyIntegratedApi.md#XhrIdentity20230301) | **Get** /2023-03-01/xhr/identity | Identity
@@ -72,72 +71,6 @@ Other parameters are passed through a pointer to a apiXhrCompanies20230301Reques
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## XhrCreateEmployee20230301
-
-> EmployeeResponse XhrCreateEmployee20230301(ctx).CreateEmployeeRequest(createEmployeeRequest).Execute()
-
-Create employee
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    createEmployeeRequest := *openapiclient.NewCreateEmployeeRequest("Greg", "Hirsch") // CreateEmployeeRequest | 
-
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrCreateEmployee20230301(context.Background()).CreateEmployeeRequest(createEmployeeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrCreateEmployee20230301``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `XhrCreateEmployee20230301`: EmployeeResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrCreateEmployee20230301`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiXhrCreateEmployee20230301Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createEmployeeRequest** | [**CreateEmployeeRequest**](CreateEmployeeRequest.md) |  | 
-
-### Return type
-
-[**EmployeeResponse**](EmployeeResponse.md)
-
-### Authorization
-
-[access-token](../README.md#access-token)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

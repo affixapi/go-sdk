@@ -285,7 +285,6 @@ All URIs are relative to *https://api.affixapi.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *Class20230301Api* | [**XhrCompanies20230301**](docs/Class20230301Api.md#xhrcompanies20230301) | **Get** /2023-03-01/xhr/company | Company
-*Class20230301Api* | [**XhrCreateEmployee20230301**](docs/Class20230301Api.md#xhrcreateemployee20230301) | **Post** /2023-03-01/xhr/employee | Create employee
 *Class20230301Api* | [**XhrEmployees20230301**](docs/Class20230301Api.md#xhremployees20230301) | **Get** /2023-03-01/xhr/employees | Employees
 *Class20230301Api* | [**XhrGroups20230301**](docs/Class20230301Api.md#xhrgroups20230301) | **Get** /2023-03-01/xhr/groups | Groups
 *Class20230301Api* | [**XhrIdentity20230301**](docs/Class20230301Api.md#xhridentity20230301) | **Get** /2023-03-01/xhr/identity | Identity
@@ -303,7 +302,6 @@ Class | Method | HTTP request | Description
 *ManagementApi* | [**Tokens**](docs/ManagementApi.md#tokens) | **Get** /2023-03-01/management/tokens | Tokens
 *ManagementApi* | [**UpdateClient**](docs/ManagementApi.md#updateclient) | **Post** /2023-03-01/management/client | Update client
 *XHRVerticallyIntegratedApi* | [**XhrCompanies20230301**](docs/XHRVerticallyIntegratedApi.md#xhrcompanies20230301) | **Get** /2023-03-01/xhr/company | Company
-*XHRVerticallyIntegratedApi* | [**XhrCreateEmployee20230301**](docs/XHRVerticallyIntegratedApi.md#xhrcreateemployee20230301) | **Post** /2023-03-01/xhr/employee | Create employee
 *XHRVerticallyIntegratedApi* | [**XhrEmployees20230301**](docs/XHRVerticallyIntegratedApi.md#xhremployees20230301) | **Get** /2023-03-01/xhr/employees | Employees
 *XHRVerticallyIntegratedApi* | [**XhrGroups20230301**](docs/XHRVerticallyIntegratedApi.md#xhrgroups20230301) | **Get** /2023-03-01/xhr/groups | Groups
 *XHRVerticallyIntegratedApi* | [**XhrIdentity20230301**](docs/XHRVerticallyIntegratedApi.md#xhridentity20230301) | **Get** /2023-03-01/xhr/identity | Identity
