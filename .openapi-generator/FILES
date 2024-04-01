@@ -6,8 +6,7 @@ api/openapi.yaml
 api_class20230301.go
 api_core.go
 api_management.go
-api_official.go
-api_xhr.go
+api_xhr_vertically_integrated.go
 client.go
 configuration.go
 docs/AddressNoNonNullRequest.md
@@ -40,7 +39,6 @@ docs/ManagementApi.md
 docs/MessageResponse.md
 docs/ModeRequest.md
 docs/ModeResponse.md
-docs/OfficialApi.md
 docs/PayrunResponse.md
 docs/PayslipResponse.md
 docs/PayslipResponseContributions.md
@@ -56,7 +54,7 @@ docs/TimeOffEntryResponse.md
 docs/TimesheetResponse.md
 docs/TokenRequest.md
 docs/TokenResponse.md
-docs/XHRApi.md
+docs/XHRVerticallyIntegratedApi.md
 git_push.sh
 go.mod
 go.sum

@@ -1,20 +1,20 @@
-# \XHRApi
+# \XHRVerticallyIntegratedApi
 
 All URIs are relative to *https://api.affixapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**XhrCompanies20230301**](XHRApi.md#XhrCompanies20230301) | **Get** /2023-03-01/xhr/company | Company
-[**XhrCreateEmployee20230301**](XHRApi.md#XhrCreateEmployee20230301) | **Post** /2023-03-01/xhr/employee | Create employee
-[**XhrEmployees20230301**](XHRApi.md#XhrEmployees20230301) | **Get** /2023-03-01/xhr/employees | Employees
-[**XhrGroups20230301**](XHRApi.md#XhrGroups20230301) | **Get** /2023-03-01/xhr/groups | Groups
-[**XhrIdentity20230301**](XHRApi.md#XhrIdentity20230301) | **Get** /2023-03-01/xhr/identity | Identity
-[**XhrPayruns20230301**](XHRApi.md#XhrPayruns20230301) | **Get** /2023-03-01/xhr/payruns | Payruns
-[**XhrPayslips20230301**](XHRApi.md#XhrPayslips20230301) | **Get** /2023-03-01/xhr/payruns/{payrun_id} | Payslips
-[**XhrTimeOffBalances20230301**](XHRApi.md#XhrTimeOffBalances20230301) | **Get** /2023-03-01/xhr/time-off-balances | Time off balances
-[**XhrTimeOffEntries20230301**](XHRApi.md#XhrTimeOffEntries20230301) | **Get** /2023-03-01/xhr/time-off-entries | Time off entries
-[**XhrTimesheets20230301**](XHRApi.md#XhrTimesheets20230301) | **Get** /2023-03-01/xhr/timesheets | Timesheets
-[**XhrWorkLocations20230301**](XHRApi.md#XhrWorkLocations20230301) | **Get** /2023-03-01/xhr/work-locations | Work locations
+[**XhrCompanies20230301**](XHRVerticallyIntegratedApi.md#XhrCompanies20230301) | **Get** /2023-03-01/xhr/company | Company
+[**XhrCreateEmployee20230301**](XHRVerticallyIntegratedApi.md#XhrCreateEmployee20230301) | **Post** /2023-03-01/xhr/employee | Create employee
+[**XhrEmployees20230301**](XHRVerticallyIntegratedApi.md#XhrEmployees20230301) | **Get** /2023-03-01/xhr/employees | Employees
+[**XhrGroups20230301**](XHRVerticallyIntegratedApi.md#XhrGroups20230301) | **Get** /2023-03-01/xhr/groups | Groups
+[**XhrIdentity20230301**](XHRVerticallyIntegratedApi.md#XhrIdentity20230301) | **Get** /2023-03-01/xhr/identity | Identity
+[**XhrPayruns20230301**](XHRVerticallyIntegratedApi.md#XhrPayruns20230301) | **Get** /2023-03-01/xhr/payruns | Payruns
+[**XhrPayslips20230301**](XHRVerticallyIntegratedApi.md#XhrPayslips20230301) | **Get** /2023-03-01/xhr/payruns/{payrun_id} | Payslips
+[**XhrTimeOffBalances20230301**](XHRVerticallyIntegratedApi.md#XhrTimeOffBalances20230301) | **Get** /2023-03-01/xhr/time-off-balances | Time off balances
+[**XhrTimeOffEntries20230301**](XHRVerticallyIntegratedApi.md#XhrTimeOffEntries20230301) | **Get** /2023-03-01/xhr/time-off-entries | Time off entries
+[**XhrTimesheets20230301**](XHRVerticallyIntegratedApi.md#XhrTimesheets20230301) | **Get** /2023-03-01/xhr/timesheets | Timesheets
+[**XhrWorkLocations20230301**](XHRVerticallyIntegratedApi.md#XhrWorkLocations20230301) | **Get** /2023-03-01/xhr/work-locations | Work locations
 
 
 
@@ -42,13 +42,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrCompanies20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrCompanies20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrCompanies20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrCompanies20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrCompanies20230301`: []CompanyResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrCompanies20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrCompanies20230301`: %v\n", resp)
 }
 ```
 
@@ -104,13 +104,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrCreateEmployee20230301(context.Background()).CreateEmployeeRequest(createEmployeeRequest).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrCreateEmployee20230301(context.Background()).CreateEmployeeRequest(createEmployeeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrCreateEmployee20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrCreateEmployee20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrCreateEmployee20230301`: EmployeeResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrCreateEmployee20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrCreateEmployee20230301`: %v\n", resp)
 }
 ```
 
@@ -169,13 +169,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrEmployees20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrEmployees20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrEmployees20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrEmployees20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrEmployees20230301`: []EmployeeResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrEmployees20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrEmployees20230301`: %v\n", resp)
 }
 ```
 
@@ -230,13 +230,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrGroups20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrGroups20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrGroups20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrGroups20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrGroups20230301`: []GroupResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrGroups20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrGroups20230301`: %v\n", resp)
 }
 ```
 
@@ -291,13 +291,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrIdentity20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrIdentity20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrIdentity20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrIdentity20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrIdentity20230301`: IdentityResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrIdentity20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrIdentity20230301`: %v\n", resp)
 }
 ```
 
@@ -355,13 +355,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrPayruns20230301(context.Background()).StartDate(startDate).EndDate(endDate).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrPayruns20230301(context.Background()).StartDate(startDate).EndDate(endDate).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrPayruns20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrPayruns20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrPayruns20230301`: []PayrunResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrPayruns20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrPayruns20230301`: %v\n", resp)
 }
 ```
 
@@ -422,13 +422,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrPayslips20230301(context.Background(), payrunId).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrPayslips20230301(context.Background(), payrunId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrPayslips20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrPayslips20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrPayslips20230301`: []PayslipResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrPayslips20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrPayslips20230301`: %v\n", resp)
 }
 ```
 
@@ -491,13 +491,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrTimeOffBalances20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrTimeOffBalances20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrTimeOffBalances20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrTimeOffBalances20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrTimeOffBalances20230301`: []TimeOffBalanceResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrTimeOffBalances20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrTimeOffBalances20230301`: %v\n", resp)
 }
 ```
 
@@ -552,13 +552,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrTimeOffEntries20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrTimeOffEntries20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrTimeOffEntries20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrTimeOffEntries20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrTimeOffEntries20230301`: []TimeOffEntryResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrTimeOffEntries20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrTimeOffEntries20230301`: %v\n", resp)
 }
 ```
 
@@ -613,13 +613,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrTimesheets20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrTimesheets20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrTimesheets20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrTimesheets20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrTimesheets20230301`: []TimesheetResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrTimesheets20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrTimesheets20230301`: %v\n", resp)
 }
 ```
 
@@ -674,13 +674,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.XHRApi.XhrWorkLocations20230301(context.Background()).Execute()
+    resp, r, err := api_client.XHRVerticallyIntegratedApi.XhrWorkLocations20230301(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `XHRApi.XhrWorkLocations20230301``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `XHRVerticallyIntegratedApi.XhrWorkLocations20230301``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `XhrWorkLocations20230301`: []LocationResponse
-    fmt.Fprintf(os.Stdout, "Response from `XHRApi.XhrWorkLocations20230301`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `XHRVerticallyIntegratedApi.XhrWorkLocations20230301`: %v\n", resp)
 }
 ```
 
