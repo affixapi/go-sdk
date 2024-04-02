@@ -22,7 +22,7 @@ type EmploymentResponse struct {
 	PayPeriod NullableString `json:"pay_period"`
 	PayFrequency NullableString `json:"pay_frequency"`
 	EmploymentType NullableString `json:"employment_type"`
-	Currency CurrencyResponse `json:"currency"`
+	Currency NullableCurrencyResponse `json:"currency"`
 	EffectiveDate NullableString `json:"effective_date"`
 }
 
@@ -30,7 +30,7 @@ type EmploymentResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmploymentResponse(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency CurrencyResponse, effectiveDate NullableString) *EmploymentResponse {
+func NewEmploymentResponse(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency NullableCurrencyResponse, effectiveDate NullableString) *EmploymentResponse {
 	this := EmploymentResponse{}
 	this.JobTitle = jobTitle
 	this.PayRate = payRate
@@ -181,27 +181,29 @@ func (o *EmploymentResponse) SetEmploymentType(v string) {
 }
 
 // GetCurrency returns the Currency field value
+// If the value is explicit nil, the zero value for CurrencyResponse will be returned
 func (o *EmploymentResponse) GetCurrency() CurrencyResponse {
-	if o == nil {
+	if o == nil || o.Currency.Get() == nil {
 		var ret CurrencyResponse
 		return ret
 	}
 
-	return o.Currency
+	return *o.Currency.Get()
 }
 
 // GetCurrencyOk returns a tuple with the Currency field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EmploymentResponse) GetCurrencyOk() (*CurrencyResponse, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Currency, true
+	return o.Currency.Get(), o.Currency.IsSet()
 }
 
 // SetCurrency sets field value
 func (o *EmploymentResponse) SetCurrency(v CurrencyResponse) {
-	o.Currency = v
+	o.Currency.Set(&v)
 }
 
 // GetEffectiveDate returns the EffectiveDate field value
@@ -248,7 +250,7 @@ func (o EmploymentResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["employment_type"] = o.EmploymentType.Get()
 	}
 	if true {
-		toSerialize["currency"] = o.Currency
+		toSerialize["currency"] = o.Currency.Get()
 	}
 	if true {
 		toSerialize["effective_date"] = o.EffectiveDate.Get()

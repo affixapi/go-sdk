@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **PayPeriod** | **NullableString** |  | 
 **PayFrequency** | **NullableString** |  | 
 **EmploymentType** | **NullableString** |  | 
-**Currency** | [**CurrencyResponse**](CurrencyResponse.md) |  | 
+**Currency** | [**NullableCurrencyResponse**](CurrencyResponse.md) |  | 
 **EffectiveDate** | **NullableString** |  | 
 
 ## Methods
 
 ### NewEmploymentResponse
 
-`func NewEmploymentResponse(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency CurrencyResponse, effectiveDate NullableString, ) *EmploymentResponse`
+`func NewEmploymentResponse(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency NullableCurrencyResponse, effectiveDate NullableString, ) *EmploymentResponse`
 
 NewEmploymentResponse instantiates a new EmploymentResponse object
 This constructor will assign default values to properties that have it defined,
@@ -201,6 +201,16 @@ and a boolean to check if the value has been set.
 SetCurrency sets Currency field to given value.
 
 
+### SetCurrencyNil
+
+`func (o *EmploymentResponse) SetCurrencyNil(b bool)`
+
+ SetCurrencyNil sets the value for Currency to be an explicit nil
+
+### UnsetCurrency
+`func (o *EmploymentResponse) UnsetCurrency()`
+
+UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
 ### GetEffectiveDate
 
 `func (o *EmploymentResponse) GetEffectiveDate() string`

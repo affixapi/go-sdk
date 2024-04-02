@@ -2108,7 +2108,7 @@ components:
       - remote_id
       - type
       type: object
-    CurrencyRequest:
+    currency-not-nullRequest:
       enum:
       - usd
       - gbp
@@ -2148,7 +2148,7 @@ components:
           nullable: true
           type: string
         currency:
-          $ref: '#/components/schemas/CurrencyRequest'
+          $ref: '#/components/schemas/currency-not-nullRequest'
         effective_date:
           example: 2020-10-11
           format: date
@@ -2404,9 +2404,11 @@ components:
       type: object
     CurrencyResponse:
       enum:
+      - null
       - usd
       - gbp
       - eur
+      nullable: true
       type: string
     employmentResponse:
       example:

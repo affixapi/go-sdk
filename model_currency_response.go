@@ -21,12 +21,14 @@ type CurrencyResponse string
 
 // List of CurrencyResponse
 const (
+	NULL CurrencyResponse = "null"
 	USD CurrencyResponse = "usd"
 	GBP CurrencyResponse = "gbp"
 	EUR CurrencyResponse = "eur"
 )
 
 var allowedCurrencyResponseEnumValues = []CurrencyResponse{
+	"null",
 	"usd",
 	"gbp",
 	"eur",

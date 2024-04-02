@@ -1,4 +1,4 @@
-# CurrencyRequest
+# CurrencyNotNullRequest
 
 ## Enum
 

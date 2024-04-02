@@ -22,7 +22,7 @@ type EmploymentNoNullEnumRequest struct {
 	PayPeriod NullableString `json:"pay_period"`
 	PayFrequency NullableString `json:"pay_frequency"`
 	EmploymentType NullableString `json:"employment_type"`
-	Currency CurrencyRequest `json:"currency"`
+	Currency CurrencyNotNullRequest `json:"currency"`
 	EffectiveDate NullableString `json:"effective_date"`
 }
 
@@ -30,7 +30,7 @@ type EmploymentNoNullEnumRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmploymentNoNullEnumRequest(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency CurrencyRequest, effectiveDate NullableString) *EmploymentNoNullEnumRequest {
+func NewEmploymentNoNullEnumRequest(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency CurrencyNotNullRequest, effectiveDate NullableString) *EmploymentNoNullEnumRequest {
 	this := EmploymentNoNullEnumRequest{}
 	this.JobTitle = jobTitle
 	this.PayRate = payRate
@@ -181,9 +181,9 @@ func (o *EmploymentNoNullEnumRequest) SetEmploymentType(v string) {
 }
 
 // GetCurrency returns the Currency field value
-func (o *EmploymentNoNullEnumRequest) GetCurrency() CurrencyRequest {
+func (o *EmploymentNoNullEnumRequest) GetCurrency() CurrencyNotNullRequest {
 	if o == nil {
-		var ret CurrencyRequest
+		var ret CurrencyNotNullRequest
 		return ret
 	}
 
@@ -192,7 +192,7 @@ func (o *EmploymentNoNullEnumRequest) GetCurrency() CurrencyRequest {
 
 // GetCurrencyOk returns a tuple with the Currency field value
 // and a boolean to check if the value has been set.
-func (o *EmploymentNoNullEnumRequest) GetCurrencyOk() (*CurrencyRequest, bool) {
+func (o *EmploymentNoNullEnumRequest) GetCurrencyOk() (*CurrencyNotNullRequest, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -200,7 +200,7 @@ func (o *EmploymentNoNullEnumRequest) GetCurrencyOk() (*CurrencyRequest, bool) {
 }
 
 // SetCurrency sets field value
-func (o *EmploymentNoNullEnumRequest) SetCurrency(v CurrencyRequest) {
+func (o *EmploymentNoNullEnumRequest) SetCurrency(v CurrencyNotNullRequest) {
 	o.Currency = v
 }
 

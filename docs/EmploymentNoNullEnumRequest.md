@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **PayPeriod** | **NullableString** |  | 
 **PayFrequency** | **NullableString** |  | 
 **EmploymentType** | **NullableString** |  | 
-**Currency** | [**CurrencyRequest**](CurrencyRequest.md) |  | 
+**Currency** | [**CurrencyNotNullRequest**](CurrencyNotNullRequest.md) |  | 
 **EffectiveDate** | **NullableString** |  | 
 
 ## Methods
 
 ### NewEmploymentNoNullEnumRequest
 
-`func NewEmploymentNoNullEnumRequest(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency CurrencyRequest, effectiveDate NullableString, ) *EmploymentNoNullEnumRequest`
+`func NewEmploymentNoNullEnumRequest(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency CurrencyNotNullRequest, effectiveDate NullableString, ) *EmploymentNoNullEnumRequest`
 
 NewEmploymentNoNullEnumRequest instantiates a new EmploymentNoNullEnumRequest object
 This constructor will assign default values to properties that have it defined,
@@ -183,20 +183,20 @@ SetEmploymentType sets EmploymentType field to given value.
 UnsetEmploymentType ensures that no value is present for EmploymentType, not even an explicit nil
 ### GetCurrency
 
-`func (o *EmploymentNoNullEnumRequest) GetCurrency() CurrencyRequest`
+`func (o *EmploymentNoNullEnumRequest) GetCurrency() CurrencyNotNullRequest`
 
 GetCurrency returns the Currency field if non-nil, zero value otherwise.
 
 ### GetCurrencyOk
 
-`func (o *EmploymentNoNullEnumRequest) GetCurrencyOk() (*CurrencyRequest, bool)`
+`func (o *EmploymentNoNullEnumRequest) GetCurrencyOk() (*CurrencyNotNullRequest, bool)`
 
 GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrency
 
-`func (o *EmploymentNoNullEnumRequest) SetCurrency(v CurrencyRequest)`
+`func (o *EmploymentNoNullEnumRequest) SetCurrency(v CurrencyNotNullRequest)`
 
 SetCurrency sets Currency field to given value.
 
