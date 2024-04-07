@@ -1930,6 +1930,7 @@ components:
           - BE
           - CA
           - CH
+          - CN
           - CZ
           - DE
           - DK
@@ -1937,6 +1938,7 @@ components:
           - ES
           - FR
           - GB
+          - HK
           - IE
           - IT
           - JP
@@ -1944,11 +1946,13 @@ components:
           - LV
           - NL
           - "NO"
+          - PH
           - PL
           - RO
           - SE
           - SG
           - SK
+          - TW
           - US
           example: IE
           nullable: true
