@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **Avatar** | **NullableString** |  | 
 **HomeLocation** | [**NullableAddressResponse**](AddressResponse.md) |  | 
 **WorkLocation** | [**NullableLocationResponse**](LocationResponse.md) |  | 
-**Manager** | [**NullableCreateEmployeeRequestManager**](CreateEmployeeRequestManager.md) |  | 
+**Manager** | [**NullableEmployeeResponseManager**](EmployeeResponseManager.md) |  | 
 **BankAccount** | [**NullableCreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  | 
 **Employments** | [**[]EmploymentResponse**](EmploymentResponse.md) |  | 
 **CustomFields** | **map[string]interface{}** |  | 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewEmployeeResponse
 
-`func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableString, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableCreateEmployeeRequestManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse, ) *EmployeeResponse`
+`func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableString, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableEmployeeResponseManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse, ) *EmployeeResponse`
 
 NewEmployeeResponse instantiates a new EmployeeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -735,20 +735,20 @@ SetWorkLocation sets WorkLocation field to given value.
 UnsetWorkLocation ensures that no value is present for WorkLocation, not even an explicit nil
 ### GetManager
 
-`func (o *EmployeeResponse) GetManager() CreateEmployeeRequestManager`
+`func (o *EmployeeResponse) GetManager() EmployeeResponseManager`
 
 GetManager returns the Manager field if non-nil, zero value otherwise.
 
 ### GetManagerOk
 
-`func (o *EmployeeResponse) GetManagerOk() (*CreateEmployeeRequestManager, bool)`
+`func (o *EmployeeResponse) GetManagerOk() (*EmployeeResponseManager, bool)`
 
 GetManagerOk returns a tuple with the Manager field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManager
 
-`func (o *EmployeeResponse) SetManager(v CreateEmployeeRequestManager)`
+`func (o *EmployeeResponse) SetManager(v EmployeeResponseManager)`
 
 SetManager sets Manager field to given value.
 

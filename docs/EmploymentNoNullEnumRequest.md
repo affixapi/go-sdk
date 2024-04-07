@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **PayPeriod** | **NullableString** |  | 
 **PayFrequency** | **NullableString** |  | 
 **EmploymentType** | **NullableString** |  | 
-**Currency** | [**CurrencyNotNullRequest**](CurrencyNotNullRequest.md) |  | 
+**Currency** | [**NullableCurrencyNotNullRequest**](CurrencyNotNullRequest.md) |  | 
 **EffectiveDate** | **NullableString** |  | 
 
 ## Methods
 
 ### NewEmploymentNoNullEnumRequest
 
-`func NewEmploymentNoNullEnumRequest(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency CurrencyNotNullRequest, effectiveDate NullableString, ) *EmploymentNoNullEnumRequest`
+`func NewEmploymentNoNullEnumRequest(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency NullableCurrencyNotNullRequest, effectiveDate NullableString, ) *EmploymentNoNullEnumRequest`
 
 NewEmploymentNoNullEnumRequest instantiates a new EmploymentNoNullEnumRequest object
 This constructor will assign default values to properties that have it defined,
@@ -201,6 +201,16 @@ and a boolean to check if the value has been set.
 SetCurrency sets Currency field to given value.
 
 
+### SetCurrencyNil
+
+`func (o *EmploymentNoNullEnumRequest) SetCurrencyNil(b bool)`
+
+ SetCurrencyNil sets the value for Currency to be an explicit nil
+
+### UnsetCurrency
+`func (o *EmploymentNoNullEnumRequest) UnsetCurrency()`
+
+UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
 ### GetEffectiveDate
 
 `func (o *EmploymentNoNullEnumRequest) GetEffectiveDate() string`

@@ -48,7 +48,7 @@ type EmployeeResponse struct {
 	Avatar NullableString `json:"avatar"`
 	HomeLocation NullableAddressResponse `json:"home_location"`
 	WorkLocation NullableLocationResponse `json:"work_location"`
-	Manager NullableCreateEmployeeRequestManager `json:"manager"`
+	Manager NullableEmployeeResponseManager `json:"manager"`
 	BankAccount NullableCreateEmployeeRequestBankAccount `json:"bank_account"`
 	Employments []EmploymentResponse `json:"employments"`
 	CustomFields map[string]interface{} `json:"custom_fields"`
@@ -59,7 +59,7 @@ type EmployeeResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableString, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableCreateEmployeeRequestManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse) *EmployeeResponse {
+func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableString, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableEmployeeResponseManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse) *EmployeeResponse {
 	this := EmployeeResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
@@ -718,10 +718,10 @@ func (o *EmployeeResponse) SetWorkLocation(v LocationResponse) {
 }
 
 // GetManager returns the Manager field value
-// If the value is explicit nil, the zero value for CreateEmployeeRequestManager will be returned
-func (o *EmployeeResponse) GetManager() CreateEmployeeRequestManager {
+// If the value is explicit nil, the zero value for EmployeeResponseManager will be returned
+func (o *EmployeeResponse) GetManager() EmployeeResponseManager {
 	if o == nil || o.Manager.Get() == nil {
-		var ret CreateEmployeeRequestManager
+		var ret EmployeeResponseManager
 		return ret
 	}
 
@@ -731,7 +731,7 @@ func (o *EmployeeResponse) GetManager() CreateEmployeeRequestManager {
 // GetManagerOk returns a tuple with the Manager field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmployeeResponse) GetManagerOk() (*CreateEmployeeRequestManager, bool) {
+func (o *EmployeeResponse) GetManagerOk() (*EmployeeResponseManager, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -739,7 +739,7 @@ func (o *EmployeeResponse) GetManagerOk() (*CreateEmployeeRequestManager, bool) 
 }
 
 // SetManager sets field value
-func (o *EmployeeResponse) SetManager(v CreateEmployeeRequestManager) {
+func (o *EmployeeResponse) SetManager(v EmployeeResponseManager) {
 	o.Manager.Set(&v)
 }
 

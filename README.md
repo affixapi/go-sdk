@@ -327,6 +327,7 @@ Class | Method | HTTP request | Description
  - [CurrencyResponse](docs/CurrencyResponse.md)
  - [DisconnectResponse](docs/DisconnectResponse.md)
  - [EmployeeResponse](docs/EmployeeResponse.md)
+ - [EmployeeResponseManager](docs/EmployeeResponseManager.md)
  - [EmploymentNoNullEnumRequest](docs/EmploymentNoNullEnumRequest.md)
  - [EmploymentResponse](docs/EmploymentResponse.md)
  - [GroupNoNullEnumRequest](docs/GroupNoNullEnumRequest.md)

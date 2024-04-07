@@ -23,6 +23,7 @@ docs/CurrencyNotNullRequest.md
 docs/CurrencyResponse.md
 docs/DisconnectResponse.md
 docs/EmployeeResponse.md
+docs/EmployeeResponseManager.md
 docs/EmploymentNoNullEnumRequest.md
 docs/EmploymentResponse.md
 docs/GroupNoNullEnumRequest.md
@@ -70,6 +71,7 @@ model_currency_not_null_request.go
 model_currency_response.go
 model_disconnect_response.go
 model_employee_response.go
+model_employee_response_manager.go
 model_employment_no_null_enum_request.go
 model_employment_response.go
 model_group_no_null_enum_request.go
