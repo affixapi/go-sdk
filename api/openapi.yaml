@@ -1939,11 +1939,16 @@ components:
           - FR
           - GB
           - HK
+          - ID
           - IE
+          - IN
           - IT
+          - KR
           - JP
           - LT
           - LV
+          - MO
+          - MY
           - NL
           - "NO"
           - PH
@@ -2054,11 +2059,16 @@ components:
           - FR
           - GB
           - HK
+          - ID
           - IE
+          - IN
           - IT
           - JP
+          - KR
           - LT
           - LV
+          - MO
+          - MY
           - NL
           - "NO"
           - PH
