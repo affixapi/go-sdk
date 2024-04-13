@@ -51,6 +51,7 @@ const (
 	GUSTO ProviderRequest = "gusto"
 	ITRENT ProviderRequest = "itrent"
 	JUSTWORKS ProviderRequest = "justworks"
+	ONPAY ProviderRequest = "onpay"
 	OYSTERHR ProviderRequest = "oysterhr"
 	PAYCIRCLE ProviderRequest = "paycircle"
 	PENTO_IO ProviderRequest = "pento.io"
@@ -93,6 +94,7 @@ var allowedProviderRequestEnumValues = []ProviderRequest{
 	"gusto",
 	"itrent",
 	"justworks",
+	"onpay",
 	"oysterhr",
 	"paycircle",
 	"pento.io",
