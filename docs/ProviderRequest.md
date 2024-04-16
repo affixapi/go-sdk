@@ -37,8 +37,6 @@
 
 * `PLANDAY` (value: `"planday"`)
 
-* `QUICKBOOKS_UK` (value: `"quickbooks uk"`)
-
 * `SAGEHR` (value: `"sagehr"`)
 
 * `SAPLINGHR` (value: `"saplinghr"`)
@@ -82,6 +80,10 @@
 * `SHAPE_PAYROLL` (value: `"shape payroll"`)
 
 * `SIMPLEPAY_IE` (value: `"simplepay.ie"`)
+
+* `QUICKBOOKS_ONLINE` (value: `"quickbooks online"`)
+
+* `ZOHO` (value: `"zoho"`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

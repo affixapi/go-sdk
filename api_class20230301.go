@@ -669,9 +669,26 @@ func (r ApiXhrPayruns20230301Request) Execute() ([]PayrunResponse, *_nethttp.Res
  * List all the pay runs that occurred during the respective period.
 
 Supported integrations:
-  - sageone
-  - simplepay.ie
+  - brain payroll
   - brightpay connect
+  - deel
+  - gusto
+  - justworks
+  - moorepay
+  - onpay
+  - oyster
+  - parolla.ie
+  - paycircle
+  - payfit
+  - pento.io
+  - quickbooks online
+  - remote.com
+  - rippling
+  - sageone
+  - shape payroll
+  - simplepay.ie
+  - staffology
+  - xero uk
 
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @return ApiXhrPayruns20230301Request

@@ -38,7 +38,6 @@ const (
 	PAYFIT ProviderResponse = "payfit"
 	PERSONIO_DE ProviderResponse = "personio.de"
 	PLANDAY ProviderResponse = "planday"
-	QUICKBOOKS_UK ProviderResponse = "quickbooks uk"
 	SAGEHR ProviderResponse = "sagehr"
 	SAPLINGHR ProviderResponse = "saplinghr"
 	STAFFOLOGY ProviderResponse = "staffology"
@@ -61,6 +60,8 @@ const (
 	SAGEONE ProviderResponse = "sageone"
 	SHAPE_PAYROLL ProviderResponse = "shape payroll"
 	SIMPLEPAY_IE ProviderResponse = "simplepay.ie"
+	QUICKBOOKS_ONLINE ProviderResponse = "quickbooks online"
+	ZOHO ProviderResponse = "zoho"
 )
 
 var allowedProviderResponseEnumValues = []ProviderResponse{
@@ -81,7 +82,6 @@ var allowedProviderResponseEnumValues = []ProviderResponse{
 	"payfit",
 	"personio.de",
 	"planday",
-	"quickbooks uk",
 	"sagehr",
 	"saplinghr",
 	"staffology",
@@ -104,6 +104,8 @@ var allowedProviderResponseEnumValues = []ProviderResponse{
 	"sageone",
 	"shape payroll",
 	"simplepay.ie",
+	"quickbooks online",
+	"zoho",
 }
 
 func (v *ProviderResponse) UnmarshalJSON(src []byte) error {
