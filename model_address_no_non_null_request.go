@@ -22,7 +22,7 @@ type AddressNoNonNullRequest struct {
 	// The administrative area of the address. If US or CA, the two-letter state or province abbreviation. Else, the province / administrative area; such as, `Dublin 2` or `County Cork` 
 	AdministrativeArea NullableString `json:"administrative_area"`
 	// The ISO-3166-2 two-letter abbreviation of the country. Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details 
-	Country NullableString `json:"country"`
+	Country string `json:"country"`
 	PostCode NullableString `json:"post_code"`
 }
 
@@ -30,7 +30,7 @@ type AddressNoNonNullRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddressNoNonNullRequest(streetAddress NullableString, locality NullableString, administrativeArea NullableString, country NullableString, postCode NullableString) *AddressNoNonNullRequest {
+func NewAddressNoNonNullRequest(streetAddress NullableString, locality NullableString, administrativeArea NullableString, country string, postCode NullableString) *AddressNoNonNullRequest {
 	this := AddressNoNonNullRequest{}
 	this.StreetAddress = streetAddress
 	this.Locality = locality
@@ -127,29 +127,27 @@ func (o *AddressNoNonNullRequest) SetAdministrativeArea(v string) {
 }
 
 // GetCountry returns the Country field value
-// If the value is explicit nil, the zero value for string will be returned
 func (o *AddressNoNonNullRequest) GetCountry() string {
-	if o == nil || o.Country.Get() == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.Country.Get()
+	return o.Country
 }
 
 // GetCountryOk returns a tuple with the Country field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddressNoNonNullRequest) GetCountryOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.Country.Get(), o.Country.IsSet()
+	return &o.Country, true
 }
 
 // SetCountry sets field value
 func (o *AddressNoNonNullRequest) SetCountry(v string) {
-	o.Country.Set(&v)
+	o.Country = v
 }
 
 // GetPostCode returns the PostCode field value
@@ -190,7 +188,7 @@ func (o AddressNoNonNullRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["administrative_area"] = o.AdministrativeArea.Get()
 	}
 	if true {
-		toSerialize["country"] = o.Country.Get()
+		toSerialize["country"] = o.Country
 	}
 	if true {
 		toSerialize["post_code"] = o.PostCode.Get()

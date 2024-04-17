@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **StreetAddress** | **NullableString** |  | 
 **Locality** | **NullableString** |  | 
 **AdministrativeArea** | **NullableString** | The administrative area of the address. If US or CA, the two-letter state or province abbreviation. Else, the province / administrative area; such as, &#x60;Dublin 2&#x60; or &#x60;County Cork&#x60;  | 
-**Country** | **NullableString** | The ISO-3166-2 two-letter abbreviation of the country. Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details  | 
+**Country** | **string** | The ISO-3166-2 two-letter abbreviation of the country. Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details  | 
 **PostCode** | **NullableString** |  | 
 
 ## Methods
 
 ### NewAddressNoNonNullRequest
 
-`func NewAddressNoNonNullRequest(streetAddress NullableString, locality NullableString, administrativeArea NullableString, country NullableString, postCode NullableString, ) *AddressNoNonNullRequest`
+`func NewAddressNoNonNullRequest(streetAddress NullableString, locality NullableString, administrativeArea NullableString, country string, postCode NullableString, ) *AddressNoNonNullRequest`
 
 NewAddressNoNonNullRequest instantiates a new AddressNoNonNullRequest object
 This constructor will assign default values to properties that have it defined,
@@ -139,16 +139,6 @@ and a boolean to check if the value has been set.
 SetCountry sets Country field to given value.
 
 
-### SetCountryNil
-
-`func (o *AddressNoNonNullRequest) SetCountryNil(b bool)`
-
- SetCountryNil sets the value for Country to be an explicit nil
-
-### UnsetCountry
-`func (o *AddressNoNonNullRequest) UnsetCountry()`
-
-UnsetCountry ensures that no value is present for Country, not even an explicit nil
 ### GetPostCode
 
 `func (o *AddressNoNonNullRequest) GetPostCode() string`
