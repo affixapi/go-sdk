@@ -1969,18 +1969,17 @@ components:
           - IT
           - LI
           - LT
-          - LT
-          - LV
           - LU
+          - LV
           - NL
           - "NO"
           - PH
           - PL
           - RO
           - SE
-          - SG
           - SK
           - CN
+          - HK
           - ID
           - IN
           - JP
@@ -1988,7 +1987,6 @@ components:
           - MO
           - MY
           - SG
-          - HK
           - TW
           example: IE
           nullable: true
@@ -2097,18 +2095,17 @@ components:
           - IT
           - LI
           - LT
-          - LT
-          - LV
           - LU
+          - LV
           - NL
           - "NO"
           - PH
           - PL
           - RO
           - SE
-          - SG
           - SK
           - CN
+          - HK
           - ID
           - IN
           - JP
@@ -2116,9 +2113,9 @@ components:
           - MO
           - MY
           - SG
-          - HK
           - TW
           example: IE
+          nullable: true
           type: string
         post_code:
           example: "30691"
