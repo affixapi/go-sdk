@@ -38,6 +38,7 @@ type EmployeeResponse struct {
 	TaxId NullableString `json:"tax_id"`
 	Gender NullableString `json:"gender"`
 	Ethnicity NullableString `json:"ethnicity"`
+	// `other` option can include co-habitating, civil partnership, separated, divorced, widowed, etc 
 	MaritalStatus NullableString `json:"marital_status"`
 	DateOfBirth NullableString `json:"date_of_birth"`
 	EmploymentStatus NullableString `json:"employment_status"`
