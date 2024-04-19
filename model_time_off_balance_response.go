@@ -21,8 +21,8 @@ type TimeOffBalanceResponse struct {
 	EmployeeId string `json:"employee_id"`
 	// the remote system-assigned id of the individual
 	RemoteId string `json:"remote_id"`
-	Balance float32 `json:"balance"`
-	Used float32 `json:"used"`
+	Balance NullableFloat32 `json:"balance"`
+	Used NullableFloat32 `json:"used"`
 	// The name of the policy, as assigned by the remote system
 	PolicyName NullableString `json:"policy_name"`
 	PolicyType NullableString `json:"policy_type"`
@@ -34,7 +34,7 @@ type TimeOffBalanceResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTimeOffBalanceResponse(employeeId string, remoteId string, balance float32, used float32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffBalanceResponse {
+func NewTimeOffBalanceResponse(employeeId string, remoteId string, balance NullableFloat32, used NullableFloat32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffBalanceResponse {
 	this := TimeOffBalanceResponse{}
 	this.EmployeeId = employeeId
 	this.RemoteId = remoteId
@@ -104,51 +104,55 @@ func (o *TimeOffBalanceResponse) SetRemoteId(v string) {
 }
 
 // GetBalance returns the Balance field value
+// If the value is explicit nil, the zero value for float32 will be returned
 func (o *TimeOffBalanceResponse) GetBalance() float32 {
-	if o == nil {
+	if o == nil || o.Balance.Get() == nil {
 		var ret float32
 		return ret
 	}
 
-	return o.Balance
+	return *o.Balance.Get()
 }
 
 // GetBalanceOk returns a tuple with the Balance field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TimeOffBalanceResponse) GetBalanceOk() (*float32, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Balance, true
+	return o.Balance.Get(), o.Balance.IsSet()
 }
 
 // SetBalance sets field value
 func (o *TimeOffBalanceResponse) SetBalance(v float32) {
-	o.Balance = v
+	o.Balance.Set(&v)
 }
 
 // GetUsed returns the Used field value
+// If the value is explicit nil, the zero value for float32 will be returned
 func (o *TimeOffBalanceResponse) GetUsed() float32 {
-	if o == nil {
+	if o == nil || o.Used.Get() == nil {
 		var ret float32
 		return ret
 	}
 
-	return o.Used
+	return *o.Used.Get()
 }
 
 // GetUsedOk returns a tuple with the Used field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TimeOffBalanceResponse) GetUsedOk() (*float32, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Used, true
+	return o.Used.Get(), o.Used.IsSet()
 }
 
 // SetUsed sets field value
 func (o *TimeOffBalanceResponse) SetUsed(v float32) {
-	o.Used = v
+	o.Used.Set(&v)
 }
 
 // GetPolicyName returns the PolicyName field value
@@ -264,10 +268,10 @@ func (o TimeOffBalanceResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["remote_id"] = o.RemoteId
 	}
 	if true {
-		toSerialize["balance"] = o.Balance
+		toSerialize["balance"] = o.Balance.Get()
 	}
 	if true {
-		toSerialize["used"] = o.Used
+		toSerialize["used"] = o.Used.Get()
 	}
 	if true {
 		toSerialize["policy_name"] = o.PolicyName.Get()

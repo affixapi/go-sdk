@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EmployeeId** | **string** | The Affix-assigned id of the individual | 
 **RemoteId** | **string** | the remote system-assigned id of the individual | 
-**Balance** | **float32** |  | 
-**Used** | **float32** |  | 
+**Balance** | **NullableFloat32** |  | 
+**Used** | **NullableFloat32** |  | 
 **PolicyName** | **NullableString** | The name of the policy, as assigned by the remote system | 
 **PolicyType** | **NullableString** |  | 
 **RemoteCreatedAt** | **NullableString** |  | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewTimeOffBalanceResponse
 
-`func NewTimeOffBalanceResponse(employeeId string, remoteId string, balance float32, used float32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffBalanceResponse`
+`func NewTimeOffBalanceResponse(employeeId string, remoteId string, balance NullableFloat32, used NullableFloat32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffBalanceResponse`
 
 NewTimeOffBalanceResponse instantiates a new TimeOffBalanceResponse object
 This constructor will assign default values to properties that have it defined,
@@ -92,6 +92,16 @@ and a boolean to check if the value has been set.
 SetBalance sets Balance field to given value.
 
 
+### SetBalanceNil
+
+`func (o *TimeOffBalanceResponse) SetBalanceNil(b bool)`
+
+ SetBalanceNil sets the value for Balance to be an explicit nil
+
+### UnsetBalance
+`func (o *TimeOffBalanceResponse) UnsetBalance()`
+
+UnsetBalance ensures that no value is present for Balance, not even an explicit nil
 ### GetUsed
 
 `func (o *TimeOffBalanceResponse) GetUsed() float32`
@@ -112,6 +122,16 @@ and a boolean to check if the value has been set.
 SetUsed sets Used field to given value.
 
 
+### SetUsedNil
+
+`func (o *TimeOffBalanceResponse) SetUsedNil(b bool)`
+
+ SetUsedNil sets the value for Used to be an explicit nil
+
+### UnsetUsed
+`func (o *TimeOffBalanceResponse) UnsetUsed()`
+
+UnsetUsed ensures that no value is present for Used, not even an explicit nil
 ### GetPolicyName
 
 `func (o *TimeOffBalanceResponse) GetPolicyName() string`
