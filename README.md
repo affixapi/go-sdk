@@ -333,6 +333,7 @@ Class | Method | HTTP request | Description
  - [EmploymentNoNullEnumRequest](docs/EmploymentNoNullEnumRequest.md)
  - [EmploymentResponse](docs/EmploymentResponse.md)
  - [EmploymentStatus](docs/EmploymentStatus.md)
+ - [EmploymentStatusNotNull](docs/EmploymentStatusNotNull.md)
  - [EmploymentStatusNotNullRequest](docs/EmploymentStatusNotNullRequest.md)
  - [EmploymentStatusResponse](docs/EmploymentStatusResponse.md)
  - [GroupNoNullEnumRequest](docs/GroupNoNullEnumRequest.md)
