@@ -36,7 +36,7 @@ type CreateEmployeeRequest struct {
 	Ethnicity NullableString `json:"ethnicity,omitempty"`
 	MaritalStatus NullableString `json:"marital_status,omitempty"`
 	DateOfBirth NullableString `json:"date_of_birth,omitempty"`
-	EmploymentStatus NullableString `json:"employment_status,omitempty"`
+	EmploymentStatus NullableEmploymentStatusNotNullRequest `json:"employment_status,omitempty"`
 	EmploymentType NullableString `json:"employment_type,omitempty"`
 	StartDate NullableString `json:"start_date,omitempty"`
 	TerminationDate NullableString `json:"termination_date,omitempty"`
@@ -48,6 +48,8 @@ type CreateEmployeeRequest struct {
 	Employments []EmploymentNoNullEnumRequest `json:"employments,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Groups []GroupNoNullEnumRequest `json:"groups,omitempty"`
+	Dependents []CreateEmployeeRequestDependents `json:"dependents,omitempty"`
+	EmergencyContacts []CreateEmployeeRequestEmergencyContacts `json:"emergency_contacts,omitempty"`
 }
 
 // NewCreateEmployeeRequest instantiates a new CreateEmployeeRequest object
@@ -622,9 +624,9 @@ func (o *CreateEmployeeRequest) UnsetDateOfBirth() {
 }
 
 // GetEmploymentStatus returns the EmploymentStatus field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateEmployeeRequest) GetEmploymentStatus() string {
+func (o *CreateEmployeeRequest) GetEmploymentStatus() EmploymentStatusNotNullRequest {
 	if o == nil || o.EmploymentStatus.Get() == nil {
-		var ret string
+		var ret EmploymentStatusNotNullRequest
 		return ret
 	}
 	return *o.EmploymentStatus.Get()
@@ -633,7 +635,7 @@ func (o *CreateEmployeeRequest) GetEmploymentStatus() string {
 // GetEmploymentStatusOk returns a tuple with the EmploymentStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateEmployeeRequest) GetEmploymentStatusOk() (*string, bool) {
+func (o *CreateEmployeeRequest) GetEmploymentStatusOk() (*EmploymentStatusNotNullRequest, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -649,8 +651,8 @@ func (o *CreateEmployeeRequest) HasEmploymentStatus() bool {
 	return false
 }
 
-// SetEmploymentStatus gets a reference to the given NullableString and assigns it to the EmploymentStatus field.
-func (o *CreateEmployeeRequest) SetEmploymentStatus(v string) {
+// SetEmploymentStatus gets a reference to the given NullableEmploymentStatusNotNullRequest and assigns it to the EmploymentStatus field.
+func (o *CreateEmployeeRequest) SetEmploymentStatus(v EmploymentStatusNotNullRequest) {
 	o.EmploymentStatus.Set(&v)
 }
 // SetEmploymentStatusNil sets the value for EmploymentStatus to be an explicit nil
@@ -1098,6 +1100,72 @@ func (o *CreateEmployeeRequest) SetGroups(v []GroupNoNullEnumRequest) {
 	o.Groups = v
 }
 
+// GetDependents returns the Dependents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateEmployeeRequest) GetDependents() []CreateEmployeeRequestDependents {
+	if o == nil  {
+		var ret []CreateEmployeeRequestDependents
+		return ret
+	}
+	return o.Dependents
+}
+
+// GetDependentsOk returns a tuple with the Dependents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateEmployeeRequest) GetDependentsOk() (*[]CreateEmployeeRequestDependents, bool) {
+	if o == nil || o.Dependents == nil {
+		return nil, false
+	}
+	return &o.Dependents, true
+}
+
+// HasDependents returns a boolean if a field has been set.
+func (o *CreateEmployeeRequest) HasDependents() bool {
+	if o != nil && o.Dependents != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDependents gets a reference to the given []CreateEmployeeRequestDependents and assigns it to the Dependents field.
+func (o *CreateEmployeeRequest) SetDependents(v []CreateEmployeeRequestDependents) {
+	o.Dependents = v
+}
+
+// GetEmergencyContacts returns the EmergencyContacts field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateEmployeeRequest) GetEmergencyContacts() []CreateEmployeeRequestEmergencyContacts {
+	if o == nil  {
+		var ret []CreateEmployeeRequestEmergencyContacts
+		return ret
+	}
+	return o.EmergencyContacts
+}
+
+// GetEmergencyContactsOk returns a tuple with the EmergencyContacts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateEmployeeRequest) GetEmergencyContactsOk() (*[]CreateEmployeeRequestEmergencyContacts, bool) {
+	if o == nil || o.EmergencyContacts == nil {
+		return nil, false
+	}
+	return &o.EmergencyContacts, true
+}
+
+// HasEmergencyContacts returns a boolean if a field has been set.
+func (o *CreateEmployeeRequest) HasEmergencyContacts() bool {
+	if o != nil && o.EmergencyContacts != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEmergencyContacts gets a reference to the given []CreateEmployeeRequestEmergencyContacts and assigns it to the EmergencyContacts field.
+func (o *CreateEmployeeRequest) SetEmergencyContacts(v []CreateEmployeeRequestEmergencyContacts) {
+	o.EmergencyContacts = v
+}
+
 func (o CreateEmployeeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.EmployeeNumber.IsSet() {
@@ -1177,6 +1245,12 @@ func (o CreateEmployeeRequest) MarshalJSON() ([]byte, error) {
 	}
 	if o.Groups != nil {
 		toSerialize["groups"] = o.Groups
+	}
+	if o.Dependents != nil {
+		toSerialize["dependents"] = o.Dependents
+	}
+	if o.EmergencyContacts != nil {
+		toSerialize["emergency_contacts"] = o.EmergencyContacts
 	}
 	return json.Marshal(toSerialize)
 }

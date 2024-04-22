@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Ethnicity** | Pointer to **NullableString** |  | [optional] 
 **MaritalStatus** | Pointer to **NullableString** |  | [optional] 
 **DateOfBirth** | Pointer to **NullableString** |  | [optional] 
-**EmploymentStatus** | Pointer to **NullableString** |  | [optional] 
+**EmploymentStatus** | Pointer to [**NullableEmploymentStatusNotNullRequest**](EmploymentStatusNotNullRequest.md) |  | [optional] 
 **EmploymentType** | Pointer to **NullableString** |  | [optional] 
 **StartDate** | Pointer to **NullableString** |  | [optional] 
 **TerminationDate** | Pointer to **NullableString** |  | [optional] 
@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 **Employments** | Pointer to [**[]EmploymentNoNullEnumRequest**](EmploymentNoNullEnumRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Groups** | Pointer to [**[]GroupNoNullEnumRequest**](GroupNoNullEnumRequest.md) |  | [optional] 
+**Dependents** | Pointer to [**[]CreateEmployeeRequestDependents**](CreateEmployeeRequestDependents.md) |  | [optional] 
+**EmergencyContacts** | Pointer to [**[]CreateEmployeeRequestEmergencyContacts**](CreateEmployeeRequestEmergencyContacts.md) |  | [optional] 
 
 ## Methods
 
@@ -512,20 +514,20 @@ HasDateOfBirth returns a boolean if a field has been set.
 UnsetDateOfBirth ensures that no value is present for DateOfBirth, not even an explicit nil
 ### GetEmploymentStatus
 
-`func (o *CreateEmployeeRequest) GetEmploymentStatus() string`
+`func (o *CreateEmployeeRequest) GetEmploymentStatus() EmploymentStatusNotNullRequest`
 
 GetEmploymentStatus returns the EmploymentStatus field if non-nil, zero value otherwise.
 
 ### GetEmploymentStatusOk
 
-`func (o *CreateEmployeeRequest) GetEmploymentStatusOk() (*string, bool)`
+`func (o *CreateEmployeeRequest) GetEmploymentStatusOk() (*EmploymentStatusNotNullRequest, bool)`
 
 GetEmploymentStatusOk returns a tuple with the EmploymentStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmploymentStatus
 
-`func (o *CreateEmployeeRequest) SetEmploymentStatus(v string)`
+`func (o *CreateEmployeeRequest) SetEmploymentStatus(v EmploymentStatusNotNullRequest)`
 
 SetEmploymentStatus sets EmploymentStatus field to given value.
 
@@ -930,6 +932,76 @@ HasGroups returns a boolean if a field has been set.
 `func (o *CreateEmployeeRequest) UnsetGroups()`
 
 UnsetGroups ensures that no value is present for Groups, not even an explicit nil
+### GetDependents
+
+`func (o *CreateEmployeeRequest) GetDependents() []CreateEmployeeRequestDependents`
+
+GetDependents returns the Dependents field if non-nil, zero value otherwise.
+
+### GetDependentsOk
+
+`func (o *CreateEmployeeRequest) GetDependentsOk() (*[]CreateEmployeeRequestDependents, bool)`
+
+GetDependentsOk returns a tuple with the Dependents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDependents
+
+`func (o *CreateEmployeeRequest) SetDependents(v []CreateEmployeeRequestDependents)`
+
+SetDependents sets Dependents field to given value.
+
+### HasDependents
+
+`func (o *CreateEmployeeRequest) HasDependents() bool`
+
+HasDependents returns a boolean if a field has been set.
+
+### SetDependentsNil
+
+`func (o *CreateEmployeeRequest) SetDependentsNil(b bool)`
+
+ SetDependentsNil sets the value for Dependents to be an explicit nil
+
+### UnsetDependents
+`func (o *CreateEmployeeRequest) UnsetDependents()`
+
+UnsetDependents ensures that no value is present for Dependents, not even an explicit nil
+### GetEmergencyContacts
+
+`func (o *CreateEmployeeRequest) GetEmergencyContacts() []CreateEmployeeRequestEmergencyContacts`
+
+GetEmergencyContacts returns the EmergencyContacts field if non-nil, zero value otherwise.
+
+### GetEmergencyContactsOk
+
+`func (o *CreateEmployeeRequest) GetEmergencyContactsOk() (*[]CreateEmployeeRequestEmergencyContacts, bool)`
+
+GetEmergencyContactsOk returns a tuple with the EmergencyContacts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmergencyContacts
+
+`func (o *CreateEmployeeRequest) SetEmergencyContacts(v []CreateEmployeeRequestEmergencyContacts)`
+
+SetEmergencyContacts sets EmergencyContacts field to given value.
+
+### HasEmergencyContacts
+
+`func (o *CreateEmployeeRequest) HasEmergencyContacts() bool`
+
+HasEmergencyContacts returns a boolean if a field has been set.
+
+### SetEmergencyContactsNil
+
+`func (o *CreateEmployeeRequest) SetEmergencyContactsNil(b bool)`
+
+ SetEmergencyContactsNil sets the value for EmergencyContacts to be an explicit nil
+
+### UnsetEmergencyContacts
+`func (o *CreateEmployeeRequest) UnsetEmergencyContacts()`
+
+UnsetEmergencyContacts ensures that no value is present for EmergencyContacts, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

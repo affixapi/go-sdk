@@ -187,8 +187,13 @@ func (a *XHRVerticallyIntegratedApiService) XhrCompanies20230301Execute(r ApiXhr
 type ApiXhrEmployees20230301Request struct {
 	ctx _context.Context
 	ApiService *XHRVerticallyIntegratedApiService
+	employmentStatus *EmploymentStatus
 }
 
+func (r ApiXhrEmployees20230301Request) EmploymentStatus(employmentStatus EmploymentStatus) ApiXhrEmployees20230301Request {
+	r.employmentStatus = &employmentStatus
+	return r
+}
 
 func (r ApiXhrEmployees20230301Request) Execute() ([]EmployeeResponse, *_nethttp.Response, error) {
 	return r.ApiService.XhrEmployees20230301Execute(r)
@@ -234,6 +239,9 @@ func (a *XHRVerticallyIntegratedApiService) XhrEmployees20230301Execute(r ApiXhr
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
 
+	if r.employmentStatus != nil {
+		localVarQueryParams.Add("employment_status", parameterToString(*r.employmentStatus, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

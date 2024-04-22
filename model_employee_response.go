@@ -41,7 +41,7 @@ type EmployeeResponse struct {
 	// `other` option can include co-habitating, civil partnership, separated, divorced, widowed, etc 
 	MaritalStatus NullableString `json:"marital_status"`
 	DateOfBirth NullableString `json:"date_of_birth"`
-	EmploymentStatus NullableString `json:"employment_status"`
+	EmploymentStatus NullableEmploymentStatusResponse `json:"employment_status"`
 	EmploymentType NullableString `json:"employment_type"`
 	StartDate NullableString `json:"start_date"`
 	RemoteCreatedAt NullableString `json:"remote_created_at"`
@@ -54,13 +54,15 @@ type EmployeeResponse struct {
 	Employments []EmploymentResponse `json:"employments"`
 	CustomFields map[string]interface{} `json:"custom_fields"`
 	Groups []GroupResponse `json:"groups"`
+	Dependents []CreateEmployeeRequestDependents `json:"dependents"`
+	EmergencyContacts []CreateEmployeeRequestEmergencyContacts `json:"emergency_contacts"`
 }
 
 // NewEmployeeResponse instantiates a new EmployeeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableString, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableEmployeeResponseManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse) *EmployeeResponse {
+func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableEmploymentStatusResponse, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableEmployeeResponseManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse, dependents []CreateEmployeeRequestDependents, emergencyContacts []CreateEmployeeRequestEmergencyContacts) *EmployeeResponse {
 	this := EmployeeResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
@@ -91,6 +93,8 @@ func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableStri
 	this.Employments = employments
 	this.CustomFields = customFields
 	this.Groups = groups
+	this.Dependents = dependents
+	this.EmergencyContacts = emergencyContacts
 	return &this
 }
 
@@ -511,10 +515,10 @@ func (o *EmployeeResponse) SetDateOfBirth(v string) {
 }
 
 // GetEmploymentStatus returns the EmploymentStatus field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmployeeResponse) GetEmploymentStatus() string {
+// If the value is explicit nil, the zero value for EmploymentStatusResponse will be returned
+func (o *EmployeeResponse) GetEmploymentStatus() EmploymentStatusResponse {
 	if o == nil || o.EmploymentStatus.Get() == nil {
-		var ret string
+		var ret EmploymentStatusResponse
 		return ret
 	}
 
@@ -524,7 +528,7 @@ func (o *EmployeeResponse) GetEmploymentStatus() string {
 // GetEmploymentStatusOk returns a tuple with the EmploymentStatus field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmployeeResponse) GetEmploymentStatusOk() (*string, bool) {
+func (o *EmployeeResponse) GetEmploymentStatusOk() (*EmploymentStatusResponse, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -532,7 +536,7 @@ func (o *EmployeeResponse) GetEmploymentStatusOk() (*string, bool) {
 }
 
 // SetEmploymentStatus sets field value
-func (o *EmployeeResponse) SetEmploymentStatus(v string) {
+func (o *EmployeeResponse) SetEmploymentStatus(v EmploymentStatusResponse) {
 	o.EmploymentStatus.Set(&v)
 }
 
@@ -848,6 +852,58 @@ func (o *EmployeeResponse) SetGroups(v []GroupResponse) {
 	o.Groups = v
 }
 
+// GetDependents returns the Dependents field value
+// If the value is explicit nil, the zero value for []CreateEmployeeRequestDependents will be returned
+func (o *EmployeeResponse) GetDependents() []CreateEmployeeRequestDependents {
+	if o == nil {
+		var ret []CreateEmployeeRequestDependents
+		return ret
+	}
+
+	return o.Dependents
+}
+
+// GetDependentsOk returns a tuple with the Dependents field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmployeeResponse) GetDependentsOk() (*[]CreateEmployeeRequestDependents, bool) {
+	if o == nil || o.Dependents == nil {
+		return nil, false
+	}
+	return &o.Dependents, true
+}
+
+// SetDependents sets field value
+func (o *EmployeeResponse) SetDependents(v []CreateEmployeeRequestDependents) {
+	o.Dependents = v
+}
+
+// GetEmergencyContacts returns the EmergencyContacts field value
+// If the value is explicit nil, the zero value for []CreateEmployeeRequestEmergencyContacts will be returned
+func (o *EmployeeResponse) GetEmergencyContacts() []CreateEmployeeRequestEmergencyContacts {
+	if o == nil {
+		var ret []CreateEmployeeRequestEmergencyContacts
+		return ret
+	}
+
+	return o.EmergencyContacts
+}
+
+// GetEmergencyContactsOk returns a tuple with the EmergencyContacts field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmployeeResponse) GetEmergencyContactsOk() (*[]CreateEmployeeRequestEmergencyContacts, bool) {
+	if o == nil || o.EmergencyContacts == nil {
+		return nil, false
+	}
+	return &o.EmergencyContacts, true
+}
+
+// SetEmergencyContacts sets field value
+func (o *EmployeeResponse) SetEmergencyContacts(v []CreateEmployeeRequestEmergencyContacts) {
+	o.EmergencyContacts = v
+}
+
 func (o EmployeeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -936,6 +992,12 @@ func (o EmployeeResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.Groups != nil {
 		toSerialize["groups"] = o.Groups
+	}
+	if o.Dependents != nil {
+		toSerialize["dependents"] = o.Dependents
+	}
+	if o.EmergencyContacts != nil {
+		toSerialize["emergency_contacts"] = o.EmergencyContacts
 	}
 	return json.Marshal(toSerialize)
 }

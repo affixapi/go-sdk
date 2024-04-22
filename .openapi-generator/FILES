@@ -18,6 +18,8 @@ docs/CompanyResponse.md
 docs/CoreApi.md
 docs/CreateEmployeeRequest.md
 docs/CreateEmployeeRequestBankAccount.md
+docs/CreateEmployeeRequestDependents.md
+docs/CreateEmployeeRequestEmergencyContacts.md
 docs/CreateEmployeeRequestManager.md
 docs/CurrencyNotNullRequest.md
 docs/CurrencyResponse.md
@@ -26,6 +28,9 @@ docs/EmployeeResponse.md
 docs/EmployeeResponseManager.md
 docs/EmploymentNoNullEnumRequest.md
 docs/EmploymentResponse.md
+docs/EmploymentStatus.md
+docs/EmploymentStatusNotNullRequest.md
+docs/EmploymentStatusResponse.md
 docs/GroupNoNullEnumRequest.md
 docs/GroupResponse.md
 docs/IdAndMessageResponse.md
@@ -66,6 +71,8 @@ model_client_response.go
 model_company_response.go
 model_create_employee_request.go
 model_create_employee_request_bank_account.go
+model_create_employee_request_dependents.go
+model_create_employee_request_emergency_contacts.go
 model_create_employee_request_manager.go
 model_currency_not_null_request.go
 model_currency_response.go
@@ -74,6 +81,9 @@ model_employee_response.go
 model_employee_response_manager.go
 model_employment_no_null_enum_request.go
 model_employment_response.go
+model_employment_status.go
+model_employment_status_not_null_request.go
+model_employment_status_response.go
 model_group_no_null_enum_request.go
 model_group_response.go
 model_id_and_message_response.go

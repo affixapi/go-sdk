@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Ethnicity** | **NullableString** |  | 
 **MaritalStatus** | **NullableString** | &#x60;other&#x60; option can include co-habitating, civil partnership, separated, divorced, widowed, etc  | 
 **DateOfBirth** | **NullableString** |  | 
-**EmploymentStatus** | **NullableString** |  | 
+**EmploymentStatus** | [**NullableEmploymentStatusResponse**](EmploymentStatusResponse.md) |  | 
 **EmploymentType** | **NullableString** |  | 
 **StartDate** | **NullableString** |  | 
 **RemoteCreatedAt** | **NullableString** |  | [readonly] 
@@ -33,12 +33,14 @@ Name | Type | Description | Notes
 **Employments** | [**[]EmploymentResponse**](EmploymentResponse.md) |  | 
 **CustomFields** | **map[string]interface{}** |  | 
 **Groups** | [**[]GroupResponse**](GroupResponse.md) |  | 
+**Dependents** | [**[]CreateEmployeeRequestDependents**](CreateEmployeeRequestDependents.md) |  | 
+**EmergencyContacts** | [**[]CreateEmployeeRequestEmergencyContacts**](CreateEmployeeRequestEmergencyContacts.md) |  | 
 
 ## Methods
 
 ### NewEmployeeResponse
 
-`func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableString, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableEmployeeResponseManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse, ) *EmployeeResponse`
+`func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableEmploymentStatusResponse, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableEmployeeResponseManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse, dependents []CreateEmployeeRequestDependents, emergencyContacts []CreateEmployeeRequestEmergencyContacts, ) *EmployeeResponse`
 
 NewEmployeeResponse instantiates a new EmployeeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -495,20 +497,20 @@ SetDateOfBirth sets DateOfBirth field to given value.
 UnsetDateOfBirth ensures that no value is present for DateOfBirth, not even an explicit nil
 ### GetEmploymentStatus
 
-`func (o *EmployeeResponse) GetEmploymentStatus() string`
+`func (o *EmployeeResponse) GetEmploymentStatus() EmploymentStatusResponse`
 
 GetEmploymentStatus returns the EmploymentStatus field if non-nil, zero value otherwise.
 
 ### GetEmploymentStatusOk
 
-`func (o *EmployeeResponse) GetEmploymentStatusOk() (*string, bool)`
+`func (o *EmployeeResponse) GetEmploymentStatusOk() (*EmploymentStatusResponse, bool)`
 
 GetEmploymentStatusOk returns a tuple with the EmploymentStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmploymentStatus
 
-`func (o *EmployeeResponse) SetEmploymentStatus(v string)`
+`func (o *EmployeeResponse) SetEmploymentStatus(v EmploymentStatusResponse)`
 
 SetEmploymentStatus sets EmploymentStatus field to given value.
 
@@ -883,6 +885,66 @@ SetGroups sets Groups field to given value.
 `func (o *EmployeeResponse) UnsetGroups()`
 
 UnsetGroups ensures that no value is present for Groups, not even an explicit nil
+### GetDependents
+
+`func (o *EmployeeResponse) GetDependents() []CreateEmployeeRequestDependents`
+
+GetDependents returns the Dependents field if non-nil, zero value otherwise.
+
+### GetDependentsOk
+
+`func (o *EmployeeResponse) GetDependentsOk() (*[]CreateEmployeeRequestDependents, bool)`
+
+GetDependentsOk returns a tuple with the Dependents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDependents
+
+`func (o *EmployeeResponse) SetDependents(v []CreateEmployeeRequestDependents)`
+
+SetDependents sets Dependents field to given value.
+
+
+### SetDependentsNil
+
+`func (o *EmployeeResponse) SetDependentsNil(b bool)`
+
+ SetDependentsNil sets the value for Dependents to be an explicit nil
+
+### UnsetDependents
+`func (o *EmployeeResponse) UnsetDependents()`
+
+UnsetDependents ensures that no value is present for Dependents, not even an explicit nil
+### GetEmergencyContacts
+
+`func (o *EmployeeResponse) GetEmergencyContacts() []CreateEmployeeRequestEmergencyContacts`
+
+GetEmergencyContacts returns the EmergencyContacts field if non-nil, zero value otherwise.
+
+### GetEmergencyContactsOk
+
+`func (o *EmployeeResponse) GetEmergencyContactsOk() (*[]CreateEmployeeRequestEmergencyContacts, bool)`
+
+GetEmergencyContactsOk returns a tuple with the EmergencyContacts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmergencyContacts
+
+`func (o *EmployeeResponse) SetEmergencyContacts(v []CreateEmployeeRequestEmergencyContacts)`
+
+SetEmergencyContacts sets EmergencyContacts field to given value.
+
+
+### SetEmergencyContactsNil
+
+`func (o *EmployeeResponse) SetEmergencyContactsNil(b bool)`
+
+ SetEmergencyContactsNil sets the value for EmergencyContacts to be an explicit nil
+
+### UnsetEmergencyContacts
+`func (o *EmployeeResponse) UnsetEmergencyContacts()`
+
+UnsetEmergencyContacts ensures that no value is present for EmergencyContacts, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
