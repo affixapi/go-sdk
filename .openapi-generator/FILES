@@ -28,8 +28,7 @@ docs/EmployeeResponse.md
 docs/EmployeeResponseManager.md
 docs/EmploymentNoNullEnumRequest.md
 docs/EmploymentResponse.md
-docs/EmploymentStatus.md
-docs/EmploymentStatusNotNull.md
+docs/EmploymentStatusNotNullNotNullable.md
 docs/EmploymentStatusNotNullRequest.md
 docs/EmploymentStatusResponse.md
 docs/GroupNoNullEnumRequest.md
@@ -82,8 +81,7 @@ model_employee_response.go
 model_employee_response_manager.go
 model_employment_no_null_enum_request.go
 model_employment_response.go
-model_employment_status.go
-model_employment_status_not_null.go
+model_employment_status_not_null_not_nullable.go
 model_employment_status_not_null_request.go
 model_employment_status_response.go
 model_group_no_null_enum_request.go

@@ -187,10 +187,10 @@ func (a *XHRVerticallyIntegratedApiService) XhrCompanies20230301Execute(r ApiXhr
 type ApiXhrEmployees20230301Request struct {
 	ctx _context.Context
 	ApiService *XHRVerticallyIntegratedApiService
-	employmentStatus *EmploymentStatusNotNull
+	employmentStatus *EmploymentStatusNotNullNotNullable
 }
 
-func (r ApiXhrEmployees20230301Request) EmploymentStatus(employmentStatus EmploymentStatusNotNull) ApiXhrEmployees20230301Request {
+func (r ApiXhrEmployees20230301Request) EmploymentStatus(employmentStatus EmploymentStatusNotNullNotNullable) ApiXhrEmployees20230301Request {
 	r.employmentStatus = &employmentStatus
 	return r
 }

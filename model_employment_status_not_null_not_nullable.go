@@ -16,55 +16,55 @@ import (
 	"fmt"
 )
 
-// EmploymentStatusNotNull the model 'EmploymentStatusNotNull'
-type EmploymentStatusNotNull string
+// EmploymentStatusNotNullNotNullable the model 'EmploymentStatusNotNullNotNullable'
+type EmploymentStatusNotNullNotNullable string
 
-// List of employment-status-not-null
+// List of employment-status-not-null-not-nullable
 const (
-	ACTIVE EmploymentStatusNotNull = "active"
-	INACTIVE EmploymentStatusNotNull = "inactive"
-	PENDING EmploymentStatusNotNull = "pending"
-	LEAVE EmploymentStatusNotNull = "leave"
+	ACTIVE EmploymentStatusNotNullNotNullable = "active"
+	INACTIVE EmploymentStatusNotNullNotNullable = "inactive"
+	PENDING EmploymentStatusNotNullNotNullable = "pending"
+	LEAVE EmploymentStatusNotNullNotNullable = "leave"
 )
 
-var allowedEmploymentStatusNotNullEnumValues = []EmploymentStatusNotNull{
+var allowedEmploymentStatusNotNullNotNullableEnumValues = []EmploymentStatusNotNullNotNullable{
 	"active",
 	"inactive",
 	"pending",
 	"leave",
 }
 
-func (v *EmploymentStatusNotNull) UnmarshalJSON(src []byte) error {
+func (v *EmploymentStatusNotNullNotNullable) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := EmploymentStatusNotNull(value)
-	for _, existing := range allowedEmploymentStatusNotNullEnumValues {
+	enumTypeValue := EmploymentStatusNotNullNotNullable(value)
+	for _, existing := range allowedEmploymentStatusNotNullNotNullableEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid EmploymentStatusNotNull", value)
+	return fmt.Errorf("%+v is not a valid EmploymentStatusNotNullNotNullable", value)
 }
 
-// NewEmploymentStatusNotNullFromValue returns a pointer to a valid EmploymentStatusNotNull
+// NewEmploymentStatusNotNullNotNullableFromValue returns a pointer to a valid EmploymentStatusNotNullNotNullable
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewEmploymentStatusNotNullFromValue(v string) (*EmploymentStatusNotNull, error) {
-	ev := EmploymentStatusNotNull(v)
+func NewEmploymentStatusNotNullNotNullableFromValue(v string) (*EmploymentStatusNotNullNotNullable, error) {
+	ev := EmploymentStatusNotNullNotNullable(v)
 	if ev.IsValid() {
 		return &ev, nil
 	} else {
-		return nil, fmt.Errorf("invalid value '%v' for EmploymentStatusNotNull: valid values are %v", v, allowedEmploymentStatusNotNullEnumValues)
+		return nil, fmt.Errorf("invalid value '%v' for EmploymentStatusNotNullNotNullable: valid values are %v", v, allowedEmploymentStatusNotNullNotNullableEnumValues)
 	}
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v EmploymentStatusNotNull) IsValid() bool {
-	for _, existing := range allowedEmploymentStatusNotNullEnumValues {
+func (v EmploymentStatusNotNullNotNullable) IsValid() bool {
+	for _, existing := range allowedEmploymentStatusNotNullNotNullableEnumValues {
 		if existing == v {
 			return true
 		}
@@ -72,43 +72,43 @@ func (v EmploymentStatusNotNull) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to employment-status-not-null value
-func (v EmploymentStatusNotNull) Ptr() *EmploymentStatusNotNull {
+// Ptr returns reference to employment-status-not-null-not-nullable value
+func (v EmploymentStatusNotNullNotNullable) Ptr() *EmploymentStatusNotNullNotNullable {
 	return &v
 }
 
-type NullableEmploymentStatusNotNull struct {
-	value *EmploymentStatusNotNull
+type NullableEmploymentStatusNotNullNotNullable struct {
+	value *EmploymentStatusNotNullNotNullable
 	isSet bool
 }
 
-func (v NullableEmploymentStatusNotNull) Get() *EmploymentStatusNotNull {
+func (v NullableEmploymentStatusNotNullNotNullable) Get() *EmploymentStatusNotNullNotNullable {
 	return v.value
 }
 
-func (v *NullableEmploymentStatusNotNull) Set(val *EmploymentStatusNotNull) {
+func (v *NullableEmploymentStatusNotNullNotNullable) Set(val *EmploymentStatusNotNullNotNullable) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableEmploymentStatusNotNull) IsSet() bool {
+func (v NullableEmploymentStatusNotNullNotNullable) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableEmploymentStatusNotNull) Unset() {
+func (v *NullableEmploymentStatusNotNullNotNullable) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableEmploymentStatusNotNull(val *EmploymentStatusNotNull) *NullableEmploymentStatusNotNull {
-	return &NullableEmploymentStatusNotNull{value: val, isSet: true}
+func NewNullableEmploymentStatusNotNullNotNullable(val *EmploymentStatusNotNullNotNullable) *NullableEmploymentStatusNotNullNotNullable {
+	return &NullableEmploymentStatusNotNullNotNullable{value: val, isSet: true}
 }
 
-func (v NullableEmploymentStatusNotNull) MarshalJSON() ([]byte, error) {
+func (v NullableEmploymentStatusNotNullNotNullable) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableEmploymentStatusNotNull) UnmarshalJSON(src []byte) error {
+func (v *NullableEmploymentStatusNotNullNotNullable) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
