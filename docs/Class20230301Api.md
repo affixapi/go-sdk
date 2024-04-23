@@ -99,7 +99,7 @@ import (
 )
 
 func main() {
-    employmentStatus := openapiclient.employment-status-not-null-not-nullable("active") // EmploymentStatusNotNullNotNullable | Enable server-side filtering of the `employment_status` attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a `null`, it will not be returned if this parameter is set)  (optional)
+    employmentStatus := openapiclient.EmploymentStatusNotNullNotNullable("active") // EmploymentStatusNotNullNotNullable | Optional query parameter. Use to enable server-side filtering of the `employment_status` attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a `null`, it will not be returned if this parameter is set)  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -124,7 +124,7 @@ Other parameters are passed through a pointer to a apiXhrEmployees20230301Reques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employmentStatus** | [**EmploymentStatusNotNullNotNullable**](EmploymentStatusNotNullNotNullable.md) | Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  | 
+ **employmentStatus** | [**EmploymentStatusNotNullNotNullable**](EmploymentStatusNotNullNotNullable.md) | Optional query parameter. Use to enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  | 
 
 ### Return type
 

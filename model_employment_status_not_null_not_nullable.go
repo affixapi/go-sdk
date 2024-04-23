@@ -19,7 +19,7 @@ import (
 // EmploymentStatusNotNullNotNullable the model 'EmploymentStatusNotNullNotNullable'
 type EmploymentStatusNotNullNotNullable string
 
-// List of employment-status-not-null-not-nullable
+// List of EmploymentStatusNotNullNotNullable
 const (
 	ACTIVE EmploymentStatusNotNullNotNullable = "active"
 	INACTIVE EmploymentStatusNotNullNotNullable = "inactive"
@@ -72,7 +72,7 @@ func (v EmploymentStatusNotNullNotNullable) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to employment-status-not-null-not-nullable value
+// Ptr returns reference to EmploymentStatusNotNullNotNullable value
 func (v EmploymentStatusNotNullNotNullable) Ptr() *EmploymentStatusNotNullNotNullable {
 	return &v
 }
