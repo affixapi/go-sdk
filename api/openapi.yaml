@@ -1036,6 +1036,23 @@ paths:
       description: |
         Retrieve Timesheets
       operationId: xhrTimesheets20230301
+      parameters:
+      - description: The start date of the search period
+        explode: true
+        in: query
+        name: start_date
+        required: true
+        schema:
+          $ref: '#/components/schemas/StartDate'
+        style: form
+      - description: The end date of the search period
+        explode: true
+        in: query
+        name: end_date
+        required: true
+        schema:
+          $ref: '#/components/schemas/EndDate'
+        style: form
       responses:
         "200":
           content:
@@ -1101,6 +1118,23 @@ paths:
       description: |
         Retrieve time off / absence entries
       operationId: xhrTimeOffEntries20230301
+      parameters:
+      - description: The start date of the search period
+        explode: true
+        in: query
+        name: start_date
+        required: true
+        schema:
+          $ref: '#/components/schemas/StartDate'
+        style: form
+      - description: The end date of the search period
+        explode: true
+        in: query
+        name: end_date
+        required: true
+        schema:
+          $ref: '#/components/schemas/EndDate'
+        style: form
       responses:
         "200":
           content:

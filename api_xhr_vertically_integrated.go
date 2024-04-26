@@ -1172,8 +1172,18 @@ func (a *XHRVerticallyIntegratedApiService) XhrTimeOffBalances20230301Execute(r 
 type ApiXhrTimeOffEntries20230301Request struct {
 	ctx _context.Context
 	ApiService *XHRVerticallyIntegratedApiService
+	startDate *string
+	endDate *string
 }
 
+func (r ApiXhrTimeOffEntries20230301Request) StartDate(startDate string) ApiXhrTimeOffEntries20230301Request {
+	r.startDate = &startDate
+	return r
+}
+func (r ApiXhrTimeOffEntries20230301Request) EndDate(endDate string) ApiXhrTimeOffEntries20230301Request {
+	r.endDate = &endDate
+	return r
+}
 
 func (r ApiXhrTimeOffEntries20230301Request) Execute() ([]TimeOffEntryResponse, *_nethttp.Response, error) {
 	return r.ApiService.XhrTimeOffEntries20230301Execute(r)
@@ -1217,7 +1227,15 @@ func (a *XHRVerticallyIntegratedApiService) XhrTimeOffEntries20230301Execute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
+	if r.startDate == nil {
+		return localVarReturnValue, nil, reportError("startDate is required and must be specified")
+	}
+	if r.endDate == nil {
+		return localVarReturnValue, nil, reportError("endDate is required and must be specified")
+	}
 
+	localVarQueryParams.Add("start_date", parameterToString(*r.startDate, ""))
+	localVarQueryParams.Add("end_date", parameterToString(*r.endDate, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1328,8 +1346,18 @@ func (a *XHRVerticallyIntegratedApiService) XhrTimeOffEntries20230301Execute(r A
 type ApiXhrTimesheets20230301Request struct {
 	ctx _context.Context
 	ApiService *XHRVerticallyIntegratedApiService
+	startDate *string
+	endDate *string
 }
 
+func (r ApiXhrTimesheets20230301Request) StartDate(startDate string) ApiXhrTimesheets20230301Request {
+	r.startDate = &startDate
+	return r
+}
+func (r ApiXhrTimesheets20230301Request) EndDate(endDate string) ApiXhrTimesheets20230301Request {
+	r.endDate = &endDate
+	return r
+}
 
 func (r ApiXhrTimesheets20230301Request) Execute() ([]TimesheetResponse, *_nethttp.Response, error) {
 	return r.ApiService.XhrTimesheets20230301Execute(r)
@@ -1373,7 +1401,15 @@ func (a *XHRVerticallyIntegratedApiService) XhrTimesheets20230301Execute(r ApiXh
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
+	if r.startDate == nil {
+		return localVarReturnValue, nil, reportError("startDate is required and must be specified")
+	}
+	if r.endDate == nil {
+		return localVarReturnValue, nil, reportError("endDate is required and must be specified")
+	}
 
+	localVarQueryParams.Add("start_date", parameterToString(*r.startDate, ""))
+	localVarQueryParams.Add("end_date", parameterToString(*r.endDate, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
