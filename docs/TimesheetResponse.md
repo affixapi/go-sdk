@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | The Affix-assigned id of the time off entry | 
 **RemoteId** | **string** | the remote system-assigned id of the time off entry | 
 **EmployeeId** | **string** | the Affix-assigned id of the individual | 
+**RemoteEmployeeId** | **string** | the remote system-assigned id of the individual | 
 **StartTime** | **NullableTime** |  | 
 **EndTime** | **NullableTime** |  | 
 **HoursWorked** | **float32** |  | 
@@ -17,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewTimesheetResponse
 
-`func NewTimesheetResponse(id string, remoteId string, employeeId string, startTime NullableTime, endTime NullableTime, hoursWorked float32, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimesheetResponse`
+`func NewTimesheetResponse(id string, remoteId string, employeeId string, remoteEmployeeId string, startTime NullableTime, endTime NullableTime, hoursWorked float32, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimesheetResponse`
 
 NewTimesheetResponse instantiates a new TimesheetResponse object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +91,26 @@ and a boolean to check if the value has been set.
 `func (o *TimesheetResponse) SetEmployeeId(v string)`
 
 SetEmployeeId sets EmployeeId field to given value.
+
+
+### GetRemoteEmployeeId
+
+`func (o *TimesheetResponse) GetRemoteEmployeeId() string`
+
+GetRemoteEmployeeId returns the RemoteEmployeeId field if non-nil, zero value otherwise.
+
+### GetRemoteEmployeeIdOk
+
+`func (o *TimesheetResponse) GetRemoteEmployeeIdOk() (*string, bool)`
+
+GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemoteEmployeeId
+
+`func (o *TimesheetResponse) SetRemoteEmployeeId(v string)`
+
+SetRemoteEmployeeId sets RemoteEmployeeId field to given value.
 
 
 ### GetStartTime

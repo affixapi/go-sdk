@@ -24,6 +24,8 @@ type TimesheetResponse struct {
 	RemoteId string `json:"remote_id"`
 	// the Affix-assigned id of the individual
 	EmployeeId string `json:"employee_id"`
+	// the remote system-assigned id of the individual
+	RemoteEmployeeId string `json:"remote_employee_id"`
 	StartTime NullableTime `json:"start_time"`
 	EndTime NullableTime `json:"end_time"`
 	HoursWorked float32 `json:"hours_worked"`
@@ -35,11 +37,12 @@ type TimesheetResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTimesheetResponse(id string, remoteId string, employeeId string, startTime NullableTime, endTime NullableTime, hoursWorked float32, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimesheetResponse {
+func NewTimesheetResponse(id string, remoteId string, employeeId string, remoteEmployeeId string, startTime NullableTime, endTime NullableTime, hoursWorked float32, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimesheetResponse {
 	this := TimesheetResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
 	this.EmployeeId = employeeId
+	this.RemoteEmployeeId = remoteEmployeeId
 	this.StartTime = startTime
 	this.EndTime = endTime
 	this.HoursWorked = hoursWorked
@@ -126,6 +129,30 @@ func (o *TimesheetResponse) GetEmployeeIdOk() (*string, bool) {
 // SetEmployeeId sets field value
 func (o *TimesheetResponse) SetEmployeeId(v string) {
 	o.EmployeeId = v
+}
+
+// GetRemoteEmployeeId returns the RemoteEmployeeId field value
+func (o *TimesheetResponse) GetRemoteEmployeeId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.RemoteEmployeeId
+}
+
+// GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field value
+// and a boolean to check if the value has been set.
+func (o *TimesheetResponse) GetRemoteEmployeeIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.RemoteEmployeeId, true
+}
+
+// SetRemoteEmployeeId sets field value
+func (o *TimesheetResponse) SetRemoteEmployeeId(v string) {
+	o.RemoteEmployeeId = v
 }
 
 // GetStartTime returns the StartTime field value
@@ -266,6 +293,9 @@ func (o TimesheetResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["employee_id"] = o.EmployeeId
+	}
+	if true {
+		toSerialize["remote_employee_id"] = o.RemoteEmployeeId
 	}
 	if true {
 		toSerialize["start_time"] = o.StartTime.Get()

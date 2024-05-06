@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EmployeeId** | **string** | The Affix-assigned id of the individual | 
-**RemoteId** | **string** | the remote system-assigned id of the individual | 
+**RemoteEmployeeId** | **string** | the remote system-assigned id of the individual | 
 **Balance** | **NullableFloat32** |  | 
 **Used** | **NullableFloat32** |  | 
 **PolicyName** | **NullableString** | The name of the policy, as assigned by the remote system | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewTimeOffBalanceResponse
 
-`func NewTimeOffBalanceResponse(employeeId string, remoteId string, balance NullableFloat32, used NullableFloat32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffBalanceResponse`
+`func NewTimeOffBalanceResponse(employeeId string, remoteEmployeeId string, balance NullableFloat32, used NullableFloat32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffBalanceResponse`
 
 NewTimeOffBalanceResponse instantiates a new TimeOffBalanceResponse object
 This constructor will assign default values to properties that have it defined,
@@ -52,24 +52,24 @@ and a boolean to check if the value has been set.
 SetEmployeeId sets EmployeeId field to given value.
 
 
-### GetRemoteId
+### GetRemoteEmployeeId
 
-`func (o *TimeOffBalanceResponse) GetRemoteId() string`
+`func (o *TimeOffBalanceResponse) GetRemoteEmployeeId() string`
 
-GetRemoteId returns the RemoteId field if non-nil, zero value otherwise.
+GetRemoteEmployeeId returns the RemoteEmployeeId field if non-nil, zero value otherwise.
 
-### GetRemoteIdOk
+### GetRemoteEmployeeIdOk
 
-`func (o *TimeOffBalanceResponse) GetRemoteIdOk() (*string, bool)`
+`func (o *TimeOffBalanceResponse) GetRemoteEmployeeIdOk() (*string, bool)`
 
-GetRemoteIdOk returns a tuple with the RemoteId field if it's non-nil, zero value otherwise
+GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRemoteId
+### SetRemoteEmployeeId
 
-`func (o *TimeOffBalanceResponse) SetRemoteId(v string)`
+`func (o *TimeOffBalanceResponse) SetRemoteEmployeeId(v string)`
 
-SetRemoteId sets RemoteId field to given value.
+SetRemoteEmployeeId sets RemoteEmployeeId field to given value.
 
 
 ### GetBalance

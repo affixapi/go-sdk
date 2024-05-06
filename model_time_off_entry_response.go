@@ -23,6 +23,8 @@ type TimeOffEntryResponse struct {
 	RemoteId string `json:"remote_id"`
 	// the Affix-assigned id of the individual
 	EmployeeId string `json:"employee_id"`
+	// the remote system-assigned id of the individual
+	RemoteEmployeeId string `json:"remote_employee_id"`
 	StartDate NullableString `json:"start_date"`
 	EndDate NullableString `json:"end_date"`
 	Amount float32 `json:"amount"`
@@ -38,11 +40,12 @@ type TimeOffEntryResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTimeOffEntryResponse(id string, remoteId string, employeeId string, startDate NullableString, endDate NullableString, amount float32, unit string, status NullableString, employeeNote NullableString, requestType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffEntryResponse {
+func NewTimeOffEntryResponse(id string, remoteId string, employeeId string, remoteEmployeeId string, startDate NullableString, endDate NullableString, amount float32, unit string, status NullableString, employeeNote NullableString, requestType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffEntryResponse {
 	this := TimeOffEntryResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
 	this.EmployeeId = employeeId
+	this.RemoteEmployeeId = remoteEmployeeId
 	this.StartDate = startDate
 	this.EndDate = endDate
 	this.Amount = amount
@@ -133,6 +136,30 @@ func (o *TimeOffEntryResponse) GetEmployeeIdOk() (*string, bool) {
 // SetEmployeeId sets field value
 func (o *TimeOffEntryResponse) SetEmployeeId(v string) {
 	o.EmployeeId = v
+}
+
+// GetRemoteEmployeeId returns the RemoteEmployeeId field value
+func (o *TimeOffEntryResponse) GetRemoteEmployeeId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.RemoteEmployeeId
+}
+
+// GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field value
+// and a boolean to check if the value has been set.
+func (o *TimeOffEntryResponse) GetRemoteEmployeeIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.RemoteEmployeeId, true
+}
+
+// SetRemoteEmployeeId sets field value
+func (o *TimeOffEntryResponse) SetRemoteEmployeeId(v string) {
+	o.RemoteEmployeeId = v
 }
 
 // GetStartDate returns the StartDate field value
@@ -375,6 +402,9 @@ func (o TimeOffEntryResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["employee_id"] = o.EmployeeId
+	}
+	if true {
+		toSerialize["remote_employee_id"] = o.RemoteEmployeeId
 	}
 	if true {
 		toSerialize["start_date"] = o.StartDate.Get()

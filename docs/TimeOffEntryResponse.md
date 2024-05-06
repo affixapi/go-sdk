@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | The Affix-assigned id of the time off entry | 
 **RemoteId** | **string** | the remote system-assigned id of the time off entry | 
 **EmployeeId** | **string** | the Affix-assigned id of the individual | 
+**RemoteEmployeeId** | **string** | the remote system-assigned id of the individual | 
 **StartDate** | **NullableString** |  | 
 **EndDate** | **NullableString** |  | 
 **Amount** | **float32** |  | 
@@ -21,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewTimeOffEntryResponse
 
-`func NewTimeOffEntryResponse(id string, remoteId string, employeeId string, startDate NullableString, endDate NullableString, amount float32, unit string, status NullableString, employeeNote NullableString, requestType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffEntryResponse`
+`func NewTimeOffEntryResponse(id string, remoteId string, employeeId string, remoteEmployeeId string, startDate NullableString, endDate NullableString, amount float32, unit string, status NullableString, employeeNote NullableString, requestType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffEntryResponse`
 
 NewTimeOffEntryResponse instantiates a new TimeOffEntryResponse object
 This constructor will assign default values to properties that have it defined,
@@ -94,6 +95,26 @@ and a boolean to check if the value has been set.
 `func (o *TimeOffEntryResponse) SetEmployeeId(v string)`
 
 SetEmployeeId sets EmployeeId field to given value.
+
+
+### GetRemoteEmployeeId
+
+`func (o *TimeOffEntryResponse) GetRemoteEmployeeId() string`
+
+GetRemoteEmployeeId returns the RemoteEmployeeId field if non-nil, zero value otherwise.
+
+### GetRemoteEmployeeIdOk
+
+`func (o *TimeOffEntryResponse) GetRemoteEmployeeIdOk() (*string, bool)`
+
+GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemoteEmployeeId
+
+`func (o *TimeOffEntryResponse) SetRemoteEmployeeId(v string)`
+
+SetRemoteEmployeeId sets RemoteEmployeeId field to given value.
 
 
 ### GetStartDate

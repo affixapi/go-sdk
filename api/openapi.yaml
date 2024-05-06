@@ -2976,12 +2976,13 @@ components:
       type: object
     TimeOffEntryResponse:
       example:
+        remote_employee_id: "19202938"
         end_date: 2020-10-14T00:00:00.000+0000
         amount: 3
-        unit: days
         request_type: vacation
-        employee_note: Visiting my family
         remote_id: "19202938"
+        unit: days
+        employee_note: Visiting my family
         employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         remote_created_at: 2020-10-11T00:00:00.000+0000
@@ -3000,6 +3001,10 @@ components:
         employee_id:
           description: the Affix-assigned id of the individual
           example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_employee_id:
+          description: the remote system-assigned id of the individual
+          example: "19202938"
           type: string
         start_date:
           example: 2020-10-11
@@ -3057,6 +3062,7 @@ components:
       - end_date
       - id
       - remote_created_at
+      - remote_employee_id
       - remote_id
       - remote_modified_at
       - request_type
@@ -3070,6 +3076,7 @@ components:
       type: array
     TimesheetResponse:
       example:
+        remote_employee_id: "19202938"
         start_time: 2020-10-11T08:00:00Z
         remote_id: "19202938"
         employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
@@ -3090,6 +3097,10 @@ components:
         employee_id:
           description: the Affix-assigned id of the individual
           example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_employee_id:
+          description: the remote system-assigned id of the individual
+          example: "19202938"
           type: string
         start_time:
           example: 2020-10-11T08:00:00Z
@@ -3121,6 +3132,7 @@ components:
       - hours_worked
       - id
       - remote_created_at
+      - remote_employee_id
       - remote_id
       - remote_modified_at
       - start_time
@@ -3131,9 +3143,9 @@ components:
       type: array
     TimeOffBalanceResponse:
       example:
+        remote_employee_id: "19202938"
         balance: 24.5
         employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
-        remote_id: "19202938"
         policy_name: Comp/In Lieu Time
         used: 12
         remote_created_at: 2020-10-11T00:00:00.000+0000
@@ -3143,7 +3155,7 @@ components:
           description: The Affix-assigned id of the individual
           example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
           type: string
-        remote_id:
+        remote_employee_id:
           description: the remote system-assigned id of the individual
           example: "19202938"
           type: string
@@ -3187,7 +3199,7 @@ components:
       - policy_name
       - policy_type
       - remote_created_at
-      - remote_id
+      - remote_employee_id
       - remote_modified_at
       - used
       type: object

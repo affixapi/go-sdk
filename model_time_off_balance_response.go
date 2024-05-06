@@ -20,7 +20,7 @@ type TimeOffBalanceResponse struct {
 	// The Affix-assigned id of the individual
 	EmployeeId string `json:"employee_id"`
 	// the remote system-assigned id of the individual
-	RemoteId string `json:"remote_id"`
+	RemoteEmployeeId string `json:"remote_employee_id"`
 	Balance NullableFloat32 `json:"balance"`
 	Used NullableFloat32 `json:"used"`
 	// The name of the policy, as assigned by the remote system
@@ -34,10 +34,10 @@ type TimeOffBalanceResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTimeOffBalanceResponse(employeeId string, remoteId string, balance NullableFloat32, used NullableFloat32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffBalanceResponse {
+func NewTimeOffBalanceResponse(employeeId string, remoteEmployeeId string, balance NullableFloat32, used NullableFloat32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffBalanceResponse {
 	this := TimeOffBalanceResponse{}
 	this.EmployeeId = employeeId
-	this.RemoteId = remoteId
+	this.RemoteEmployeeId = remoteEmployeeId
 	this.Balance = balance
 	this.Used = used
 	this.PolicyName = policyName
@@ -79,28 +79,28 @@ func (o *TimeOffBalanceResponse) SetEmployeeId(v string) {
 	o.EmployeeId = v
 }
 
-// GetRemoteId returns the RemoteId field value
-func (o *TimeOffBalanceResponse) GetRemoteId() string {
+// GetRemoteEmployeeId returns the RemoteEmployeeId field value
+func (o *TimeOffBalanceResponse) GetRemoteEmployeeId() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.RemoteId
+	return o.RemoteEmployeeId
 }
 
-// GetRemoteIdOk returns a tuple with the RemoteId field value
+// GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field value
 // and a boolean to check if the value has been set.
-func (o *TimeOffBalanceResponse) GetRemoteIdOk() (*string, bool) {
+func (o *TimeOffBalanceResponse) GetRemoteEmployeeIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.RemoteId, true
+	return &o.RemoteEmployeeId, true
 }
 
-// SetRemoteId sets field value
-func (o *TimeOffBalanceResponse) SetRemoteId(v string) {
-	o.RemoteId = v
+// SetRemoteEmployeeId sets field value
+func (o *TimeOffBalanceResponse) SetRemoteEmployeeId(v string) {
+	o.RemoteEmployeeId = v
 }
 
 // GetBalance returns the Balance field value
@@ -265,7 +265,7 @@ func (o TimeOffBalanceResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["employee_id"] = o.EmployeeId
 	}
 	if true {
-		toSerialize["remote_id"] = o.RemoteId
+		toSerialize["remote_employee_id"] = o.RemoteEmployeeId
 	}
 	if true {
 		toSerialize["balance"] = o.Balance.Get()
