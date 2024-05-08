@@ -23,6 +23,7 @@ type PolicyTypeResponse string
 const (
 	NULL PolicyTypeResponse = "null"
 	VACATION PolicyTypeResponse = "vacation"
+	HOLIDAY PolicyTypeResponse = "holiday"
 	SICK PolicyTypeResponse = "sick"
 	PERSONAL PolicyTypeResponse = "personal"
 	JURY_DUTY PolicyTypeResponse = "jury_duty"
@@ -33,6 +34,7 @@ const (
 var allowedPolicyTypeResponseEnumValues = []PolicyTypeResponse{
 	"null",
 	"vacation",
+	"holiday",
 	"sick",
 	"personal",
 	"jury_duty",
