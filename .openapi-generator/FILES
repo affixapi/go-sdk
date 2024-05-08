@@ -51,6 +51,7 @@ docs/PayslipResponseContributions.md
 docs/PayslipResponseDeductions.md
 docs/PayslipResponseEarnings.md
 docs/PayslipResponseTaxes.md
+docs/PolicyTypeResponse.md
 docs/ProviderRequest.md
 docs/ProviderResponse.md
 docs/ScopesRequest.md
@@ -103,6 +104,7 @@ model_payslip_response_contributions.go
 model_payslip_response_deductions.go
 model_payslip_response_earnings.go
 model_payslip_response_taxes.go
+model_policy_type_response.go
 model_provider_request.go
 model_provider_response.go
 model_scopes_request.go

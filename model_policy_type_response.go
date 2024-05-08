@@ -13,342 +13,109 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
+	"fmt"
 )
 
-// TimesheetResponse struct for TimesheetResponse
-type TimesheetResponse struct {
-	// The Affix-assigned id of the time off entry
-	Id string `json:"id"`
-	// the remote system-assigned id of the time off entry
-	RemoteId string `json:"remote_id"`
-	// the Affix-assigned id of the individual
-	EmployeeId string `json:"employee_id"`
-	// the remote system-assigned id of the individual
-	EmployeeRemoteId string `json:"employee_remote_id"`
-	StartTime NullableTime `json:"start_time"`
-	EndTime NullableTime `json:"end_time"`
-	HoursWorked float32 `json:"hours_worked"`
-	RemoteCreatedAt NullableString `json:"remote_created_at"`
-	RemoteModifiedAt NullableString `json:"remote_modified_at"`
+// PolicyTypeResponse the model 'PolicyTypeResponse'
+type PolicyTypeResponse string
+
+// List of policy-typeResponse
+const (
+	NULL PolicyTypeResponse = "null"
+	VACATION PolicyTypeResponse = "vacation"
+	SICK PolicyTypeResponse = "sick"
+	PERSONAL PolicyTypeResponse = "personal"
+	JURY_DUTY PolicyTypeResponse = "jury_duty"
+	VOLUNTEER PolicyTypeResponse = "volunteer"
+	BEREAVEMENT PolicyTypeResponse = "bereavement"
+)
+
+var allowedPolicyTypeResponseEnumValues = []PolicyTypeResponse{
+	"null",
+	"vacation",
+	"sick",
+	"personal",
+	"jury_duty",
+	"volunteer",
+	"bereavement",
 }
 
-// NewTimesheetResponse instantiates a new TimesheetResponse object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTimesheetResponse(id string, remoteId string, employeeId string, employeeRemoteId string, startTime NullableTime, endTime NullableTime, hoursWorked float32, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimesheetResponse {
-	this := TimesheetResponse{}
-	this.Id = id
-	this.RemoteId = remoteId
-	this.EmployeeId = employeeId
-	this.EmployeeRemoteId = employeeRemoteId
-	this.StartTime = startTime
-	this.EndTime = endTime
-	this.HoursWorked = hoursWorked
-	this.RemoteCreatedAt = remoteCreatedAt
-	this.RemoteModifiedAt = remoteModifiedAt
-	return &this
-}
-
-// NewTimesheetResponseWithDefaults instantiates a new TimesheetResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewTimesheetResponseWithDefaults() *TimesheetResponse {
-	this := TimesheetResponse{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *TimesheetResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
+func (v *PolicyTypeResponse) UnmarshalJSON(src []byte) error {
+	var value string
+	err := json.Unmarshal(src, &value)
+	if err != nil {
+		return err
+	}
+	enumTypeValue := PolicyTypeResponse(value)
+	for _, existing := range allowedPolicyTypeResponseEnumValues {
+		if existing == enumTypeValue {
+			*v = enumTypeValue
+			return nil
+		}
 	}
 
-	return o.Id
+	return fmt.Errorf("%+v is not a valid PolicyTypeResponse", value)
 }
 
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *TimesheetResponse) GetIdOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
+// NewPolicyTypeResponseFromValue returns a pointer to a valid PolicyTypeResponse
+// for the value passed as argument, or an error if the value passed is not allowed by the enum
+func NewPolicyTypeResponseFromValue(v string) (*PolicyTypeResponse, error) {
+	ev := PolicyTypeResponse(v)
+	if ev.IsValid() {
+		return &ev, nil
+	} else {
+		return nil, fmt.Errorf("invalid value '%v' for PolicyTypeResponse: valid values are %v", v, allowedPolicyTypeResponseEnumValues)
 	}
-	return &o.Id, true
 }
 
-// SetId sets field value
-func (o *TimesheetResponse) SetId(v string) {
-	o.Id = v
-}
-
-// GetRemoteId returns the RemoteId field value
-func (o *TimesheetResponse) GetRemoteId() string {
-	if o == nil {
-		var ret string
-		return ret
+// IsValid return true if the value is valid for the enum, false otherwise
+func (v PolicyTypeResponse) IsValid() bool {
+	for _, existing := range allowedPolicyTypeResponseEnumValues {
+		if existing == v {
+			return true
+		}
 	}
-
-	return o.RemoteId
+	return false
 }
 
-// GetRemoteIdOk returns a tuple with the RemoteId field value
-// and a boolean to check if the value has been set.
-func (o *TimesheetResponse) GetRemoteIdOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.RemoteId, true
+// Ptr returns reference to policy-typeResponse value
+func (v PolicyTypeResponse) Ptr() *PolicyTypeResponse {
+	return &v
 }
 
-// SetRemoteId sets field value
-func (o *TimesheetResponse) SetRemoteId(v string) {
-	o.RemoteId = v
-}
-
-// GetEmployeeId returns the EmployeeId field value
-func (o *TimesheetResponse) GetEmployeeId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.EmployeeId
-}
-
-// GetEmployeeIdOk returns a tuple with the EmployeeId field value
-// and a boolean to check if the value has been set.
-func (o *TimesheetResponse) GetEmployeeIdOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.EmployeeId, true
-}
-
-// SetEmployeeId sets field value
-func (o *TimesheetResponse) SetEmployeeId(v string) {
-	o.EmployeeId = v
-}
-
-// GetEmployeeRemoteId returns the EmployeeRemoteId field value
-func (o *TimesheetResponse) GetEmployeeRemoteId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.EmployeeRemoteId
-}
-
-// GetEmployeeRemoteIdOk returns a tuple with the EmployeeRemoteId field value
-// and a boolean to check if the value has been set.
-func (o *TimesheetResponse) GetEmployeeRemoteIdOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.EmployeeRemoteId, true
-}
-
-// SetEmployeeRemoteId sets field value
-func (o *TimesheetResponse) SetEmployeeRemoteId(v string) {
-	o.EmployeeRemoteId = v
-}
-
-// GetStartTime returns the StartTime field value
-// If the value is explicit nil, the zero value for time.Time will be returned
-func (o *TimesheetResponse) GetStartTime() time.Time {
-	if o == nil || o.StartTime.Get() == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return *o.StartTime.Get()
-}
-
-// GetStartTimeOk returns a tuple with the StartTime field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TimesheetResponse) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.StartTime.Get(), o.StartTime.IsSet()
-}
-
-// SetStartTime sets field value
-func (o *TimesheetResponse) SetStartTime(v time.Time) {
-	o.StartTime.Set(&v)
-}
-
-// GetEndTime returns the EndTime field value
-// If the value is explicit nil, the zero value for time.Time will be returned
-func (o *TimesheetResponse) GetEndTime() time.Time {
-	if o == nil || o.EndTime.Get() == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return *o.EndTime.Get()
-}
-
-// GetEndTimeOk returns a tuple with the EndTime field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TimesheetResponse) GetEndTimeOk() (*time.Time, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.EndTime.Get(), o.EndTime.IsSet()
-}
-
-// SetEndTime sets field value
-func (o *TimesheetResponse) SetEndTime(v time.Time) {
-	o.EndTime.Set(&v)
-}
-
-// GetHoursWorked returns the HoursWorked field value
-func (o *TimesheetResponse) GetHoursWorked() float32 {
-	if o == nil {
-		var ret float32
-		return ret
-	}
-
-	return o.HoursWorked
-}
-
-// GetHoursWorkedOk returns a tuple with the HoursWorked field value
-// and a boolean to check if the value has been set.
-func (o *TimesheetResponse) GetHoursWorkedOk() (*float32, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.HoursWorked, true
-}
-
-// SetHoursWorked sets field value
-func (o *TimesheetResponse) SetHoursWorked(v float32) {
-	o.HoursWorked = v
-}
-
-// GetRemoteCreatedAt returns the RemoteCreatedAt field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *TimesheetResponse) GetRemoteCreatedAt() string {
-	if o == nil || o.RemoteCreatedAt.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.RemoteCreatedAt.Get()
-}
-
-// GetRemoteCreatedAtOk returns a tuple with the RemoteCreatedAt field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TimesheetResponse) GetRemoteCreatedAtOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.RemoteCreatedAt.Get(), o.RemoteCreatedAt.IsSet()
-}
-
-// SetRemoteCreatedAt sets field value
-func (o *TimesheetResponse) SetRemoteCreatedAt(v string) {
-	o.RemoteCreatedAt.Set(&v)
-}
-
-// GetRemoteModifiedAt returns the RemoteModifiedAt field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *TimesheetResponse) GetRemoteModifiedAt() string {
-	if o == nil || o.RemoteModifiedAt.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.RemoteModifiedAt.Get()
-}
-
-// GetRemoteModifiedAtOk returns a tuple with the RemoteModifiedAt field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TimesheetResponse) GetRemoteModifiedAtOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.RemoteModifiedAt.Get(), o.RemoteModifiedAt.IsSet()
-}
-
-// SetRemoteModifiedAt sets field value
-func (o *TimesheetResponse) SetRemoteModifiedAt(v string) {
-	o.RemoteModifiedAt.Set(&v)
-}
-
-func (o TimesheetResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["remote_id"] = o.RemoteId
-	}
-	if true {
-		toSerialize["employee_id"] = o.EmployeeId
-	}
-	if true {
-		toSerialize["employee_remote_id"] = o.EmployeeRemoteId
-	}
-	if true {
-		toSerialize["start_time"] = o.StartTime.Get()
-	}
-	if true {
-		toSerialize["end_time"] = o.EndTime.Get()
-	}
-	if true {
-		toSerialize["hours_worked"] = o.HoursWorked
-	}
-	if true {
-		toSerialize["remote_created_at"] = o.RemoteCreatedAt.Get()
-	}
-	if true {
-		toSerialize["remote_modified_at"] = o.RemoteModifiedAt.Get()
-	}
-	return json.Marshal(toSerialize)
-}
-
-type NullableTimesheetResponse struct {
-	value *TimesheetResponse
+type NullablePolicyTypeResponse struct {
+	value *PolicyTypeResponse
 	isSet bool
 }
 
-func (v NullableTimesheetResponse) Get() *TimesheetResponse {
+func (v NullablePolicyTypeResponse) Get() *PolicyTypeResponse {
 	return v.value
 }
 
-func (v *NullableTimesheetResponse) Set(val *TimesheetResponse) {
+func (v *NullablePolicyTypeResponse) Set(val *PolicyTypeResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableTimesheetResponse) IsSet() bool {
+func (v NullablePolicyTypeResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableTimesheetResponse) Unset() {
+func (v *NullablePolicyTypeResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableTimesheetResponse(val *TimesheetResponse) *NullableTimesheetResponse {
-	return &NullableTimesheetResponse{value: val, isSet: true}
+func NewNullablePolicyTypeResponse(val *PolicyTypeResponse) *NullablePolicyTypeResponse {
+	return &NullablePolicyTypeResponse{value: val, isSet: true}
 }
 
-func (v NullableTimesheetResponse) MarshalJSON() ([]byte, error) {
+func (v NullablePolicyTypeResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableTimesheetResponse) UnmarshalJSON(src []byte) error {
+func (v *NullablePolicyTypeResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

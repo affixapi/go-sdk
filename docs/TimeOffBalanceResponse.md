@@ -5,11 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EmployeeId** | **string** | The Affix-assigned id of the individual | 
-**RemoteEmployeeId** | **string** | the remote system-assigned id of the individual | 
+**EmployeeRemoteId** | **string** | the remote system-assigned id of the individual | 
 **Balance** | **NullableFloat32** |  | 
 **Used** | **NullableFloat32** |  | 
+**PolicyId** | **NullableString** | The Affix-assigned id of the policy | 
+**PolicyRemoteId** | **NullableString** | The remote system-assigned id of the policy | 
 **PolicyName** | **NullableString** | The name of the policy, as assigned by the remote system | 
-**PolicyType** | **NullableString** |  | 
+**PolicyType** | [**NullablePolicyTypeResponse**](PolicyTypeResponse.md) |  | 
 **RemoteCreatedAt** | **NullableString** |  | 
 **RemoteModifiedAt** | **NullableString** |  | 
 
@@ -17,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewTimeOffBalanceResponse
 
-`func NewTimeOffBalanceResponse(employeeId string, remoteEmployeeId string, balance NullableFloat32, used NullableFloat32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffBalanceResponse`
+`func NewTimeOffBalanceResponse(employeeId string, employeeRemoteId string, balance NullableFloat32, used NullableFloat32, policyId NullableString, policyRemoteId NullableString, policyName NullableString, policyType NullablePolicyTypeResponse, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffBalanceResponse`
 
 NewTimeOffBalanceResponse instantiates a new TimeOffBalanceResponse object
 This constructor will assign default values to properties that have it defined,
@@ -52,24 +54,24 @@ and a boolean to check if the value has been set.
 SetEmployeeId sets EmployeeId field to given value.
 
 
-### GetRemoteEmployeeId
+### GetEmployeeRemoteId
 
-`func (o *TimeOffBalanceResponse) GetRemoteEmployeeId() string`
+`func (o *TimeOffBalanceResponse) GetEmployeeRemoteId() string`
 
-GetRemoteEmployeeId returns the RemoteEmployeeId field if non-nil, zero value otherwise.
+GetEmployeeRemoteId returns the EmployeeRemoteId field if non-nil, zero value otherwise.
 
-### GetRemoteEmployeeIdOk
+### GetEmployeeRemoteIdOk
 
-`func (o *TimeOffBalanceResponse) GetRemoteEmployeeIdOk() (*string, bool)`
+`func (o *TimeOffBalanceResponse) GetEmployeeRemoteIdOk() (*string, bool)`
 
-GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field if it's non-nil, zero value otherwise
+GetEmployeeRemoteIdOk returns a tuple with the EmployeeRemoteId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRemoteEmployeeId
+### SetEmployeeRemoteId
 
-`func (o *TimeOffBalanceResponse) SetRemoteEmployeeId(v string)`
+`func (o *TimeOffBalanceResponse) SetEmployeeRemoteId(v string)`
 
-SetRemoteEmployeeId sets RemoteEmployeeId field to given value.
+SetEmployeeRemoteId sets EmployeeRemoteId field to given value.
 
 
 ### GetBalance
@@ -132,6 +134,66 @@ SetUsed sets Used field to given value.
 `func (o *TimeOffBalanceResponse) UnsetUsed()`
 
 UnsetUsed ensures that no value is present for Used, not even an explicit nil
+### GetPolicyId
+
+`func (o *TimeOffBalanceResponse) GetPolicyId() string`
+
+GetPolicyId returns the PolicyId field if non-nil, zero value otherwise.
+
+### GetPolicyIdOk
+
+`func (o *TimeOffBalanceResponse) GetPolicyIdOk() (*string, bool)`
+
+GetPolicyIdOk returns a tuple with the PolicyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyId
+
+`func (o *TimeOffBalanceResponse) SetPolicyId(v string)`
+
+SetPolicyId sets PolicyId field to given value.
+
+
+### SetPolicyIdNil
+
+`func (o *TimeOffBalanceResponse) SetPolicyIdNil(b bool)`
+
+ SetPolicyIdNil sets the value for PolicyId to be an explicit nil
+
+### UnsetPolicyId
+`func (o *TimeOffBalanceResponse) UnsetPolicyId()`
+
+UnsetPolicyId ensures that no value is present for PolicyId, not even an explicit nil
+### GetPolicyRemoteId
+
+`func (o *TimeOffBalanceResponse) GetPolicyRemoteId() string`
+
+GetPolicyRemoteId returns the PolicyRemoteId field if non-nil, zero value otherwise.
+
+### GetPolicyRemoteIdOk
+
+`func (o *TimeOffBalanceResponse) GetPolicyRemoteIdOk() (*string, bool)`
+
+GetPolicyRemoteIdOk returns a tuple with the PolicyRemoteId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyRemoteId
+
+`func (o *TimeOffBalanceResponse) SetPolicyRemoteId(v string)`
+
+SetPolicyRemoteId sets PolicyRemoteId field to given value.
+
+
+### SetPolicyRemoteIdNil
+
+`func (o *TimeOffBalanceResponse) SetPolicyRemoteIdNil(b bool)`
+
+ SetPolicyRemoteIdNil sets the value for PolicyRemoteId to be an explicit nil
+
+### UnsetPolicyRemoteId
+`func (o *TimeOffBalanceResponse) UnsetPolicyRemoteId()`
+
+UnsetPolicyRemoteId ensures that no value is present for PolicyRemoteId, not even an explicit nil
 ### GetPolicyName
 
 `func (o *TimeOffBalanceResponse) GetPolicyName() string`
@@ -164,20 +226,20 @@ SetPolicyName sets PolicyName field to given value.
 UnsetPolicyName ensures that no value is present for PolicyName, not even an explicit nil
 ### GetPolicyType
 
-`func (o *TimeOffBalanceResponse) GetPolicyType() string`
+`func (o *TimeOffBalanceResponse) GetPolicyType() PolicyTypeResponse`
 
 GetPolicyType returns the PolicyType field if non-nil, zero value otherwise.
 
 ### GetPolicyTypeOk
 
-`func (o *TimeOffBalanceResponse) GetPolicyTypeOk() (*string, bool)`
+`func (o *TimeOffBalanceResponse) GetPolicyTypeOk() (*PolicyTypeResponse, bool)`
 
 GetPolicyTypeOk returns a tuple with the PolicyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolicyType
 
-`func (o *TimeOffBalanceResponse) SetPolicyType(v string)`
+`func (o *TimeOffBalanceResponse) SetPolicyType(v PolicyTypeResponse)`
 
 SetPolicyType sets PolicyType field to given value.
 

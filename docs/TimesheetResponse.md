@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | The Affix-assigned id of the time off entry | 
 **RemoteId** | **string** | the remote system-assigned id of the time off entry | 
 **EmployeeId** | **string** | the Affix-assigned id of the individual | 
-**RemoteEmployeeId** | **string** | the remote system-assigned id of the individual | 
+**EmployeeRemoteId** | **string** | the remote system-assigned id of the individual | 
 **StartTime** | **NullableTime** |  | 
 **EndTime** | **NullableTime** |  | 
 **HoursWorked** | **float32** |  | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewTimesheetResponse
 
-`func NewTimesheetResponse(id string, remoteId string, employeeId string, remoteEmployeeId string, startTime NullableTime, endTime NullableTime, hoursWorked float32, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimesheetResponse`
+`func NewTimesheetResponse(id string, remoteId string, employeeId string, employeeRemoteId string, startTime NullableTime, endTime NullableTime, hoursWorked float32, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimesheetResponse`
 
 NewTimesheetResponse instantiates a new TimesheetResponse object
 This constructor will assign default values to properties that have it defined,
@@ -93,24 +93,24 @@ and a boolean to check if the value has been set.
 SetEmployeeId sets EmployeeId field to given value.
 
 
-### GetRemoteEmployeeId
+### GetEmployeeRemoteId
 
-`func (o *TimesheetResponse) GetRemoteEmployeeId() string`
+`func (o *TimesheetResponse) GetEmployeeRemoteId() string`
 
-GetRemoteEmployeeId returns the RemoteEmployeeId field if non-nil, zero value otherwise.
+GetEmployeeRemoteId returns the EmployeeRemoteId field if non-nil, zero value otherwise.
 
-### GetRemoteEmployeeIdOk
+### GetEmployeeRemoteIdOk
 
-`func (o *TimesheetResponse) GetRemoteEmployeeIdOk() (*string, bool)`
+`func (o *TimesheetResponse) GetEmployeeRemoteIdOk() (*string, bool)`
 
-GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field if it's non-nil, zero value otherwise
+GetEmployeeRemoteIdOk returns a tuple with the EmployeeRemoteId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRemoteEmployeeId
+### SetEmployeeRemoteId
 
-`func (o *TimesheetResponse) SetRemoteEmployeeId(v string)`
+`func (o *TimesheetResponse) SetEmployeeRemoteId(v string)`
 
-SetRemoteEmployeeId sets RemoteEmployeeId field to given value.
+SetEmployeeRemoteId sets EmployeeRemoteId field to given value.
 
 
 ### GetStartTime

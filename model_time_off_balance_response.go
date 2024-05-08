@@ -20,12 +20,16 @@ type TimeOffBalanceResponse struct {
 	// The Affix-assigned id of the individual
 	EmployeeId string `json:"employee_id"`
 	// the remote system-assigned id of the individual
-	RemoteEmployeeId string `json:"remote_employee_id"`
+	EmployeeRemoteId string `json:"employee_remote_id"`
 	Balance NullableFloat32 `json:"balance"`
 	Used NullableFloat32 `json:"used"`
+	// The Affix-assigned id of the policy
+	PolicyId NullableString `json:"policy_id"`
+	// The remote system-assigned id of the policy
+	PolicyRemoteId NullableString `json:"policy_remote_id"`
 	// The name of the policy, as assigned by the remote system
 	PolicyName NullableString `json:"policy_name"`
-	PolicyType NullableString `json:"policy_type"`
+	PolicyType NullablePolicyTypeResponse `json:"policy_type"`
 	RemoteCreatedAt NullableString `json:"remote_created_at"`
 	RemoteModifiedAt NullableString `json:"remote_modified_at"`
 }
@@ -34,12 +38,14 @@ type TimeOffBalanceResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTimeOffBalanceResponse(employeeId string, remoteEmployeeId string, balance NullableFloat32, used NullableFloat32, policyName NullableString, policyType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffBalanceResponse {
+func NewTimeOffBalanceResponse(employeeId string, employeeRemoteId string, balance NullableFloat32, used NullableFloat32, policyId NullableString, policyRemoteId NullableString, policyName NullableString, policyType NullablePolicyTypeResponse, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffBalanceResponse {
 	this := TimeOffBalanceResponse{}
 	this.EmployeeId = employeeId
-	this.RemoteEmployeeId = remoteEmployeeId
+	this.EmployeeRemoteId = employeeRemoteId
 	this.Balance = balance
 	this.Used = used
+	this.PolicyId = policyId
+	this.PolicyRemoteId = policyRemoteId
 	this.PolicyName = policyName
 	this.PolicyType = policyType
 	this.RemoteCreatedAt = remoteCreatedAt
@@ -79,28 +85,28 @@ func (o *TimeOffBalanceResponse) SetEmployeeId(v string) {
 	o.EmployeeId = v
 }
 
-// GetRemoteEmployeeId returns the RemoteEmployeeId field value
-func (o *TimeOffBalanceResponse) GetRemoteEmployeeId() string {
+// GetEmployeeRemoteId returns the EmployeeRemoteId field value
+func (o *TimeOffBalanceResponse) GetEmployeeRemoteId() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.RemoteEmployeeId
+	return o.EmployeeRemoteId
 }
 
-// GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field value
+// GetEmployeeRemoteIdOk returns a tuple with the EmployeeRemoteId field value
 // and a boolean to check if the value has been set.
-func (o *TimeOffBalanceResponse) GetRemoteEmployeeIdOk() (*string, bool) {
+func (o *TimeOffBalanceResponse) GetEmployeeRemoteIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.RemoteEmployeeId, true
+	return &o.EmployeeRemoteId, true
 }
 
-// SetRemoteEmployeeId sets field value
-func (o *TimeOffBalanceResponse) SetRemoteEmployeeId(v string) {
-	o.RemoteEmployeeId = v
+// SetEmployeeRemoteId sets field value
+func (o *TimeOffBalanceResponse) SetEmployeeRemoteId(v string) {
+	o.EmployeeRemoteId = v
 }
 
 // GetBalance returns the Balance field value
@@ -155,6 +161,58 @@ func (o *TimeOffBalanceResponse) SetUsed(v float32) {
 	o.Used.Set(&v)
 }
 
+// GetPolicyId returns the PolicyId field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *TimeOffBalanceResponse) GetPolicyId() string {
+	if o == nil || o.PolicyId.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.PolicyId.Get()
+}
+
+// GetPolicyIdOk returns a tuple with the PolicyId field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TimeOffBalanceResponse) GetPolicyIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.PolicyId.Get(), o.PolicyId.IsSet()
+}
+
+// SetPolicyId sets field value
+func (o *TimeOffBalanceResponse) SetPolicyId(v string) {
+	o.PolicyId.Set(&v)
+}
+
+// GetPolicyRemoteId returns the PolicyRemoteId field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *TimeOffBalanceResponse) GetPolicyRemoteId() string {
+	if o == nil || o.PolicyRemoteId.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.PolicyRemoteId.Get()
+}
+
+// GetPolicyRemoteIdOk returns a tuple with the PolicyRemoteId field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TimeOffBalanceResponse) GetPolicyRemoteIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.PolicyRemoteId.Get(), o.PolicyRemoteId.IsSet()
+}
+
+// SetPolicyRemoteId sets field value
+func (o *TimeOffBalanceResponse) SetPolicyRemoteId(v string) {
+	o.PolicyRemoteId.Set(&v)
+}
+
 // GetPolicyName returns the PolicyName field value
 // If the value is explicit nil, the zero value for string will be returned
 func (o *TimeOffBalanceResponse) GetPolicyName() string {
@@ -182,10 +240,10 @@ func (o *TimeOffBalanceResponse) SetPolicyName(v string) {
 }
 
 // GetPolicyType returns the PolicyType field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *TimeOffBalanceResponse) GetPolicyType() string {
+// If the value is explicit nil, the zero value for PolicyTypeResponse will be returned
+func (o *TimeOffBalanceResponse) GetPolicyType() PolicyTypeResponse {
 	if o == nil || o.PolicyType.Get() == nil {
-		var ret string
+		var ret PolicyTypeResponse
 		return ret
 	}
 
@@ -195,7 +253,7 @@ func (o *TimeOffBalanceResponse) GetPolicyType() string {
 // GetPolicyTypeOk returns a tuple with the PolicyType field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TimeOffBalanceResponse) GetPolicyTypeOk() (*string, bool) {
+func (o *TimeOffBalanceResponse) GetPolicyTypeOk() (*PolicyTypeResponse, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -203,7 +261,7 @@ func (o *TimeOffBalanceResponse) GetPolicyTypeOk() (*string, bool) {
 }
 
 // SetPolicyType sets field value
-func (o *TimeOffBalanceResponse) SetPolicyType(v string) {
+func (o *TimeOffBalanceResponse) SetPolicyType(v PolicyTypeResponse) {
 	o.PolicyType.Set(&v)
 }
 
@@ -265,13 +323,19 @@ func (o TimeOffBalanceResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["employee_id"] = o.EmployeeId
 	}
 	if true {
-		toSerialize["remote_employee_id"] = o.RemoteEmployeeId
+		toSerialize["employee_remote_id"] = o.EmployeeRemoteId
 	}
 	if true {
 		toSerialize["balance"] = o.Balance.Get()
 	}
 	if true {
 		toSerialize["used"] = o.Used.Get()
+	}
+	if true {
+		toSerialize["policy_id"] = o.PolicyId.Get()
+	}
+	if true {
+		toSerialize["policy_remote_id"] = o.PolicyRemoteId.Get()
 	}
 	if true {
 		toSerialize["policy_name"] = o.PolicyName.Get()

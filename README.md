@@ -354,6 +354,7 @@ Class | Method | HTTP request | Description
  - [PayslipResponseDeductions](docs/PayslipResponseDeductions.md)
  - [PayslipResponseEarnings](docs/PayslipResponseEarnings.md)
  - [PayslipResponseTaxes](docs/PayslipResponseTaxes.md)
+ - [PolicyTypeResponse](docs/PolicyTypeResponse.md)
  - [ProviderRequest](docs/ProviderRequest.md)
  - [ProviderResponse](docs/ProviderResponse.md)
  - [ScopesRequest](docs/ScopesRequest.md)

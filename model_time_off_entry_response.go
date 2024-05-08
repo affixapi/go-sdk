@@ -24,14 +24,20 @@ type TimeOffEntryResponse struct {
 	// the Affix-assigned id of the individual
 	EmployeeId string `json:"employee_id"`
 	// the remote system-assigned id of the individual
-	RemoteEmployeeId string `json:"remote_employee_id"`
+	EmployeeRemoteId string `json:"employee_remote_id"`
 	StartDate NullableString `json:"start_date"`
 	EndDate NullableString `json:"end_date"`
 	Amount float32 `json:"amount"`
 	Unit string `json:"unit"`
 	Status NullableString `json:"status"`
 	EmployeeNote NullableString `json:"employee_note"`
-	RequestType NullableString `json:"request_type"`
+	// The Affix-assigned id of the policy
+	PolicyId NullableString `json:"policy_id"`
+	// The remote system-assigned id of the policy
+	PolicyRemoteId NullableString `json:"policy_remote_id"`
+	// The name of the policy, as assigned by the remote system
+	PolicyName NullableString `json:"policy_name"`
+	PolicyType NullablePolicyTypeResponse `json:"policy_type"`
 	RemoteCreatedAt NullableString `json:"remote_created_at"`
 	RemoteModifiedAt NullableString `json:"remote_modified_at"`
 }
@@ -40,19 +46,22 @@ type TimeOffEntryResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTimeOffEntryResponse(id string, remoteId string, employeeId string, remoteEmployeeId string, startDate NullableString, endDate NullableString, amount float32, unit string, status NullableString, employeeNote NullableString, requestType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffEntryResponse {
+func NewTimeOffEntryResponse(id string, remoteId string, employeeId string, employeeRemoteId string, startDate NullableString, endDate NullableString, amount float32, unit string, status NullableString, employeeNote NullableString, policyId NullableString, policyRemoteId NullableString, policyName NullableString, policyType NullablePolicyTypeResponse, remoteCreatedAt NullableString, remoteModifiedAt NullableString) *TimeOffEntryResponse {
 	this := TimeOffEntryResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
 	this.EmployeeId = employeeId
-	this.RemoteEmployeeId = remoteEmployeeId
+	this.EmployeeRemoteId = employeeRemoteId
 	this.StartDate = startDate
 	this.EndDate = endDate
 	this.Amount = amount
 	this.Unit = unit
 	this.Status = status
 	this.EmployeeNote = employeeNote
-	this.RequestType = requestType
+	this.PolicyId = policyId
+	this.PolicyRemoteId = policyRemoteId
+	this.PolicyName = policyName
+	this.PolicyType = policyType
 	this.RemoteCreatedAt = remoteCreatedAt
 	this.RemoteModifiedAt = remoteModifiedAt
 	return &this
@@ -138,28 +147,28 @@ func (o *TimeOffEntryResponse) SetEmployeeId(v string) {
 	o.EmployeeId = v
 }
 
-// GetRemoteEmployeeId returns the RemoteEmployeeId field value
-func (o *TimeOffEntryResponse) GetRemoteEmployeeId() string {
+// GetEmployeeRemoteId returns the EmployeeRemoteId field value
+func (o *TimeOffEntryResponse) GetEmployeeRemoteId() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.RemoteEmployeeId
+	return o.EmployeeRemoteId
 }
 
-// GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field value
+// GetEmployeeRemoteIdOk returns a tuple with the EmployeeRemoteId field value
 // and a boolean to check if the value has been set.
-func (o *TimeOffEntryResponse) GetRemoteEmployeeIdOk() (*string, bool) {
+func (o *TimeOffEntryResponse) GetEmployeeRemoteIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.RemoteEmployeeId, true
+	return &o.EmployeeRemoteId, true
 }
 
-// SetRemoteEmployeeId sets field value
-func (o *TimeOffEntryResponse) SetRemoteEmployeeId(v string) {
-	o.RemoteEmployeeId = v
+// SetEmployeeRemoteId sets field value
+func (o *TimeOffEntryResponse) SetEmployeeRemoteId(v string) {
+	o.EmployeeRemoteId = v
 }
 
 // GetStartDate returns the StartDate field value
@@ -314,30 +323,108 @@ func (o *TimeOffEntryResponse) SetEmployeeNote(v string) {
 	o.EmployeeNote.Set(&v)
 }
 
-// GetRequestType returns the RequestType field value
+// GetPolicyId returns the PolicyId field value
 // If the value is explicit nil, the zero value for string will be returned
-func (o *TimeOffEntryResponse) GetRequestType() string {
-	if o == nil || o.RequestType.Get() == nil {
+func (o *TimeOffEntryResponse) GetPolicyId() string {
+	if o == nil || o.PolicyId.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.RequestType.Get()
+	return *o.PolicyId.Get()
 }
 
-// GetRequestTypeOk returns a tuple with the RequestType field value
+// GetPolicyIdOk returns a tuple with the PolicyId field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TimeOffEntryResponse) GetRequestTypeOk() (*string, bool) {
+func (o *TimeOffEntryResponse) GetPolicyIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.RequestType.Get(), o.RequestType.IsSet()
+	return o.PolicyId.Get(), o.PolicyId.IsSet()
 }
 
-// SetRequestType sets field value
-func (o *TimeOffEntryResponse) SetRequestType(v string) {
-	o.RequestType.Set(&v)
+// SetPolicyId sets field value
+func (o *TimeOffEntryResponse) SetPolicyId(v string) {
+	o.PolicyId.Set(&v)
+}
+
+// GetPolicyRemoteId returns the PolicyRemoteId field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *TimeOffEntryResponse) GetPolicyRemoteId() string {
+	if o == nil || o.PolicyRemoteId.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.PolicyRemoteId.Get()
+}
+
+// GetPolicyRemoteIdOk returns a tuple with the PolicyRemoteId field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TimeOffEntryResponse) GetPolicyRemoteIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.PolicyRemoteId.Get(), o.PolicyRemoteId.IsSet()
+}
+
+// SetPolicyRemoteId sets field value
+func (o *TimeOffEntryResponse) SetPolicyRemoteId(v string) {
+	o.PolicyRemoteId.Set(&v)
+}
+
+// GetPolicyName returns the PolicyName field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *TimeOffEntryResponse) GetPolicyName() string {
+	if o == nil || o.PolicyName.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.PolicyName.Get()
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TimeOffEntryResponse) GetPolicyNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.PolicyName.Get(), o.PolicyName.IsSet()
+}
+
+// SetPolicyName sets field value
+func (o *TimeOffEntryResponse) SetPolicyName(v string) {
+	o.PolicyName.Set(&v)
+}
+
+// GetPolicyType returns the PolicyType field value
+// If the value is explicit nil, the zero value for PolicyTypeResponse will be returned
+func (o *TimeOffEntryResponse) GetPolicyType() PolicyTypeResponse {
+	if o == nil || o.PolicyType.Get() == nil {
+		var ret PolicyTypeResponse
+		return ret
+	}
+
+	return *o.PolicyType.Get()
+}
+
+// GetPolicyTypeOk returns a tuple with the PolicyType field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TimeOffEntryResponse) GetPolicyTypeOk() (*PolicyTypeResponse, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.PolicyType.Get(), o.PolicyType.IsSet()
+}
+
+// SetPolicyType sets field value
+func (o *TimeOffEntryResponse) SetPolicyType(v PolicyTypeResponse) {
+	o.PolicyType.Set(&v)
 }
 
 // GetRemoteCreatedAt returns the RemoteCreatedAt field value
@@ -404,7 +491,7 @@ func (o TimeOffEntryResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["employee_id"] = o.EmployeeId
 	}
 	if true {
-		toSerialize["remote_employee_id"] = o.RemoteEmployeeId
+		toSerialize["employee_remote_id"] = o.EmployeeRemoteId
 	}
 	if true {
 		toSerialize["start_date"] = o.StartDate.Get()
@@ -425,7 +512,16 @@ func (o TimeOffEntryResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["employee_note"] = o.EmployeeNote.Get()
 	}
 	if true {
-		toSerialize["request_type"] = o.RequestType.Get()
+		toSerialize["policy_id"] = o.PolicyId.Get()
+	}
+	if true {
+		toSerialize["policy_remote_id"] = o.PolicyRemoteId.Get()
+	}
+	if true {
+		toSerialize["policy_name"] = o.PolicyName.Get()
+	}
+	if true {
+		toSerialize["policy_type"] = o.PolicyType.Get()
 	}
 	if true {
 		toSerialize["remote_created_at"] = o.RemoteCreatedAt.Get()

@@ -7,14 +7,17 @@ Name | Type | Description | Notes
 **Id** | **string** | The Affix-assigned id of the time off entry | 
 **RemoteId** | **string** | the remote system-assigned id of the time off entry | 
 **EmployeeId** | **string** | the Affix-assigned id of the individual | 
-**RemoteEmployeeId** | **string** | the remote system-assigned id of the individual | 
+**EmployeeRemoteId** | **string** | the remote system-assigned id of the individual | 
 **StartDate** | **NullableString** |  | 
 **EndDate** | **NullableString** |  | 
 **Amount** | **float32** |  | 
 **Unit** | **string** |  | 
 **Status** | **NullableString** |  | 
 **EmployeeNote** | **NullableString** |  | 
-**RequestType** | **NullableString** |  | 
+**PolicyId** | **NullableString** | The Affix-assigned id of the policy | 
+**PolicyRemoteId** | **NullableString** | The remote system-assigned id of the policy | 
+**PolicyName** | **NullableString** | The name of the policy, as assigned by the remote system | 
+**PolicyType** | [**NullablePolicyTypeResponse**](PolicyTypeResponse.md) |  | 
 **RemoteCreatedAt** | **NullableString** |  | 
 **RemoteModifiedAt** | **NullableString** |  | 
 
@@ -22,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewTimeOffEntryResponse
 
-`func NewTimeOffEntryResponse(id string, remoteId string, employeeId string, remoteEmployeeId string, startDate NullableString, endDate NullableString, amount float32, unit string, status NullableString, employeeNote NullableString, requestType NullableString, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffEntryResponse`
+`func NewTimeOffEntryResponse(id string, remoteId string, employeeId string, employeeRemoteId string, startDate NullableString, endDate NullableString, amount float32, unit string, status NullableString, employeeNote NullableString, policyId NullableString, policyRemoteId NullableString, policyName NullableString, policyType NullablePolicyTypeResponse, remoteCreatedAt NullableString, remoteModifiedAt NullableString, ) *TimeOffEntryResponse`
 
 NewTimeOffEntryResponse instantiates a new TimeOffEntryResponse object
 This constructor will assign default values to properties that have it defined,
@@ -97,24 +100,24 @@ and a boolean to check if the value has been set.
 SetEmployeeId sets EmployeeId field to given value.
 
 
-### GetRemoteEmployeeId
+### GetEmployeeRemoteId
 
-`func (o *TimeOffEntryResponse) GetRemoteEmployeeId() string`
+`func (o *TimeOffEntryResponse) GetEmployeeRemoteId() string`
 
-GetRemoteEmployeeId returns the RemoteEmployeeId field if non-nil, zero value otherwise.
+GetEmployeeRemoteId returns the EmployeeRemoteId field if non-nil, zero value otherwise.
 
-### GetRemoteEmployeeIdOk
+### GetEmployeeRemoteIdOk
 
-`func (o *TimeOffEntryResponse) GetRemoteEmployeeIdOk() (*string, bool)`
+`func (o *TimeOffEntryResponse) GetEmployeeRemoteIdOk() (*string, bool)`
 
-GetRemoteEmployeeIdOk returns a tuple with the RemoteEmployeeId field if it's non-nil, zero value otherwise
+GetEmployeeRemoteIdOk returns a tuple with the EmployeeRemoteId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRemoteEmployeeId
+### SetEmployeeRemoteId
 
-`func (o *TimeOffEntryResponse) SetRemoteEmployeeId(v string)`
+`func (o *TimeOffEntryResponse) SetEmployeeRemoteId(v string)`
 
-SetRemoteEmployeeId sets RemoteEmployeeId field to given value.
+SetEmployeeRemoteId sets EmployeeRemoteId field to given value.
 
 
 ### GetStartDate
@@ -277,36 +280,126 @@ SetEmployeeNote sets EmployeeNote field to given value.
 `func (o *TimeOffEntryResponse) UnsetEmployeeNote()`
 
 UnsetEmployeeNote ensures that no value is present for EmployeeNote, not even an explicit nil
-### GetRequestType
+### GetPolicyId
 
-`func (o *TimeOffEntryResponse) GetRequestType() string`
+`func (o *TimeOffEntryResponse) GetPolicyId() string`
 
-GetRequestType returns the RequestType field if non-nil, zero value otherwise.
+GetPolicyId returns the PolicyId field if non-nil, zero value otherwise.
 
-### GetRequestTypeOk
+### GetPolicyIdOk
 
-`func (o *TimeOffEntryResponse) GetRequestTypeOk() (*string, bool)`
+`func (o *TimeOffEntryResponse) GetPolicyIdOk() (*string, bool)`
 
-GetRequestTypeOk returns a tuple with the RequestType field if it's non-nil, zero value otherwise
+GetPolicyIdOk returns a tuple with the PolicyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRequestType
+### SetPolicyId
 
-`func (o *TimeOffEntryResponse) SetRequestType(v string)`
+`func (o *TimeOffEntryResponse) SetPolicyId(v string)`
 
-SetRequestType sets RequestType field to given value.
+SetPolicyId sets PolicyId field to given value.
 
 
-### SetRequestTypeNil
+### SetPolicyIdNil
 
-`func (o *TimeOffEntryResponse) SetRequestTypeNil(b bool)`
+`func (o *TimeOffEntryResponse) SetPolicyIdNil(b bool)`
 
- SetRequestTypeNil sets the value for RequestType to be an explicit nil
+ SetPolicyIdNil sets the value for PolicyId to be an explicit nil
 
-### UnsetRequestType
-`func (o *TimeOffEntryResponse) UnsetRequestType()`
+### UnsetPolicyId
+`func (o *TimeOffEntryResponse) UnsetPolicyId()`
 
-UnsetRequestType ensures that no value is present for RequestType, not even an explicit nil
+UnsetPolicyId ensures that no value is present for PolicyId, not even an explicit nil
+### GetPolicyRemoteId
+
+`func (o *TimeOffEntryResponse) GetPolicyRemoteId() string`
+
+GetPolicyRemoteId returns the PolicyRemoteId field if non-nil, zero value otherwise.
+
+### GetPolicyRemoteIdOk
+
+`func (o *TimeOffEntryResponse) GetPolicyRemoteIdOk() (*string, bool)`
+
+GetPolicyRemoteIdOk returns a tuple with the PolicyRemoteId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyRemoteId
+
+`func (o *TimeOffEntryResponse) SetPolicyRemoteId(v string)`
+
+SetPolicyRemoteId sets PolicyRemoteId field to given value.
+
+
+### SetPolicyRemoteIdNil
+
+`func (o *TimeOffEntryResponse) SetPolicyRemoteIdNil(b bool)`
+
+ SetPolicyRemoteIdNil sets the value for PolicyRemoteId to be an explicit nil
+
+### UnsetPolicyRemoteId
+`func (o *TimeOffEntryResponse) UnsetPolicyRemoteId()`
+
+UnsetPolicyRemoteId ensures that no value is present for PolicyRemoteId, not even an explicit nil
+### GetPolicyName
+
+`func (o *TimeOffEntryResponse) GetPolicyName() string`
+
+GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
+
+### GetPolicyNameOk
+
+`func (o *TimeOffEntryResponse) GetPolicyNameOk() (*string, bool)`
+
+GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyName
+
+`func (o *TimeOffEntryResponse) SetPolicyName(v string)`
+
+SetPolicyName sets PolicyName field to given value.
+
+
+### SetPolicyNameNil
+
+`func (o *TimeOffEntryResponse) SetPolicyNameNil(b bool)`
+
+ SetPolicyNameNil sets the value for PolicyName to be an explicit nil
+
+### UnsetPolicyName
+`func (o *TimeOffEntryResponse) UnsetPolicyName()`
+
+UnsetPolicyName ensures that no value is present for PolicyName, not even an explicit nil
+### GetPolicyType
+
+`func (o *TimeOffEntryResponse) GetPolicyType() PolicyTypeResponse`
+
+GetPolicyType returns the PolicyType field if non-nil, zero value otherwise.
+
+### GetPolicyTypeOk
+
+`func (o *TimeOffEntryResponse) GetPolicyTypeOk() (*PolicyTypeResponse, bool)`
+
+GetPolicyTypeOk returns a tuple with the PolicyType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyType
+
+`func (o *TimeOffEntryResponse) SetPolicyType(v PolicyTypeResponse)`
+
+SetPolicyType sets PolicyType field to given value.
+
+
+### SetPolicyTypeNil
+
+`func (o *TimeOffEntryResponse) SetPolicyTypeNil(b bool)`
+
+ SetPolicyTypeNil sets the value for PolicyType to be an explicit nil
+
+### UnsetPolicyType
+`func (o *TimeOffEntryResponse) UnsetPolicyType()`
+
+UnsetPolicyType ensures that no value is present for PolicyType, not even an explicit nil
 ### GetRemoteCreatedAt
 
 `func (o *TimeOffEntryResponse) GetRemoteCreatedAt() string`
