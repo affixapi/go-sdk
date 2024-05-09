@@ -51,7 +51,8 @@ type EmployeeResponse struct {
 	WorkLocation NullableLocationResponse `json:"work_location"`
 	Manager NullableEmployeeResponseManager `json:"manager"`
 	BankAccount NullableCreateEmployeeRequestBankAccount `json:"bank_account"`
-	Employments []EmploymentResponse `json:"employments"`
+	EmploymentHistory []EmploymentHistoryResponse `json:"employment_history"`
+	CompensationHistory []CompensationHistoryResponse `json:"compensation_history"`
 	CustomFields map[string]interface{} `json:"custom_fields"`
 	Groups []GroupResponse `json:"groups"`
 	Dependents []CreateEmployeeRequestDependents `json:"dependents"`
@@ -62,7 +63,7 @@ type EmployeeResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableEmploymentStatusResponse, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableEmployeeResponseManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse, dependents []CreateEmployeeRequestDependents, emergencyContacts []CreateEmployeeRequestEmergencyContacts) *EmployeeResponse {
+func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableEmploymentStatusResponse, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableEmployeeResponseManager, bankAccount NullableCreateEmployeeRequestBankAccount, employmentHistory []EmploymentHistoryResponse, compensationHistory []CompensationHistoryResponse, customFields map[string]interface{}, groups []GroupResponse, dependents []CreateEmployeeRequestDependents, emergencyContacts []CreateEmployeeRequestEmergencyContacts) *EmployeeResponse {
 	this := EmployeeResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
@@ -90,7 +91,8 @@ func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableStri
 	this.WorkLocation = workLocation
 	this.Manager = manager
 	this.BankAccount = bankAccount
-	this.Employments = employments
+	this.EmploymentHistory = employmentHistory
+	this.CompensationHistory = compensationHistory
 	this.CustomFields = customFields
 	this.Groups = groups
 	this.Dependents = dependents
@@ -774,30 +776,56 @@ func (o *EmployeeResponse) SetBankAccount(v CreateEmployeeRequestBankAccount) {
 	o.BankAccount.Set(&v)
 }
 
-// GetEmployments returns the Employments field value
-// If the value is explicit nil, the zero value for []EmploymentResponse will be returned
-func (o *EmployeeResponse) GetEmployments() []EmploymentResponse {
+// GetEmploymentHistory returns the EmploymentHistory field value
+// If the value is explicit nil, the zero value for []EmploymentHistoryResponse will be returned
+func (o *EmployeeResponse) GetEmploymentHistory() []EmploymentHistoryResponse {
 	if o == nil {
-		var ret []EmploymentResponse
+		var ret []EmploymentHistoryResponse
 		return ret
 	}
 
-	return o.Employments
+	return o.EmploymentHistory
 }
 
-// GetEmploymentsOk returns a tuple with the Employments field value
+// GetEmploymentHistoryOk returns a tuple with the EmploymentHistory field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmployeeResponse) GetEmploymentsOk() (*[]EmploymentResponse, bool) {
-	if o == nil || o.Employments == nil {
+func (o *EmployeeResponse) GetEmploymentHistoryOk() (*[]EmploymentHistoryResponse, bool) {
+	if o == nil || o.EmploymentHistory == nil {
 		return nil, false
 	}
-	return &o.Employments, true
+	return &o.EmploymentHistory, true
 }
 
-// SetEmployments sets field value
-func (o *EmployeeResponse) SetEmployments(v []EmploymentResponse) {
-	o.Employments = v
+// SetEmploymentHistory sets field value
+func (o *EmployeeResponse) SetEmploymentHistory(v []EmploymentHistoryResponse) {
+	o.EmploymentHistory = v
+}
+
+// GetCompensationHistory returns the CompensationHistory field value
+// If the value is explicit nil, the zero value for []CompensationHistoryResponse will be returned
+func (o *EmployeeResponse) GetCompensationHistory() []CompensationHistoryResponse {
+	if o == nil {
+		var ret []CompensationHistoryResponse
+		return ret
+	}
+
+	return o.CompensationHistory
+}
+
+// GetCompensationHistoryOk returns a tuple with the CompensationHistory field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmployeeResponse) GetCompensationHistoryOk() (*[]CompensationHistoryResponse, bool) {
+	if o == nil || o.CompensationHistory == nil {
+		return nil, false
+	}
+	return &o.CompensationHistory, true
+}
+
+// SetCompensationHistory sets field value
+func (o *EmployeeResponse) SetCompensationHistory(v []CompensationHistoryResponse) {
+	o.CompensationHistory = v
 }
 
 // GetCustomFields returns the CustomFields field value
@@ -984,8 +1012,11 @@ func (o EmployeeResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["bank_account"] = o.BankAccount.Get()
 	}
-	if o.Employments != nil {
-		toSerialize["employments"] = o.Employments
+	if o.EmploymentHistory != nil {
+		toSerialize["employment_history"] = o.EmploymentHistory
+	}
+	if o.CompensationHistory != nil {
+		toSerialize["compensation_history"] = o.CompensationHistory
 	}
 	if o.CustomFields != nil {
 		toSerialize["custom_fields"] = o.CustomFields

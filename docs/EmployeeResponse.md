@@ -30,7 +30,8 @@ Name | Type | Description | Notes
 **WorkLocation** | [**NullableLocationResponse**](LocationResponse.md) |  | 
 **Manager** | [**NullableEmployeeResponseManager**](EmployeeResponseManager.md) |  | 
 **BankAccount** | [**NullableCreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  | 
-**Employments** | [**[]EmploymentResponse**](EmploymentResponse.md) |  | 
+**EmploymentHistory** | [**[]EmploymentHistoryResponse**](EmploymentHistoryResponse.md) |  | 
+**CompensationHistory** | [**[]CompensationHistoryResponse**](CompensationHistoryResponse.md) |  | 
 **CustomFields** | **map[string]interface{}** |  | 
 **Groups** | [**[]GroupResponse**](GroupResponse.md) |  | 
 **Dependents** | [**[]CreateEmployeeRequestDependents**](CreateEmployeeRequestDependents.md) |  | 
@@ -40,7 +41,7 @@ Name | Type | Description | Notes
 
 ### NewEmployeeResponse
 
-`func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableEmploymentStatusResponse, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableEmployeeResponseManager, bankAccount NullableCreateEmployeeRequestBankAccount, employments []EmploymentResponse, customFields map[string]interface{}, groups []GroupResponse, dependents []CreateEmployeeRequestDependents, emergencyContacts []CreateEmployeeRequestEmergencyContacts, ) *EmployeeResponse`
+`func NewEmployeeResponse(id string, remoteId string, employeeNumber NullableString, firstName string, lastName string, displayFullName NullableString, nationality NullableString, jobTitle NullableString, workEmail NullableString, personalEmail NullableString, mobilePhoneNumber NullableString, taxId NullableString, gender NullableString, ethnicity NullableString, maritalStatus NullableString, dateOfBirth NullableString, employmentStatus NullableEmploymentStatusResponse, employmentType NullableString, startDate NullableString, remoteCreatedAt NullableString, terminationDate NullableString, avatar NullableString, homeLocation NullableAddressResponse, workLocation NullableLocationResponse, manager NullableEmployeeResponseManager, bankAccount NullableCreateEmployeeRequestBankAccount, employmentHistory []EmploymentHistoryResponse, compensationHistory []CompensationHistoryResponse, customFields map[string]interface{}, groups []GroupResponse, dependents []CreateEmployeeRequestDependents, emergencyContacts []CreateEmployeeRequestEmergencyContacts, ) *EmployeeResponse`
 
 NewEmployeeResponse instantiates a new EmployeeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -795,36 +796,66 @@ SetBankAccount sets BankAccount field to given value.
 `func (o *EmployeeResponse) UnsetBankAccount()`
 
 UnsetBankAccount ensures that no value is present for BankAccount, not even an explicit nil
-### GetEmployments
+### GetEmploymentHistory
 
-`func (o *EmployeeResponse) GetEmployments() []EmploymentResponse`
+`func (o *EmployeeResponse) GetEmploymentHistory() []EmploymentHistoryResponse`
 
-GetEmployments returns the Employments field if non-nil, zero value otherwise.
+GetEmploymentHistory returns the EmploymentHistory field if non-nil, zero value otherwise.
 
-### GetEmploymentsOk
+### GetEmploymentHistoryOk
 
-`func (o *EmployeeResponse) GetEmploymentsOk() (*[]EmploymentResponse, bool)`
+`func (o *EmployeeResponse) GetEmploymentHistoryOk() (*[]EmploymentHistoryResponse, bool)`
 
-GetEmploymentsOk returns a tuple with the Employments field if it's non-nil, zero value otherwise
+GetEmploymentHistoryOk returns a tuple with the EmploymentHistory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEmployments
+### SetEmploymentHistory
 
-`func (o *EmployeeResponse) SetEmployments(v []EmploymentResponse)`
+`func (o *EmployeeResponse) SetEmploymentHistory(v []EmploymentHistoryResponse)`
 
-SetEmployments sets Employments field to given value.
+SetEmploymentHistory sets EmploymentHistory field to given value.
 
 
-### SetEmploymentsNil
+### SetEmploymentHistoryNil
 
-`func (o *EmployeeResponse) SetEmploymentsNil(b bool)`
+`func (o *EmployeeResponse) SetEmploymentHistoryNil(b bool)`
 
- SetEmploymentsNil sets the value for Employments to be an explicit nil
+ SetEmploymentHistoryNil sets the value for EmploymentHistory to be an explicit nil
 
-### UnsetEmployments
-`func (o *EmployeeResponse) UnsetEmployments()`
+### UnsetEmploymentHistory
+`func (o *EmployeeResponse) UnsetEmploymentHistory()`
 
-UnsetEmployments ensures that no value is present for Employments, not even an explicit nil
+UnsetEmploymentHistory ensures that no value is present for EmploymentHistory, not even an explicit nil
+### GetCompensationHistory
+
+`func (o *EmployeeResponse) GetCompensationHistory() []CompensationHistoryResponse`
+
+GetCompensationHistory returns the CompensationHistory field if non-nil, zero value otherwise.
+
+### GetCompensationHistoryOk
+
+`func (o *EmployeeResponse) GetCompensationHistoryOk() (*[]CompensationHistoryResponse, bool)`
+
+GetCompensationHistoryOk returns a tuple with the CompensationHistory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompensationHistory
+
+`func (o *EmployeeResponse) SetCompensationHistory(v []CompensationHistoryResponse)`
+
+SetCompensationHistory sets CompensationHistory field to given value.
+
+
+### SetCompensationHistoryNil
+
+`func (o *EmployeeResponse) SetCompensationHistoryNil(b bool)`
+
+ SetCompensationHistoryNil sets the value for CompensationHistory to be an explicit nil
+
+### UnsetCompensationHistory
+`func (o *EmployeeResponse) UnsetCompensationHistory()`
+
+UnsetCompensationHistory ensures that no value is present for CompensationHistory, not even an explicit nil
 ### GetCustomFields
 
 `func (o *EmployeeResponse) GetCustomFields() map[string]interface{}`

@@ -13,285 +13,103 @@ package openapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// EmploymentNoNullEnumRequest struct for EmploymentNoNullEnumRequest
-type EmploymentNoNullEnumRequest struct {
-	JobTitle NullableString `json:"job_title"`
-	PayRate NullableFloat32 `json:"pay_rate"`
-	PayPeriod NullableString `json:"pay_period"`
-	PayFrequency NullableString `json:"pay_frequency"`
-	EmploymentType NullableString `json:"employment_type"`
-	Currency NullableCurrencyNotNullRequest `json:"currency"`
-	EffectiveDate NullableString `json:"effective_date"`
+// CurrencyRequest the model 'CurrencyRequest'
+type CurrencyRequest string
+
+// List of CurrencyRequest
+const (
+	NULL CurrencyRequest = "null"
+	USD CurrencyRequest = "usd"
+	GBP CurrencyRequest = "gbp"
+	EUR CurrencyRequest = "eur"
+)
+
+var allowedCurrencyRequestEnumValues = []CurrencyRequest{
+	"null",
+	"usd",
+	"gbp",
+	"eur",
 }
 
-// NewEmploymentNoNullEnumRequest instantiates a new EmploymentNoNullEnumRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewEmploymentNoNullEnumRequest(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency NullableCurrencyNotNullRequest, effectiveDate NullableString) *EmploymentNoNullEnumRequest {
-	this := EmploymentNoNullEnumRequest{}
-	this.JobTitle = jobTitle
-	this.PayRate = payRate
-	this.PayPeriod = payPeriod
-	this.PayFrequency = payFrequency
-	this.EmploymentType = employmentType
-	this.Currency = currency
-	this.EffectiveDate = effectiveDate
-	return &this
-}
-
-// NewEmploymentNoNullEnumRequestWithDefaults instantiates a new EmploymentNoNullEnumRequest object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewEmploymentNoNullEnumRequestWithDefaults() *EmploymentNoNullEnumRequest {
-	this := EmploymentNoNullEnumRequest{}
-	return &this
-}
-
-// GetJobTitle returns the JobTitle field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmploymentNoNullEnumRequest) GetJobTitle() string {
-	if o == nil || o.JobTitle.Get() == nil {
-		var ret string
-		return ret
+func (v *CurrencyRequest) UnmarshalJSON(src []byte) error {
+	var value string
+	err := json.Unmarshal(src, &value)
+	if err != nil {
+		return err
+	}
+	enumTypeValue := CurrencyRequest(value)
+	for _, existing := range allowedCurrencyRequestEnumValues {
+		if existing == enumTypeValue {
+			*v = enumTypeValue
+			return nil
+		}
 	}
 
-	return *o.JobTitle.Get()
+	return fmt.Errorf("%+v is not a valid CurrencyRequest", value)
 }
 
-// GetJobTitleOk returns a tuple with the JobTitle field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentNoNullEnumRequest) GetJobTitleOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
+// NewCurrencyRequestFromValue returns a pointer to a valid CurrencyRequest
+// for the value passed as argument, or an error if the value passed is not allowed by the enum
+func NewCurrencyRequestFromValue(v string) (*CurrencyRequest, error) {
+	ev := CurrencyRequest(v)
+	if ev.IsValid() {
+		return &ev, nil
+	} else {
+		return nil, fmt.Errorf("invalid value '%v' for CurrencyRequest: valid values are %v", v, allowedCurrencyRequestEnumValues)
 	}
-	return o.JobTitle.Get(), o.JobTitle.IsSet()
 }
 
-// SetJobTitle sets field value
-func (o *EmploymentNoNullEnumRequest) SetJobTitle(v string) {
-	o.JobTitle.Set(&v)
-}
-
-// GetPayRate returns the PayRate field value
-// If the value is explicit nil, the zero value for float32 will be returned
-func (o *EmploymentNoNullEnumRequest) GetPayRate() float32 {
-	if o == nil || o.PayRate.Get() == nil {
-		var ret float32
-		return ret
+// IsValid return true if the value is valid for the enum, false otherwise
+func (v CurrencyRequest) IsValid() bool {
+	for _, existing := range allowedCurrencyRequestEnumValues {
+		if existing == v {
+			return true
+		}
 	}
-
-	return *o.PayRate.Get()
+	return false
 }
 
-// GetPayRateOk returns a tuple with the PayRate field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentNoNullEnumRequest) GetPayRateOk() (*float32, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.PayRate.Get(), o.PayRate.IsSet()
+// Ptr returns reference to CurrencyRequest value
+func (v CurrencyRequest) Ptr() *CurrencyRequest {
+	return &v
 }
 
-// SetPayRate sets field value
-func (o *EmploymentNoNullEnumRequest) SetPayRate(v float32) {
-	o.PayRate.Set(&v)
-}
-
-// GetPayPeriod returns the PayPeriod field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmploymentNoNullEnumRequest) GetPayPeriod() string {
-	if o == nil || o.PayPeriod.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.PayPeriod.Get()
-}
-
-// GetPayPeriodOk returns a tuple with the PayPeriod field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentNoNullEnumRequest) GetPayPeriodOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.PayPeriod.Get(), o.PayPeriod.IsSet()
-}
-
-// SetPayPeriod sets field value
-func (o *EmploymentNoNullEnumRequest) SetPayPeriod(v string) {
-	o.PayPeriod.Set(&v)
-}
-
-// GetPayFrequency returns the PayFrequency field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmploymentNoNullEnumRequest) GetPayFrequency() string {
-	if o == nil || o.PayFrequency.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.PayFrequency.Get()
-}
-
-// GetPayFrequencyOk returns a tuple with the PayFrequency field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentNoNullEnumRequest) GetPayFrequencyOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.PayFrequency.Get(), o.PayFrequency.IsSet()
-}
-
-// SetPayFrequency sets field value
-func (o *EmploymentNoNullEnumRequest) SetPayFrequency(v string) {
-	o.PayFrequency.Set(&v)
-}
-
-// GetEmploymentType returns the EmploymentType field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmploymentNoNullEnumRequest) GetEmploymentType() string {
-	if o == nil || o.EmploymentType.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.EmploymentType.Get()
-}
-
-// GetEmploymentTypeOk returns a tuple with the EmploymentType field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentNoNullEnumRequest) GetEmploymentTypeOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.EmploymentType.Get(), o.EmploymentType.IsSet()
-}
-
-// SetEmploymentType sets field value
-func (o *EmploymentNoNullEnumRequest) SetEmploymentType(v string) {
-	o.EmploymentType.Set(&v)
-}
-
-// GetCurrency returns the Currency field value
-// If the value is explicit nil, the zero value for CurrencyNotNullRequest will be returned
-func (o *EmploymentNoNullEnumRequest) GetCurrency() CurrencyNotNullRequest {
-	if o == nil || o.Currency.Get() == nil {
-		var ret CurrencyNotNullRequest
-		return ret
-	}
-
-	return *o.Currency.Get()
-}
-
-// GetCurrencyOk returns a tuple with the Currency field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentNoNullEnumRequest) GetCurrencyOk() (*CurrencyNotNullRequest, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.Currency.Get(), o.Currency.IsSet()
-}
-
-// SetCurrency sets field value
-func (o *EmploymentNoNullEnumRequest) SetCurrency(v CurrencyNotNullRequest) {
-	o.Currency.Set(&v)
-}
-
-// GetEffectiveDate returns the EffectiveDate field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmploymentNoNullEnumRequest) GetEffectiveDate() string {
-	if o == nil || o.EffectiveDate.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.EffectiveDate.Get()
-}
-
-// GetEffectiveDateOk returns a tuple with the EffectiveDate field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentNoNullEnumRequest) GetEffectiveDateOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.EffectiveDate.Get(), o.EffectiveDate.IsSet()
-}
-
-// SetEffectiveDate sets field value
-func (o *EmploymentNoNullEnumRequest) SetEffectiveDate(v string) {
-	o.EffectiveDate.Set(&v)
-}
-
-func (o EmploymentNoNullEnumRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["job_title"] = o.JobTitle.Get()
-	}
-	if true {
-		toSerialize["pay_rate"] = o.PayRate.Get()
-	}
-	if true {
-		toSerialize["pay_period"] = o.PayPeriod.Get()
-	}
-	if true {
-		toSerialize["pay_frequency"] = o.PayFrequency.Get()
-	}
-	if true {
-		toSerialize["employment_type"] = o.EmploymentType.Get()
-	}
-	if true {
-		toSerialize["currency"] = o.Currency.Get()
-	}
-	if true {
-		toSerialize["effective_date"] = o.EffectiveDate.Get()
-	}
-	return json.Marshal(toSerialize)
-}
-
-type NullableEmploymentNoNullEnumRequest struct {
-	value *EmploymentNoNullEnumRequest
+type NullableCurrencyRequest struct {
+	value *CurrencyRequest
 	isSet bool
 }
 
-func (v NullableEmploymentNoNullEnumRequest) Get() *EmploymentNoNullEnumRequest {
+func (v NullableCurrencyRequest) Get() *CurrencyRequest {
 	return v.value
 }
 
-func (v *NullableEmploymentNoNullEnumRequest) Set(val *EmploymentNoNullEnumRequest) {
+func (v *NullableCurrencyRequest) Set(val *CurrencyRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableEmploymentNoNullEnumRequest) IsSet() bool {
+func (v NullableCurrencyRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableEmploymentNoNullEnumRequest) Unset() {
+func (v *NullableCurrencyRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableEmploymentNoNullEnumRequest(val *EmploymentNoNullEnumRequest) *NullableEmploymentNoNullEnumRequest {
-	return &NullableEmploymentNoNullEnumRequest{value: val, isSet: true}
+func NewNullableCurrencyRequest(val *CurrencyRequest) *NullableCurrencyRequest {
+	return &NullableCurrencyRequest{value: val, isSet: true}
 }
 
-func (v NullableEmploymentNoNullEnumRequest) MarshalJSON() ([]byte, error) {
+func (v NullableCurrencyRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableEmploymentNoNullEnumRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableCurrencyRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

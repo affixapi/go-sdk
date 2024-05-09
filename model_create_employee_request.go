@@ -45,7 +45,8 @@ type CreateEmployeeRequest struct {
 	WorkLocation NullableLocationNoNonNullRequest `json:"work_location,omitempty"`
 	Manager NullableCreateEmployeeRequestManager `json:"manager,omitempty"`
 	BankAccount NullableCreateEmployeeRequestBankAccount `json:"bank_account,omitempty"`
-	Employments []EmploymentNoNullEnumRequest `json:"employments,omitempty"`
+	EmploymentHistory []EmploymentHistoryNoNonNullRequest `json:"employment_history,omitempty"`
+	CompensationHistory []CompensationHistoryNoNonNullRequest `json:"compensation_history,omitempty"`
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Groups []GroupNoNullEnumRequest `json:"groups,omitempty"`
 	Dependents []CreateEmployeeRequestDependents `json:"dependents,omitempty"`
@@ -1001,37 +1002,70 @@ func (o *CreateEmployeeRequest) UnsetBankAccount() {
 	o.BankAccount.Unset()
 }
 
-// GetEmployments returns the Employments field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateEmployeeRequest) GetEmployments() []EmploymentNoNullEnumRequest {
+// GetEmploymentHistory returns the EmploymentHistory field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateEmployeeRequest) GetEmploymentHistory() []EmploymentHistoryNoNonNullRequest {
 	if o == nil  {
-		var ret []EmploymentNoNullEnumRequest
+		var ret []EmploymentHistoryNoNonNullRequest
 		return ret
 	}
-	return o.Employments
+	return o.EmploymentHistory
 }
 
-// GetEmploymentsOk returns a tuple with the Employments field value if set, nil otherwise
+// GetEmploymentHistoryOk returns a tuple with the EmploymentHistory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateEmployeeRequest) GetEmploymentsOk() (*[]EmploymentNoNullEnumRequest, bool) {
-	if o == nil || o.Employments == nil {
+func (o *CreateEmployeeRequest) GetEmploymentHistoryOk() (*[]EmploymentHistoryNoNonNullRequest, bool) {
+	if o == nil || o.EmploymentHistory == nil {
 		return nil, false
 	}
-	return &o.Employments, true
+	return &o.EmploymentHistory, true
 }
 
-// HasEmployments returns a boolean if a field has been set.
-func (o *CreateEmployeeRequest) HasEmployments() bool {
-	if o != nil && o.Employments != nil {
+// HasEmploymentHistory returns a boolean if a field has been set.
+func (o *CreateEmployeeRequest) HasEmploymentHistory() bool {
+	if o != nil && o.EmploymentHistory != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetEmployments gets a reference to the given []EmploymentNoNullEnumRequest and assigns it to the Employments field.
-func (o *CreateEmployeeRequest) SetEmployments(v []EmploymentNoNullEnumRequest) {
-	o.Employments = v
+// SetEmploymentHistory gets a reference to the given []EmploymentHistoryNoNonNullRequest and assigns it to the EmploymentHistory field.
+func (o *CreateEmployeeRequest) SetEmploymentHistory(v []EmploymentHistoryNoNonNullRequest) {
+	o.EmploymentHistory = v
+}
+
+// GetCompensationHistory returns the CompensationHistory field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateEmployeeRequest) GetCompensationHistory() []CompensationHistoryNoNonNullRequest {
+	if o == nil  {
+		var ret []CompensationHistoryNoNonNullRequest
+		return ret
+	}
+	return o.CompensationHistory
+}
+
+// GetCompensationHistoryOk returns a tuple with the CompensationHistory field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateEmployeeRequest) GetCompensationHistoryOk() (*[]CompensationHistoryNoNonNullRequest, bool) {
+	if o == nil || o.CompensationHistory == nil {
+		return nil, false
+	}
+	return &o.CompensationHistory, true
+}
+
+// HasCompensationHistory returns a boolean if a field has been set.
+func (o *CreateEmployeeRequest) HasCompensationHistory() bool {
+	if o != nil && o.CompensationHistory != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompensationHistory gets a reference to the given []CompensationHistoryNoNonNullRequest and assigns it to the CompensationHistory field.
+func (o *CreateEmployeeRequest) SetCompensationHistory(v []CompensationHistoryNoNonNullRequest) {
+	o.CompensationHistory = v
 }
 
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1237,8 +1271,11 @@ func (o CreateEmployeeRequest) MarshalJSON() ([]byte, error) {
 	if o.BankAccount.IsSet() {
 		toSerialize["bank_account"] = o.BankAccount.Get()
 	}
-	if o.Employments != nil {
-		toSerialize["employments"] = o.Employments
+	if o.EmploymentHistory != nil {
+		toSerialize["employment_history"] = o.EmploymentHistory
+	}
+	if o.CompensationHistory != nil {
+		toSerialize["compensation_history"] = o.CompensationHistory
 	}
 	if o.CustomFields != nil {
 		toSerialize["custom_fields"] = o.CustomFields

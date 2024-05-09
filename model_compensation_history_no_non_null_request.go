@@ -15,24 +15,22 @@ import (
 	"encoding/json"
 )
 
-// EmploymentResponse struct for EmploymentResponse
-type EmploymentResponse struct {
-	JobTitle NullableString `json:"job_title"`
-	PayRate NullableFloat32 `json:"pay_rate"`
-	PayPeriod NullableString `json:"pay_period"`
-	PayFrequency NullableString `json:"pay_frequency"`
-	EmploymentType NullableString `json:"employment_type"`
-	Currency NullableCurrencyResponse `json:"currency"`
-	EffectiveDate NullableString `json:"effective_date"`
+// CompensationHistoryNoNonNullRequest struct for CompensationHistoryNoNonNullRequest
+type CompensationHistoryNoNonNullRequest struct {
+	PayRate float32 `json:"pay_rate"`
+	PayPeriod string `json:"pay_period"`
+	PayFrequency string `json:"pay_frequency"`
+	EmploymentType string `json:"employment_type"`
+	Currency NullableCurrencyRequest `json:"currency"`
+	EffectiveDate string `json:"effective_date"`
 }
 
-// NewEmploymentResponse instantiates a new EmploymentResponse object
+// NewCompensationHistoryNoNonNullRequest instantiates a new CompensationHistoryNoNonNullRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmploymentResponse(jobTitle NullableString, payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency NullableCurrencyResponse, effectiveDate NullableString) *EmploymentResponse {
-	this := EmploymentResponse{}
-	this.JobTitle = jobTitle
+func NewCompensationHistoryNoNonNullRequest(payRate float32, payPeriod string, payFrequency string, employmentType string, currency NullableCurrencyRequest, effectiveDate string) *CompensationHistoryNoNonNullRequest {
+	this := CompensationHistoryNoNonNullRequest{}
 	this.PayRate = payRate
 	this.PayPeriod = payPeriod
 	this.PayFrequency = payFrequency
@@ -42,149 +40,115 @@ func NewEmploymentResponse(jobTitle NullableString, payRate NullableFloat32, pay
 	return &this
 }
 
-// NewEmploymentResponseWithDefaults instantiates a new EmploymentResponse object
+// NewCompensationHistoryNoNonNullRequestWithDefaults instantiates a new CompensationHistoryNoNonNullRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewEmploymentResponseWithDefaults() *EmploymentResponse {
-	this := EmploymentResponse{}
+func NewCompensationHistoryNoNonNullRequestWithDefaults() *CompensationHistoryNoNonNullRequest {
+	this := CompensationHistoryNoNonNullRequest{}
 	return &this
 }
 
-// GetJobTitle returns the JobTitle field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmploymentResponse) GetJobTitle() string {
-	if o == nil || o.JobTitle.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.JobTitle.Get()
-}
-
-// GetJobTitleOk returns a tuple with the JobTitle field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentResponse) GetJobTitleOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.JobTitle.Get(), o.JobTitle.IsSet()
-}
-
-// SetJobTitle sets field value
-func (o *EmploymentResponse) SetJobTitle(v string) {
-	o.JobTitle.Set(&v)
-}
-
 // GetPayRate returns the PayRate field value
-// If the value is explicit nil, the zero value for float32 will be returned
-func (o *EmploymentResponse) GetPayRate() float32 {
-	if o == nil || o.PayRate.Get() == nil {
+func (o *CompensationHistoryNoNonNullRequest) GetPayRate() float32 {
+	if o == nil {
 		var ret float32
 		return ret
 	}
 
-	return *o.PayRate.Get()
+	return o.PayRate
 }
 
 // GetPayRateOk returns a tuple with the PayRate field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentResponse) GetPayRateOk() (*float32, bool) {
+func (o *CompensationHistoryNoNonNullRequest) GetPayRateOk() (*float32, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.PayRate.Get(), o.PayRate.IsSet()
+	return &o.PayRate, true
 }
 
 // SetPayRate sets field value
-func (o *EmploymentResponse) SetPayRate(v float32) {
-	o.PayRate.Set(&v)
+func (o *CompensationHistoryNoNonNullRequest) SetPayRate(v float32) {
+	o.PayRate = v
 }
 
 // GetPayPeriod returns the PayPeriod field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmploymentResponse) GetPayPeriod() string {
-	if o == nil || o.PayPeriod.Get() == nil {
+func (o *CompensationHistoryNoNonNullRequest) GetPayPeriod() string {
+	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.PayPeriod.Get()
+	return o.PayPeriod
 }
 
 // GetPayPeriodOk returns a tuple with the PayPeriod field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentResponse) GetPayPeriodOk() (*string, bool) {
+func (o *CompensationHistoryNoNonNullRequest) GetPayPeriodOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.PayPeriod.Get(), o.PayPeriod.IsSet()
+	return &o.PayPeriod, true
 }
 
 // SetPayPeriod sets field value
-func (o *EmploymentResponse) SetPayPeriod(v string) {
-	o.PayPeriod.Set(&v)
+func (o *CompensationHistoryNoNonNullRequest) SetPayPeriod(v string) {
+	o.PayPeriod = v
 }
 
 // GetPayFrequency returns the PayFrequency field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmploymentResponse) GetPayFrequency() string {
-	if o == nil || o.PayFrequency.Get() == nil {
+func (o *CompensationHistoryNoNonNullRequest) GetPayFrequency() string {
+	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.PayFrequency.Get()
+	return o.PayFrequency
 }
 
 // GetPayFrequencyOk returns a tuple with the PayFrequency field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentResponse) GetPayFrequencyOk() (*string, bool) {
+func (o *CompensationHistoryNoNonNullRequest) GetPayFrequencyOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.PayFrequency.Get(), o.PayFrequency.IsSet()
+	return &o.PayFrequency, true
 }
 
 // SetPayFrequency sets field value
-func (o *EmploymentResponse) SetPayFrequency(v string) {
-	o.PayFrequency.Set(&v)
+func (o *CompensationHistoryNoNonNullRequest) SetPayFrequency(v string) {
+	o.PayFrequency = v
 }
 
 // GetEmploymentType returns the EmploymentType field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmploymentResponse) GetEmploymentType() string {
-	if o == nil || o.EmploymentType.Get() == nil {
+func (o *CompensationHistoryNoNonNullRequest) GetEmploymentType() string {
+	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.EmploymentType.Get()
+	return o.EmploymentType
 }
 
 // GetEmploymentTypeOk returns a tuple with the EmploymentType field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentResponse) GetEmploymentTypeOk() (*string, bool) {
+func (o *CompensationHistoryNoNonNullRequest) GetEmploymentTypeOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.EmploymentType.Get(), o.EmploymentType.IsSet()
+	return &o.EmploymentType, true
 }
 
 // SetEmploymentType sets field value
-func (o *EmploymentResponse) SetEmploymentType(v string) {
-	o.EmploymentType.Set(&v)
+func (o *CompensationHistoryNoNonNullRequest) SetEmploymentType(v string) {
+	o.EmploymentType = v
 }
 
 // GetCurrency returns the Currency field value
-// If the value is explicit nil, the zero value for CurrencyResponse will be returned
-func (o *EmploymentResponse) GetCurrency() CurrencyResponse {
+// If the value is explicit nil, the zero value for CurrencyRequest will be returned
+func (o *CompensationHistoryNoNonNullRequest) GetCurrency() CurrencyRequest {
 	if o == nil || o.Currency.Get() == nil {
-		var ret CurrencyResponse
+		var ret CurrencyRequest
 		return ret
 	}
 
@@ -194,7 +158,7 @@ func (o *EmploymentResponse) GetCurrency() CurrencyResponse {
 // GetCurrencyOk returns a tuple with the Currency field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentResponse) GetCurrencyOk() (*CurrencyResponse, bool) {
+func (o *CompensationHistoryNoNonNullRequest) GetCurrencyOk() (*CurrencyRequest, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -202,94 +166,89 @@ func (o *EmploymentResponse) GetCurrencyOk() (*CurrencyResponse, bool) {
 }
 
 // SetCurrency sets field value
-func (o *EmploymentResponse) SetCurrency(v CurrencyResponse) {
+func (o *CompensationHistoryNoNonNullRequest) SetCurrency(v CurrencyRequest) {
 	o.Currency.Set(&v)
 }
 
 // GetEffectiveDate returns the EffectiveDate field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EmploymentResponse) GetEffectiveDate() string {
-	if o == nil || o.EffectiveDate.Get() == nil {
+func (o *CompensationHistoryNoNonNullRequest) GetEffectiveDate() string {
+	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.EffectiveDate.Get()
+	return o.EffectiveDate
 }
 
 // GetEffectiveDateOk returns a tuple with the EffectiveDate field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EmploymentResponse) GetEffectiveDateOk() (*string, bool) {
+func (o *CompensationHistoryNoNonNullRequest) GetEffectiveDateOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return o.EffectiveDate.Get(), o.EffectiveDate.IsSet()
+	return &o.EffectiveDate, true
 }
 
 // SetEffectiveDate sets field value
-func (o *EmploymentResponse) SetEffectiveDate(v string) {
-	o.EffectiveDate.Set(&v)
+func (o *CompensationHistoryNoNonNullRequest) SetEffectiveDate(v string) {
+	o.EffectiveDate = v
 }
 
-func (o EmploymentResponse) MarshalJSON() ([]byte, error) {
+func (o CompensationHistoryNoNonNullRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["job_title"] = o.JobTitle.Get()
+		toSerialize["pay_rate"] = o.PayRate
 	}
 	if true {
-		toSerialize["pay_rate"] = o.PayRate.Get()
+		toSerialize["pay_period"] = o.PayPeriod
 	}
 	if true {
-		toSerialize["pay_period"] = o.PayPeriod.Get()
+		toSerialize["pay_frequency"] = o.PayFrequency
 	}
 	if true {
-		toSerialize["pay_frequency"] = o.PayFrequency.Get()
-	}
-	if true {
-		toSerialize["employment_type"] = o.EmploymentType.Get()
+		toSerialize["employment_type"] = o.EmploymentType
 	}
 	if true {
 		toSerialize["currency"] = o.Currency.Get()
 	}
 	if true {
-		toSerialize["effective_date"] = o.EffectiveDate.Get()
+		toSerialize["effective_date"] = o.EffectiveDate
 	}
 	return json.Marshal(toSerialize)
 }
 
-type NullableEmploymentResponse struct {
-	value *EmploymentResponse
+type NullableCompensationHistoryNoNonNullRequest struct {
+	value *CompensationHistoryNoNonNullRequest
 	isSet bool
 }
 
-func (v NullableEmploymentResponse) Get() *EmploymentResponse {
+func (v NullableCompensationHistoryNoNonNullRequest) Get() *CompensationHistoryNoNonNullRequest {
 	return v.value
 }
 
-func (v *NullableEmploymentResponse) Set(val *EmploymentResponse) {
+func (v *NullableCompensationHistoryNoNonNullRequest) Set(val *CompensationHistoryNoNonNullRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableEmploymentResponse) IsSet() bool {
+func (v NullableCompensationHistoryNoNonNullRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableEmploymentResponse) Unset() {
+func (v *NullableCompensationHistoryNoNonNullRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableEmploymentResponse(val *EmploymentResponse) *NullableEmploymentResponse {
-	return &NullableEmploymentResponse{value: val, isSet: true}
+func NewNullableCompensationHistoryNoNonNullRequest(val *CompensationHistoryNoNonNullRequest) *NullableCompensationHistoryNoNonNullRequest {
+	return &NullableCompensationHistoryNoNonNullRequest{value: val, isSet: true}
 }
 
-func (v NullableEmploymentResponse) MarshalJSON() ([]byte, error) {
+func (v NullableCompensationHistoryNoNonNullRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableEmploymentResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableCompensationHistoryNoNonNullRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

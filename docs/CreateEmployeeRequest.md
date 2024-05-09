@@ -27,7 +27,8 @@ Name | Type | Description | Notes
 **WorkLocation** | Pointer to [**NullableLocationNoNonNullRequest**](LocationNoNonNullRequest.md) |  | [optional] 
 **Manager** | Pointer to [**NullableCreateEmployeeRequestManager**](CreateEmployeeRequestManager.md) |  | [optional] 
 **BankAccount** | Pointer to [**NullableCreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  | [optional] 
-**Employments** | Pointer to [**[]EmploymentNoNullEnumRequest**](EmploymentNoNullEnumRequest.md) |  | [optional] 
+**EmploymentHistory** | Pointer to [**[]EmploymentHistoryNoNonNullRequest**](EmploymentHistoryNoNonNullRequest.md) |  | [optional] 
+**CompensationHistory** | Pointer to [**[]CompensationHistoryNoNonNullRequest**](CompensationHistoryNoNonNullRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Groups** | Pointer to [**[]GroupNoNullEnumRequest**](GroupNoNullEnumRequest.md) |  | [optional] 
 **Dependents** | Pointer to [**[]CreateEmployeeRequestDependents**](CreateEmployeeRequestDependents.md) |  | [optional] 
@@ -827,41 +828,76 @@ HasBankAccount returns a boolean if a field has been set.
 `func (o *CreateEmployeeRequest) UnsetBankAccount()`
 
 UnsetBankAccount ensures that no value is present for BankAccount, not even an explicit nil
-### GetEmployments
+### GetEmploymentHistory
 
-`func (o *CreateEmployeeRequest) GetEmployments() []EmploymentNoNullEnumRequest`
+`func (o *CreateEmployeeRequest) GetEmploymentHistory() []EmploymentHistoryNoNonNullRequest`
 
-GetEmployments returns the Employments field if non-nil, zero value otherwise.
+GetEmploymentHistory returns the EmploymentHistory field if non-nil, zero value otherwise.
 
-### GetEmploymentsOk
+### GetEmploymentHistoryOk
 
-`func (o *CreateEmployeeRequest) GetEmploymentsOk() (*[]EmploymentNoNullEnumRequest, bool)`
+`func (o *CreateEmployeeRequest) GetEmploymentHistoryOk() (*[]EmploymentHistoryNoNonNullRequest, bool)`
 
-GetEmploymentsOk returns a tuple with the Employments field if it's non-nil, zero value otherwise
+GetEmploymentHistoryOk returns a tuple with the EmploymentHistory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEmployments
+### SetEmploymentHistory
 
-`func (o *CreateEmployeeRequest) SetEmployments(v []EmploymentNoNullEnumRequest)`
+`func (o *CreateEmployeeRequest) SetEmploymentHistory(v []EmploymentHistoryNoNonNullRequest)`
 
-SetEmployments sets Employments field to given value.
+SetEmploymentHistory sets EmploymentHistory field to given value.
 
-### HasEmployments
+### HasEmploymentHistory
 
-`func (o *CreateEmployeeRequest) HasEmployments() bool`
+`func (o *CreateEmployeeRequest) HasEmploymentHistory() bool`
 
-HasEmployments returns a boolean if a field has been set.
+HasEmploymentHistory returns a boolean if a field has been set.
 
-### SetEmploymentsNil
+### SetEmploymentHistoryNil
 
-`func (o *CreateEmployeeRequest) SetEmploymentsNil(b bool)`
+`func (o *CreateEmployeeRequest) SetEmploymentHistoryNil(b bool)`
 
- SetEmploymentsNil sets the value for Employments to be an explicit nil
+ SetEmploymentHistoryNil sets the value for EmploymentHistory to be an explicit nil
 
-### UnsetEmployments
-`func (o *CreateEmployeeRequest) UnsetEmployments()`
+### UnsetEmploymentHistory
+`func (o *CreateEmployeeRequest) UnsetEmploymentHistory()`
 
-UnsetEmployments ensures that no value is present for Employments, not even an explicit nil
+UnsetEmploymentHistory ensures that no value is present for EmploymentHistory, not even an explicit nil
+### GetCompensationHistory
+
+`func (o *CreateEmployeeRequest) GetCompensationHistory() []CompensationHistoryNoNonNullRequest`
+
+GetCompensationHistory returns the CompensationHistory field if non-nil, zero value otherwise.
+
+### GetCompensationHistoryOk
+
+`func (o *CreateEmployeeRequest) GetCompensationHistoryOk() (*[]CompensationHistoryNoNonNullRequest, bool)`
+
+GetCompensationHistoryOk returns a tuple with the CompensationHistory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompensationHistory
+
+`func (o *CreateEmployeeRequest) SetCompensationHistory(v []CompensationHistoryNoNonNullRequest)`
+
+SetCompensationHistory sets CompensationHistory field to given value.
+
+### HasCompensationHistory
+
+`func (o *CreateEmployeeRequest) HasCompensationHistory() bool`
+
+HasCompensationHistory returns a boolean if a field has been set.
+
+### SetCompensationHistoryNil
+
+`func (o *CreateEmployeeRequest) SetCompensationHistoryNil(b bool)`
+
+ SetCompensationHistoryNil sets the value for CompensationHistory to be an explicit nil
+
+### UnsetCompensationHistory
+`func (o *CreateEmployeeRequest) UnsetCompensationHistory()`
+
+UnsetCompensationHistory ensures that no value is present for CompensationHistory, not even an explicit nil
 ### GetCustomFields
 
 `func (o *CreateEmployeeRequest) GetCustomFields() map[string]interface{}`

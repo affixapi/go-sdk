@@ -13,101 +13,223 @@ package openapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
-// CurrencyNotNullRequest the model 'CurrencyNotNullRequest'
-type CurrencyNotNullRequest string
-
-// List of currency-not-nullRequest
-const (
-	USD CurrencyNotNullRequest = "usd"
-	GBP CurrencyNotNullRequest = "gbp"
-	EUR CurrencyNotNullRequest = "eur"
-)
-
-var allowedCurrencyNotNullRequestEnumValues = []CurrencyNotNullRequest{
-	"usd",
-	"gbp",
-	"eur",
+// EmploymentHistoryResponse struct for EmploymentHistoryResponse
+type EmploymentHistoryResponse struct {
+	JobTitle NullableString `json:"job_title"`
+	EffectiveDate NullableString `json:"effective_date"`
+	GroupId NullableString `json:"group_id"`
+	GroupRemoteId NullableString `json:"group_remote_id"`
+	GroupName NullableString `json:"group_name"`
 }
 
-func (v *CurrencyNotNullRequest) UnmarshalJSON(src []byte) error {
-	var value string
-	err := json.Unmarshal(src, &value)
-	if err != nil {
-		return err
+// NewEmploymentHistoryResponse instantiates a new EmploymentHistoryResponse object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewEmploymentHistoryResponse(jobTitle NullableString, effectiveDate NullableString, groupId NullableString, groupRemoteId NullableString, groupName NullableString) *EmploymentHistoryResponse {
+	this := EmploymentHistoryResponse{}
+	this.JobTitle = jobTitle
+	this.EffectiveDate = effectiveDate
+	this.GroupId = groupId
+	this.GroupRemoteId = groupRemoteId
+	this.GroupName = groupName
+	return &this
+}
+
+// NewEmploymentHistoryResponseWithDefaults instantiates a new EmploymentHistoryResponse object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewEmploymentHistoryResponseWithDefaults() *EmploymentHistoryResponse {
+	this := EmploymentHistoryResponse{}
+	return &this
+}
+
+// GetJobTitle returns the JobTitle field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *EmploymentHistoryResponse) GetJobTitle() string {
+	if o == nil || o.JobTitle.Get() == nil {
+		var ret string
+		return ret
 	}
-	enumTypeValue := CurrencyNotNullRequest(value)
-	for _, existing := range allowedCurrencyNotNullRequestEnumValues {
-		if existing == enumTypeValue {
-			*v = enumTypeValue
-			return nil
-		}
+
+	return *o.JobTitle.Get()
+}
+
+// GetJobTitleOk returns a tuple with the JobTitle field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmploymentHistoryResponse) GetJobTitleOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.JobTitle.Get(), o.JobTitle.IsSet()
+}
+
+// SetJobTitle sets field value
+func (o *EmploymentHistoryResponse) SetJobTitle(v string) {
+	o.JobTitle.Set(&v)
+}
+
+// GetEffectiveDate returns the EffectiveDate field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *EmploymentHistoryResponse) GetEffectiveDate() string {
+	if o == nil || o.EffectiveDate.Get() == nil {
+		var ret string
+		return ret
 	}
 
-	return fmt.Errorf("%+v is not a valid CurrencyNotNullRequest", value)
+	return *o.EffectiveDate.Get()
 }
 
-// NewCurrencyNotNullRequestFromValue returns a pointer to a valid CurrencyNotNullRequest
-// for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewCurrencyNotNullRequestFromValue(v string) (*CurrencyNotNullRequest, error) {
-	ev := CurrencyNotNullRequest(v)
-	if ev.IsValid() {
-		return &ev, nil
-	} else {
-		return nil, fmt.Errorf("invalid value '%v' for CurrencyNotNullRequest: valid values are %v", v, allowedCurrencyNotNullRequestEnumValues)
+// GetEffectiveDateOk returns a tuple with the EffectiveDate field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmploymentHistoryResponse) GetEffectiveDateOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
 	}
+	return o.EffectiveDate.Get(), o.EffectiveDate.IsSet()
 }
 
-// IsValid return true if the value is valid for the enum, false otherwise
-func (v CurrencyNotNullRequest) IsValid() bool {
-	for _, existing := range allowedCurrencyNotNullRequestEnumValues {
-		if existing == v {
-			return true
-		}
+// SetEffectiveDate sets field value
+func (o *EmploymentHistoryResponse) SetEffectiveDate(v string) {
+	o.EffectiveDate.Set(&v)
+}
+
+// GetGroupId returns the GroupId field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *EmploymentHistoryResponse) GetGroupId() string {
+	if o == nil || o.GroupId.Get() == nil {
+		var ret string
+		return ret
 	}
-	return false
+
+	return *o.GroupId.Get()
 }
 
-// Ptr returns reference to currency-not-nullRequest value
-func (v CurrencyNotNullRequest) Ptr() *CurrencyNotNullRequest {
-	return &v
+// GetGroupIdOk returns a tuple with the GroupId field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmploymentHistoryResponse) GetGroupIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.GroupId.Get(), o.GroupId.IsSet()
 }
 
-type NullableCurrencyNotNullRequest struct {
-	value *CurrencyNotNullRequest
+// SetGroupId sets field value
+func (o *EmploymentHistoryResponse) SetGroupId(v string) {
+	o.GroupId.Set(&v)
+}
+
+// GetGroupRemoteId returns the GroupRemoteId field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *EmploymentHistoryResponse) GetGroupRemoteId() string {
+	if o == nil || o.GroupRemoteId.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.GroupRemoteId.Get()
+}
+
+// GetGroupRemoteIdOk returns a tuple with the GroupRemoteId field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmploymentHistoryResponse) GetGroupRemoteIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.GroupRemoteId.Get(), o.GroupRemoteId.IsSet()
+}
+
+// SetGroupRemoteId sets field value
+func (o *EmploymentHistoryResponse) SetGroupRemoteId(v string) {
+	o.GroupRemoteId.Set(&v)
+}
+
+// GetGroupName returns the GroupName field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *EmploymentHistoryResponse) GetGroupName() string {
+	if o == nil || o.GroupName.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.GroupName.Get()
+}
+
+// GetGroupNameOk returns a tuple with the GroupName field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmploymentHistoryResponse) GetGroupNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.GroupName.Get(), o.GroupName.IsSet()
+}
+
+// SetGroupName sets field value
+func (o *EmploymentHistoryResponse) SetGroupName(v string) {
+	o.GroupName.Set(&v)
+}
+
+func (o EmploymentHistoryResponse) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["job_title"] = o.JobTitle.Get()
+	}
+	if true {
+		toSerialize["effective_date"] = o.EffectiveDate.Get()
+	}
+	if true {
+		toSerialize["group_id"] = o.GroupId.Get()
+	}
+	if true {
+		toSerialize["group_remote_id"] = o.GroupRemoteId.Get()
+	}
+	if true {
+		toSerialize["group_name"] = o.GroupName.Get()
+	}
+	return json.Marshal(toSerialize)
+}
+
+type NullableEmploymentHistoryResponse struct {
+	value *EmploymentHistoryResponse
 	isSet bool
 }
 
-func (v NullableCurrencyNotNullRequest) Get() *CurrencyNotNullRequest {
+func (v NullableEmploymentHistoryResponse) Get() *EmploymentHistoryResponse {
 	return v.value
 }
 
-func (v *NullableCurrencyNotNullRequest) Set(val *CurrencyNotNullRequest) {
+func (v *NullableEmploymentHistoryResponse) Set(val *EmploymentHistoryResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCurrencyNotNullRequest) IsSet() bool {
+func (v NullableEmploymentHistoryResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCurrencyNotNullRequest) Unset() {
+func (v *NullableEmploymentHistoryResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCurrencyNotNullRequest(val *CurrencyNotNullRequest) *NullableCurrencyNotNullRequest {
-	return &NullableCurrencyNotNullRequest{value: val, isSet: true}
+func NewNullableEmploymentHistoryResponse(val *EmploymentHistoryResponse) *NullableEmploymentHistoryResponse {
+	return &NullableEmploymentHistoryResponse{value: val, isSet: true}
 }
 
-func (v NullableCurrencyNotNullRequest) MarshalJSON() ([]byte, error) {
+func (v NullableEmploymentHistoryResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCurrencyNotNullRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableEmploymentHistoryResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
 

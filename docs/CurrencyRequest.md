@@ -1,7 +1,9 @@
-# CurrencyNotNullRequest
+# CurrencyRequest
 
 ## Enum
 
+
+* `NULL` (value: `"null"`)
 
 * `USD` (value: `"usd"`)
 
