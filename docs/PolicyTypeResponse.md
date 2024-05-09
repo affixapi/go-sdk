@@ -5,19 +5,19 @@
 
 * `NULL` (value: `"null"`)
 
-* `VACATION` (value: `"vacation"`)
+* `BEREAVEMENT` (value: `"bereavement"`)
 
 * `HOLIDAY` (value: `"holiday"`)
 
-* `SICK` (value: `"sick"`)
+* `JURY_DUTY` (value: `"jury_duty"`)
 
 * `PERSONAL` (value: `"personal"`)
 
-* `JURY_DUTY` (value: `"jury_duty"`)
+* `SICK` (value: `"sick"`)
+
+* `VACATION` (value: `"vacation"`)
 
 * `VOLUNTEER` (value: `"volunteer"`)
-
-* `BEREAVEMENT` (value: `"bereavement"`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -22,24 +22,24 @@ type PolicyTypeResponse string
 // List of policy-typeResponse
 const (
 	NULL PolicyTypeResponse = "null"
-	VACATION PolicyTypeResponse = "vacation"
-	HOLIDAY PolicyTypeResponse = "holiday"
-	SICK PolicyTypeResponse = "sick"
-	PERSONAL PolicyTypeResponse = "personal"
-	JURY_DUTY PolicyTypeResponse = "jury_duty"
-	VOLUNTEER PolicyTypeResponse = "volunteer"
 	BEREAVEMENT PolicyTypeResponse = "bereavement"
+	HOLIDAY PolicyTypeResponse = "holiday"
+	JURY_DUTY PolicyTypeResponse = "jury_duty"
+	PERSONAL PolicyTypeResponse = "personal"
+	SICK PolicyTypeResponse = "sick"
+	VACATION PolicyTypeResponse = "vacation"
+	VOLUNTEER PolicyTypeResponse = "volunteer"
 )
 
 var allowedPolicyTypeResponseEnumValues = []PolicyTypeResponse{
 	"null",
-	"vacation",
-	"holiday",
-	"sick",
-	"personal",
-	"jury_duty",
-	"volunteer",
 	"bereavement",
+	"holiday",
+	"jury_duty",
+	"personal",
+	"sick",
+	"vacation",
+	"volunteer",
 }
 
 func (v *PolicyTypeResponse) UnmarshalJSON(src []byte) error {
