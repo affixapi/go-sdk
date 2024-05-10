@@ -9,12 +9,14 @@ Name | Type | Description | Notes
 **GroupId** | **NullableString** |  | 
 **GroupRemoteId** | **NullableString** |  | 
 **GroupName** | **NullableString** |  | 
+**ManagerId** | **NullableString** |  | 
+**ManagerRemoteId** | **NullableString** |  | 
 
 ## Methods
 
 ### NewEmploymentHistoryResponse
 
-`func NewEmploymentHistoryResponse(jobTitle NullableString, effectiveDate NullableString, groupId NullableString, groupRemoteId NullableString, groupName NullableString, ) *EmploymentHistoryResponse`
+`func NewEmploymentHistoryResponse(jobTitle NullableString, effectiveDate NullableString, groupId NullableString, groupRemoteId NullableString, groupName NullableString, managerId NullableString, managerRemoteId NullableString, ) *EmploymentHistoryResponse`
 
 NewEmploymentHistoryResponse instantiates a new EmploymentHistoryResponse object
 This constructor will assign default values to properties that have it defined,
@@ -179,6 +181,66 @@ SetGroupName sets GroupName field to given value.
 `func (o *EmploymentHistoryResponse) UnsetGroupName()`
 
 UnsetGroupName ensures that no value is present for GroupName, not even an explicit nil
+### GetManagerId
+
+`func (o *EmploymentHistoryResponse) GetManagerId() string`
+
+GetManagerId returns the ManagerId field if non-nil, zero value otherwise.
+
+### GetManagerIdOk
+
+`func (o *EmploymentHistoryResponse) GetManagerIdOk() (*string, bool)`
+
+GetManagerIdOk returns a tuple with the ManagerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManagerId
+
+`func (o *EmploymentHistoryResponse) SetManagerId(v string)`
+
+SetManagerId sets ManagerId field to given value.
+
+
+### SetManagerIdNil
+
+`func (o *EmploymentHistoryResponse) SetManagerIdNil(b bool)`
+
+ SetManagerIdNil sets the value for ManagerId to be an explicit nil
+
+### UnsetManagerId
+`func (o *EmploymentHistoryResponse) UnsetManagerId()`
+
+UnsetManagerId ensures that no value is present for ManagerId, not even an explicit nil
+### GetManagerRemoteId
+
+`func (o *EmploymentHistoryResponse) GetManagerRemoteId() string`
+
+GetManagerRemoteId returns the ManagerRemoteId field if non-nil, zero value otherwise.
+
+### GetManagerRemoteIdOk
+
+`func (o *EmploymentHistoryResponse) GetManagerRemoteIdOk() (*string, bool)`
+
+GetManagerRemoteIdOk returns a tuple with the ManagerRemoteId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManagerRemoteId
+
+`func (o *EmploymentHistoryResponse) SetManagerRemoteId(v string)`
+
+SetManagerRemoteId sets ManagerRemoteId field to given value.
+
+
+### SetManagerRemoteIdNil
+
+`func (o *EmploymentHistoryResponse) SetManagerRemoteIdNil(b bool)`
+
+ SetManagerRemoteIdNil sets the value for ManagerRemoteId to be an explicit nil
+
+### UnsetManagerRemoteId
+`func (o *EmploymentHistoryResponse) UnsetManagerRemoteId()`
+
+UnsetManagerRemoteId ensures that no value is present for ManagerRemoteId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

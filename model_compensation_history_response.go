@@ -23,13 +23,14 @@ type CompensationHistoryResponse struct {
 	EmploymentType NullableString `json:"employment_type"`
 	Currency NullableCurrencyResponse `json:"currency"`
 	EffectiveDate NullableString `json:"effective_date"`
+	Notes NullableString `json:"notes"`
 }
 
 // NewCompensationHistoryResponse instantiates a new CompensationHistoryResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCompensationHistoryResponse(payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency NullableCurrencyResponse, effectiveDate NullableString) *CompensationHistoryResponse {
+func NewCompensationHistoryResponse(payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency NullableCurrencyResponse, effectiveDate NullableString, notes NullableString) *CompensationHistoryResponse {
 	this := CompensationHistoryResponse{}
 	this.PayRate = payRate
 	this.PayPeriod = payPeriod
@@ -37,6 +38,7 @@ func NewCompensationHistoryResponse(payRate NullableFloat32, payPeriod NullableS
 	this.EmploymentType = employmentType
 	this.Currency = currency
 	this.EffectiveDate = effectiveDate
+	this.Notes = notes
 	return &this
 }
 
@@ -204,6 +206,32 @@ func (o *CompensationHistoryResponse) SetEffectiveDate(v string) {
 	o.EffectiveDate.Set(&v)
 }
 
+// GetNotes returns the Notes field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *CompensationHistoryResponse) GetNotes() string {
+	if o == nil || o.Notes.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.Notes.Get()
+}
+
+// GetNotesOk returns a tuple with the Notes field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CompensationHistoryResponse) GetNotesOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.Notes.Get(), o.Notes.IsSet()
+}
+
+// SetNotes sets field value
+func (o *CompensationHistoryResponse) SetNotes(v string) {
+	o.Notes.Set(&v)
+}
+
 func (o CompensationHistoryResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -223,6 +251,9 @@ func (o CompensationHistoryResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["effective_date"] = o.EffectiveDate.Get()
+	}
+	if true {
+		toSerialize["notes"] = o.Notes.Get()
 	}
 	return json.Marshal(toSerialize)
 }

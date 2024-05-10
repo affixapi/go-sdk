@@ -23,13 +23,14 @@ type CompensationHistoryNoNonNullRequest struct {
 	EmploymentType string `json:"employment_type"`
 	Currency NullableCurrencyNotNullRequest `json:"currency"`
 	EffectiveDate string `json:"effective_date"`
+	Notes string `json:"notes"`
 }
 
 // NewCompensationHistoryNoNonNullRequest instantiates a new CompensationHistoryNoNonNullRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCompensationHistoryNoNonNullRequest(payRate float32, payPeriod string, payFrequency string, employmentType string, currency NullableCurrencyNotNullRequest, effectiveDate string) *CompensationHistoryNoNonNullRequest {
+func NewCompensationHistoryNoNonNullRequest(payRate float32, payPeriod string, payFrequency string, employmentType string, currency NullableCurrencyNotNullRequest, effectiveDate string, notes string) *CompensationHistoryNoNonNullRequest {
 	this := CompensationHistoryNoNonNullRequest{}
 	this.PayRate = payRate
 	this.PayPeriod = payPeriod
@@ -37,6 +38,7 @@ func NewCompensationHistoryNoNonNullRequest(payRate float32, payPeriod string, p
 	this.EmploymentType = employmentType
 	this.Currency = currency
 	this.EffectiveDate = effectiveDate
+	this.Notes = notes
 	return &this
 }
 
@@ -194,6 +196,30 @@ func (o *CompensationHistoryNoNonNullRequest) SetEffectiveDate(v string) {
 	o.EffectiveDate = v
 }
 
+// GetNotes returns the Notes field value
+func (o *CompensationHistoryNoNonNullRequest) GetNotes() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Notes
+}
+
+// GetNotesOk returns a tuple with the Notes field value
+// and a boolean to check if the value has been set.
+func (o *CompensationHistoryNoNonNullRequest) GetNotesOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Notes, true
+}
+
+// SetNotes sets field value
+func (o *CompensationHistoryNoNonNullRequest) SetNotes(v string) {
+	o.Notes = v
+}
+
 func (o CompensationHistoryNoNonNullRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -213,6 +239,9 @@ func (o CompensationHistoryNoNonNullRequest) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["effective_date"] = o.EffectiveDate
+	}
+	if true {
+		toSerialize["notes"] = o.Notes
 	}
 	return json.Marshal(toSerialize)
 }

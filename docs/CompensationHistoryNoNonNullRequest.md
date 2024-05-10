@@ -10,12 +10,13 @@ Name | Type | Description | Notes
 **EmploymentType** | **string** |  | 
 **Currency** | [**NullableCurrencyNotNullRequest**](CurrencyNotNullRequest.md) |  | 
 **EffectiveDate** | **string** |  | 
+**Notes** | **string** |  | 
 
 ## Methods
 
 ### NewCompensationHistoryNoNonNullRequest
 
-`func NewCompensationHistoryNoNonNullRequest(payRate float32, payPeriod string, payFrequency string, employmentType string, currency NullableCurrencyNotNullRequest, effectiveDate string, ) *CompensationHistoryNoNonNullRequest`
+`func NewCompensationHistoryNoNonNullRequest(payRate float32, payPeriod string, payFrequency string, employmentType string, currency NullableCurrencyNotNullRequest, effectiveDate string, notes string, ) *CompensationHistoryNoNonNullRequest`
 
 NewCompensationHistoryNoNonNullRequest instantiates a new CompensationHistoryNoNonNullRequest object
 This constructor will assign default values to properties that have it defined,
@@ -158,6 +159,26 @@ and a boolean to check if the value has been set.
 `func (o *CompensationHistoryNoNonNullRequest) SetEffectiveDate(v string)`
 
 SetEffectiveDate sets EffectiveDate field to given value.
+
+
+### GetNotes
+
+`func (o *CompensationHistoryNoNonNullRequest) GetNotes() string`
+
+GetNotes returns the Notes field if non-nil, zero value otherwise.
+
+### GetNotesOk
+
+`func (o *CompensationHistoryNoNonNullRequest) GetNotesOk() (*string, bool)`
+
+GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotes
+
+`func (o *CompensationHistoryNoNonNullRequest) SetNotes(v string)`
+
+SetNotes sets Notes field to given value.
 
 
 

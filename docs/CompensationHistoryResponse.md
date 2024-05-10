@@ -10,12 +10,13 @@ Name | Type | Description | Notes
 **EmploymentType** | **NullableString** |  | 
 **Currency** | [**NullableCurrencyResponse**](CurrencyResponse.md) |  | 
 **EffectiveDate** | **NullableString** |  | 
+**Notes** | **NullableString** |  | 
 
 ## Methods
 
 ### NewCompensationHistoryResponse
 
-`func NewCompensationHistoryResponse(payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency NullableCurrencyResponse, effectiveDate NullableString, ) *CompensationHistoryResponse`
+`func NewCompensationHistoryResponse(payRate NullableFloat32, payPeriod NullableString, payFrequency NullableString, employmentType NullableString, currency NullableCurrencyResponse, effectiveDate NullableString, notes NullableString, ) *CompensationHistoryResponse`
 
 NewCompensationHistoryResponse instantiates a new CompensationHistoryResponse object
 This constructor will assign default values to properties that have it defined,
@@ -210,6 +211,36 @@ SetEffectiveDate sets EffectiveDate field to given value.
 `func (o *CompensationHistoryResponse) UnsetEffectiveDate()`
 
 UnsetEffectiveDate ensures that no value is present for EffectiveDate, not even an explicit nil
+### GetNotes
+
+`func (o *CompensationHistoryResponse) GetNotes() string`
+
+GetNotes returns the Notes field if non-nil, zero value otherwise.
+
+### GetNotesOk
+
+`func (o *CompensationHistoryResponse) GetNotesOk() (*string, bool)`
+
+GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotes
+
+`func (o *CompensationHistoryResponse) SetNotes(v string)`
+
+SetNotes sets Notes field to given value.
+
+
+### SetNotesNil
+
+`func (o *CompensationHistoryResponse) SetNotesNil(b bool)`
+
+ SetNotesNil sets the value for Notes to be an explicit nil
+
+### UnsetNotes
+`func (o *CompensationHistoryResponse) UnsetNotes()`
+
+UnsetNotes ensures that no value is present for Notes, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

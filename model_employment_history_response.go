@@ -22,19 +22,23 @@ type EmploymentHistoryResponse struct {
 	GroupId NullableString `json:"group_id"`
 	GroupRemoteId NullableString `json:"group_remote_id"`
 	GroupName NullableString `json:"group_name"`
+	ManagerId NullableString `json:"manager_id"`
+	ManagerRemoteId NullableString `json:"manager_remote_id"`
 }
 
 // NewEmploymentHistoryResponse instantiates a new EmploymentHistoryResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmploymentHistoryResponse(jobTitle NullableString, effectiveDate NullableString, groupId NullableString, groupRemoteId NullableString, groupName NullableString) *EmploymentHistoryResponse {
+func NewEmploymentHistoryResponse(jobTitle NullableString, effectiveDate NullableString, groupId NullableString, groupRemoteId NullableString, groupName NullableString, managerId NullableString, managerRemoteId NullableString) *EmploymentHistoryResponse {
 	this := EmploymentHistoryResponse{}
 	this.JobTitle = jobTitle
 	this.EffectiveDate = effectiveDate
 	this.GroupId = groupId
 	this.GroupRemoteId = groupRemoteId
 	this.GroupName = groupName
+	this.ManagerId = managerId
+	this.ManagerRemoteId = managerRemoteId
 	return &this
 }
 
@@ -176,6 +180,58 @@ func (o *EmploymentHistoryResponse) SetGroupName(v string) {
 	o.GroupName.Set(&v)
 }
 
+// GetManagerId returns the ManagerId field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *EmploymentHistoryResponse) GetManagerId() string {
+	if o == nil || o.ManagerId.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.ManagerId.Get()
+}
+
+// GetManagerIdOk returns a tuple with the ManagerId field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmploymentHistoryResponse) GetManagerIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.ManagerId.Get(), o.ManagerId.IsSet()
+}
+
+// SetManagerId sets field value
+func (o *EmploymentHistoryResponse) SetManagerId(v string) {
+	o.ManagerId.Set(&v)
+}
+
+// GetManagerRemoteId returns the ManagerRemoteId field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *EmploymentHistoryResponse) GetManagerRemoteId() string {
+	if o == nil || o.ManagerRemoteId.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.ManagerRemoteId.Get()
+}
+
+// GetManagerRemoteIdOk returns a tuple with the ManagerRemoteId field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmploymentHistoryResponse) GetManagerRemoteIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.ManagerRemoteId.Get(), o.ManagerRemoteId.IsSet()
+}
+
+// SetManagerRemoteId sets field value
+func (o *EmploymentHistoryResponse) SetManagerRemoteId(v string) {
+	o.ManagerRemoteId.Set(&v)
+}
+
 func (o EmploymentHistoryResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -192,6 +248,12 @@ func (o EmploymentHistoryResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["group_name"] = o.GroupName.Get()
+	}
+	if true {
+		toSerialize["manager_id"] = o.ManagerId.Get()
+	}
+	if true {
+		toSerialize["manager_remote_id"] = o.ManagerRemoteId.Get()
 	}
 	return json.Marshal(toSerialize)
 }
