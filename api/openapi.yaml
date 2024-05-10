@@ -2292,9 +2292,8 @@ components:
       - group_remote_id
       - job_title
       type: object
-    CurrencyRequest:
+    currency-not-nullRequest:
       enum:
-      - null
       - usd
       - gbp
       - eur
@@ -2327,7 +2326,7 @@ components:
           example: full_time
           type: string
         currency:
-          $ref: '#/components/schemas/CurrencyRequest'
+          $ref: '#/components/schemas/currency-not-nullRequest'
         effective_date:
           example: 2020-10-11
           format: date

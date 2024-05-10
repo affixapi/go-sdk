@@ -23,7 +23,7 @@ docs/CreateEmployeeRequestBankAccount.md
 docs/CreateEmployeeRequestDependents.md
 docs/CreateEmployeeRequestEmergencyContacts.md
 docs/CreateEmployeeRequestManager.md
-docs/CurrencyRequest.md
+docs/CurrencyNotNullRequest.md
 docs/CurrencyResponse.md
 docs/DisconnectResponse.md
 docs/EmployeeResponse.md
@@ -79,7 +79,7 @@ model_create_employee_request_bank_account.go
 model_create_employee_request_dependents.go
 model_create_employee_request_emergency_contacts.go
 model_create_employee_request_manager.go
-model_currency_request.go
+model_currency_not_null_request.go
 model_currency_response.go
 model_disconnect_response.go
 model_employee_response.go

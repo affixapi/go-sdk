@@ -16,55 +16,53 @@ import (
 	"fmt"
 )
 
-// CurrencyRequest the model 'CurrencyRequest'
-type CurrencyRequest string
+// CurrencyNotNullRequest the model 'CurrencyNotNullRequest'
+type CurrencyNotNullRequest string
 
-// List of CurrencyRequest
+// List of currency-not-nullRequest
 const (
-	NULL CurrencyRequest = "null"
-	USD CurrencyRequest = "usd"
-	GBP CurrencyRequest = "gbp"
-	EUR CurrencyRequest = "eur"
+	USD CurrencyNotNullRequest = "usd"
+	GBP CurrencyNotNullRequest = "gbp"
+	EUR CurrencyNotNullRequest = "eur"
 )
 
-var allowedCurrencyRequestEnumValues = []CurrencyRequest{
-	"null",
+var allowedCurrencyNotNullRequestEnumValues = []CurrencyNotNullRequest{
 	"usd",
 	"gbp",
 	"eur",
 }
 
-func (v *CurrencyRequest) UnmarshalJSON(src []byte) error {
+func (v *CurrencyNotNullRequest) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := CurrencyRequest(value)
-	for _, existing := range allowedCurrencyRequestEnumValues {
+	enumTypeValue := CurrencyNotNullRequest(value)
+	for _, existing := range allowedCurrencyNotNullRequestEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid CurrencyRequest", value)
+	return fmt.Errorf("%+v is not a valid CurrencyNotNullRequest", value)
 }
 
-// NewCurrencyRequestFromValue returns a pointer to a valid CurrencyRequest
+// NewCurrencyNotNullRequestFromValue returns a pointer to a valid CurrencyNotNullRequest
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewCurrencyRequestFromValue(v string) (*CurrencyRequest, error) {
-	ev := CurrencyRequest(v)
+func NewCurrencyNotNullRequestFromValue(v string) (*CurrencyNotNullRequest, error) {
+	ev := CurrencyNotNullRequest(v)
 	if ev.IsValid() {
 		return &ev, nil
 	} else {
-		return nil, fmt.Errorf("invalid value '%v' for CurrencyRequest: valid values are %v", v, allowedCurrencyRequestEnumValues)
+		return nil, fmt.Errorf("invalid value '%v' for CurrencyNotNullRequest: valid values are %v", v, allowedCurrencyNotNullRequestEnumValues)
 	}
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v CurrencyRequest) IsValid() bool {
-	for _, existing := range allowedCurrencyRequestEnumValues {
+func (v CurrencyNotNullRequest) IsValid() bool {
+	for _, existing := range allowedCurrencyNotNullRequestEnumValues {
 		if existing == v {
 			return true
 		}
@@ -72,43 +70,43 @@ func (v CurrencyRequest) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to CurrencyRequest value
-func (v CurrencyRequest) Ptr() *CurrencyRequest {
+// Ptr returns reference to currency-not-nullRequest value
+func (v CurrencyNotNullRequest) Ptr() *CurrencyNotNullRequest {
 	return &v
 }
 
-type NullableCurrencyRequest struct {
-	value *CurrencyRequest
+type NullableCurrencyNotNullRequest struct {
+	value *CurrencyNotNullRequest
 	isSet bool
 }
 
-func (v NullableCurrencyRequest) Get() *CurrencyRequest {
+func (v NullableCurrencyNotNullRequest) Get() *CurrencyNotNullRequest {
 	return v.value
 }
 
-func (v *NullableCurrencyRequest) Set(val *CurrencyRequest) {
+func (v *NullableCurrencyNotNullRequest) Set(val *CurrencyNotNullRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCurrencyRequest) IsSet() bool {
+func (v NullableCurrencyNotNullRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCurrencyRequest) Unset() {
+func (v *NullableCurrencyNotNullRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCurrencyRequest(val *CurrencyRequest) *NullableCurrencyRequest {
-	return &NullableCurrencyRequest{value: val, isSet: true}
+func NewNullableCurrencyNotNullRequest(val *CurrencyNotNullRequest) *NullableCurrencyNotNullRequest {
+	return &NullableCurrencyNotNullRequest{value: val, isSet: true}
 }
 
-func (v NullableCurrencyRequest) MarshalJSON() ([]byte, error) {
+func (v NullableCurrencyNotNullRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCurrencyRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableCurrencyNotNullRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

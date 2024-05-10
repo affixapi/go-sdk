@@ -8,14 +8,14 @@ Name | Type | Description | Notes
 **PayPeriod** | **string** |  | 
 **PayFrequency** | **string** |  | 
 **EmploymentType** | **string** |  | 
-**Currency** | [**NullableCurrencyRequest**](CurrencyRequest.md) |  | 
+**Currency** | [**NullableCurrencyNotNullRequest**](CurrencyNotNullRequest.md) |  | 
 **EffectiveDate** | **string** |  | 
 
 ## Methods
 
 ### NewCompensationHistoryNoNonNullRequest
 
-`func NewCompensationHistoryNoNonNullRequest(payRate float32, payPeriod string, payFrequency string, employmentType string, currency NullableCurrencyRequest, effectiveDate string, ) *CompensationHistoryNoNonNullRequest`
+`func NewCompensationHistoryNoNonNullRequest(payRate float32, payPeriod string, payFrequency string, employmentType string, currency NullableCurrencyNotNullRequest, effectiveDate string, ) *CompensationHistoryNoNonNullRequest`
 
 NewCompensationHistoryNoNonNullRequest instantiates a new CompensationHistoryNoNonNullRequest object
 This constructor will assign default values to properties that have it defined,
@@ -112,20 +112,20 @@ SetEmploymentType sets EmploymentType field to given value.
 
 ### GetCurrency
 
-`func (o *CompensationHistoryNoNonNullRequest) GetCurrency() CurrencyRequest`
+`func (o *CompensationHistoryNoNonNullRequest) GetCurrency() CurrencyNotNullRequest`
 
 GetCurrency returns the Currency field if non-nil, zero value otherwise.
 
 ### GetCurrencyOk
 
-`func (o *CompensationHistoryNoNonNullRequest) GetCurrencyOk() (*CurrencyRequest, bool)`
+`func (o *CompensationHistoryNoNonNullRequest) GetCurrencyOk() (*CurrencyNotNullRequest, bool)`
 
 GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrency
 
-`func (o *CompensationHistoryNoNonNullRequest) SetCurrency(v CurrencyRequest)`
+`func (o *CompensationHistoryNoNonNullRequest) SetCurrency(v CurrencyNotNullRequest)`
 
 SetCurrency sets Currency field to given value.
 

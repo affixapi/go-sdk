@@ -21,7 +21,7 @@ type CompensationHistoryNoNonNullRequest struct {
 	PayPeriod string `json:"pay_period"`
 	PayFrequency string `json:"pay_frequency"`
 	EmploymentType string `json:"employment_type"`
-	Currency NullableCurrencyRequest `json:"currency"`
+	Currency NullableCurrencyNotNullRequest `json:"currency"`
 	EffectiveDate string `json:"effective_date"`
 }
 
@@ -29,7 +29,7 @@ type CompensationHistoryNoNonNullRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCompensationHistoryNoNonNullRequest(payRate float32, payPeriod string, payFrequency string, employmentType string, currency NullableCurrencyRequest, effectiveDate string) *CompensationHistoryNoNonNullRequest {
+func NewCompensationHistoryNoNonNullRequest(payRate float32, payPeriod string, payFrequency string, employmentType string, currency NullableCurrencyNotNullRequest, effectiveDate string) *CompensationHistoryNoNonNullRequest {
 	this := CompensationHistoryNoNonNullRequest{}
 	this.PayRate = payRate
 	this.PayPeriod = payPeriod
@@ -145,10 +145,10 @@ func (o *CompensationHistoryNoNonNullRequest) SetEmploymentType(v string) {
 }
 
 // GetCurrency returns the Currency field value
-// If the value is explicit nil, the zero value for CurrencyRequest will be returned
-func (o *CompensationHistoryNoNonNullRequest) GetCurrency() CurrencyRequest {
+// If the value is explicit nil, the zero value for CurrencyNotNullRequest will be returned
+func (o *CompensationHistoryNoNonNullRequest) GetCurrency() CurrencyNotNullRequest {
 	if o == nil || o.Currency.Get() == nil {
-		var ret CurrencyRequest
+		var ret CurrencyNotNullRequest
 		return ret
 	}
 
@@ -158,7 +158,7 @@ func (o *CompensationHistoryNoNonNullRequest) GetCurrency() CurrencyRequest {
 // GetCurrencyOk returns a tuple with the Currency field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CompensationHistoryNoNonNullRequest) GetCurrencyOk() (*CurrencyRequest, bool) {
+func (o *CompensationHistoryNoNonNullRequest) GetCurrencyOk() (*CurrencyNotNullRequest, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -166,7 +166,7 @@ func (o *CompensationHistoryNoNonNullRequest) GetCurrencyOk() (*CurrencyRequest,
 }
 
 // SetCurrency sets field value
-func (o *CompensationHistoryNoNonNullRequest) SetCurrency(v CurrencyRequest) {
+func (o *CompensationHistoryNoNonNullRequest) SetCurrency(v CurrencyNotNullRequest) {
 	o.Currency.Set(&v)
 }
 
