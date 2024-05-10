@@ -2310,6 +2310,7 @@ components:
           type: string
         pay_frequency:
           enum:
+          - year
           - weekly
           - biweekly
           - semimonthly
@@ -2658,6 +2659,7 @@ components:
           type: string
         pay_frequency:
           enum:
+          - year
           - weekly
           - biweekly
           - semimonthly
