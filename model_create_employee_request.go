@@ -34,6 +34,7 @@ type CreateEmployeeRequest struct {
 	TaxId NullableString `json:"tax_id,omitempty"`
 	Gender NullableString `json:"gender,omitempty"`
 	Ethnicity NullableString `json:"ethnicity,omitempty"`
+	// `other` option can include co-habitating, civil partnership, separated, widowed, etc 
 	MaritalStatus NullableString `json:"marital_status,omitempty"`
 	DateOfBirth NullableString `json:"date_of_birth,omitempty"`
 	EmploymentStatus NullableEmploymentStatusNotNullRequest `json:"employment_status,omitempty"`

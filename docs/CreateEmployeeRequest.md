@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **TaxId** | Pointer to **NullableString** |  | [optional] 
 **Gender** | Pointer to **NullableString** |  | [optional] 
 **Ethnicity** | Pointer to **NullableString** |  | [optional] 
-**MaritalStatus** | Pointer to **NullableString** |  | [optional] 
+**MaritalStatus** | Pointer to **NullableString** | &#x60;other&#x60; option can include co-habitating, civil partnership, separated, widowed, etc  | [optional] 
 **DateOfBirth** | Pointer to **NullableString** |  | [optional] 
 **EmploymentStatus** | Pointer to [**NullableEmploymentStatusNotNullRequest**](EmploymentStatusNotNullRequest.md) |  | [optional] 
 **EmploymentType** | Pointer to **NullableString** |  | [optional] 
