@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The Affix-assigned id of the individual | 
 **RemoteId** | **string** | the remote system-assigned id of the payrun | 
-**RunState** | **string** |  | 
+**RunState** | **NullableString** |  | 
 **RunType** | **NullableString** |  | 
 **StartDate** | **NullableString** | Payrun period start date | 
 **EndDate** | **NullableString** | Payrun period end date | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewPayrunResponse
 
-`func NewPayrunResponse(id string, remoteId string, runState string, runType NullableString, startDate NullableString, endDate NullableString, paymentDate NullableString, ) *PayrunResponse`
+`func NewPayrunResponse(id string, remoteId string, runState NullableString, runType NullableString, startDate NullableString, endDate NullableString, paymentDate NullableString, ) *PayrunResponse`
 
 NewPayrunResponse instantiates a new PayrunResponse object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,16 @@ and a boolean to check if the value has been set.
 SetRunState sets RunState field to given value.
 
 
+### SetRunStateNil
+
+`func (o *PayrunResponse) SetRunStateNil(b bool)`
+
+ SetRunStateNil sets the value for RunState to be an explicit nil
+
+### UnsetRunState
+`func (o *PayrunResponse) UnsetRunState()`
+
+UnsetRunState ensures that no value is present for RunState, not even an explicit nil
 ### GetRunType
 
 `func (o *PayrunResponse) GetRunType() string`

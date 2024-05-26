@@ -21,7 +21,7 @@ type PayrunResponse struct {
 	Id string `json:"id"`
 	// the remote system-assigned id of the payrun
 	RemoteId string `json:"remote_id"`
-	RunState string `json:"run_state"`
+	RunState NullableString `json:"run_state"`
 	RunType NullableString `json:"run_type"`
 	// Payrun period start date
 	StartDate NullableString `json:"start_date"`
@@ -35,7 +35,7 @@ type PayrunResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPayrunResponse(id string, remoteId string, runState string, runType NullableString, startDate NullableString, endDate NullableString, paymentDate NullableString) *PayrunResponse {
+func NewPayrunResponse(id string, remoteId string, runState NullableString, runType NullableString, startDate NullableString, endDate NullableString, paymentDate NullableString) *PayrunResponse {
 	this := PayrunResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
@@ -104,27 +104,29 @@ func (o *PayrunResponse) SetRemoteId(v string) {
 }
 
 // GetRunState returns the RunState field value
+// If the value is explicit nil, the zero value for string will be returned
 func (o *PayrunResponse) GetRunState() string {
-	if o == nil {
+	if o == nil || o.RunState.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return o.RunState
+	return *o.RunState.Get()
 }
 
 // GetRunStateOk returns a tuple with the RunState field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayrunResponse) GetRunStateOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.RunState, true
+	return o.RunState.Get(), o.RunState.IsSet()
 }
 
 // SetRunState sets field value
 func (o *PayrunResponse) SetRunState(v string) {
-	o.RunState = v
+	o.RunState.Set(&v)
 }
 
 // GetRunType returns the RunType field value
@@ -240,7 +242,7 @@ func (o PayrunResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["remote_id"] = o.RemoteId
 	}
 	if true {
-		toSerialize["run_state"] = o.RunState
+		toSerialize["run_state"] = o.RunState.Get()
 	}
 	if true {
 		toSerialize["run_type"] = o.RunType.Get()
