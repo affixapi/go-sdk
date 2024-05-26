@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **EmployeeId** | **string** |  | 
 **PayrunId** | **string** |  | 
 **Currency** | **string** |  | 
-**GrossPay** | **float32** | if USD/EUR/GBP, in cent | 
-**NetPay** | **float32** | if USD/EUR/GBP, in cent | 
+**GrossPay** | **NullableFloat32** | if USD/EUR/GBP, in cent | 
+**NetPay** | **NullableFloat32** | if USD/EUR/GBP, in cent | 
 **StartDate** | **string** |  | 
 **EndDate** | **string** |  | 
 **PaymentDate** | **string** |  | 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewPayslipResponse
 
-`func NewPayslipResponse(id string, remoteId string, employeeId string, payrunId string, currency string, grossPay float32, netPay float32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes, ) *PayslipResponse`
+`func NewPayslipResponse(id string, remoteId string, employeeId string, payrunId string, currency string, grossPay NullableFloat32, netPay NullableFloat32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes, ) *PayslipResponse`
 
 NewPayslipResponse instantiates a new PayslipResponse object
 This constructor will assign default values to properties that have it defined,
@@ -158,6 +158,16 @@ and a boolean to check if the value has been set.
 SetGrossPay sets GrossPay field to given value.
 
 
+### SetGrossPayNil
+
+`func (o *PayslipResponse) SetGrossPayNil(b bool)`
+
+ SetGrossPayNil sets the value for GrossPay to be an explicit nil
+
+### UnsetGrossPay
+`func (o *PayslipResponse) UnsetGrossPay()`
+
+UnsetGrossPay ensures that no value is present for GrossPay, not even an explicit nil
 ### GetNetPay
 
 `func (o *PayslipResponse) GetNetPay() float32`
@@ -178,6 +188,16 @@ and a boolean to check if the value has been set.
 SetNetPay sets NetPay field to given value.
 
 
+### SetNetPayNil
+
+`func (o *PayslipResponse) SetNetPayNil(b bool)`
+
+ SetNetPayNil sets the value for NetPay to be an explicit nil
+
+### UnsetNetPay
+`func (o *PayslipResponse) UnsetNetPay()`
+
+UnsetNetPay ensures that no value is present for NetPay, not even an explicit nil
 ### GetStartDate
 
 `func (o *PayslipResponse) GetStartDate() string`
@@ -258,6 +278,16 @@ and a boolean to check if the value has been set.
 SetEarnings sets Earnings field to given value.
 
 
+### SetEarningsNil
+
+`func (o *PayslipResponse) SetEarningsNil(b bool)`
+
+ SetEarningsNil sets the value for Earnings to be an explicit nil
+
+### UnsetEarnings
+`func (o *PayslipResponse) UnsetEarnings()`
+
+UnsetEarnings ensures that no value is present for Earnings, not even an explicit nil
 ### GetContributions
 
 `func (o *PayslipResponse) GetContributions() []PayslipResponseContributions`
@@ -308,6 +338,16 @@ and a boolean to check if the value has been set.
 SetDeductions sets Deductions field to given value.
 
 
+### SetDeductionsNil
+
+`func (o *PayslipResponse) SetDeductionsNil(b bool)`
+
+ SetDeductionsNil sets the value for Deductions to be an explicit nil
+
+### UnsetDeductions
+`func (o *PayslipResponse) UnsetDeductions()`
+
+UnsetDeductions ensures that no value is present for Deductions, not even an explicit nil
 ### GetTaxes
 
 `func (o *PayslipResponse) GetTaxes() []PayslipResponseTaxes`
@@ -328,6 +368,16 @@ and a boolean to check if the value has been set.
 SetTaxes sets Taxes field to given value.
 
 
+### SetTaxesNil
+
+`func (o *PayslipResponse) SetTaxesNil(b bool)`
+
+ SetTaxesNil sets the value for Taxes to be an explicit nil
+
+### UnsetTaxes
+`func (o *PayslipResponse) UnsetTaxes()`
+
+UnsetTaxes ensures that no value is present for Taxes, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

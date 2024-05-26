@@ -25,9 +25,9 @@ type PayslipResponse struct {
 	PayrunId string `json:"payrun_id"`
 	Currency string `json:"currency"`
 	// if USD/EUR/GBP, in cent
-	GrossPay float32 `json:"gross_pay"`
+	GrossPay NullableFloat32 `json:"gross_pay"`
 	// if USD/EUR/GBP, in cent
-	NetPay float32 `json:"net_pay"`
+	NetPay NullableFloat32 `json:"net_pay"`
 	StartDate string `json:"start_date"`
 	EndDate string `json:"end_date"`
 	PaymentDate string `json:"payment_date"`
@@ -42,7 +42,7 @@ type PayslipResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPayslipResponse(id string, remoteId string, employeeId string, payrunId string, currency string, grossPay float32, netPay float32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes) *PayslipResponse {
+func NewPayslipResponse(id string, remoteId string, employeeId string, payrunId string, currency string, grossPay NullableFloat32, netPay NullableFloat32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes) *PayslipResponse {
 	this := PayslipResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
@@ -190,51 +190,55 @@ func (o *PayslipResponse) SetCurrency(v string) {
 }
 
 // GetGrossPay returns the GrossPay field value
+// If the value is explicit nil, the zero value for float32 will be returned
 func (o *PayslipResponse) GetGrossPay() float32 {
-	if o == nil {
+	if o == nil || o.GrossPay.Get() == nil {
 		var ret float32
 		return ret
 	}
 
-	return o.GrossPay
+	return *o.GrossPay.Get()
 }
 
 // GetGrossPayOk returns a tuple with the GrossPay field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayslipResponse) GetGrossPayOk() (*float32, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.GrossPay, true
+	return o.GrossPay.Get(), o.GrossPay.IsSet()
 }
 
 // SetGrossPay sets field value
 func (o *PayslipResponse) SetGrossPay(v float32) {
-	o.GrossPay = v
+	o.GrossPay.Set(&v)
 }
 
 // GetNetPay returns the NetPay field value
+// If the value is explicit nil, the zero value for float32 will be returned
 func (o *PayslipResponse) GetNetPay() float32 {
-	if o == nil {
+	if o == nil || o.NetPay.Get() == nil {
 		var ret float32
 		return ret
 	}
 
-	return o.NetPay
+	return *o.NetPay.Get()
 }
 
 // GetNetPayOk returns a tuple with the NetPay field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayslipResponse) GetNetPayOk() (*float32, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.NetPay, true
+	return o.NetPay.Get(), o.NetPay.IsSet()
 }
 
 // SetNetPay sets field value
 func (o *PayslipResponse) SetNetPay(v float32) {
-	o.NetPay = v
+	o.NetPay.Set(&v)
 }
 
 // GetStartDate returns the StartDate field value
@@ -310,6 +314,7 @@ func (o *PayslipResponse) SetPaymentDate(v string) {
 }
 
 // GetEarnings returns the Earnings field value
+// If the value is explicit nil, the zero value for []PayslipResponseEarnings will be returned
 func (o *PayslipResponse) GetEarnings() []PayslipResponseEarnings {
 	if o == nil {
 		var ret []PayslipResponseEarnings
@@ -321,8 +326,9 @@ func (o *PayslipResponse) GetEarnings() []PayslipResponseEarnings {
 
 // GetEarningsOk returns a tuple with the Earnings field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayslipResponse) GetEarningsOk() (*[]PayslipResponseEarnings, bool) {
-	if o == nil  {
+	if o == nil || o.Earnings == nil {
 		return nil, false
 	}
 	return &o.Earnings, true
@@ -360,6 +366,7 @@ func (o *PayslipResponse) SetContributions(v []PayslipResponseContributions) {
 }
 
 // GetDeductions returns the Deductions field value
+// If the value is explicit nil, the zero value for []PayslipResponseDeductions will be returned
 func (o *PayslipResponse) GetDeductions() []PayslipResponseDeductions {
 	if o == nil {
 		var ret []PayslipResponseDeductions
@@ -371,8 +378,9 @@ func (o *PayslipResponse) GetDeductions() []PayslipResponseDeductions {
 
 // GetDeductionsOk returns a tuple with the Deductions field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayslipResponse) GetDeductionsOk() (*[]PayslipResponseDeductions, bool) {
-	if o == nil  {
+	if o == nil || o.Deductions == nil {
 		return nil, false
 	}
 	return &o.Deductions, true
@@ -384,6 +392,7 @@ func (o *PayslipResponse) SetDeductions(v []PayslipResponseDeductions) {
 }
 
 // GetTaxes returns the Taxes field value
+// If the value is explicit nil, the zero value for []PayslipResponseTaxes will be returned
 func (o *PayslipResponse) GetTaxes() []PayslipResponseTaxes {
 	if o == nil {
 		var ret []PayslipResponseTaxes
@@ -395,8 +404,9 @@ func (o *PayslipResponse) GetTaxes() []PayslipResponseTaxes {
 
 // GetTaxesOk returns a tuple with the Taxes field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayslipResponse) GetTaxesOk() (*[]PayslipResponseTaxes, bool) {
-	if o == nil  {
+	if o == nil || o.Taxes == nil {
 		return nil, false
 	}
 	return &o.Taxes, true
@@ -425,10 +435,10 @@ func (o PayslipResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["currency"] = o.Currency
 	}
 	if true {
-		toSerialize["gross_pay"] = o.GrossPay
+		toSerialize["gross_pay"] = o.GrossPay.Get()
 	}
 	if true {
-		toSerialize["net_pay"] = o.NetPay
+		toSerialize["net_pay"] = o.NetPay.Get()
 	}
 	if true {
 		toSerialize["start_date"] = o.StartDate
@@ -439,16 +449,16 @@ func (o PayslipResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["payment_date"] = o.PaymentDate
 	}
-	if true {
+	if o.Earnings != nil {
 		toSerialize["earnings"] = o.Earnings
 	}
 	if o.Contributions != nil {
 		toSerialize["contributions"] = o.Contributions
 	}
-	if true {
+	if o.Deductions != nil {
 		toSerialize["deductions"] = o.Deductions
 	}
-	if true {
+	if o.Taxes != nil {
 		toSerialize["taxes"] = o.Taxes
 	}
 	return json.Marshal(toSerialize)
