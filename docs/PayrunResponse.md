@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The Affix-assigned id of the individual | 
 **RemoteId** | **string** | the remote system-assigned id of the payrun | 
-**RunState** | **NullableString** |  | 
-**RunType** | **NullableString** |  | 
+**State** | **NullableString** |  | 
+**Type** | [**NullablePayrunTypeResponse**](PayrunTypeResponse.md) |  | 
 **StartDate** | **NullableString** | Payrun period start date | 
 **EndDate** | **NullableString** | Payrun period end date | 
 **PaymentDate** | **NullableString** | Payment date / check date | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewPayrunResponse
 
-`func NewPayrunResponse(id string, remoteId string, runState NullableString, runType NullableString, startDate NullableString, endDate NullableString, paymentDate NullableString, ) *PayrunResponse`
+`func NewPayrunResponse(id string, remoteId string, state NullableString, type_ NullablePayrunTypeResponse, startDate NullableString, endDate NullableString, paymentDate NullableString, ) *PayrunResponse`
 
 NewPayrunResponse instantiates a new PayrunResponse object
 This constructor will assign default values to properties that have it defined,
@@ -71,66 +71,66 @@ and a boolean to check if the value has been set.
 SetRemoteId sets RemoteId field to given value.
 
 
-### GetRunState
+### GetState
 
-`func (o *PayrunResponse) GetRunState() string`
+`func (o *PayrunResponse) GetState() string`
 
-GetRunState returns the RunState field if non-nil, zero value otherwise.
+GetState returns the State field if non-nil, zero value otherwise.
 
-### GetRunStateOk
+### GetStateOk
 
-`func (o *PayrunResponse) GetRunStateOk() (*string, bool)`
+`func (o *PayrunResponse) GetStateOk() (*string, bool)`
 
-GetRunStateOk returns a tuple with the RunState field if it's non-nil, zero value otherwise
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRunState
+### SetState
 
-`func (o *PayrunResponse) SetRunState(v string)`
+`func (o *PayrunResponse) SetState(v string)`
 
-SetRunState sets RunState field to given value.
+SetState sets State field to given value.
 
 
-### SetRunStateNil
+### SetStateNil
 
-`func (o *PayrunResponse) SetRunStateNil(b bool)`
+`func (o *PayrunResponse) SetStateNil(b bool)`
 
- SetRunStateNil sets the value for RunState to be an explicit nil
+ SetStateNil sets the value for State to be an explicit nil
 
-### UnsetRunState
-`func (o *PayrunResponse) UnsetRunState()`
+### UnsetState
+`func (o *PayrunResponse) UnsetState()`
 
-UnsetRunState ensures that no value is present for RunState, not even an explicit nil
-### GetRunType
+UnsetState ensures that no value is present for State, not even an explicit nil
+### GetType
 
-`func (o *PayrunResponse) GetRunType() string`
+`func (o *PayrunResponse) GetType() PayrunTypeResponse`
 
-GetRunType returns the RunType field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetRunTypeOk
+### GetTypeOk
 
-`func (o *PayrunResponse) GetRunTypeOk() (*string, bool)`
+`func (o *PayrunResponse) GetTypeOk() (*PayrunTypeResponse, bool)`
 
-GetRunTypeOk returns a tuple with the RunType field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRunType
+### SetType
 
-`func (o *PayrunResponse) SetRunType(v string)`
+`func (o *PayrunResponse) SetType(v PayrunTypeResponse)`
 
-SetRunType sets RunType field to given value.
+SetType sets Type field to given value.
 
 
-### SetRunTypeNil
+### SetTypeNil
 
-`func (o *PayrunResponse) SetRunTypeNil(b bool)`
+`func (o *PayrunResponse) SetTypeNil(b bool)`
 
- SetRunTypeNil sets the value for RunType to be an explicit nil
+ SetTypeNil sets the value for Type to be an explicit nil
 
-### UnsetRunType
-`func (o *PayrunResponse) UnsetRunType()`
+### UnsetType
+`func (o *PayrunResponse) UnsetType()`
 
-UnsetRunType ensures that no value is present for RunType, not even an explicit nil
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetStartDate
 
 `func (o *PayrunResponse) GetStartDate() string`

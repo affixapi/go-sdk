@@ -13,286 +13,107 @@ package openapi
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// PayrunResponse struct for PayrunResponse
-type PayrunResponse struct {
-	// The Affix-assigned id of the individual
-	Id string `json:"id"`
-	// the remote system-assigned id of the payrun
-	RemoteId string `json:"remote_id"`
-	State NullableString `json:"state"`
-	Type NullablePayrunTypeResponse `json:"type"`
-	// Payrun period start date
-	StartDate NullableString `json:"start_date"`
-	// Payrun period end date
-	EndDate NullableString `json:"end_date"`
-	// Payment date / check date
-	PaymentDate NullableString `json:"payment_date"`
+// PayrunTypeResponse the model 'PayrunTypeResponse'
+type PayrunTypeResponse string
+
+// List of payrun-typeResponse
+const (
+	REGULAR PayrunTypeResponse = "regular"
+	ONE_TIME PayrunTypeResponse = "one-time"
+	OFF_CYCLE PayrunTypeResponse = "off-cycle"
+	CORRECTION PayrunTypeResponse = "correction"
+	REVERSAL PayrunTypeResponse = "reversal"
+	NULL PayrunTypeResponse = "null"
+)
+
+var allowedPayrunTypeResponseEnumValues = []PayrunTypeResponse{
+	"regular",
+	"one-time",
+	"off-cycle",
+	"correction",
+	"reversal",
+	"null",
 }
 
-// NewPayrunResponse instantiates a new PayrunResponse object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPayrunResponse(id string, remoteId string, state NullableString, type_ NullablePayrunTypeResponse, startDate NullableString, endDate NullableString, paymentDate NullableString) *PayrunResponse {
-	this := PayrunResponse{}
-	this.Id = id
-	this.RemoteId = remoteId
-	this.State = state
-	this.Type = type_
-	this.StartDate = startDate
-	this.EndDate = endDate
-	this.PaymentDate = paymentDate
-	return &this
-}
-
-// NewPayrunResponseWithDefaults instantiates a new PayrunResponse object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewPayrunResponseWithDefaults() *PayrunResponse {
-	this := PayrunResponse{}
-	return &this
-}
-
-// GetId returns the Id field value
-func (o *PayrunResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
+func (v *PayrunTypeResponse) UnmarshalJSON(src []byte) error {
+	var value string
+	err := json.Unmarshal(src, &value)
+	if err != nil {
+		return err
+	}
+	enumTypeValue := PayrunTypeResponse(value)
+	for _, existing := range allowedPayrunTypeResponseEnumValues {
+		if existing == enumTypeValue {
+			*v = enumTypeValue
+			return nil
+		}
 	}
 
-	return o.Id
+	return fmt.Errorf("%+v is not a valid PayrunTypeResponse", value)
 }
 
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *PayrunResponse) GetIdOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
+// NewPayrunTypeResponseFromValue returns a pointer to a valid PayrunTypeResponse
+// for the value passed as argument, or an error if the value passed is not allowed by the enum
+func NewPayrunTypeResponseFromValue(v string) (*PayrunTypeResponse, error) {
+	ev := PayrunTypeResponse(v)
+	if ev.IsValid() {
+		return &ev, nil
+	} else {
+		return nil, fmt.Errorf("invalid value '%v' for PayrunTypeResponse: valid values are %v", v, allowedPayrunTypeResponseEnumValues)
 	}
-	return &o.Id, true
 }
 
-// SetId sets field value
-func (o *PayrunResponse) SetId(v string) {
-	o.Id = v
-}
-
-// GetRemoteId returns the RemoteId field value
-func (o *PayrunResponse) GetRemoteId() string {
-	if o == nil {
-		var ret string
-		return ret
+// IsValid return true if the value is valid for the enum, false otherwise
+func (v PayrunTypeResponse) IsValid() bool {
+	for _, existing := range allowedPayrunTypeResponseEnumValues {
+		if existing == v {
+			return true
+		}
 	}
-
-	return o.RemoteId
+	return false
 }
 
-// GetRemoteIdOk returns a tuple with the RemoteId field value
-// and a boolean to check if the value has been set.
-func (o *PayrunResponse) GetRemoteIdOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.RemoteId, true
+// Ptr returns reference to payrun-typeResponse value
+func (v PayrunTypeResponse) Ptr() *PayrunTypeResponse {
+	return &v
 }
 
-// SetRemoteId sets field value
-func (o *PayrunResponse) SetRemoteId(v string) {
-	o.RemoteId = v
-}
-
-// GetState returns the State field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *PayrunResponse) GetState() string {
-	if o == nil || o.State.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.State.Get()
-}
-
-// GetStateOk returns a tuple with the State field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PayrunResponse) GetStateOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.State.Get(), o.State.IsSet()
-}
-
-// SetState sets field value
-func (o *PayrunResponse) SetState(v string) {
-	o.State.Set(&v)
-}
-
-// GetType returns the Type field value
-// If the value is explicit nil, the zero value for PayrunTypeResponse will be returned
-func (o *PayrunResponse) GetType() PayrunTypeResponse {
-	if o == nil || o.Type.Get() == nil {
-		var ret PayrunTypeResponse
-		return ret
-	}
-
-	return *o.Type.Get()
-}
-
-// GetTypeOk returns a tuple with the Type field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PayrunResponse) GetTypeOk() (*PayrunTypeResponse, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.Type.Get(), o.Type.IsSet()
-}
-
-// SetType sets field value
-func (o *PayrunResponse) SetType(v PayrunTypeResponse) {
-	o.Type.Set(&v)
-}
-
-// GetStartDate returns the StartDate field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *PayrunResponse) GetStartDate() string {
-	if o == nil || o.StartDate.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.StartDate.Get()
-}
-
-// GetStartDateOk returns a tuple with the StartDate field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PayrunResponse) GetStartDateOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.StartDate.Get(), o.StartDate.IsSet()
-}
-
-// SetStartDate sets field value
-func (o *PayrunResponse) SetStartDate(v string) {
-	o.StartDate.Set(&v)
-}
-
-// GetEndDate returns the EndDate field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *PayrunResponse) GetEndDate() string {
-	if o == nil || o.EndDate.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.EndDate.Get()
-}
-
-// GetEndDateOk returns a tuple with the EndDate field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PayrunResponse) GetEndDateOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.EndDate.Get(), o.EndDate.IsSet()
-}
-
-// SetEndDate sets field value
-func (o *PayrunResponse) SetEndDate(v string) {
-	o.EndDate.Set(&v)
-}
-
-// GetPaymentDate returns the PaymentDate field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *PayrunResponse) GetPaymentDate() string {
-	if o == nil || o.PaymentDate.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.PaymentDate.Get()
-}
-
-// GetPaymentDateOk returns a tuple with the PaymentDate field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PayrunResponse) GetPaymentDateOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.PaymentDate.Get(), o.PaymentDate.IsSet()
-}
-
-// SetPaymentDate sets field value
-func (o *PayrunResponse) SetPaymentDate(v string) {
-	o.PaymentDate.Set(&v)
-}
-
-func (o PayrunResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["remote_id"] = o.RemoteId
-	}
-	if true {
-		toSerialize["state"] = o.State.Get()
-	}
-	if true {
-		toSerialize["type"] = o.Type.Get()
-	}
-	if true {
-		toSerialize["start_date"] = o.StartDate.Get()
-	}
-	if true {
-		toSerialize["end_date"] = o.EndDate.Get()
-	}
-	if true {
-		toSerialize["payment_date"] = o.PaymentDate.Get()
-	}
-	return json.Marshal(toSerialize)
-}
-
-type NullablePayrunResponse struct {
-	value *PayrunResponse
+type NullablePayrunTypeResponse struct {
+	value *PayrunTypeResponse
 	isSet bool
 }
 
-func (v NullablePayrunResponse) Get() *PayrunResponse {
+func (v NullablePayrunTypeResponse) Get() *PayrunTypeResponse {
 	return v.value
 }
 
-func (v *NullablePayrunResponse) Set(val *PayrunResponse) {
+func (v *NullablePayrunTypeResponse) Set(val *PayrunTypeResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullablePayrunResponse) IsSet() bool {
+func (v NullablePayrunTypeResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullablePayrunResponse) Unset() {
+func (v *NullablePayrunTypeResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullablePayrunResponse(val *PayrunResponse) *NullablePayrunResponse {
-	return &NullablePayrunResponse{value: val, isSet: true}
+func NewNullablePayrunTypeResponse(val *PayrunTypeResponse) *NullablePayrunTypeResponse {
+	return &NullablePayrunTypeResponse{value: val, isSet: true}
 }
 
-func (v NullablePayrunResponse) MarshalJSON() ([]byte, error) {
+func (v NullablePayrunTypeResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullablePayrunResponse) UnmarshalJSON(src []byte) error {
+func (v *NullablePayrunTypeResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

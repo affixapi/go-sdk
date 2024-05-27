@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The Affix-assigned id of the payslip | 
-**RemoteId** | **string** | the remote system-assigned id of the payrun | 
+**Id** | **NullableString** | The Affix-assigned id of the payslip | 
+**RemoteId** | **NullableString** | the remote system-assigned id of the payrun | 
 **EmployeeId** | **string** |  | 
+**EmployeeRemoteId** | **string** |  | 
 **PayrunId** | **string** |  | 
-**Currency** | **string** |  | 
+**PayrunRemoteId** | **string** |  | 
+**PayrunType** | [**NullablePayrunTypeResponse**](PayrunTypeResponse.md) |  | 
+**Currency** | [**NullableCurrencyNotNullResponse**](CurrencyNotNullResponse.md) |  | 
 **GrossPay** | **NullableFloat32** | if USD/EUR/GBP, in cent | 
 **NetPay** | **NullableFloat32** | if USD/EUR/GBP, in cent | 
 **StartDate** | **string** |  | 
@@ -23,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewPayslipResponse
 
-`func NewPayslipResponse(id string, remoteId string, employeeId string, payrunId string, currency string, grossPay NullableFloat32, netPay NullableFloat32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes, ) *PayslipResponse`
+`func NewPayslipResponse(id NullableString, remoteId NullableString, employeeId string, employeeRemoteId string, payrunId string, payrunRemoteId string, payrunType NullablePayrunTypeResponse, currency NullableCurrencyNotNullResponse, grossPay NullableFloat32, netPay NullableFloat32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes, ) *PayslipResponse`
 
 NewPayslipResponse instantiates a new PayslipResponse object
 This constructor will assign default values to properties that have it defined,
@@ -58,6 +61,16 @@ and a boolean to check if the value has been set.
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *PayslipResponse) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *PayslipResponse) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetRemoteId
 
 `func (o *PayslipResponse) GetRemoteId() string`
@@ -78,6 +91,16 @@ and a boolean to check if the value has been set.
 SetRemoteId sets RemoteId field to given value.
 
 
+### SetRemoteIdNil
+
+`func (o *PayslipResponse) SetRemoteIdNil(b bool)`
+
+ SetRemoteIdNil sets the value for RemoteId to be an explicit nil
+
+### UnsetRemoteId
+`func (o *PayslipResponse) UnsetRemoteId()`
+
+UnsetRemoteId ensures that no value is present for RemoteId, not even an explicit nil
 ### GetEmployeeId
 
 `func (o *PayslipResponse) GetEmployeeId() string`
@@ -96,6 +119,26 @@ and a boolean to check if the value has been set.
 `func (o *PayslipResponse) SetEmployeeId(v string)`
 
 SetEmployeeId sets EmployeeId field to given value.
+
+
+### GetEmployeeRemoteId
+
+`func (o *PayslipResponse) GetEmployeeRemoteId() string`
+
+GetEmployeeRemoteId returns the EmployeeRemoteId field if non-nil, zero value otherwise.
+
+### GetEmployeeRemoteIdOk
+
+`func (o *PayslipResponse) GetEmployeeRemoteIdOk() (*string, bool)`
+
+GetEmployeeRemoteIdOk returns a tuple with the EmployeeRemoteId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmployeeRemoteId
+
+`func (o *PayslipResponse) SetEmployeeRemoteId(v string)`
+
+SetEmployeeRemoteId sets EmployeeRemoteId field to given value.
 
 
 ### GetPayrunId
@@ -118,26 +161,86 @@ and a boolean to check if the value has been set.
 SetPayrunId sets PayrunId field to given value.
 
 
+### GetPayrunRemoteId
+
+`func (o *PayslipResponse) GetPayrunRemoteId() string`
+
+GetPayrunRemoteId returns the PayrunRemoteId field if non-nil, zero value otherwise.
+
+### GetPayrunRemoteIdOk
+
+`func (o *PayslipResponse) GetPayrunRemoteIdOk() (*string, bool)`
+
+GetPayrunRemoteIdOk returns a tuple with the PayrunRemoteId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPayrunRemoteId
+
+`func (o *PayslipResponse) SetPayrunRemoteId(v string)`
+
+SetPayrunRemoteId sets PayrunRemoteId field to given value.
+
+
+### GetPayrunType
+
+`func (o *PayslipResponse) GetPayrunType() PayrunTypeResponse`
+
+GetPayrunType returns the PayrunType field if non-nil, zero value otherwise.
+
+### GetPayrunTypeOk
+
+`func (o *PayslipResponse) GetPayrunTypeOk() (*PayrunTypeResponse, bool)`
+
+GetPayrunTypeOk returns a tuple with the PayrunType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPayrunType
+
+`func (o *PayslipResponse) SetPayrunType(v PayrunTypeResponse)`
+
+SetPayrunType sets PayrunType field to given value.
+
+
+### SetPayrunTypeNil
+
+`func (o *PayslipResponse) SetPayrunTypeNil(b bool)`
+
+ SetPayrunTypeNil sets the value for PayrunType to be an explicit nil
+
+### UnsetPayrunType
+`func (o *PayslipResponse) UnsetPayrunType()`
+
+UnsetPayrunType ensures that no value is present for PayrunType, not even an explicit nil
 ### GetCurrency
 
-`func (o *PayslipResponse) GetCurrency() string`
+`func (o *PayslipResponse) GetCurrency() CurrencyNotNullResponse`
 
 GetCurrency returns the Currency field if non-nil, zero value otherwise.
 
 ### GetCurrencyOk
 
-`func (o *PayslipResponse) GetCurrencyOk() (*string, bool)`
+`func (o *PayslipResponse) GetCurrencyOk() (*CurrencyNotNullResponse, bool)`
 
 GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrency
 
-`func (o *PayslipResponse) SetCurrency(v string)`
+`func (o *PayslipResponse) SetCurrency(v CurrencyNotNullResponse)`
 
 SetCurrency sets Currency field to given value.
 
 
+### SetCurrencyNil
+
+`func (o *PayslipResponse) SetCurrencyNil(b bool)`
+
+ SetCurrencyNil sets the value for Currency to be an explicit nil
+
+### UnsetCurrency
+`func (o *PayslipResponse) UnsetCurrency()`
+
+UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
 ### GetGrossPay
 
 `func (o *PayslipResponse) GetGrossPay() float32`

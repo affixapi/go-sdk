@@ -18,12 +18,15 @@ import (
 // PayslipResponse struct for PayslipResponse
 type PayslipResponse struct {
 	// The Affix-assigned id of the payslip
-	Id string `json:"id"`
+	Id NullableString `json:"id"`
 	// the remote system-assigned id of the payrun
-	RemoteId string `json:"remote_id"`
+	RemoteId NullableString `json:"remote_id"`
 	EmployeeId string `json:"employee_id"`
+	EmployeeRemoteId string `json:"employee_remote_id"`
 	PayrunId string `json:"payrun_id"`
-	Currency string `json:"currency"`
+	PayrunRemoteId string `json:"payrun_remote_id"`
+	PayrunType NullablePayrunTypeResponse `json:"payrun_type"`
+	Currency NullableCurrencyNotNullResponse `json:"currency"`
 	// if USD/EUR/GBP, in cent
 	GrossPay NullableFloat32 `json:"gross_pay"`
 	// if USD/EUR/GBP, in cent
@@ -42,12 +45,15 @@ type PayslipResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPayslipResponse(id string, remoteId string, employeeId string, payrunId string, currency string, grossPay NullableFloat32, netPay NullableFloat32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes) *PayslipResponse {
+func NewPayslipResponse(id NullableString, remoteId NullableString, employeeId string, employeeRemoteId string, payrunId string, payrunRemoteId string, payrunType NullablePayrunTypeResponse, currency NullableCurrencyNotNullResponse, grossPay NullableFloat32, netPay NullableFloat32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes) *PayslipResponse {
 	this := PayslipResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
 	this.EmployeeId = employeeId
+	this.EmployeeRemoteId = employeeRemoteId
 	this.PayrunId = payrunId
+	this.PayrunRemoteId = payrunRemoteId
+	this.PayrunType = payrunType
 	this.Currency = currency
 	this.GrossPay = grossPay
 	this.NetPay = netPay
@@ -70,51 +76,55 @@ func NewPayslipResponseWithDefaults() *PayslipResponse {
 }
 
 // GetId returns the Id field value
+// If the value is explicit nil, the zero value for string will be returned
 func (o *PayslipResponse) GetId() string {
-	if o == nil {
+	if o == nil || o.Id.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return *o.Id.Get()
 }
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayslipResponse) GetIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Id, true
+	return o.Id.Get(), o.Id.IsSet()
 }
 
 // SetId sets field value
 func (o *PayslipResponse) SetId(v string) {
-	o.Id = v
+	o.Id.Set(&v)
 }
 
 // GetRemoteId returns the RemoteId field value
+// If the value is explicit nil, the zero value for string will be returned
 func (o *PayslipResponse) GetRemoteId() string {
-	if o == nil {
+	if o == nil || o.RemoteId.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return o.RemoteId
+	return *o.RemoteId.Get()
 }
 
 // GetRemoteIdOk returns a tuple with the RemoteId field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PayslipResponse) GetRemoteIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.RemoteId, true
+	return o.RemoteId.Get(), o.RemoteId.IsSet()
 }
 
 // SetRemoteId sets field value
 func (o *PayslipResponse) SetRemoteId(v string) {
-	o.RemoteId = v
+	o.RemoteId.Set(&v)
 }
 
 // GetEmployeeId returns the EmployeeId field value
@@ -141,6 +151,30 @@ func (o *PayslipResponse) SetEmployeeId(v string) {
 	o.EmployeeId = v
 }
 
+// GetEmployeeRemoteId returns the EmployeeRemoteId field value
+func (o *PayslipResponse) GetEmployeeRemoteId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.EmployeeRemoteId
+}
+
+// GetEmployeeRemoteIdOk returns a tuple with the EmployeeRemoteId field value
+// and a boolean to check if the value has been set.
+func (o *PayslipResponse) GetEmployeeRemoteIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.EmployeeRemoteId, true
+}
+
+// SetEmployeeRemoteId sets field value
+func (o *PayslipResponse) SetEmployeeRemoteId(v string) {
+	o.EmployeeRemoteId = v
+}
+
 // GetPayrunId returns the PayrunId field value
 func (o *PayslipResponse) GetPayrunId() string {
 	if o == nil {
@@ -165,28 +199,80 @@ func (o *PayslipResponse) SetPayrunId(v string) {
 	o.PayrunId = v
 }
 
-// GetCurrency returns the Currency field value
-func (o *PayslipResponse) GetCurrency() string {
+// GetPayrunRemoteId returns the PayrunRemoteId field value
+func (o *PayslipResponse) GetPayrunRemoteId() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Currency
+	return o.PayrunRemoteId
+}
+
+// GetPayrunRemoteIdOk returns a tuple with the PayrunRemoteId field value
+// and a boolean to check if the value has been set.
+func (o *PayslipResponse) GetPayrunRemoteIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.PayrunRemoteId, true
+}
+
+// SetPayrunRemoteId sets field value
+func (o *PayslipResponse) SetPayrunRemoteId(v string) {
+	o.PayrunRemoteId = v
+}
+
+// GetPayrunType returns the PayrunType field value
+// If the value is explicit nil, the zero value for PayrunTypeResponse will be returned
+func (o *PayslipResponse) GetPayrunType() PayrunTypeResponse {
+	if o == nil || o.PayrunType.Get() == nil {
+		var ret PayrunTypeResponse
+		return ret
+	}
+
+	return *o.PayrunType.Get()
+}
+
+// GetPayrunTypeOk returns a tuple with the PayrunType field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PayslipResponse) GetPayrunTypeOk() (*PayrunTypeResponse, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.PayrunType.Get(), o.PayrunType.IsSet()
+}
+
+// SetPayrunType sets field value
+func (o *PayslipResponse) SetPayrunType(v PayrunTypeResponse) {
+	o.PayrunType.Set(&v)
+}
+
+// GetCurrency returns the Currency field value
+// If the value is explicit nil, the zero value for CurrencyNotNullResponse will be returned
+func (o *PayslipResponse) GetCurrency() CurrencyNotNullResponse {
+	if o == nil || o.Currency.Get() == nil {
+		var ret CurrencyNotNullResponse
+		return ret
+	}
+
+	return *o.Currency.Get()
 }
 
 // GetCurrencyOk returns a tuple with the Currency field value
 // and a boolean to check if the value has been set.
-func (o *PayslipResponse) GetCurrencyOk() (*string, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PayslipResponse) GetCurrencyOk() (*CurrencyNotNullResponse, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Currency, true
+	return o.Currency.Get(), o.Currency.IsSet()
 }
 
 // SetCurrency sets field value
-func (o *PayslipResponse) SetCurrency(v string) {
-	o.Currency = v
+func (o *PayslipResponse) SetCurrency(v CurrencyNotNullResponse) {
+	o.Currency.Set(&v)
 }
 
 // GetGrossPay returns the GrossPay field value
@@ -420,19 +506,28 @@ func (o *PayslipResponse) SetTaxes(v []PayslipResponseTaxes) {
 func (o PayslipResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.Id.Get()
 	}
 	if true {
-		toSerialize["remote_id"] = o.RemoteId
+		toSerialize["remote_id"] = o.RemoteId.Get()
 	}
 	if true {
 		toSerialize["employee_id"] = o.EmployeeId
 	}
 	if true {
+		toSerialize["employee_remote_id"] = o.EmployeeRemoteId
+	}
+	if true {
 		toSerialize["payrun_id"] = o.PayrunId
 	}
 	if true {
-		toSerialize["currency"] = o.Currency
+		toSerialize["payrun_remote_id"] = o.PayrunRemoteId
+	}
+	if true {
+		toSerialize["payrun_type"] = o.PayrunType.Get()
+	}
+	if true {
+		toSerialize["currency"] = o.Currency.Get()
 	}
 	if true {
 		toSerialize["gross_pay"] = o.GrossPay.Get()

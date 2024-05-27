@@ -24,6 +24,7 @@ docs/CreateEmployeeRequestDependents.md
 docs/CreateEmployeeRequestEmergencyContacts.md
 docs/CreateEmployeeRequestManager.md
 docs/CurrencyNotNullRequest.md
+docs/CurrencyNotNullResponse.md
 docs/CurrencyResponse.md
 docs/DisconnectResponse.md
 docs/EmployeeResponse.md
@@ -48,6 +49,7 @@ docs/MessageResponse.md
 docs/ModeRequest.md
 docs/ModeResponse.md
 docs/PayrunResponse.md
+docs/PayrunTypeResponse.md
 docs/PayslipResponse.md
 docs/PayslipResponseContributions.md
 docs/PayslipResponseDeductions.md
@@ -80,6 +82,7 @@ model_create_employee_request_dependents.go
 model_create_employee_request_emergency_contacts.go
 model_create_employee_request_manager.go
 model_currency_not_null_request.go
+model_currency_not_null_response.go
 model_currency_response.go
 model_disconnect_response.go
 model_employee_response.go
@@ -103,6 +106,7 @@ model_message_response.go
 model_mode_request.go
 model_mode_response.go
 model_payrun_response.go
+model_payrun_type_response.go
 model_payslip_response.go
 model_payslip_response_contributions.go
 model_payslip_response_deductions.go
