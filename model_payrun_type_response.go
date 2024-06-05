@@ -22,8 +22,8 @@ type PayrunTypeResponse string
 // List of payrun-typeResponse
 const (
 	REGULAR PayrunTypeResponse = "regular"
-	ONE_TIME PayrunTypeResponse = "one-time"
-	OFF_CYCLE PayrunTypeResponse = "off-cycle"
+	ONE_TIME PayrunTypeResponse = "one_time"
+	OFF_CYCLE PayrunTypeResponse = "off_cycle"
 	CORRECTION PayrunTypeResponse = "correction"
 	REVERSAL PayrunTypeResponse = "reversal"
 	NULL PayrunTypeResponse = "null"
@@ -31,8 +31,8 @@ const (
 
 var allowedPayrunTypeResponseEnumValues = []PayrunTypeResponse{
 	"regular",
-	"one-time",
-	"off-cycle",
+	"one_time",
+	"off_cycle",
 	"correction",
 	"reversal",
 	"null",
