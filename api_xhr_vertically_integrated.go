@@ -691,7 +691,7 @@ Supported integrations:
   - pento.io
   - quickbooks online
   - remote.com
-  - rippling
+  # - rippling
   - sageone
   - shape payroll
   - simplepay.ie
@@ -878,7 +878,7 @@ Supported integrations:
   - pento.io
   - quickbooks online
   - remote.com
-  - rippling
+  # - rippling
   - sageone
   - shape payroll
   - simplepay.ie
