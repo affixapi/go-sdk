@@ -56,7 +56,6 @@ const (
 	PENTO_IO ProviderResponse = "pento.io"
 	PEOPLEHR ProviderResponse = "peoplehr"
 	REMOTE_COM ProviderResponse = "remote.com"
-	RIPPLING ProviderResponse = "rippling"
 	SAGEONE ProviderResponse = "sageone"
 	SHAPE_PAYROLL ProviderResponse = "shape payroll"
 	SIMPLEPAY_IE ProviderResponse = "simplepay.ie"
@@ -100,7 +99,6 @@ var allowedProviderResponseEnumValues = []ProviderResponse{
 	"pento.io",
 	"peoplehr",
 	"remote.com",
-	"rippling",
 	"sageone",
 	"shape payroll",
 	"simplepay.ie",

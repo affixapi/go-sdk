@@ -73,8 +73,6 @@
 
 * `REMOTE_COM` (value: `"remote.com"`)
 
-* `RIPPLING` (value: `"rippling"`)
-
 * `SAGEONE` (value: `"sageone"`)
 
 * `SHAPE_PAYROLL` (value: `"shape payroll"`)
