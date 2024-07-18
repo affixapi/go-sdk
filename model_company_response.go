@@ -18,9 +18,9 @@ import (
 // CompanyResponse struct for CompanyResponse
 type CompanyResponse struct {
 	// The Affix-assigned id of the abscence
-	Id string `json:"id"`
+	Id NullableString `json:"id"`
 	// the remote system-assigned id of the abscence
-	RemoteId string `json:"remote_id"`
+	RemoteId NullableString `json:"remote_id"`
 	LegalName NullableString `json:"legal_name"`
 	DisplayName NullableString `json:"display_name"`
 	TaxId NullableString `json:"tax_id"`
@@ -31,7 +31,7 @@ type CompanyResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCompanyResponse(id string, remoteId string, legalName NullableString, displayName NullableString, taxId NullableString, address NullableAddressResponse) *CompanyResponse {
+func NewCompanyResponse(id NullableString, remoteId NullableString, legalName NullableString, displayName NullableString, taxId NullableString, address NullableAddressResponse) *CompanyResponse {
 	this := CompanyResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
@@ -51,51 +51,55 @@ func NewCompanyResponseWithDefaults() *CompanyResponse {
 }
 
 // GetId returns the Id field value
+// If the value is explicit nil, the zero value for string will be returned
 func (o *CompanyResponse) GetId() string {
-	if o == nil {
+	if o == nil || o.Id.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return *o.Id.Get()
 }
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CompanyResponse) GetIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Id, true
+	return o.Id.Get(), o.Id.IsSet()
 }
 
 // SetId sets field value
 func (o *CompanyResponse) SetId(v string) {
-	o.Id = v
+	o.Id.Set(&v)
 }
 
 // GetRemoteId returns the RemoteId field value
+// If the value is explicit nil, the zero value for string will be returned
 func (o *CompanyResponse) GetRemoteId() string {
-	if o == nil {
+	if o == nil || o.RemoteId.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return o.RemoteId
+	return *o.RemoteId.Get()
 }
 
 // GetRemoteIdOk returns a tuple with the RemoteId field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CompanyResponse) GetRemoteIdOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.RemoteId, true
+	return o.RemoteId.Get(), o.RemoteId.IsSet()
 }
 
 // SetRemoteId sets field value
 func (o *CompanyResponse) SetRemoteId(v string) {
-	o.RemoteId = v
+	o.RemoteId.Set(&v)
 }
 
 // GetLegalName returns the LegalName field value
@@ -205,10 +209,10 @@ func (o *CompanyResponse) SetAddress(v AddressResponse) {
 func (o CompanyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.Id.Get()
 	}
 	if true {
-		toSerialize["remote_id"] = o.RemoteId
+		toSerialize["remote_id"] = o.RemoteId.Get()
 	}
 	if true {
 		toSerialize["legal_name"] = o.LegalName.Get()

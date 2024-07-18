@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The Affix-assigned id of the abscence | 
-**RemoteId** | **string** | the remote system-assigned id of the abscence | 
+**Id** | **NullableString** | The Affix-assigned id of the abscence | 
+**RemoteId** | **NullableString** | the remote system-assigned id of the abscence | 
 **LegalName** | **NullableString** |  | 
 **DisplayName** | **NullableString** |  | 
 **TaxId** | **NullableString** |  | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewCompanyResponse
 
-`func NewCompanyResponse(id string, remoteId string, legalName NullableString, displayName NullableString, taxId NullableString, address NullableAddressResponse, ) *CompanyResponse`
+`func NewCompanyResponse(id NullableString, remoteId NullableString, legalName NullableString, displayName NullableString, taxId NullableString, address NullableAddressResponse, ) *CompanyResponse`
 
 NewCompanyResponse instantiates a new CompanyResponse object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,16 @@ and a boolean to check if the value has been set.
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *CompanyResponse) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *CompanyResponse) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetRemoteId
 
 `func (o *CompanyResponse) GetRemoteId() string`
@@ -70,6 +80,16 @@ and a boolean to check if the value has been set.
 SetRemoteId sets RemoteId field to given value.
 
 
+### SetRemoteIdNil
+
+`func (o *CompanyResponse) SetRemoteIdNil(b bool)`
+
+ SetRemoteIdNil sets the value for RemoteId to be an explicit nil
+
+### UnsetRemoteId
+`func (o *CompanyResponse) UnsetRemoteId()`
+
+UnsetRemoteId ensures that no value is present for RemoteId, not even an explicit nil
 ### GetLegalName
 
 `func (o *CompanyResponse) GetLegalName() string`
