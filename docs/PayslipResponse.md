@@ -21,12 +21,13 @@ Name | Type | Description | Notes
 **Contributions** | [**[]PayslipResponseContributions**](PayslipResponseContributions.md) | Items paid by the employer that are not included in gross pay, such as employer-paid portion of private health insurance  | 
 **Deductions** | [**[]PayslipResponseDeductions**](PayslipResponseDeductions.md) |  | 
 **Taxes** | [**[]PayslipResponseTaxes**](PayslipResponseTaxes.md) |  | 
+**Reimbursements** | [**[]PayslipResponseReimbursements**](PayslipResponseReimbursements.md) |  | 
 
 ## Methods
 
 ### NewPayslipResponse
 
-`func NewPayslipResponse(id NullableString, remoteId NullableString, employeeId string, employeeRemoteId string, payrunId string, payrunRemoteId string, payrunType NullablePayrunTypeResponse, currency NullableCurrencyNotNullResponse, grossPay NullableFloat32, netPay NullableFloat32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes, ) *PayslipResponse`
+`func NewPayslipResponse(id NullableString, remoteId NullableString, employeeId string, employeeRemoteId string, payrunId string, payrunRemoteId string, payrunType NullablePayrunTypeResponse, currency NullableCurrencyNotNullResponse, grossPay NullableFloat32, netPay NullableFloat32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes, reimbursements []PayslipResponseReimbursements, ) *PayslipResponse`
 
 NewPayslipResponse instantiates a new PayslipResponse object
 This constructor will assign default values to properties that have it defined,
@@ -481,6 +482,36 @@ SetTaxes sets Taxes field to given value.
 `func (o *PayslipResponse) UnsetTaxes()`
 
 UnsetTaxes ensures that no value is present for Taxes, not even an explicit nil
+### GetReimbursements
+
+`func (o *PayslipResponse) GetReimbursements() []PayslipResponseReimbursements`
+
+GetReimbursements returns the Reimbursements field if non-nil, zero value otherwise.
+
+### GetReimbursementsOk
+
+`func (o *PayslipResponse) GetReimbursementsOk() (*[]PayslipResponseReimbursements, bool)`
+
+GetReimbursementsOk returns a tuple with the Reimbursements field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReimbursements
+
+`func (o *PayslipResponse) SetReimbursements(v []PayslipResponseReimbursements)`
+
+SetReimbursements sets Reimbursements field to given value.
+
+
+### SetReimbursementsNil
+
+`func (o *PayslipResponse) SetReimbursementsNil(b bool)`
+
+ SetReimbursementsNil sets the value for Reimbursements to be an explicit nil
+
+### UnsetReimbursements
+`func (o *PayslipResponse) UnsetReimbursements()`
+
+UnsetReimbursements ensures that no value is present for Reimbursements, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -39,13 +39,14 @@ type PayslipResponse struct {
 	Contributions []PayslipResponseContributions `json:"contributions"`
 	Deductions []PayslipResponseDeductions `json:"deductions"`
 	Taxes []PayslipResponseTaxes `json:"taxes"`
+	Reimbursements []PayslipResponseReimbursements `json:"reimbursements"`
 }
 
 // NewPayslipResponse instantiates a new PayslipResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPayslipResponse(id NullableString, remoteId NullableString, employeeId string, employeeRemoteId string, payrunId string, payrunRemoteId string, payrunType NullablePayrunTypeResponse, currency NullableCurrencyNotNullResponse, grossPay NullableFloat32, netPay NullableFloat32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes) *PayslipResponse {
+func NewPayslipResponse(id NullableString, remoteId NullableString, employeeId string, employeeRemoteId string, payrunId string, payrunRemoteId string, payrunType NullablePayrunTypeResponse, currency NullableCurrencyNotNullResponse, grossPay NullableFloat32, netPay NullableFloat32, startDate string, endDate string, paymentDate string, earnings []PayslipResponseEarnings, contributions []PayslipResponseContributions, deductions []PayslipResponseDeductions, taxes []PayslipResponseTaxes, reimbursements []PayslipResponseReimbursements) *PayslipResponse {
 	this := PayslipResponse{}
 	this.Id = id
 	this.RemoteId = remoteId
@@ -64,6 +65,7 @@ func NewPayslipResponse(id NullableString, remoteId NullableString, employeeId s
 	this.Contributions = contributions
 	this.Deductions = deductions
 	this.Taxes = taxes
+	this.Reimbursements = reimbursements
 	return &this
 }
 
@@ -503,6 +505,32 @@ func (o *PayslipResponse) SetTaxes(v []PayslipResponseTaxes) {
 	o.Taxes = v
 }
 
+// GetReimbursements returns the Reimbursements field value
+// If the value is explicit nil, the zero value for []PayslipResponseReimbursements will be returned
+func (o *PayslipResponse) GetReimbursements() []PayslipResponseReimbursements {
+	if o == nil {
+		var ret []PayslipResponseReimbursements
+		return ret
+	}
+
+	return o.Reimbursements
+}
+
+// GetReimbursementsOk returns a tuple with the Reimbursements field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PayslipResponse) GetReimbursementsOk() (*[]PayslipResponseReimbursements, bool) {
+	if o == nil || o.Reimbursements == nil {
+		return nil, false
+	}
+	return &o.Reimbursements, true
+}
+
+// SetReimbursements sets field value
+func (o *PayslipResponse) SetReimbursements(v []PayslipResponseReimbursements) {
+	o.Reimbursements = v
+}
+
 func (o PayslipResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -555,6 +583,9 @@ func (o PayslipResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.Taxes != nil {
 		toSerialize["taxes"] = o.Taxes
+	}
+	if o.Reimbursements != nil {
+		toSerialize["reimbursements"] = o.Reimbursements
 	}
 	return json.Marshal(toSerialize)
 }
