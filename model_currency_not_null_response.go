@@ -24,12 +24,16 @@ const (
 	USD CurrencyNotNullResponse = "usd"
 	GBP CurrencyNotNullResponse = "gbp"
 	EUR CurrencyNotNullResponse = "eur"
+	SEK CurrencyNotNullResponse = "sek"
+	CAD CurrencyNotNullResponse = "cad"
 )
 
 var allowedCurrencyNotNullResponseEnumValues = []CurrencyNotNullResponse{
 	"usd",
 	"gbp",
 	"eur",
+	"sek",
+	"cad",
 }
 
 func (v *CurrencyNotNullResponse) UnmarshalJSON(src []byte) error {

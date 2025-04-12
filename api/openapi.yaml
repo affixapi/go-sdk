@@ -2026,6 +2026,7 @@ components:
           - AR
           - BR
           - CL
+          - CO
           - PE
           - AT
           - BE
@@ -2048,6 +2049,7 @@ components:
           - LT
           - LU
           - LV
+          - MK
           - NL
           - "NO"
           - PL
@@ -2056,6 +2058,7 @@ components:
           - RU
           - SE
           - SK
+          - BD
           - CN
           - HK
           - ID
@@ -2063,12 +2066,17 @@ components:
           - IN
           - JP
           - KR
+          - KZ
           - MO
           - MY
           - PH
+          - PK
           - PS
+          - SA
           - SG
           - TH
+          - TJ
+          - TM
           - TR
           - TW
           - VN
@@ -2183,6 +2191,7 @@ components:
           - AR
           - BR
           - CL
+          - CO
           - PE
           - AT
           - BE
@@ -2205,6 +2214,7 @@ components:
           - LT
           - LU
           - LV
+          - MK
           - NL
           - "NO"
           - PL
@@ -2213,6 +2223,7 @@ components:
           - RU
           - SE
           - SK
+          - BD
           - CN
           - HK
           - ID
@@ -2220,12 +2231,17 @@ components:
           - IN
           - JP
           - KR
+          - KZ
           - MO
           - MY
           - PH
+          - PK
           - PS
+          - SA
           - SG
           - TH
+          - TJ
+          - TM
           - TR
           - TW
           - VN
@@ -2321,6 +2337,8 @@ components:
       - usd
       - gbp
       - eur
+      - sek
+      - cad
       example: eur
       nullable: true
       type: string
@@ -2682,6 +2700,8 @@ components:
       - usd
       - gbp
       - eur
+      - sek
+      - cad
       example: eur
       nullable: true
       type: string
@@ -3494,6 +3514,8 @@ components:
       - usd
       - gbp
       - eur
+      - sek
+      - cad
       example: eur
       nullable: true
       type: string
