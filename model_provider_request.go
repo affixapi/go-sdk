@@ -56,11 +56,12 @@ const (
 	PAYCIRCLE ProviderRequest = "paycircle"
 	PENTO_IO ProviderRequest = "pento.io"
 	PEOPLEHR ProviderRequest = "peoplehr"
+	QUICKBOOKS_ONLINE ProviderRequest = "quickbooks online"
 	REMOTE_COM ProviderRequest = "remote.com"
 	SAGEONE ProviderRequest = "sageone"
 	SHAPE_PAYROLL ProviderRequest = "shape payroll"
 	SIMPLEPAY_IE ProviderRequest = "simplepay.ie"
-	QUICKBOOKS_ONLINE ProviderRequest = "quickbooks online"
+	TALENOX ProviderRequest = "talenox"
 	ZOHO ProviderRequest = "zoho"
 )
 
@@ -100,11 +101,12 @@ var allowedProviderRequestEnumValues = []ProviderRequest{
 	"paycircle",
 	"pento.io",
 	"peoplehr",
+	"quickbooks online",
 	"remote.com",
 	"sageone",
 	"shape payroll",
 	"simplepay.ie",
-	"quickbooks online",
+	"talenox",
 	"zoho",
 }
 
