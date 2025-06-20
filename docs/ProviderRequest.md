@@ -77,6 +77,8 @@
 
 * `REMOTE_COM` (value: `"remote.com"`)
 
+* `RUNA` (value: `"runa"`)
+
 * `SAGEONE` (value: `"sageone"`)
 
 * `SHAPE_PAYROLL` (value: `"shape payroll"`)
@@ -84,6 +86,8 @@
 * `SIMPLEPAY_IE` (value: `"simplepay.ie"`)
 
 * `TALENOX` (value: `"talenox"`)
+
+* `UNITY` (value: `"unity"`)
 
 * `ZOHO` (value: `"zoho"`)
 

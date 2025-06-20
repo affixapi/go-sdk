@@ -58,10 +58,12 @@ const (
 	PEOPLEHR ProviderRequest = "peoplehr"
 	QUICKBOOKS_ONLINE ProviderRequest = "quickbooks online"
 	REMOTE_COM ProviderRequest = "remote.com"
+	RUNA ProviderRequest = "runa"
 	SAGEONE ProviderRequest = "sageone"
 	SHAPE_PAYROLL ProviderRequest = "shape payroll"
 	SIMPLEPAY_IE ProviderRequest = "simplepay.ie"
 	TALENOX ProviderRequest = "talenox"
+	UNITY ProviderRequest = "unity"
 	ZOHO ProviderRequest = "zoho"
 )
 
@@ -103,10 +105,12 @@ var allowedProviderRequestEnumValues = []ProviderRequest{
 	"peoplehr",
 	"quickbooks online",
 	"remote.com",
+	"runa",
 	"sageone",
 	"shape payroll",
 	"simplepay.ie",
 	"talenox",
+	"unity",
 	"zoho",
 }
 
