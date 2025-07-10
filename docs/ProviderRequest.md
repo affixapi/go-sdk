@@ -49,7 +49,11 @@
 
 * `BRIGHTPAY_CONNECT` (value: `"brightpay connect"`)
 
+* `BUK` (value: `"buk"`)
+
 * `EMPLOYMENT_HERO` (value: `"employment hero"`)
+
+* `EPE` (value: `"epe"`)
 
 * `FACTORIALHR` (value: `"factorialhr"`)
 
@@ -90,6 +94,8 @@
 * `UNITY` (value: `"unity"`)
 
 * `ZOHO` (value: `"zoho"`)
+
+* `ZUCCHETTI` (value: `"zucchetti"`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -44,7 +44,9 @@ const (
 	XERO_UK ProviderResponse = "xero uk"
 	BRAIN_PAYROLL ProviderResponse = "brain payroll"
 	BRIGHTPAY_CONNECT ProviderResponse = "brightpay connect"
+	BUK ProviderResponse = "buk"
 	EMPLOYMENT_HERO ProviderResponse = "employment hero"
+	EPE ProviderResponse = "epe"
 	FACTORIALHR ProviderResponse = "factorialhr"
 	FOURTHHR ProviderResponse = "fourthhr"
 	GUSTO ProviderResponse = "gusto"
@@ -65,6 +67,7 @@ const (
 	TALENOX ProviderResponse = "talenox"
 	UNITY ProviderResponse = "unity"
 	ZOHO ProviderResponse = "zoho"
+	ZUCCHETTI ProviderResponse = "zucchetti"
 )
 
 var allowedProviderResponseEnumValues = []ProviderResponse{
@@ -91,7 +94,9 @@ var allowedProviderResponseEnumValues = []ProviderResponse{
 	"xero uk",
 	"brain payroll",
 	"brightpay connect",
+	"buk",
 	"employment hero",
+	"epe",
 	"factorialhr",
 	"fourthhr",
 	"gusto",
@@ -112,6 +117,7 @@ var allowedProviderResponseEnumValues = []ProviderResponse{
 	"talenox",
 	"unity",
 	"zoho",
+	"zucchetti",
 }
 
 func (v *ProviderResponse) UnmarshalJSON(src []byte) error {

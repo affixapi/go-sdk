@@ -1503,7 +1503,9 @@ components:
       - xero uk
       - brain payroll
       - brightpay connect
+      - buk
       - employment hero
+      - epe
       - factorialhr
       - fourthhr
       - gusto
@@ -1524,6 +1526,7 @@ components:
       - talenox
       - unity
       - zoho
+      - zucchetti
       type: string
     ModeResponse:
       enum:
@@ -1555,7 +1558,9 @@ components:
       - xero uk
       - brain payroll
       - brightpay connect
+      - buk
       - employment hero
+      - epe
       - factorialhr
       - fourthhr
       - gusto
@@ -1576,6 +1581,7 @@ components:
       - talenox
       - unity
       - zoho
+      - zucchetti
       type: string
     ProvidersResponse:
       example:
@@ -1610,9 +1616,11 @@ components:
         providers:
         - bamboohr
         - brightpay connect
+        - buk
         - deel
         - deputy
         - employment hero
+        - epe
         - factorialhr
         - fourthhr
         - gusto
@@ -1637,6 +1645,7 @@ components:
         - unity
         - xero uk
         - zoho
+        - zucchetti
       items:
         properties:
           mode:
