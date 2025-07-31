@@ -49,9 +49,11 @@ const (
 	EPE ProviderRequest = "epe"
 	FACTORIALHR ProviderRequest = "factorialhr"
 	FOURTHHR ProviderRequest = "fourthhr"
+	GREYTHR ProviderRequest = "greythr"
 	GUSTO ProviderRequest = "gusto"
 	ITRENT ProviderRequest = "itrent"
 	JUSTWORKS ProviderRequest = "justworks"
+	KEYPAY ProviderRequest = "keypay"
 	KONTEK_SE ProviderRequest = "kontek.se"
 	ONPAY ProviderRequest = "onpay"
 	OYSTERHR ProviderRequest = "oysterhr"
@@ -65,6 +67,7 @@ const (
 	SHAPE_PAYROLL ProviderRequest = "shape payroll"
 	SIMPLEPAY_IE ProviderRequest = "simplepay.ie"
 	TALENOX ProviderRequest = "talenox"
+	TALENTOZ ProviderRequest = "talentoz"
 	UNITY ProviderRequest = "unity"
 	ZOHO ProviderRequest = "zoho"
 	ZUCCHETTI ProviderRequest = "zucchetti"
@@ -99,9 +102,11 @@ var allowedProviderRequestEnumValues = []ProviderRequest{
 	"epe",
 	"factorialhr",
 	"fourthhr",
+	"greythr",
 	"gusto",
 	"itrent",
 	"justworks",
+	"keypay",
 	"kontek.se",
 	"onpay",
 	"oysterhr",
@@ -115,6 +120,7 @@ var allowedProviderRequestEnumValues = []ProviderRequest{
 	"shape payroll",
 	"simplepay.ie",
 	"talenox",
+	"talentoz",
 	"unity",
 	"zoho",
 	"zucchetti",

@@ -59,11 +59,15 @@
 
 * `FOURTHHR` (value: `"fourthhr"`)
 
+* `GREYTHR` (value: `"greythr"`)
+
 * `GUSTO` (value: `"gusto"`)
 
 * `ITRENT` (value: `"itrent"`)
 
 * `JUSTWORKS` (value: `"justworks"`)
+
+* `KEYPAY` (value: `"keypay"`)
 
 * `KONTEK_SE` (value: `"kontek.se"`)
 
@@ -90,6 +94,8 @@
 * `SIMPLEPAY_IE` (value: `"simplepay.ie"`)
 
 * `TALENOX` (value: `"talenox"`)
+
+* `TALENTOZ` (value: `"talentoz"`)
 
 * `UNITY` (value: `"unity"`)
 
