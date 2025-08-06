@@ -66,6 +66,7 @@ const (
 	SAGEONE ProviderResponse = "sageone"
 	SHAPE_PAYROLL ProviderResponse = "shape payroll"
 	SIMPLEPAY_IE ProviderResponse = "simplepay.ie"
+	SUNFISH ProviderResponse = "sunfish"
 	TALENOX ProviderResponse = "talenox"
 	TALENTOZ ProviderResponse = "talentoz"
 	UNITY ProviderResponse = "unity"
@@ -119,6 +120,7 @@ var allowedProviderResponseEnumValues = []ProviderResponse{
 	"sageone",
 	"shape payroll",
 	"simplepay.ie",
+	"sunfish",
 	"talenox",
 	"talentoz",
 	"unity",

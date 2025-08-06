@@ -1525,6 +1525,7 @@ components:
       - sageone
       - shape payroll
       - simplepay.ie
+      - sunfish
       - talenox
       - talentoz
       - unity
@@ -1583,6 +1584,7 @@ components:
       - sageone
       - shape payroll
       - simplepay.ie
+      - sunfish
       - talenox
       - talentoz
       - unity
@@ -1649,6 +1651,7 @@ components:
         - sageone
         - shape payroll
         - simplepay.ie
+        - sunfish
         - talenox
         - talentoz
         - unity

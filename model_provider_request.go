@@ -66,6 +66,7 @@ const (
 	SAGEONE ProviderRequest = "sageone"
 	SHAPE_PAYROLL ProviderRequest = "shape payroll"
 	SIMPLEPAY_IE ProviderRequest = "simplepay.ie"
+	SUNFISH ProviderRequest = "sunfish"
 	TALENOX ProviderRequest = "talenox"
 	TALENTOZ ProviderRequest = "talentoz"
 	UNITY ProviderRequest = "unity"
@@ -119,6 +120,7 @@ var allowedProviderRequestEnumValues = []ProviderRequest{
 	"sageone",
 	"shape payroll",
 	"simplepay.ie",
+	"sunfish",
 	"talenox",
 	"talentoz",
 	"unity",
